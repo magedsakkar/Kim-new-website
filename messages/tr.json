@@ -1,0 +1,250 @@
+{
+  "nav": {
+    "home": "Ana Sayfa",
+    "about": "Hakkımızda",
+    "programs": "Programlar",
+    "volunteer": "Gönüllü Ol",
+    "newToIslam": "İslam'a Yeni",
+    "library": "Dijital Kitaplık",
+    "contact": "İletişim",
+    "donate": "Bağış Yap",
+    "whoWeAre": "Biz Kimiz?",
+    "leadership": "Liderliğimiz",
+    "media": "Medya",
+    "tourist": "Turist Programları",
+    "volunteerActivities": "Gönüllü Etkinlikler",
+    "studentMeetings": "Öğrenci Buluşmaları",
+    "joinVolunteer": "Gönüllü Başvurusu",
+    "kimAcademy": "KİM Akademi",
+    "faq": "Sık Sorulan Sorular"
+  },
+  "hero": {
+    "eyebrow": "Kültürlerarası İletişim Merkezi",
+    "title": "Köprüler Kuruyor,",
+    "titleAccent": "Kalpler Birleştiriyoruz",
+    "subtitle": "İstanbul'un kalbinde, farklı kültürlerden insanları İslam ile buluşturuyor, anlayış ve diyalog köprüleri inşa ediyoruz.",
+    "cta1": "Programlarımızı Keşfet",
+    "cta2": "Gönüllü Ol",
+    "scrollHint": "Aşağı kaydır"
+  },
+  "stats": {
+    "title": "Rakamlarla KİM",
+    "visitors": "Aylık Ziyaretçi",
+    "volunteers": "Aktif Gönüllü",
+    "years": "Yıllık Deneyim",
+    "countries": "Ülkeden Ziyaretçi"
+  },
+  "programs": {
+    "title": "Programlarımız",
+    "subtitle": "Farklı ihtiyaçlara yönelik özel olarak tasarlanmış kapsamlı programlarımızla kültürlerarası diyaloğu güçlendiriyoruz.",
+    "tourist": {
+      "title": "Turist Programları",
+      "description": "İstanbul'u ziyaret eden turistler için rehberli cami turları, kültürel sohbetler ve İslam'ı tanıma oturumları."
+    },
+    "volunteer": {
+      "title": "Gönüllü Etkinlikler",
+      "description": "Gönüllülerimizin aktif katılımıyla gerçekleştirilen iftar yemekleri, kültürel buluşmalar ve topluluk projeleri."
+    },
+    "student": {
+      "title": "Öğrenci Buluşmaları",
+      "description": "Üniversite öğrencilerine yönelik seminerler, atölyeler ve eğitim oturumları ile akademik perspektiften İslam'ı keşfetme."
+    },
+    "learnMore": "Daha Fazla Bilgi",
+    "viewAll": "Tüm Programları Gör"
+  },
+  "events": {
+    "title": "Yaklaşan Etkinlikler",
+    "subtitle": "Bize katılın ve unutulmaz deneyimler yaşayın.",
+    "noEvents": "Yaklaşan etkinlik bulunmamaktadır.",
+    "register": "Kayıt Ol",
+    "viewAll": "Tüm Etkinlikleri Gör"
+  },
+  "testimonials": {
+    "title": "Ziyaretçilerimiz Ne Diyor?",
+    "subtitle": "Farklı ülkelerden gelen misafirlerimizin deneyimleri."
+  },
+  "cta": {
+    "title": "Misyonumuza Destek Olun",
+    "subtitle": "Her katkınız, daha fazla insanın kültürlerarası diyalog deneyimi yaşamasını sağlar.",
+    "donate": "Bağış Yap",
+    "volunteer": "Gönüllü Ol",
+    "actionBadge": "Harekete Geç",
+    "donateSub": "Misyonumuza destek ol",
+    "volunteerSub": "Topluluğumuza katıl"
+  },
+  "about": {
+    "eyebrow": "Hakkımızda",
+    "title": "Anlayış ve Diyalog İçin",
+    "subtitle": "2010 yılında İstanbul'da kurulan KİM Vakfı, Müslüman olmayan ziyaretçilere, öğrencilere ve yerleşiklere İslam'ı tanıtmak amacıyla eğitim ve kültürel girişimler aracılığıyla köprüler kurmaktadır.",
+    "mission": "Misyonumuz",
+    "missionText": "Kültürlerarası anlayışı ve diyaloğu güçlendirerek, farklı geçmişlerden gelen insanların İslam ile doğrudan ve otantik bir şekilde buluşmasını sağlamak.",
+    "vision": "Vizyonumuz",
+    "visionText": "Kültürel ve dini farklılıkların köprü olduğu, anlayış ve saygının egemen olduğu bir dünya inşa etmek.",
+    "values": "Değerlerimiz",
+    "founded": "Kuruluş",
+    "foundedYear": "2010",
+    "location": "Konum",
+    "locationValue": "Süleymaniye, İstanbul"
+  },
+  "volunteer": {
+    "eyebrow": "Gönüllü Ol",
+    "title": "Ekibimize Katıl",
+    "subtitle": "Anlayış ve diyalog köprüleri kurmak için gönüllü ekibimize katıl.",
+    "form": {
+      "name": "Ad Soyad",
+      "email": "E-posta",
+      "phone": "Telefon",
+      "profession": "Meslek",
+      "motivation": "Neden gönüllü olmak istiyorsunuz?",
+      "submit": "Başvuru Gönder",
+      "success": "Başvurunuz alındı. En kısa sürede sizinle iletişime geçeceğiz.",
+      "error": "Bir hata oluştu. Lütfen tekrar deneyin."
+    },
+    "academy": {
+      "title": "KİM Akademi",
+      "subtitle": "Gönüllülerimiz için kapsamlı eğitim programı",
+      "description": "KİM Akademi, gönüllülerimizin misafirlere en iyi deneyimi sunabilmesi için gerekli bilgi ve becerileri kazanmalarını sağlar."
+    },
+    "faq": {
+      "title": "Sık Sorulan Sorular"
+    }
+  },
+  "contact": {
+    "eyebrow": "İletişim",
+    "title": "Bize Ulaşın",
+    "subtitle": "Sorularınız için bizimle iletişime geçin.",
+    "address": "Adres",
+    "addressValue": "Süleymaniye Mah. Kanuni Medresesi Sk. No:20, Fatih/İstanbul",
+    "phone": "Telefon",
+    "email": "E-posta",
+    "form": {
+      "name": "Ad Soyad",
+      "email": "E-posta",
+      "subject": "Konu",
+      "message": "Mesaj",
+      "submit": "Gönder",
+      "success": "Mesajınız alındı. Teşekkür ederiz!",
+      "error": "Gönderim sırasında bir hata oluştu."
+    }
+  },
+  "donate": {
+    "eyebrow": "Bağış",
+    "title": "Desteğinizle Büyüyoruz",
+    "subtitle": "Her bağışınız, daha fazla insanın kültürlerarası diyalog deneyimi yaşamasına katkıda bulunur.",
+    "bankInfo": "Banka Hesap Bilgileri",
+    "copy": "Kopyala",
+    "copied": "Kopyalandı!"
+  },
+  "footer": {
+    "description": "Kültürlerarası anlayış ve diyalog için köprüler kuruyor, kalpler birleştiriyoruz.",
+    "quickLinks": "Hızlı Bağlantılar",
+    "programs": "Programlar",
+    "contact": "İletişim",
+    "rights": "Tüm hakları saklıdır.",
+    "privacy": "Gizlilik Politikası",
+    "terms": "Kullanım Koşulları"
+  },
+  "library": {
+    "eyebrow": "Dijital Kitaplık",
+    "title": "Kaynaklar ve Yayınlar",
+    "subtitle": "İslam, kültür ve diyalog üzerine kapsamlı kaynak koleksiyonumuz.",
+    "search": "Kaynak ara...",
+    "all": "Tümü",
+    "books": "Kitaplar",
+    "brochures": "Broşürler",
+    "videos": "Videolar",
+    "download": "İndir"
+  },
+  "newToIslam": {
+    "eyebrow": "İslam'a Yeni",
+    "title": "İslam'ı Keşfet",
+    "subtitle": "İslam'a yeni adım atanlar için rehber kaynaklar ve ilham veren hikayeler.",
+    "stories": "Tanıklıklar",
+    "resources": "Kaynaklar",
+    "contact": "Bizimle İletişime Geç"
+  },
+  "howILiveIslam": {
+    "badge": "Yeni Müslüman Bakım Alanı",
+    "title": "İslam'ı Nasıl Yaşıyorum",
+    "subtitle": "Modern dünyada Müslümanca yaşamak için pratik ve dürüst rehberlik — ilk namazdan iman merkezli bir topluluk kurmaya kadar.",
+    "comingSoonBanner": "Bölüm geliştirme aşamasındadır — detaylı kılavuzlar, video içerikleri ve topluluk kaynakları yakında eklenecektir.",
+    "soon": "Yakında",
+    "sectionTitle": "Konular",
+    "quote": "Bir ameli — en sevdiğin ameli — al ve buna devam et. Çünkü Allah siz iyilik yapmaktan usanana kadar sevap vermekten usanmaz.",
+    "quoteAuthor": "Hz. Muhammed ﷺ",
+    "back": "Yeni Müslüman Bakım Alanına Dön",
+    "prayer": { "title": "Namaz Hayatı", "desc": "Beş vakit namazı kılmak, kıble yönünü bulmak ve ibadetde istikrar sağlamak." },
+    "halal": { "title": "Helal Yaşam", "desc": "Helal gıda, etik tüketim ve Müslüman olmayan bir toplumda İslami tercihler yapmak." },
+    "finance": { "title": "İslami Finans", "desc": "Faizsiz bankacılık, zekat hesaplama ve etik servet yönetimini anlamak." },
+    "family": { "title": "Aile ve Evlilik", "desc": "Evlilik, aile rolleri ve çocukları imanla yetiştirme konusunda İslami bakış açısı." },
+    "community": { "title": "Topluluk", "desc": "Müslüman topluluğunuzu bulmak, cami adabı ve kardeşlik bağları kurmak." },
+    "dawah": { "title": "Davet", "desc": "İslam'ı bilgelik ve nezaketle paylaşmak — inancınız hakkında doğal ve güvenle konuşmak." }
+  },
+  "newMuslimCareArea": {
+    "badge": "KİM Vakfı · Yeni Müslüman Bakım Alanı",
+    "heroTitle": "Dönüşüm Yolculuğunuz",
+    "heroTitleHighlight": "Burada Başlıyor",
+    "heroSubtitle": "İslam'ı ilk kez keşfediyorsanız, yeni bir Müslümansanız veya ömür boyu süren imanınızı derinleştiriyorsanız — bu sizin tam bakım sisteminizdir.",
+    "systemEyebrow": "Sistem",
+    "systemTitle": "Bir Dönüşüm Yolculuğu Sistemi",
+    "systemSubtitle": "Bir kurs değil. Bir gerçekler listesi değil. İlk sorunuzdan İslam'ı güvenle yaşamaya kadar size eşlik etmek için tasarlanmış eksiksiz bir sistem.",
+    "step": "Adım",
+    "discoverTitle": "Keşif",
+    "discoverDesc": "Sorularla geliyorsunuz. Allah kimdir? İslam nedir? Tanrı için kanıt var mı? Merak burada başlar.",
+    "understandTitle": "Anlayış",
+    "understandDesc": "Yapılandırılmış eğitim yolculuğumuz aracılığıyla İslami inanç, ibadet, ahlak, Kuran ve Peygamber ﷺ'yi keşfediyorsunuz.",
+    "connectTitle": "Bağlantı",
+    "connectDesc": "Namaz, dua, şükür ve manevi tefekkür yoluyla Allah ile kişisel bir ilişki kuruyorsunuz.",
+    "liveTitle": "İslam'ı Yaşamak",
+    "liveDesc": "İslam'ı günlük hayatınızda somutlaştırmaya başlıyorsunuz — nasıl namaz kıldığınızda, yediğinizde, aile kurduğunuzda ve topluluğunuza hizmet ettiğinizde.",
+    "journeyPath": "Yolculuk Güzergahınız",
+    "whoWeAreLabel": "Biz Kimiz",
+    "whoWeAreSub": "Bağlam ve Temel",
+    "whatIsIslamLabel": "İslam Nedir",
+    "whatIsIslamSub": "9 Adımlı Öğrenme Yolculuğu",
+    "howILiveLabel": "İslam'ı Nasıl Yaşıyorum",
+    "howILiveSub": "Günlük Pratik",
+    "choosePath": "Yolunuzu Seçin",
+    "choosePathSub": "Her birini kendi hızınızda tamamlayabileceğiniz üç tam yolculuk.",
+    "whoWeAreTitle": "Biz Kimiz",
+    "whoWeAreDesc": "KİM Vakfı'nı tanıyın — misyonumuz, vizyonumuz, merkezlerimiz ve bu çalışmanın arkasındaki küresel topluluk.",
+    "whoWeAreCta": "Ekibi Tanıyın",
+    "whatIsIslamTitle": "İslam Nedir?",
+    "whatIsIslamDesc": "İslami inanç, ibadet, ahlak ve akılcı inanç üzerine yapılandırılmış bir yolculuk — meraklı zihinler için.",
+    "whatIsIslamCta": "Yolculuğa Başla",
+    "howILiveTitle": "İslam'ı Nasıl Yaşıyorum",
+    "howILiveDesc": "Namaz, helal yaşam, İslami finans, aile, topluluk ve günlük Müslüman hayatına pratik rehberlik.",
+    "howILiveCta": "Pratikleri Keşfet",
+    "globalResourcesEyebrow": "Kaynaklar ve Erişim",
+    "globalResourcesTitle": "Küresel Kaynaklar",
+    "partnerLocationsTitle": "Ortak Konumlar",
+    "partnerLocationsDesc": "80'den fazla ülkede aktif ortaklıklarımız var. Küresel ağımız aracılığıyla yakınızda bir İslam merkezi bulun.",
+    "partnerLocationsCta": "Ortak Bul",
+    "suleymaniyeAppTitle": "Süleymaniye Uygulaması",
+    "suleymaniyeAppDesc": "Etkileşimli cami tablet uygulamamız, ziyaretçilere cami kompleksi içinde sürükleyici, çok dilli bir dijital deneyim sunuyor.",
+    "suleymaniyeAppCta": "Daha Fazla Bilgi",
+    "madrasaToursTitle": "Medrese Medya Turları",
+    "madrasaToursDesc": "İstanbul'daki üç merkezimizi — KİM 1 (Ziyaretçi Merkezi), KİM 2 (Medrese) ve KİM 3 (Medya) — yüz yüze veya sanal olarak turla.",
+    "madrasaToursCta": "Tur Rezervasyonu",
+    "volunteerTitle": "Bizimle Gönüllü Olun",
+    "volunteerDesc": "İster İstanbul'da ister dünyanın herhangi bir yerinde olun, gönüllü ekibimize katılın ve kültürlerarası anlayış misyonuna katkıda bulunun.",
+    "volunteerCta": "Gönüllülüğe Başla",
+    "partnersEyebrow": "Küresel Ağ",
+    "partnersTitle": "Dünyadaki Ortaklarımız",
+    "partnersSubtitle": "KİM Vakfı, özgün İslami eğitimin erişimini genişletmek için 80'den fazla ülkedeki İslami kuruluşlar, üniversiteler ve merkezlerle çalışmaktadır.",
+    "partnerCountries": "Ortak Ülkeler",
+    "partnerOrganizations": "Ortak Kuruluşlar",
+    "continents": "Kıta",
+    "becomePartner": "Ortak Olun"
+  },
+  "common": {
+    "readMore": "Devamını Oku",
+    "close": "Kapat",
+    "menu": "Menü",
+    "language": "Dil",
+    "back": "Geri",
+    "loading": "Yükleniyor...",
+    "error": "Bir hata oluştu",
+    "success": "Başarılı"
+  }
+}
