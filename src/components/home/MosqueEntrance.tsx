@@ -40,7 +40,7 @@ function MosqueEntranceOverlay({ onDone }: { onDone: () => void }) {
           : { scale: [1, 1.05, 1], filter: 'blur(0px) brightness(1)' }
         }
         transition={zooming
-          ? { duration: 1.9, ease: [0.12, 0, 0.55, 1] }
+          ? { duration: 1.9, ease: [0.12, 0, 0.55, 1] as const }
           : { duration: 14, repeat: Infinity, ease: 'easeInOut' }
         }
       >

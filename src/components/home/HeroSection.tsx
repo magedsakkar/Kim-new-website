@@ -12,10 +12,12 @@ const STATS = [
   { value: '2010',   label: 'Est. Süleymaniye' },
 ];
 
+const EASE = [0.22, 1, 0.36, 1] as const;
+
 const FADE_UP = (delay = 0) => ({
   initial: { opacity: 0, y: 28 },
   animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.8, delay, ease: [0.22, 1, 0.36, 1] },
+  transition: { duration: 0.8, delay, ease: EASE },
 });
 
 export function HeroSection() {
@@ -149,7 +151,7 @@ export function HeroSection() {
             className="order-1 lg:order-2 relative h-[340px] sm:h-[430px] lg:h-[580px]"
             initial={{ opacity: 0, x: 40, scale: 0.96 }}
             animate={{ opacity: 1, x: 0, scale: 1 }}
-            transition={{ duration: 1.1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 1.1, delay: 0.2, ease: EASE }}
           >
             {/* Gold glow border */}
             <div
