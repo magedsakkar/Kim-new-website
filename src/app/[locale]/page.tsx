@@ -1,3 +1,4 @@
+import { MosqueEntrance } from '@/components/home/MosqueEntrance';
 import { HeroSection } from '@/components/home/HeroSection';
 import { MarqueeBanner } from '@/components/home/MarqueeBanner';
 import { StatsSection } from '@/components/home/StatsSection';
@@ -25,6 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default function HomePage() {
   return (
     <>
+      <MosqueEntrance />
       <HeroSection />
       <MarqueeBanner />
       <StatsSection />
