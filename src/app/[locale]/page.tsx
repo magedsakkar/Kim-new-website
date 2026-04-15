@@ -3,6 +3,7 @@ import { HeroSection } from '@/components/home/HeroSection';
 import { MarqueeBanner } from '@/components/home/MarqueeBanner';
 import { StatsSection } from '@/components/home/StatsSection';
 import { MissionStatement } from '@/components/home/MissionStatement';
+import { VideosSection } from '@/components/home/VideosSection';
 import { ProgramsPreview } from '@/components/home/ProgramsPreview';
 import { EventsSection } from '@/components/home/EventsSection';
 import { TestimonialsSection } from '@/components/home/TestimonialsSection';
@@ -31,6 +32,7 @@ export default function HomePage() {
       <MarqueeBanner />
       <StatsSection />
       <MissionStatement />
+      <VideosSection />
       <ProgramsPreview />
       <EventsSection />
       <TestimonialsSection />
