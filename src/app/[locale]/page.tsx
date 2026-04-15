@@ -8,6 +8,7 @@ import { ProgramsPreview } from '@/components/home/ProgramsPreview';
 import { EventsSection } from '@/components/home/EventsSection';
 import { TestimonialsSection } from '@/components/home/TestimonialsSection';
 import { CTABanner } from '@/components/home/CTABanner';
+import { GallerySection } from '@/components/home/GallerySection';
 import { buildMetadata } from '@/lib/metadata';
 import type { Metadata } from 'next';
 
@@ -35,6 +36,7 @@ export default function HomePage() {
       <VideosSection />
       <ProgramsPreview />
       <EventsSection />
+      <GallerySection />
       <TestimonialsSection />
       <CTABanner />
     </>
