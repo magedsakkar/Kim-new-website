@@ -128,67 +128,104 @@ export function HeroSection() {
             </motion.div>
           </div>
 
-          {/* RIGHT: Mosque photo card */}
+          {/* RIGHT: Animated KİM logo card */}
           <motion.div
             className="order-1 lg:order-2 relative h-[340px] sm:h-[430px] lg:h-[580px]"
             initial={{ opacity: 0, x: 40, scale: 0.96 }}
             animate={{ opacity: 1, x: 0, scale: 1 }}
             transition={{ duration: 1.1, delay: 0.2, ease: EASE }}
           >
-            {/* Gold glow border */}
-            <div className="absolute -inset-[1px] rounded-3xl"
-              style={{ background: 'linear-gradient(135deg, rgba(201,151,58,0.55) 0%, rgba(201,151,58,0.08) 45%, rgba(201,151,58,0.35) 100%)' }}
+            {/* Animated gold glow border */}
+            <motion.div
+              className="absolute -inset-[1px] rounded-3xl"
+              animate={{ opacity: [0.6, 1, 0.6] }}
+              transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+              style={{ background: 'linear-gradient(135deg, rgba(201,151,58,0.7) 0%, rgba(201,151,58,0.08) 45%, rgba(201,151,58,0.55) 100%)' }}
             />
 
-            {/* Card inner */}
-            <div className="absolute inset-0 rounded-3xl overflow-hidden">
-              <Image src="/images/suleymaniye-mosque.jpg" alt="Süleymaniye Mosque"
-                fill className="object-cover object-[center_55%] scale-105" unoptimized />
+            {/* Card body */}
+            <div className="absolute inset-0 rounded-3xl overflow-hidden"
+              style={{ background: 'linear-gradient(155deg, #1A2B62 0%, #0F1838 45%, #08101E 100%)' }}>
 
-              {/* Original diagonal overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
+              {/* Islamic geometric pattern bg */}
+              <div className="absolute inset-0 opacity-[0.05] pointer-events-none"
+                style={{
+                  backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='88' height='88'%3E%3Cpath d='M44 6 L49 32 L74 18 L57 40 L83 44 L57 48 L74 70 L49 56 L44 82 L39 56 L14 70 L31 48 L5 44 L31 40 L14 18 L39 32Z' fill='none' stroke='%23C9973A' stroke-width='1'/%3E%3C/svg%3E")`,
+                  backgroundSize: '88px 88px',
+                }}
+              />
+
+              {/* Diagonal overlay — original design element */}
               <div className="absolute inset-0 bg-gradient-to-br from-kim-navy/30 via-transparent to-transparent" />
+
+              {/* ── Concentric animated rings ── */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                {/* Outermost slow-rotate ring with tick marks */}
+                <motion.div
+                  className="absolute rounded-full border border-kim-gold/10"
+                  style={{ width: '82%', height: '82%',
+                    backgroundImage: 'repeating-conic-gradient(rgba(201,151,58,0.15) 0deg 1deg, transparent 1deg 30deg)' }}
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 35, repeat: Infinity, ease: 'linear' }}
+                />
+                {/* Ring 2 — counter-rotate */}
+                <motion.div
+                  className="absolute rounded-full border border-kim-gold/18"
+                  style={{ width: '66%', height: '66%' }}
+                  animate={{ rotate: -360 }}
+                  transition={{ duration: 25, repeat: Infinity, ease: 'linear' }}
+                >
+                  {/* Orbiting gold dot */}
+                  <div className="absolute -top-1.5 left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-kim-gold shadow-[0_0_8px_rgba(201,151,58,0.8)]" />
+                </motion.div>
+                {/* Ring 3 */}
+                <motion.div
+                  className="absolute rounded-full border border-kim-gold/25"
+                  style={{ width: '50%', height: '50%' }}
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 18, repeat: Infinity, ease: 'linear' }}
+                />
+                {/* Ring 4 — pulse */}
+                <motion.div
+                  className="absolute rounded-full border border-kim-gold/30"
+                  style={{ width: '34%', height: '34%' }}
+                  animate={{ scale: [1, 1.08, 1], opacity: [0.5, 1, 0.5] }}
+                  transition={{ duration: 3.5, repeat: Infinity, ease: 'easeInOut' }}
+                />
+
+                {/* Central logo */}
+                <div className="relative z-10 flex items-center justify-center w-24 h-24 rounded-full border border-kim-gold/35"
+                  style={{ background: 'radial-gradient(circle, rgba(201,151,58,0.18) 0%, rgba(20,26,74,0.8) 70%)', boxShadow: '0 0 50px rgba(201,151,58,0.28), inset 0 0 30px rgba(201,151,58,0.06)' }}>
+                  <Image
+                    src="/images/logo_kim_aklamasz-removebg-preview.png"
+                    alt="KİM Vakfı"
+                    width={52}
+                    height={52}
+                    className="w-12 h-12 object-contain brightness-0 invert"
+                  />
+                </div>
+              </div>
 
               {/* Top-left: founded badge */}
               <div className="absolute top-4 left-4">
                 <div className="rounded-xl bg-kim-gold px-3 py-2"
-                  style={{ boxShadow: '0 4px 20px rgba(201,151,58,0.5)' }}>
+                  style={{ boxShadow: '0 4px 24px rgba(201,151,58,0.55)' }}>
                   <p className="text-white font-black text-xl leading-none">2010</p>
                   <p className="text-white/80 text-[9px] font-semibold uppercase tracking-wider mt-0.5">Founded</p>
                 </div>
               </div>
 
-              {/* Top-right: animated KİM logo badge */}
+              {/* Top-right: stats badge */}
               <div className="absolute top-4 right-4">
-                <div className="relative w-12 h-12 flex items-center justify-center">
-                  {/* Rotating outer ring */}
-                  <motion.div
-                    className="absolute inset-0 rounded-full border border-kim-gold/40"
-                    animate={{ rotate: 360 }}
-                    transition={{ duration: 12, repeat: Infinity, ease: 'linear' }}
-                    style={{
-                      background: 'conic-gradient(from 0deg, transparent 60%, rgba(201,151,58,0.3) 80%, transparent 100%)',
-                      borderRadius: '50%',
-                    }}
-                  />
-                  {/* Pulse ring */}
-                  <motion.div
-                    className="absolute -inset-1 rounded-full border border-kim-gold/20"
-                    animate={{ scale: [1, 1.35, 1], opacity: [0.5, 0, 0.5] }}
-                    transition={{ duration: 3, repeat: Infinity, ease: 'easeOut' }}
-                  />
-                  {/* Badge face */}
-                  <div className="absolute inset-0 rounded-full bg-black/40 backdrop-blur-sm border border-white/15" />
-                  <Image src="/images/logo_kim_aklamasz-removebg-preview.png" alt="KİM Vakfı"
-                    width={26} height={26}
-                    className="w-6 h-6 object-contain brightness-0 invert relative z-10"
-                  />
+                <div className="rounded-xl border border-white/12 bg-black/35 backdrop-blur-sm px-3 py-2 text-right">
+                  <p className="text-white font-bold text-base leading-none">80+</p>
+                  <p className="text-white/45 text-[9px] uppercase tracking-wider mt-0.5">Countries</p>
                 </div>
               </div>
 
               {/* Bottom info card */}
               <div className="absolute bottom-0 left-0 right-0 p-4">
-                <div className="rounded-2xl border border-white/10 bg-black/45 p-4 backdrop-blur-md">
+                <div className="rounded-2xl border border-white/10 bg-black/50 p-4 backdrop-blur-md">
                   <div className="flex items-center gap-2 mb-1.5">
                     <MapPin className="h-3 w-3 text-kim-gold shrink-0" />
                     <span className="text-kim-gold text-[10px] font-bold uppercase tracking-[0.2em]">

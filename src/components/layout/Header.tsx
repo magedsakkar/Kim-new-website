@@ -138,10 +138,10 @@ export function Header() {
                       <span className="relative z-10">{link.label}</span>
                       {link.children && (
                         <svg
-                          className="relative z-10 w-3 h-3 opacity-50 group-hover:opacity-100 group-hover:rotate-180 transition-all duration-200"
+                          className="relative z-10 w-3.5 h-3.5 text-kim-gold/70 group-hover:text-kim-gold group-hover:rotate-180 transition-all duration-200"
                           fill="none" viewBox="0 0 24 24" stroke="currentColor"
                         >
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
                         </svg>
                       )}
                     </Link>
