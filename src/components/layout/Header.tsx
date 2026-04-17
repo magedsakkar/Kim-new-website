@@ -70,26 +70,29 @@ export function Header() {
       >
         <div
           className={cn(
-            'relative max-w-7xl mx-auto rounded-2xl border overflow-hidden transition-all duration-500',
+            'relative max-w-7xl mx-auto rounded-2xl border transition-all duration-500',
             scrolled
               ? 'bg-kim-navy/96 backdrop-blur-xl border-white/15 shadow-2xl shadow-kim-navy/50'
               : 'bg-kim-navy/88 backdrop-blur-lg border-white/10 shadow-lg shadow-kim-navy/30'
           )}
         >
-          {/* ── Scroll progress bar ── */}
-          <div
-            className="absolute top-0 left-0 h-[2px] bg-gradient-to-r from-kim-gold via-amber-300 to-kim-gold transition-[width] duration-100 ease-linear"
-            style={{ width: `${scrollProgress}%` }}
-          />
+          {/* Inner clip wrapper — keeps progress bar and pattern clipped to rounded corners */}
+          <div className="absolute inset-0 rounded-2xl overflow-hidden pointer-events-none">
+            {/* ── Scroll progress bar ── */}
+            <div
+              className="absolute top-0 left-0 h-[2px] bg-gradient-to-r from-kim-gold via-amber-300 to-kim-gold transition-[width] duration-100 ease-linear"
+              style={{ width: `${scrollProgress}%` }}
+            />
 
-          {/* ── Islamic star tile background ── */}
-          <div
-            className="absolute inset-0 opacity-[0.025] pointer-events-none"
-            style={{
-              backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48'%3E%3Cpath d='M24 4l2.5 9.5 8-5.5-4 8.5 9.5 2-9.5 2 4 8.5-8-5.5L24 33l-2.5-9.5-8 5.5 4-8.5-9.5-2 9.5-2-4-8.5 8 5.5Z' fill='white'/%3E%3C/svg%3E")`,
-              backgroundSize: '48px 48px',
-            }}
-          />
+            {/* ── Islamic star tile background ── */}
+            <div
+              className="absolute inset-0 opacity-[0.025]"
+              style={{
+                backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48'%3E%3Cpath d='M24 4l2.5 9.5 8-5.5-4 8.5 9.5 2-9.5 2 4 8.5-8-5.5L24 33l-2.5-9.5-8 5.5 4-8.5-9.5-2 9.5-2-4-8.5 8 5.5Z' fill='white'/%3E%3C/svg%3E")`,
+                backgroundSize: '48px 48px',
+              }}
+            />
+          </div>
 
           {/* ── Main row ── */}
           <div className="flex items-center justify-between h-14 md:h-16 px-4 md:px-5">

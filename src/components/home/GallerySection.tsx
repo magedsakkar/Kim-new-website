@@ -5,19 +5,19 @@ import { motion, useMotionValue, animate } from 'framer-motion';
 
 const GALLERY = [
   { id: 1, title: 'Süleymaniye – KİM Merkezi', subtitle: 'Cross Cultural Center · Fatih, İstanbul',
-    bg: 'linear-gradient(135deg, #141A4A 0%, #0D5C63 100%)', pattern: 'mosque', accent: '#C9973A' },
+    bg: 'linear-gradient(145deg, #1A2B7A 0%, #0D5C63 60%, #0A1828 100%)', pattern: 'mosque', accent: '#C9973A' },
   { id: 2, title: 'Kültürlerarası Diyalog', subtitle: 'Intercultural dialogue since 2010',
-    bg: 'linear-gradient(135deg, #1C2562 0%, #0D3D50 100%)', pattern: 'star', accent: '#0D5C63' },
+    bg: 'linear-gradient(145deg, #2D1A6A 0%, #1C2562 50%, #0A0F2E 100%)', pattern: 'star', accent: '#A78BFA' },
   { id: 3, title: 'İslam\'ı Keşfediyoruz', subtitle: 'Educational journey for new visitors',
-    bg: 'linear-gradient(135deg, #0D5C63 0%, #141A4A 100%)', pattern: 'arabesque', accent: '#C9973A' },
+    bg: 'linear-gradient(145deg, #0D5C63 0%, #1A2B62 55%, #0A1222 100%)', pattern: 'arabesque', accent: '#C9973A' },
   { id: 4, title: 'Gönüllü Programları', subtitle: 'Volunteer & community programmes',
-    bg: 'linear-gradient(135deg, #1A1000 0%, #3D2800 100%)', pattern: 'grid', accent: '#C9973A' },
+    bg: 'linear-gradient(145deg, #4A2800 0%, #8B4500 45%, #1A0E00 100%)', pattern: 'grid', accent: '#F59E0B' },
   { id: 5, title: 'Uluslararası Ziyaretçiler', subtitle: '80+ countries · 4,500+ visitors per year',
-    bg: 'linear-gradient(135deg, #0A1525 0%, #1C2562 100%)', pattern: 'dots', accent: '#C9973A' },
+    bg: 'linear-gradient(145deg, #0A2040 0%, #1C4A7A 50%, #060F20 100%)', pattern: 'dots', accent: '#38BDF8' },
   { id: 6, title: 'Dijital Kütüphane', subtitle: 'Books & videos in 25+ languages',
-    bg: 'linear-gradient(135deg, #0E1E34 0%, #0D5C63 100%)', pattern: 'mosque', accent: '#0D5C63' },
+    bg: 'linear-gradient(145deg, #0E2E3A 0%, #0D5C63 55%, #060E18 100%)', pattern: 'mosque', accent: '#34D399' },
   { id: 7, title: 'Ramazan Etkinlikleri', subtitle: 'Annual Ramadan programmes & iftars',
-    bg: 'linear-gradient(135deg, #1C2562 0%, #8B7300 60%)', pattern: 'star', accent: '#C9973A' },
+    bg: 'linear-gradient(145deg, #3D2800 0%, #C9973A 45%, #1A1000 100%)', pattern: 'star', accent: '#FCD34D' },
 ] as const;
 
 const PATTERN_SVG: Record<string, string> = {
@@ -79,7 +79,7 @@ export function GallerySection() {
 
   return (
     <section
-      className="py-20 md:py-28 bg-[#070C18] relative overflow-hidden"
+      className="py-20 md:py-28 bg-gradient-to-b from-[#0A1235] via-[#0D1640] to-[#0A1235] relative overflow-hidden"
       onMouseEnter={() => { isHovered.current = true; }}
       onMouseLeave={() => { isHovered.current = false; }}
     >
@@ -97,7 +97,7 @@ export function GallerySection() {
               <span className="h-px w-10 bg-kim-gold" />
               <span className="text-kim-gold text-xs font-semibold uppercase tracking-[0.28em]">Galeri</span>
             </div>
-            <h2 className="font-serif text-3xl md:text-4xl font-bold text-white">
+            <h2 className="font-serif text-3xl md:text-4xl font-bold text-gradient-gold">
               KİM Vakfı&apos;ndan Kareler
             </h2>
           </div>
@@ -119,6 +119,12 @@ export function GallerySection() {
 
       {/* ── Slider wrapper with floating side arrows ─────────────── */}
       <div className="relative">
+        {/* Left fade */}
+        <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-24 z-10 pointer-events-none"
+          style={{background: 'linear-gradient(to right, #0B1438 0%, transparent 100%)'}} />
+        {/* Right fade */}
+        <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-24 z-10 pointer-events-none"
+          style={{background: 'linear-gradient(to left, #0B1438 0%, transparent 100%)'}} />
         {/* ← LEFT arrow */}
         <button
           onClick={() => goTo(active - 1)}
@@ -152,7 +158,7 @@ export function GallerySection() {
                 <motion.div
                   key={item.id}
                   onClick={() => { if (!isDragging.current) goTo(i); }}
-                  animate={{ scale: isActive ? 1 : 0.93, opacity: isActive ? 1 : 0.6, y: isActive ? 0 : 18 }}
+                  animate={{ scale: isActive ? 1.02 : 0.91, opacity: isActive ? 1 : 0.6, y: isActive ? 0 : 18 }}
                   transition={{ type: 'spring', stiffness: 300, damping: 28 }}
                   className="relative shrink-0 rounded-2xl overflow-hidden"
                   style={{ width: CARD_W, height: CARD_H, background: item.bg }}
@@ -160,10 +166,22 @@ export function GallerySection() {
                   {/* Pattern */}
                   <div className="absolute inset-0 pointer-events-none"
                     style={{ backgroundImage: `url("${patternUrl}")`,
-                      backgroundSize: item.pattern === 'star' ? '88px 88px' : item.pattern === 'arabesque' ? '60px 60px' : item.pattern === 'dots' ? '30px 30px' : '80px 80px' }} />
+                      backgroundSize: item.pattern === 'star' ? '88px 88px' : item.pattern === 'arabesque' ? '60px 60px' : item.pattern === 'dots' ? '30px 30px' : '80px 80px',
+                      opacity: 0.18 }} />
                   {/* Accent glow */}
                   <div className="absolute top-0 inset-x-0 h-40 pointer-events-none"
                     style={{ background: `radial-gradient(ellipse 80% 80% at 50% 0%, ${item.accent}22 0%, transparent 70%)` }} />
+                  {/* Central geometric art */}
+                  <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                    <div className="opacity-[0.07]">
+                      <svg width="200" height="200" viewBox="0 0 200 200">
+                        <circle cx="100" cy="100" r="80" fill="none" stroke="white" strokeWidth="0.8"/>
+                        <circle cx="100" cy="100" r="55" fill="none" stroke="white" strokeWidth="0.6"/>
+                        <circle cx="100" cy="100" r="30" fill="none" stroke="white" strokeWidth="0.5"/>
+                        <path d="M100 20L114 62 158 62 124 86 138 128 100 104 62 128 76 86 42 62 86 62Z" fill="none" stroke="white" strokeWidth="0.7"/>
+                      </svg>
+                    </div>
+                  </div>
                   {/* Watermark number */}
                   <div className="absolute top-4 left-5">
                     <span className="text-white/14 font-black text-[5rem] leading-none font-serif select-none">

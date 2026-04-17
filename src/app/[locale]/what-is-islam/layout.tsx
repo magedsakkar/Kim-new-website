@@ -1,3 +1,6 @@
+'use client';
+
+import { usePathname } from '@/lib/i18n/navigation';
 import { globalLinks } from '@/data/what-is-islam';
 import { JourneyNav } from '@/components/what-is-islam/JourneyNav';
 import { FloatingActions } from '@/components/what-is-islam/FloatingActions';
@@ -6,6 +9,14 @@ import { Link } from '@/lib/i18n/navigation';
 import Image from 'next/image';
 
 export default function WhatIsIslamLayout({ children }: { children: React.ReactNode }) {
+  const pathname = usePathname();
+
+  // Hub page — full-screen immersive design, no sidebar
+  if (pathname === '/what-is-islam') {
+    return <>{children}</>;
+  }
+
+  // Sub-pages — standard sidebar layout
   return (
     <div className="min-h-screen bg-kim-cream">
 
@@ -33,7 +44,6 @@ export default function WhatIsIslamLayout({ children }: { children: React.ReactN
           </div>
 
           <div className="flex items-center gap-2">
-            {/* Global discovery links — icon-only on header */}
             <div className="hidden md:flex items-center">
               {globalLinks.map((link) => (
                 <a
@@ -64,7 +74,6 @@ export default function WhatIsIslamLayout({ children }: { children: React.ReactN
           {/* ── Sidebar (desktop) ─────────────────────────── */}
           <aside className="hidden lg:flex w-60 shrink-0 flex-col sticky top-24">
             <div className="rounded-2xl bg-kim-navy shadow-xl overflow-hidden">
-              {/* Sidebar header */}
               <div className="px-4 pt-5 pb-4 border-b border-white/10">
                 <p className="text-[9px] font-bold uppercase tracking-widest text-white/40 mb-1">
                   Educational Journey
@@ -73,13 +82,9 @@ export default function WhatIsIslamLayout({ children }: { children: React.ReactN
                   What is Islam?
                 </h2>
               </div>
-
-              {/* Nav */}
               <div className="px-3 py-4">
                 <JourneyNav />
               </div>
-
-              {/* Footer */}
               <div className="px-4 py-3 border-t border-white/10 bg-white/5">
                 <p className="text-[10px] text-white/40 leading-relaxed">
                   Follow at your own pace. Each step deepens your understanding.
