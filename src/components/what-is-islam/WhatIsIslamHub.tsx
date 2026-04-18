@@ -360,95 +360,6 @@ function IslamicBackground() {
 
 // ── Topic List Sidebar (left, narrow) ─────────────────────────────────────────
 
-function TopicListSidebar({ activeId, onSelect }: { activeId: string; onSelect: (id: string) => void }) {
-  const stepIdx = STEP_ORDER.indexOf(activeId);
-  return (
-    <div className="hidden lg:flex flex-col w-44 xl:w-48 bg-[#06102E]/96 backdrop-blur-md border-r border-white/8 flex-shrink-0">
-      {/* Header */}
-      <div className="px-4 py-4 border-b border-white/8">
-        <p className="text-[8px] font-black uppercase tracking-[0.3em] text-kim-gold/75 mb-1">
-          Educational Journey
-        </p>
-        <h2 className="font-serif text-sm font-bold text-white leading-tight">What is Islam?</h2>
-        <p className="text-white/28 text-[9px] mt-1.5">Select any topic to explore</p>
-      </div>
-
-      {/* Topic list */}
-      <div className="flex-1 overflow-y-auto py-3 px-2">
-        <div className="relative">
-          {/* Vertical track */}
-          <div className="absolute left-[18px] top-4 bottom-8 w-px"
-            style={{ background: 'linear-gradient(to bottom, rgba(201,151,58,0.55) 0%, rgba(201,151,58,0.1) 60%, rgba(201,151,58,0.3) 100%)' }} />
-
-          {journeySteps.map((step) => {
-            const isActive = step.id === activeId;
-            const isCore   = step.phase === 'core';
-            const isPast   = STEP_ORDER.indexOf(step.id) < stepIdx;
-            return (
-              <motion.button
-                key={step.id}
-                onClick={() => onSelect(step.id)}
-                className={cn(
-                  'relative flex items-center gap-2.5 w-full rounded-lg px-2 py-2 mb-0.5 text-left transition-all duration-150 border',
-                  isActive ? 'bg-kim-gold/12 border-kim-gold/28' : 'hover:bg-white/5 border-transparent',
-                  !isCore && 'ml-4',
-                )}
-                whileHover={{ x: 1 }}
-                transition={{ type: 'spring', stiffness: 450, damping: 32 }}
-              >
-                {/* Node dot */}
-                <div className={cn(
-                  'relative z-10 flex-shrink-0 flex items-center justify-center rounded-full text-xs transition-all',
-                  isActive
-                    ? 'w-7 h-7 bg-kim-gold border border-kim-gold shadow-[0_0_14px_rgba(201,151,58,0.6)]'
-                    : isPast
-                    ? 'w-6 h-6 bg-kim-gold/16 border border-kim-gold/35'
-                    : isCore
-                    ? 'w-6 h-6 border border-white/18 bg-white/4 group-hover:border-white/40'
-                    : 'w-5 h-5 border border-white/10 bg-kim-navy-dark'
-                )}>
-                  {step.icon}
-                </div>
-
-                {/* Label */}
-                <span className={cn(
-                  'text-[10px] font-semibold leading-tight',
-                  isActive ? 'text-kim-gold' : isPast ? 'text-white/45' : 'text-white/40',
-                )}>
-                  {step.shortLabel}
-                </span>
-
-                {isActive && (
-                  <motion.div
-                    className="w-1 h-1 rounded-full bg-kim-gold flex-shrink-0 ml-auto"
-                    animate={{ scale: [1, 1.8, 1], opacity: [1, 0.4, 1] }}
-                    transition={{ duration: 1.6, repeat: Infinity }}
-                  />
-                )}
-              </motion.button>
-            );
-          })}
-        </div>
-      </div>
-
-      {/* Progress dots */}
-      <div className="px-3 py-3 border-t border-white/8">
-        <div className="flex gap-1 flex-wrap mb-1">
-          {STEP_ORDER.map((id, i) => (
-            <button key={id} onClick={() => onSelect(id)}>
-              <div className={cn(
-                'rounded-full transition-all duration-200',
-                id === activeId ? 'w-4 h-1.5 bg-kim-gold' : i < stepIdx ? 'w-1.5 h-1.5 bg-kim-gold/35' : 'w-1.5 h-1.5 bg-white/14',
-              )} />
-            </button>
-          ))}
-        </div>
-        <p className="text-white/20 text-[9px]">{stepIdx + 1} / {STEP_ORDER.length}</p>
-      </div>
-    </div>
-  );
-}
-
 // ── Journey Tree Viewer (embedded JourneyMapCanvas logic, props-driven) ────────
 
 function JourneyTreeViewer({ activeId, onSelect }: { activeId: string; onSelect: (id: string) => void }) {
@@ -564,7 +475,7 @@ function JourneyTreeViewer({ activeId, onSelect }: { activeId: string; onSelect:
 
 function JourneyTreePanel({ activeId, onSelect }: { activeId: string; onSelect: (id: string) => void }) {
   return (
-    <div className="hidden xl:flex flex-col w-[300px] bg-[#07102A]/96 backdrop-blur-md border-r border-white/8 flex-shrink-0 overflow-y-auto">
+    <div className="hidden lg:flex flex-col w-[300px] bg-[#07102A]/96 backdrop-blur-md border-r border-white/8 flex-shrink-0 overflow-y-auto">
       {/* Header */}
       <div className="px-4 py-4 border-b border-white/8 bg-kim-navy-dark/30 flex-shrink-0">
         <p className="text-[8px] font-black uppercase tracking-[0.3em] text-kim-gold/75 mb-1">Educational Journey</p>
@@ -843,12 +754,9 @@ export function WhatIsIslamHub() {
       {/* Full-page Islamic animated background */}
       <IslamicBackground />
 
-      {/* 3-column layout */}
+      {/* 2-column layout (tree + content) */}
       <div className="flex h-full overflow-hidden relative z-[1]">
-        {/* Col 1: Topic list sidebar */}
-        <TopicListSidebar activeId={activeId} onSelect={setActiveId} />
-
-        {/* Col 2: SVG journey tree + tools */}
+        {/* Col 1: SVG journey tree + tools (lg+) */}
         <JourneyTreePanel activeId={activeId} onSelect={setActiveId} />
 
         {/* Col 3: Main content */}

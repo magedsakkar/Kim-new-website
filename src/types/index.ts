@@ -39,9 +39,13 @@ export interface Resource {
   title: string;
   description: string;
   type: 'book' | 'brochure' | 'video';
-  url: string;
-  language: string;
-  thumbnail?: string;
+  url: string;             // PDF/video/resource download URL
+  language: string;        // Primary language label shown on card
+  languages?: string[];    // All language options (for multi-language sets)
+  thumbnail?: string;      // Cover image URL
+  category?: string;       // 'belief' | 'quran' | 'new-muslim' | etc.
+  pages?: number;
+  author?: string;
 }
 
 export interface NavItem {
