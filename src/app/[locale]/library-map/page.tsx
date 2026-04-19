@@ -87,14 +87,17 @@ const TURKEY_ONLY_LOCATIONS: MapLocation[] = [
 ];
 
 const WORLD_ONLY_LOCATIONS: MapLocation[] = [
-  { id: 33, name: 'Tokyo Camii',                city: 'Tokyo', country: 'Japonya',     lat: 35.6636, lng: 139.6815, address: 'Yoyogi, Shibuya-ku, Tokyo, Japan' },
-  { id: 34, name: 'Namazgah / Tiran Merkez Camii', city: 'Tiran', country: 'Arnavutluk', lat: 41.3275, lng: 19.8187, address: 'Tirana, Albania' },
+  { id: 33, name: 'Tokyo Camii',                    city: 'Tokyo',     country: 'Japonya',      lat: 35.6636, lng: 139.6815, address: 'Yoyogi, Shibuya-ku, Tokyo, Japan' },
+  { id: 34, name: 'Namazgah / Tiran Merkez Camii',  city: 'Tiran',     country: 'Arnavutluk',   lat: 41.3275, lng: 19.8187,  address: 'Tirana, Albania' },
+  { id: 35, name: 'Emevi Camii',                    city: 'Şam',       country: 'Suriye',       lat: 33.5112, lng: 36.3073,  address: 'Al-Amine Square, Damascus, Syria' },
+  { id: 36, name: 'Halep Ulu Camii',                city: 'Halep',     country: 'Suriye',       lat: 36.1991, lng: 37.1583,  address: 'Al-Jdeide, Aleppo, Syria' },
+  { id: 37, name: 'Agios Ioannis Camii',            city: 'Lefkoşa',   country: 'Kıbrıs',       lat: 35.1780, lng: 33.3610,  address: 'Nicosia (North), Cyprus' },
 ];
 
 // ── Merged sets for tabs ───────────────────────────────────────────────────
-// Turkey tab: Istanbul + Turkey/Cyprus cities (all 32 Turkish-area locations)
+// Turkey tab: Istanbul + Turkey/Cyprus cities
 const TURKEY_ALL: MapLocation[] = [...ISTANBUL_LOCATIONS, ...TURKEY_ONLY_LOCATIONS];
-// World tab: every location (all 34)
+// World tab: every location worldwide
 const WORLD_ALL: MapLocation[] = [...ISTANBUL_LOCATIONS, ...TURKEY_ONLY_LOCATIONS, ...WORLD_ONLY_LOCATIONS];
 
 // ── Dynamic import ─────────────────────────────────────────────────────────
@@ -130,7 +133,7 @@ export default function LibraryMapPage() {
   const locale = (raw in T ? raw : 'en') as keyof typeof T;
   const t      = T[locale];
 
-  const [activeTab, setActiveTab] = useState<TabKey>('istanbul');
+  const [activeTab, setActiveTab] = useState<TabKey>('world');
 
   const TABS: { key: TabKey; label: string; count: number; center: [number, number]; zoom: number; locations: MapLocation[] }[] = [
     {
@@ -199,9 +202,9 @@ export default function LibraryMapPage() {
           </p>
           <div className="flex flex-wrap items-center justify-center gap-8 md:gap-16">
             {[
-              { value: '34', label: t.stats.locations },
-              { value: '3',  label: t.stats.countries },
-              { value: '25+',label: t.stats.languages },
+              { value: `${WORLD_ALL.length}`, label: t.stats.locations },
+              { value: '7',   label: t.stats.countries },
+              { value: '25+', label: t.stats.languages },
             ].map((stat) => (
               <div key={stat.label} className="text-center">
                 <div className="font-serif text-3xl font-bold text-kim-gold">{stat.value}</div>

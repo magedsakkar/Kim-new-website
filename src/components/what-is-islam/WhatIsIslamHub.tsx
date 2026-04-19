@@ -366,8 +366,16 @@ function JourneyTreeViewer({ activeId, onSelect }: { activeId: string; onSelect:
   const [ax, ay] = NODE_POS[activeId] ?? [CW / 2, CH / 2];
 
   return (
-    <div className="select-none">
-      <div className="relative w-full" style={{ paddingBottom: `${(CH / CW) * 100}%` }}>
+    <div className="select-none w-full h-full">
+      {/* Aspect-ratio box — fills available height, never overflows */}
+      <div
+        className="relative mx-auto"
+        style={{
+          width: '100%',
+          aspectRatio: `${CW} / ${CH}`,
+          maxHeight: '100%',
+        }}
+      >
         {/* SVG lines + indicator */}
         <svg viewBox={`0 0 ${CW} ${CH}`} className="absolute inset-0 w-full h-full pointer-events-none" aria-hidden="true">
           <defs>
@@ -475,20 +483,20 @@ function JourneyTreeViewer({ activeId, onSelect }: { activeId: string; onSelect:
 
 function JourneyTreePanel({ activeId, onSelect }: { activeId: string; onSelect: (id: string) => void }) {
   return (
-    <div className="hidden lg:flex flex-col w-[300px] bg-[#07102A]/96 backdrop-blur-md border-r border-white/8 flex-shrink-0 overflow-y-auto">
-      {/* Header */}
-      <div className="px-4 py-4 border-b border-white/8 bg-kim-navy-dark/30 flex-shrink-0">
+    <div className="hidden lg:flex flex-col w-[300px] bg-[#07102A]/96 backdrop-blur-md border-r border-white/8 flex-shrink-0 overflow-hidden">
+      {/* Header — fixed height */}
+      <div className="flex-shrink-0 px-4 py-3 border-b border-white/8 bg-kim-navy-dark/30">
         <p className="text-[8px] font-black uppercase tracking-[0.3em] text-kim-gold/75 mb-1">Educational Journey</p>
         <h2 className="font-serif text-sm font-bold text-white leading-tight">What is Islam?</h2>
       </div>
 
-      {/* SVG tree */}
-      <div className="px-3 py-3 flex-shrink-0">
+      {/* SVG tree — fills ALL remaining space, no scroll */}
+      <div className="flex-1 min-h-0 px-2 py-2 overflow-hidden">
         <JourneyTreeViewer activeId={activeId} onSelect={onSelect} />
       </div>
 
-      {/* Tool links */}
-      <div className="px-3 pt-2 pb-3 space-y-1.5 border-t border-white/8 flex-shrink-0">
+      {/* Tool links — fixed height */}
+      <div className="flex-shrink-0 px-3 pt-2 pb-2 space-y-1 border-t border-white/8">
         {floatingActions.map((action) => (
           <Link
             key={action.id}
@@ -501,8 +509,8 @@ function JourneyTreePanel({ activeId, onSelect }: { activeId: string; onSelect: 
         ))}
       </div>
 
-      {/* Footer */}
-      <p className="px-4 pb-4 text-[9px] text-white/18 leading-relaxed flex-shrink-0">
+      {/* Footer — fixed height */}
+      <p className="flex-shrink-0 px-4 pb-3 text-[9px] text-white/18 leading-relaxed">
         Follow at your own pace — return any time to continue your journey.
       </p>
     </div>
@@ -526,7 +534,7 @@ function ContentPanel({
   const transcript = TRANSCRIPTS[activeId] ?? step.description;
 
   return (
-    <div className="flex-1 overflow-y-auto min-w-0 bg-[#060B1C]">
+    <div className="flex-1 overflow-y-auto min-w-0">
       {/* Sticky top bar */}
       <div className="sticky top-0 z-10 bg-[#05081A]/96 backdrop-blur-md border-b border-white/8 px-4 py-3 flex items-center gap-3">
         <button
@@ -572,7 +580,7 @@ function ContentPanel({
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -10 }}
           transition={{ duration: 0.28, ease: 'easeOut' }}
-          className="p-5 lg:p-7 max-w-5xl mx-auto"
+          className="p-4 lg:p-6 max-w-5xl mx-auto"
         >
           <div className="grid lg:grid-cols-[1fr_300px] xl:grid-cols-[1fr_320px] gap-6">
 
@@ -591,7 +599,7 @@ function ContentPanel({
               </div>
 
               {/* Transcript */}
-              <div className="rounded-2xl bg-[#0A1330] border border-white/8 p-5">
+              <div className="rounded-2xl bg-[#0A1330]/75 backdrop-blur-sm border border-white/8 p-5">
                 <div className="flex items-center gap-2 mb-3">
                   <FileText className="w-3.5 h-3.5 text-kim-gold flex-shrink-0" />
                   <h3 className="text-[10px] font-black text-white uppercase tracking-[0.2em]">Overview &amp; Transcript</h3>
@@ -602,7 +610,7 @@ function ContentPanel({
 
             {/* Right: About + Key Points + CTA + Topics */}
             <div className="space-y-4">
-              <div className="rounded-2xl bg-[#0A1330] border border-white/8 p-5">
+              <div className="rounded-2xl bg-[#0A1330]/75 backdrop-blur-sm border border-white/8 p-5">
                 <div className="flex items-center gap-2 mb-3">
                   <BookOpen className="w-3.5 h-3.5 text-kim-gold flex-shrink-0" />
                   <h3 className="text-[10px] font-black text-white uppercase tracking-[0.2em]">About This Topic</h3>
@@ -633,7 +641,7 @@ function ContentPanel({
               </Link>
 
               {/* All Topics mini-grid */}
-              <div className="rounded-2xl bg-[#0A1330] border border-white/8 p-4">
+              <div className="rounded-2xl bg-[#0A1330]/75 backdrop-blur-sm border border-white/8 p-4">
                 <p className="text-white/22 text-[9px] uppercase tracking-wider mb-3">All Topics</p>
                 <div className="grid grid-cols-3 gap-1.5">
                   {STEP_ORDER.map((id) => {
