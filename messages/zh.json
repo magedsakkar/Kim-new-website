@@ -1,0 +1,255 @@
+{
+  "nav": {
+    "home": "首页",
+    "about": "关于我们",
+    "programs": "项目",
+    "volunteer": "志愿服务",
+    "newToIslam": "伊斯兰新人",
+    "library": "数字图书馆",
+    "contact": "联系我们",
+    "donate": "捐赠",
+    "whoWeAre": "我们是谁",
+    "leadership": "领导层",
+    "media": "媒体",
+    "tourist": "旅游项目",
+    "volunteerActivities": "志愿活动",
+    "studentMeetings": "学生交流",
+    "joinVolunteer": "加入志愿者",
+    "kimAcademy": "KİM学院",
+    "faq": "常见问题",
+    "locations": "我们的地点"
+  },
+  "hero": {
+    "eyebrow": "跨文化交流中心",
+    "title": "架起桥梁，",
+    "titleAccent": "连接心灵",
+    "subtitle": "在伊斯坦布尔的心脏地带，我们将来自不同文化的人们与伊斯兰连接起来，架起相互理解和对话的桥梁。",
+    "cta1": "探索项目",
+    "cta2": "志愿服务",
+    "scrollHint": "向下滚动"
+  },
+  "stats": {
+    "title": "KİM数字",
+    "visitors": "月度访客",
+    "volunteers": "活跃志愿者",
+    "years": "年经验",
+    "countries": "代表国家"
+  },
+  "programs": {
+    "title": "我们的项目",
+    "subtitle": "针对不同需求设计的综合项目，加强跨文化对话。",
+    "tourist": {
+      "title": "旅游项目",
+      "description": "为伊斯坦布尔游客提供清真寺导览、文化交流和伊斯兰入门课程。"
+    },
+    "volunteer": {
+      "title": "志愿活动",
+      "description": "在志愿者积极参与下举办的开斋节晚宴、文化聚会和社区项目。"
+    },
+    "student": {
+      "title": "学生交流",
+      "description": "为从学术角度探索伊斯兰的大学生提供研讨会、工作坊和教育课程。"
+    },
+    "learnMore": "了解更多",
+    "viewAll": "查看所有项目"
+  },
+  "events": {
+    "title": "即将举行的活动",
+    "subtitle": "加入我们，体验难忘时刻。",
+    "noEvents": "目前没有即将举行的活动。",
+    "register": "报名",
+    "viewAll": "查看所有活动"
+  },
+  "testimonials": {
+    "title": "访客怎么说",
+    "subtitle": "来自世界各地宾客的体验。"
+  },
+  "cta": {
+    "title": "支持我们的使命",
+    "subtitle": "每一份贡献都让更多人体验跨文化对话。",
+    "donate": "捐赠",
+    "volunteer": "志愿服务",
+    "actionBadge": "采取行动",
+    "donateSub": "支持我们的使命",
+    "volunteerSub": "加入我们的社区"
+  },
+  "about": {
+    "eyebrow": "关于我们",
+    "title": "促进理解与对话",
+    "subtitle": "KİM基金会于2010年在伊斯坦布尔成立，通过教育和文化举措，为非穆斯林访客、学生和居民架起了解伊斯兰的桥梁。",
+    "mission": "我们的使命",
+    "missionText": "通过为不同背景的人提供与伊斯兰直接而真实的接触，加强跨文化理解与对话。",
+    "vision": "我们的愿景",
+    "visionText": "建立一个文化和宗教差异成为桥梁、理解与尊重占主导地位的世界。",
+    "values": "我们的价值观",
+    "founded": "成立于",
+    "foundedYear": "2010",
+    "location": "地点",
+    "locationValue": "苏莱曼尼耶，伊斯坦布尔"
+  },
+  "volunteer": {
+    "eyebrow": "志愿服务",
+    "title": "加入我们的团队",
+    "subtitle": "加入我们的志愿者团队，架起理解与对话的桥梁。",
+    "form": {
+      "name": "全名",
+      "email": "电子邮件",
+      "phone": "电话",
+      "profession": "职业",
+      "motivation": "您为什么想做志愿者？",
+      "submit": "提交申请",
+      "success": "您的申请已收到。我们将尽快与您联系。",
+      "error": "发生错误。请重试。"
+    },
+    "academy": {
+      "title": "KİM学院",
+      "subtitle": "为我们志愿者提供的综合培训项目",
+      "description": "KİM学院为志愿者提供为宾客提供最佳体验所需的知识和技能。"
+    },
+    "faq": {
+      "title": "常见问题"
+    }
+  },
+  "contact": {
+    "eyebrow": "联系我们",
+    "title": "取得联系",
+    "subtitle": "如有任何问题或咨询，请联系我们。",
+    "address": "地址",
+    "addressValue": "Süleymaniye Mah. Kanuni Medresesi Sk. No:20, Fatih/伊斯坦布尔",
+    "phone": "电话",
+    "email": "电子邮件",
+    "formTitle": "给我们发消息",
+    "mapsLabel": "在谷歌地图中打开",
+    "socialMedia": "社交媒体",
+    "allLocations": "所有KİM地点",
+    "form": {
+      "name": "全名",
+      "email": "电子邮件",
+      "subject": "主题",
+      "message": "消息",
+      "submit": "发送",
+      "success": "您的消息已收到。谢谢！",
+      "error": "发送时发生错误。"
+    }
+  },
+  "donate": {
+    "eyebrow": "捐赠",
+    "title": "我们因您的支持而成长",
+    "subtitle": "每一笔捐款都让更多人体验跨文化对话。",
+    "bankInfo": "银行账户信息",
+    "copy": "复制",
+    "copied": "已复制！"
+  },
+  "footer": {
+    "description": "架起桥梁，连接心灵，促进跨文化理解与对话。",
+    "quickLinks": "快速链接",
+    "programs": "项目",
+    "contact": "联系我们",
+    "rights": "版权所有。",
+    "privacy": "隐私政策",
+    "terms": "使用条款"
+  },
+  "library": {
+    "eyebrow": "数字图书馆",
+    "title": "资源与出版物",
+    "subtitle": "我们关于伊斯兰、文化和对话的综合资源库。",
+    "search": "搜索资源...",
+    "all": "全部",
+    "books": "书籍",
+    "brochures": "手册",
+    "videos": "视频",
+    "download": "下载"
+  },
+  "newToIslam": {
+    "eyebrow": "伊斯兰新人",
+    "title": "探索伊斯兰",
+    "subtitle": "为伊斯兰新人提供的指引资源和励志故事。",
+    "stories": "见证",
+    "resources": "资源",
+    "contact": "联系我们"
+  },
+  "howILiveIslam": {
+    "badge": "新穆斯林关爱区",
+    "title": "我如何践行伊斯兰",
+    "subtitle": "在现代世界过穆斯林生活的实用诚实指南——从第一次礼拜到建立以信仰为中心的社区。",
+    "comingSoonBanner": "完整版块开发中——详细指南、视频内容和社区资源即将推出。",
+    "soon": "即将推出",
+    "sectionTitle": "主题",
+    "quote": "选择一件功课——你最喜爱的那件——并坚持下去。真主不会对赐予奖赏感到厌倦，直到你厌倦行善为止。",
+    "quoteAuthor": "先知穆罕默德 ﷺ",
+    "back": "返回新穆斯林关爱区",
+    "prayer": { "title": "礼拜生活", "desc": "如何确立每日五次礼拜，找到朝拜方向（基卜拉），培养持续的功修。" },
+    "halal": { "title": "清真生活", "desc": "在非穆斯林社会中应对清真食品、道德消费和伊斯兰选择。" },
+    "finance": { "title": "伊斯兰金融", "desc": "了解无利息银行、天课计算和道德财富管理。" },
+    "family": { "title": "家庭与婚姻", "desc": "伊斯兰关于婚姻、家庭角色和在信仰中抚养子女的观点。" },
+    "community": { "title": "社区", "desc": "寻找穆斯林社区、清真寺礼仪和建立兄弟姐妹情谊。" },
+    "dawah": { "title": "传播伊斯兰（达瓦）", "desc": "以智慧和善意传播伊斯兰——如何自然自信地谈论您的信仰。" }
+  },
+  "newMuslimCareArea": {
+    "badge": "KİM基金会 · 新穆斯林关爱区",
+    "heroTitle": "您的转变之旅",
+    "heroTitleHighlight": "从这里开始",
+    "heroSubtitle": "无论您是第一次探索伊斯兰，是正在寻找方向的新穆斯林，还是在深化一生的信仰——这是您完整的关爱系统。",
+    "systemEyebrow": "系统",
+    "systemTitle": "转变之旅系统",
+    "systemSubtitle": "不是课程。不是事实清单。一个完整的系统，旨在引导您从第一个问题走向自信地践行伊斯兰。",
+    "step": "步骤",
+    "discoverTitle": "发现",
+    "discoverDesc": "您带着问题而来。真主是谁？伊斯兰是什么？有证明上帝存在的依据吗？好奇心从这里开始。",
+    "understandTitle": "理解",
+    "understandDesc": "通过我们结构化的教育之旅，探索伊斯兰信仰、功修、伦理、《古兰经》和先知 ﷺ。",
+    "connectTitle": "连接",
+    "connectDesc": "与真主建立个人关系——通过礼拜、祈祷（杜阿）、感恩和精神反思。",
+    "liveTitle": "践行伊斯兰",
+    "liveDesc": "开始在日常生活中体现伊斯兰——在礼拜、饮食、交往、组建家庭和服务社区的方式中。",
+    "journeyPath": "您的旅程路径",
+    "whoWeAreLabel": "我们是谁",
+    "whoWeAreSub": "背景与基础",
+    "whatIsIslamLabel": "伊斯兰是什么",
+    "whatIsIslamSub": "9步学习之旅",
+    "howILiveLabel": "我如何践行伊斯兰",
+    "howILiveSub": "日常实践",
+    "choosePath": "选择您的路径",
+    "choosePathSub": "三条完整路径，每条都按您自己的节奏。",
+    "whoWeAreTitle": "我们是谁",
+    "whoWeAreDesc": "了解KİM基金会——我们的使命、愿景、中心以及这项工作背后的全球社区。",
+    "whoWeAreCta": "认识团队",
+    "whatIsIslamTitle": "伊斯兰是什么？",
+    "whatIsIslamDesc": "通过伊斯兰信仰、功修、伦理和理性信念的结构化旅程——为好奇的头脑而建。",
+    "whatIsIslamCta": "开始旅程",
+    "howILiveTitle": "我如何践行伊斯兰",
+    "howILiveDesc": "关于礼拜、清真生活、伊斯兰金融、家庭、社区和日常穆斯林生活的实用指导。",
+    "howILiveCta": "探索实践",
+    "globalResourcesEyebrow": "资源与访问",
+    "globalResourcesTitle": "全球资源",
+    "partnerLocationsTitle": "合作伙伴地点",
+    "partnerLocationsDesc": "我们在80多个国家拥有活跃的合作关系。通过我们的全球网络与您附近的伊斯兰中心联系。",
+    "partnerLocationsCta": "寻找合作伙伴",
+    "suleymaniyeAppTitle": "苏莱曼尼耶应用程序",
+    "suleymaniyeAppDesc": "我们的互动平板电脑应用程序为游客提供清真寺建筑群内的沉浸式多语言数字体验。",
+    "suleymaniyeAppCta": "了解更多",
+    "madrasaToursTitle": "伊斯兰学院媒体参观",
+    "madrasaToursDesc": "参观我们在伊斯坦布尔的三个中心——KİM 1（游客中心）、KİM 2（伊斯兰学院）和KİM 3（媒体）——亲临或虚拟参观。",
+    "madrasaToursCta": "预订参观",
+    "volunteerTitle": "与我们一起志愿服务",
+    "volunteerDesc": "无论在伊斯坦布尔还是世界任何地方，加入我们的志愿者团队，为跨文化理解使命做出贡献。",
+    "volunteerCta": "开始志愿服务",
+    "partnersEyebrow": "全球网络",
+    "partnersTitle": "我们在世界各地的合作伙伴",
+    "partnersSubtitle": "KİM基金会与80多个国家的伊斯兰组织、大学和中心合作，扩大正宗伊斯兰教育的覆盖面。",
+    "partnerCountries": "合作伙伴国家",
+    "partnerOrganizations": "合作伙伴组织",
+    "continents": "大洲",
+    "becomePartner": "成为合作伙伴"
+  },
+  "common": {
+    "readMore": "阅读更多",
+    "close": "关闭",
+    "menu": "菜单",
+    "language": "语言",
+    "back": "返回",
+    "loading": "加载中...",
+    "error": "发生错误",
+    "success": "成功"
+  }
+}

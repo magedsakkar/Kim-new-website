@@ -1,0 +1,255 @@
+{
+  "nav": {
+    "home": "홈",
+    "about": "소개",
+    "programs": "프로그램",
+    "volunteer": "자원봉사",
+    "newToIslam": "이슬람 입문",
+    "library": "디지털 도서관",
+    "contact": "연락처",
+    "donate": "기부",
+    "whoWeAre": "우리는 누구인가",
+    "leadership": "지도부",
+    "media": "미디어",
+    "tourist": "관광 프로그램",
+    "volunteerActivities": "자원봉사 활동",
+    "studentMeetings": "학생 모임",
+    "joinVolunteer": "자원봉사자로 참여하기",
+    "kimAcademy": "KİM 아카데미",
+    "faq": "자주 묻는 질문",
+    "locations": "지부 위치"
+  },
+  "hero": {
+    "eyebrow": "문화간 교류 센터",
+    "title": "다리를 놓고,",
+    "titleAccent": "마음을 잇다",
+    "subtitle": "이스탄불의 심장부에서, 우리는 다양한 문화의 사람들을 이슬람과 연결하여 이해와 대화의 다리를 놓고 있습니다.",
+    "cta1": "프로그램 탐색",
+    "cta2": "자원봉사",
+    "scrollHint": "아래로 스크롤"
+  },
+  "stats": {
+    "title": "숫자로 보는 KİM",
+    "visitors": "월간 방문자",
+    "volunteers": "활동 자원봉사자",
+    "years": "경력 연수",
+    "countries": "참여 국가"
+  },
+  "programs": {
+    "title": "우리의 프로그램",
+    "subtitle": "다양한 필요를 위해 설계된 종합 프로그램으로 문화간 대화를 강화합니다.",
+    "tourist": {
+      "title": "관광 프로그램",
+      "description": "이스탄불 방문객을 위한 모스크 가이드 투어, 문화 대화, 이슬람 소개 세션."
+    },
+    "volunteer": {
+      "title": "자원봉사 활동",
+      "description": "자원봉사자들의 적극적인 참여로 진행되는 이프타르 만찬, 문화 모임, 지역사회 프로젝트."
+    },
+    "student": {
+      "title": "학생 모임",
+      "description": "학문적 관점에서 이슬람을 탐구하는 대학생들을 위한 세미나, 워크샵, 교육 세션."
+    },
+    "learnMore": "더 알아보기",
+    "viewAll": "모든 프로그램 보기"
+  },
+  "events": {
+    "title": "예정된 행사",
+    "subtitle": "함께 잊을 수 없는 순간을 경험하세요.",
+    "noEvents": "현재 예정된 행사가 없습니다.",
+    "register": "등록하기",
+    "viewAll": "모든 행사 보기"
+  },
+  "testimonials": {
+    "title": "방문자들의 이야기",
+    "subtitle": "전 세계 게스트들의 경험담."
+  },
+  "cta": {
+    "title": "우리의 사명을 지원해 주세요",
+    "subtitle": "모든 기여는 더 많은 사람들이 문화간 대화를 경험할 수 있게 합니다.",
+    "donate": "기부하기",
+    "volunteer": "자원봉사",
+    "actionBadge": "행동하기",
+    "donateSub": "우리의 사명을 지원하세요",
+    "volunteerSub": "우리 커뮤니티에 참여하세요"
+  },
+  "about": {
+    "eyebrow": "소개",
+    "title": "이해와 대화를 위해",
+    "subtitle": "2010년 이스탄불에 설립된 KİM 재단은 교육 및 문화 이니셔티브를 통해 비무슬림 방문자, 학생, 거주자에게 이슬람을 소개하는 다리를 놓고 있습니다.",
+    "mission": "우리의 사명",
+    "missionText": "다양한 배경을 가진 사람들에게 이슬람과의 직접적이고 진정한 만남을 제공하여 문화간 이해와 대화를 강화합니다.",
+    "vision": "우리의 비전",
+    "visionText": "문화적, 종교적 차이가 다리가 되고, 이해와 존중이 지배하는 세상을 만들어 나가는 것입니다.",
+    "values": "우리의 가치",
+    "founded": "설립",
+    "foundedYear": "2010",
+    "location": "위치",
+    "locationValue": "쉴레이마니예, 이스탄불"
+  },
+  "volunteer": {
+    "eyebrow": "자원봉사",
+    "title": "우리 팀에 참여하세요",
+    "subtitle": "이해와 대화의 다리를 놓기 위해 자원봉사 팀에 참여하세요.",
+    "form": {
+      "name": "전체 이름",
+      "email": "이메일",
+      "phone": "전화번호",
+      "profession": "직업",
+      "motivation": "왜 자원봉사를 하고 싶으신가요?",
+      "submit": "신청서 제출",
+      "success": "신청서가 접수되었습니다. 곧 연락드리겠습니다.",
+      "error": "오류가 발생했습니다. 다시 시도해 주세요."
+    },
+    "academy": {
+      "title": "KİM 아카데미",
+      "subtitle": "자원봉사자를 위한 종합 교육 프로그램",
+      "description": "KİM 아카데미는 자원봉사자들이 게스트에게 최상의 경험을 제공하는 데 필요한 지식과 기술을 갖출 수 있도록 합니다."
+    },
+    "faq": {
+      "title": "자주 묻는 질문"
+    }
+  },
+  "contact": {
+    "eyebrow": "연락처",
+    "title": "연락하기",
+    "subtitle": "질문이나 문의 사항이 있으시면 연락해 주세요.",
+    "address": "주소",
+    "addressValue": "Süleymaniye Mah. Kanuni Medresesi Sk. No:20, Fatih/이스탄불",
+    "phone": "전화",
+    "email": "이메일",
+    "formTitle": "메시지 보내기",
+    "mapsLabel": "Google 지도에서 열기",
+    "socialMedia": "소셜 미디어",
+    "allLocations": "모든 KİM 위치",
+    "form": {
+      "name": "전체 이름",
+      "email": "이메일",
+      "subject": "제목",
+      "message": "메시지",
+      "submit": "보내기",
+      "success": "메시지가 접수되었습니다. 감사합니다!",
+      "error": "전송 중 오류가 발생했습니다."
+    }
+  },
+  "donate": {
+    "eyebrow": "기부",
+    "title": "여러분의 지원으로 성장합니다",
+    "subtitle": "모든 기부는 더 많은 사람들이 문화간 대화를 경험할 수 있도록 기여합니다.",
+    "bankInfo": "은행 계좌 정보",
+    "copy": "복사",
+    "copied": "복사됨!"
+  },
+  "footer": {
+    "description": "문화간 이해와 대화를 위해 다리를 놓고 마음을 연결합니다.",
+    "quickLinks": "빠른 링크",
+    "programs": "프로그램",
+    "contact": "연락처",
+    "rights": "모든 권리 보유.",
+    "privacy": "개인정보 처리방침",
+    "terms": "이용 약관"
+  },
+  "library": {
+    "eyebrow": "디지털 도서관",
+    "title": "자료 및 출판물",
+    "subtitle": "이슬람, 문화, 대화에 관한 종합 자료 모음.",
+    "search": "자료 검색...",
+    "all": "전체",
+    "books": "도서",
+    "brochures": "브로셔",
+    "videos": "동영상",
+    "download": "다운로드"
+  },
+  "newToIslam": {
+    "eyebrow": "이슬람 입문",
+    "title": "이슬람 발견하기",
+    "subtitle": "이슬람을 처음 접하는 분들을 위한 안내 자료와 영감을 주는 이야기.",
+    "stories": "간증",
+    "resources": "자료",
+    "contact": "연락하기"
+  },
+  "howILiveIslam": {
+    "badge": "새 무슬림 케어 구역",
+    "title": "나는 어떻게 이슬람을 실천하는가",
+    "subtitle": "현대 세계에서 무슬림으로 살아가기 위한 실용적이고 솔직한 안내서 — 첫 번째 예배부터 신앙 중심 공동체 건설까지.",
+    "comingSoonBanner": "전체 섹션 개발 중 — 상세 안내서, 동영상 콘텐츠, 커뮤니티 자료 곧 출시 예정.",
+    "soon": "곧 출시",
+    "sectionTitle": "주제",
+    "quote": "하나의 행위를 취하라 — 당신이 가장 사랑하는 것을 — 그리고 그것에 일관되게 하라. 알라께서는 당신이 선행에 지칠 때까지 보상을 주시는 것에 지치지 않으신다.",
+    "quoteAuthor": "예언자 무함마드 ﷺ",
+    "back": "새 무슬림 케어 구역으로 돌아가기",
+    "prayer": { "title": "예배 생활", "desc": "다섯 번의 일일 예배를 확립하고, 키블라 방향을 찾고, 예배에서 일관성을 개발하는 방법." },
+    "halal": { "title": "할랄 생활", "desc": "비무슬림 사회에서 할랄 식품, 윤리적 소비, 이슬람적 선택 항법." },
+    "finance": { "title": "이슬람 금융", "desc": "리바 없는 은행업, 자카트 계산, 윤리적 자산 관리 이해." },
+    "family": { "title": "가족과 결혼", "desc": "결혼, 가족 역할, 신앙 안에서 자녀 양육에 대한 이슬람적 관점." },
+    "community": { "title": "커뮤니티", "desc": "무슬림 커뮤니티 찾기, 모스크 예절, 형제우애 유대 구축." },
+    "dawah": { "title": "다와", "desc": "지혜와 친절함으로 이슬람 전파하기 — 자연스럽고 자신 있게 신앙에 대해 말하는 방법." }
+  },
+  "newMuslimCareArea": {
+    "badge": "KİM 재단 · 새 무슬림 케어 구역",
+    "heroTitle": "당신의 변화 여정",
+    "heroTitleHighlight": "여기서 시작됩니다",
+    "heroSubtitle": "이슬람을 처음 탐구하거나, 길을 찾고 있는 새 무슬림이거나, 평생의 신앙을 깊이 하는 중이거나 — 이것이 당신의 완전한 케어 시스템입니다.",
+    "systemEyebrow": "시스템",
+    "systemTitle": "변화 여정 시스템",
+    "systemSubtitle": "강좌가 아닙니다. 사실 목록도 아닙니다. 첫 번째 질문에서 자신 있게 이슬람을 실천하기까지 당신을 안내하도록 설계된 완전한 시스템입니다.",
+    "step": "단계",
+    "discoverTitle": "발견",
+    "discoverDesc": "질문을 가지고 옵니다. 알라는 누구인가? 이슬람은 무엇인가? 신에 대한 증거가 있는가? 여기서 호기심이 시작됩니다.",
+    "understandTitle": "이해",
+    "understandDesc": "구조화된 교육 여정을 통해 이슬람 신앙, 예배, 윤리, 꾸란, 예언자 ﷺ를 탐구합니다.",
+    "connectTitle": "연결",
+    "connectDesc": "예배, 두아, 감사, 영적 성찰을 통해 알라와 개인적인 관계를 쌓습니다.",
+    "liveTitle": "이슬람 실천하기",
+    "liveDesc": "일상 생활에서 이슬람을 구현하기 시작합니다 — 예배하고, 먹고, 교류하고, 가정을 이루고, 공동체를 섬기는 방식에서.",
+    "journeyPath": "당신의 여정 경로",
+    "whoWeAreLabel": "우리는 누구인가",
+    "whoWeAreSub": "맥락과 기반",
+    "whatIsIslamLabel": "이슬람이란 무엇인가",
+    "whatIsIslamSub": "9단계 학습 여정",
+    "howILiveLabel": "나는 어떻게 이슬람을 실천하는가",
+    "howILiveSub": "일상 실천",
+    "choosePath": "경로 선택",
+    "choosePathSub": "세 가지 완전한 여정, 각자의 속도로.",
+    "whoWeAreTitle": "우리는 누구인가",
+    "whoWeAreDesc": "KİM 재단을 알아보세요 — 우리의 사명, 비전, 센터, 이 사역 뒤의 글로벌 커뮤니티.",
+    "whoWeAreCta": "팀 만나기",
+    "whatIsIslamTitle": "이슬람이란 무엇인가?",
+    "whatIsIslamDesc": "이슬람 신앙, 예배, 윤리, 이성적 신념을 통한 구조화된 여정 — 호기심 있는 마음을 위해 설계.",
+    "whatIsIslamCta": "여정 시작하기",
+    "howILiveTitle": "나는 어떻게 이슬람을 실천하는가",
+    "howILiveDesc": "예배, 할랄 생활, 이슬람 금융, 가족, 커뮤니티, 일상 무슬림 생활에 대한 실용적인 안내.",
+    "howILiveCta": "실천 탐색",
+    "globalResourcesEyebrow": "자료 및 접근",
+    "globalResourcesTitle": "글로벌 자료",
+    "partnerLocationsTitle": "파트너 위치",
+    "partnerLocationsDesc": "80개 이상의 국가에 활성 파트너십이 있습니다. 글로벌 네트워크를 통해 가까운 이슬람 센터와 연결하세요.",
+    "partnerLocationsCta": "파트너 찾기",
+    "suleymaniyeAppTitle": "쉴레이마니예 앱",
+    "suleymaniyeAppDesc": "우리의 인터랙티브 태블릿 앱은 모스크 단지 내에서 방문자에게 몰입감 있는 다국어 디지털 경험을 제공합니다.",
+    "suleymaniyeAppCta": "더 알아보기",
+    "madrasaToursTitle": "마드라사 미디어 투어",
+    "madrasaToursDesc": "이스탄불의 세 센터 — KİM 1(방문자 센터), KİM 2(마드라사), KİM 3(미디어) — 를 직접 또는 가상으로 방문하세요.",
+    "madrasaToursCta": "투어 예약",
+    "volunteerTitle": "우리와 함께 자원봉사",
+    "volunteerDesc": "이스탄불이든 전 세계 어디서든, 자원봉사 팀에 참여하여 문화간 이해 사명에 기여하세요.",
+    "volunteerCta": "자원봉사 시작",
+    "partnersEyebrow": "글로벌 네트워크",
+    "partnersTitle": "세계 속 우리의 파트너",
+    "partnersSubtitle": "KİM 재단은 진정한 이슬람 교육의 범위를 확장하기 위해 80개 이상의 국가에 있는 이슬람 기관, 대학, 센터와 협력합니다.",
+    "partnerCountries": "파트너 국가",
+    "partnerOrganizations": "파트너 기관",
+    "continents": "대륙",
+    "becomePartner": "파트너 되기"
+  },
+  "common": {
+    "readMore": "더 읽기",
+    "close": "닫기",
+    "menu": "메뉴",
+    "language": "언어",
+    "back": "뒤로",
+    "loading": "로딩 중...",
+    "error": "오류가 발생했습니다",
+    "success": "성공"
+  }
+}

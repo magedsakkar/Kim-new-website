@@ -1,0 +1,255 @@
+{
+  "nav": {
+    "home": "Kezdőlap",
+    "about": "Rólunk",
+    "programs": "Programok",
+    "volunteer": "Önkéntesség",
+    "newToIslam": "Új az iszlámban",
+    "library": "Digitális könyvtár",
+    "contact": "Kapcsolat",
+    "donate": "Adományozás",
+    "whoWeAre": "Kik vagyunk",
+    "leadership": "Vezetőség",
+    "media": "Média",
+    "tourist": "Turisztikai programok",
+    "volunteerActivities": "Önkéntes tevékenységek",
+    "studentMeetings": "Hallgatói találkozók",
+    "joinVolunteer": "Csatlakozzon önkéntesként",
+    "kimAcademy": "KİM Akadémia",
+    "faq": "Gyakran ismételt kérdések",
+    "locations": "Helyszíneink"
+  },
+  "hero": {
+    "eyebrow": "Kultúraközi Központ",
+    "title": "Hidakat építünk,",
+    "titleAccent": "Szíveket kötünk össze",
+    "subtitle": "Isztambul szívében összekapcsoljuk a különböző kultúrák embereit az iszlámmal, megértési és párbeszéd hidakat építve.",
+    "cta1": "Fedezze fel a programokat",
+    "cta2": "Önkéntesség",
+    "scrollHint": "Görgessen le"
+  },
+  "stats": {
+    "title": "KİM számokban",
+    "visitors": "Havi látogatók",
+    "volunteers": "Aktív önkéntesek",
+    "years": "Évnyi tapasztalat",
+    "countries": "Képviselt ország"
+  },
+  "programs": {
+    "title": "Programjaink",
+    "subtitle": "Átfogó programok, amelyek különböző igényekre vannak tervezve, erősítve a kultúraközi párbeszédet.",
+    "tourist": {
+      "title": "Turisztikai programok",
+      "description": "Vezetett mecsetlátogatások, kulturális beszélgetések és iszlám bemutató foglalkozások Isztambul látogatói számára."
+    },
+    "volunteer": {
+      "title": "Önkéntes tevékenységek",
+      "description": "Iftar-vacsorák, kulturális összejövetelek és közösségi projektek önkéntesek aktív részvételével."
+    },
+    "student": {
+      "title": "Hallgatói találkozók",
+      "description": "Szemináriumok, workshopok és oktatási foglalkozások az iszlámot akadémiai szempontból tanulmányozó egyetemi hallgatóknak."
+    },
+    "learnMore": "Tudjon meg többet",
+    "viewAll": "Az összes program megtekintése"
+  },
+  "events": {
+    "title": "Közelgő rendezvények",
+    "subtitle": "Csatlakozzon hozzánk, és éljen át felejthetetlen pillanatokat.",
+    "noEvents": "Jelenleg nincsenek közelgő rendezvények.",
+    "register": "Regisztráljon",
+    "viewAll": "Az összes rendezvény megtekintése"
+  },
+  "testimonials": {
+    "title": "Mit mondanak látogatóink",
+    "subtitle": "Vendégeink tapasztalatai a világ minden tájáról."
+  },
+  "cta": {
+    "title": "Támogassa küldetésünket",
+    "subtitle": "Minden hozzájárulás lehetővé teszi, hogy több ember tapasztalja meg a kultúraközi párbeszédet.",
+    "donate": "Adományozás",
+    "volunteer": "Önkéntesség",
+    "actionBadge": "Tegyen lépéseket",
+    "donateSub": "Támogassa küldetésünket",
+    "volunteerSub": "Csatlakozzon közösségünkhöz"
+  },
+  "about": {
+    "eyebrow": "Rólunk",
+    "title": "A megértésért és a párbeszédért",
+    "subtitle": "A 2010-ben Isztambulban alapított KİM Alapítvány hidakat épít, hogy oktatási és kulturális kezdeményezéseken keresztül bemutassa az iszlámot nem muszlim látogatóknak, diákoknak és lakóknak.",
+    "mission": "Küldetésünk",
+    "missionText": "A kultúraközi megértés és párbeszéd erősítése azáltal, hogy különböző hátterű embereknek közvetlen és hiteles találkozásokat biztosítunk az iszlámmal.",
+    "vision": "Víziónk",
+    "visionText": "Olyan világ felépítése, amelyben a kulturális és vallási különbségek hidakként szolgálnak, és ahol a megértés és a tisztelet az elsődleges.",
+    "values": "Értékeink",
+    "founded": "Alapítva",
+    "foundedYear": "2010",
+    "location": "Helyszín",
+    "locationValue": "Süleymaniye, Isztambul"
+  },
+  "volunteer": {
+    "eyebrow": "Önkéntesség",
+    "title": "Csatlakozzon csapatunkhoz",
+    "subtitle": "Csatlakozzon önkéntes csapatunkhoz, hogy hidakat építsen a megértés és párbeszéd érdekében.",
+    "form": {
+      "name": "Teljes név",
+      "email": "E-mail",
+      "phone": "Telefon",
+      "profession": "Foglalkozás",
+      "motivation": "Miért szeretne önkéntes lenni?",
+      "submit": "Jelentkezés beküldése",
+      "success": "Jelentkezését megkaptuk. Hamarosan felvesszük Önnel a kapcsolatot.",
+      "error": "Hiba történt. Kérjük, próbálja újra."
+    },
+    "academy": {
+      "title": "KİM Akadémia",
+      "subtitle": "Átfogó képzési program önkéneseink számára",
+      "description": "A KİM Akadémia biztosítja az önkéntesek számára a szükséges tudást és készségeket, hogy a lehető legjobb élményt nyújthassák a vendégeknek."
+    },
+    "faq": {
+      "title": "Gyakran feltett kérdések"
+    }
+  },
+  "contact": {
+    "eyebrow": "Kapcsolat",
+    "title": "Vegye fel velünk a kapcsolatot",
+    "subtitle": "Lépjen kapcsolatba velünk bármilyen kérdéssel vagy megkereséssel.",
+    "address": "Cím",
+    "addressValue": "Süleymaniye Mah. Kanuni Medresesi Sk. No:20, Fatih/Isztambul",
+    "phone": "Telefon",
+    "email": "E-mail",
+    "formTitle": "Írjon nekünk",
+    "mapsLabel": "Megnyitás a Google Térképen",
+    "socialMedia": "Közösségi média",
+    "allLocations": "Az összes KİM helyszín",
+    "form": {
+      "name": "Teljes név",
+      "email": "E-mail",
+      "subject": "Tárgy",
+      "message": "Üzenet",
+      "submit": "Küldés",
+      "success": "Üzenetét megkaptuk. Köszönjük!",
+      "error": "Hiba történt a küldés során."
+    }
+  },
+  "donate": {
+    "eyebrow": "Adomány",
+    "title": "Az Ön támogatásával növekszünk",
+    "subtitle": "Minden adomány hozzájárul ahhoz, hogy több ember tapasztalja meg a kultúraközi párbeszédet.",
+    "bankInfo": "Bankszámla adatok",
+    "copy": "Másolás",
+    "copied": "Másolva!"
+  },
+  "footer": {
+    "description": "Hidakat építünk és szíveket kötünk össze a kultúraközi megértés és párbeszéd érdekében.",
+    "quickLinks": "Gyors linkek",
+    "programs": "Programok",
+    "contact": "Kapcsolat",
+    "rights": "Minden jog fenntartva.",
+    "privacy": "Adatvédelmi irányelvek",
+    "terms": "Felhasználási feltételek"
+  },
+  "library": {
+    "eyebrow": "Digitális könyvtár",
+    "title": "Erőforrások és kiadványok",
+    "subtitle": "Átfogó erőforrásgyűjteményünk az iszlámról, a kultúráról és a párbeszédről.",
+    "search": "Erőforrások keresése...",
+    "all": "Összes",
+    "books": "Könyvek",
+    "brochures": "Brosúrák",
+    "videos": "Videók",
+    "download": "Letöltés"
+  },
+  "newToIslam": {
+    "eyebrow": "Új az iszlámban",
+    "title": "Fedezze fel az iszlámot",
+    "subtitle": "Útmutató erőforrások és inspiráló történetek azok számára, akik most ismerkednek az iszlámmal.",
+    "stories": "Tanúságtételek",
+    "resources": "Erőforrások",
+    "contact": "Vegye fel velünk a kapcsolatot"
+  },
+  "howILiveIslam": {
+    "badge": "Új muszlimok támogatási területe",
+    "title": "Hogyan élem az iszlámot",
+    "subtitle": "Gyakorlati és őszinte útmutató a muszlim élethez a modern világban — az első imától a hitközpontú közösség felépítéséig.",
+    "comingSoonBanner": "A teljes rész fejlesztés alatt — részletes útmutatók, videótartalmak és közösségi erőforrások hamarosan.",
+    "soon": "Hamarosan",
+    "sectionTitle": "Témák",
+    "quote": "Fogjon egy cselekedetet — azt, amelyet a legjobban szeret — és legyen kitartó benne. Allah nem fárad el a jutalom adásában, amíg Ön el nem fárad a jó cselekvésben.",
+    "quoteAuthor": "Mohamed próféta ﷺ",
+    "back": "Vissza az új muszlimok támogatási területére",
+    "prayer": { "title": "Az ima élete", "desc": "Hogyan alakítsa ki az öt napi imát, találja meg a Qibla irányát és fejlesszen ki következetességet az imádatban." },
+    "halal": { "title": "Halal élet", "desc": "Eligazodás a halal élelmiszerek, az etikus fogyasztás és az iszlám döntéshozatal terén nem muszlim társadalomban." },
+    "finance": { "title": "Iszlám pénzügyek", "desc": "A Riba-mentes bankolás, a Zakat kiszámítása és az etikus vagyonkezelés megértése." },
+    "family": { "title": "Család és házasság", "desc": "Az iszlám nézőpontja a házasságról, a családi szerepekről és a gyermeknevelésről a hitben." },
+    "community": { "title": "Közösség", "desc": "Muszlim közösség megtalálása, mecseti etikett és testvéri kötelékek kialakítása." },
+    "dawah": { "title": "Dawah", "desc": "Az iszlám megosztása bölcsességgel és kedvességgel — hogyan beszéljünk hitünkről természetesen és magabiztosan." }
+  },
+  "newMuslimCareArea": {
+    "badge": "KİM Alapítvány · Új muszlimok támogatási területe",
+    "heroTitle": "Az Ön átalakulási útja",
+    "heroTitleHighlight": "Itt kezdődik",
+    "heroSubtitle": "Akár először fedezi fel az iszlámot, új muszlim, aki megtalálja az útját, vagy egy életen át tartó hitét mélyíti el — ez az Ön teljes gondozási rendszere.",
+    "systemEyebrow": "A rendszer",
+    "systemTitle": "Átalakulási útrendszer",
+    "systemSubtitle": "Nem tanfolyam. Nem tények listája. Egy teljes rendszer, amely az első kérdéstől egészen az iszlám magabiztos megéléséig kíséri Önt.",
+    "step": "Lépés",
+    "discoverTitle": "Felfedezés",
+    "discoverDesc": "Kérdésekkel érkezik. Ki Allah? Mi az iszlám? Van bizonyíték Istenre? Itt kezdődik a kíváncsiság.",
+    "understandTitle": "Megértés",
+    "understandDesc": "Feltárja az iszlám hitelveket, imádatot, etikát, a Koránt és a Prófétát ﷺ a strukturált oktatási utunkon keresztül.",
+    "connectTitle": "Kapcsolódás",
+    "connectDesc": "Személyes kapcsolatot épít Allahhal — ima, du'a, hála és lelki elmélkedés révén.",
+    "liveTitle": "Az iszlám megélése",
+    "liveDesc": "Elkezdi megtestesíteni az iszlámot mindennapi életében — abban, ahogy imádkozik, eszik, kapcsolatot tart, családot alapít és szolgálja közösségét.",
+    "journeyPath": "Az Ön útja",
+    "whoWeAreLabel": "Kik vagyunk",
+    "whoWeAreSub": "Kontextus és alap",
+    "whatIsIslamLabel": "Mi az iszlám",
+    "whatIsIslamSub": "9 lépéses tanulási út",
+    "howILiveLabel": "Hogyan élem az iszlámot",
+    "howILiveSub": "Napi gyakorlat",
+    "choosePath": "Válassza útját",
+    "choosePathSub": "Három teljes út, mindenki a saját tempójában.",
+    "whoWeAreTitle": "Kik vagyunk",
+    "whoWeAreDesc": "Ismerje meg a KİM Alapítványt — küldetésünk, víziónk, központjaink és az e munka mögött álló globális közösség.",
+    "whoWeAreCta": "Ismerje meg a csapatot",
+    "whatIsIslamTitle": "Mi az iszlám?",
+    "whatIsIslamDesc": "Strukturált út az iszlám hitelveken, imádaton, etikán és racionális meggyőződésen át — a kíváncsi elmére szabva.",
+    "whatIsIslamCta": "Kezdje el az utat",
+    "howILiveTitle": "Hogyan élem az iszlámot",
+    "howILiveDesc": "Gyakorlati útmutató az imához, halal élethez, iszlám pénzügyekhez, családhoz, közösséghez és mindennapi muszlim élethez.",
+    "howILiveCta": "Fedezze fel a gyakorlatokat",
+    "globalResourcesEyebrow": "Erőforrások és hozzáférés",
+    "globalResourcesTitle": "Globális erőforrások",
+    "partnerLocationsTitle": "Partner helyszínek",
+    "partnerLocationsDesc": "Több mint 80 országban van aktív partnerségünk. Csatlakozzon egy közeli iszlám központhoz globális hálózatunkon keresztül.",
+    "partnerLocationsCta": "Partner keresése",
+    "suleymaniyeAppTitle": "Süleymaniye alkalmazás",
+    "suleymaniyeAppDesc": "Interaktív tabletes alkalmazásunk magával ragadó, többnyelvű digitális élményt nyújt a látogatóknak közvetlenül a mecset komplexumában.",
+    "suleymaniyeAppCta": "Tudjon meg többet",
+    "madrasaToursTitle": "Medresze médiatúrák",
+    "madrasaToursDesc": "Látogassa meg isztambuli három központunkat — KİM 1 (Látogatóközpont), KİM 2 (Medresze) és KİM 3 (Média) — személyesen vagy virtuálisan.",
+    "madrasaToursCta": "Foglaljon túrát",
+    "volunteerTitle": "Legyen önkéntesünk",
+    "volunteerDesc": "Akár Isztambulban, akár a világ bármely pontján tartózkodik, csatlakozzon önkéntes csapatunkhoz és járuljon hozzá a kultúraközi megértés küldetéséhez.",
+    "volunteerCta": "Kezdje el az önkéntességet",
+    "partnersEyebrow": "Globális hálózat",
+    "partnersTitle": "Partnereink a világban",
+    "partnersSubtitle": "A KİM Alapítvány iszlám szervezetekkel, egyetemekkel és központokkal működik együtt több mint 80 országban az hiteles iszlám oktatás elérhetőségének bővítése érdekében.",
+    "partnerCountries": "Partnerországok",
+    "partnerOrganizations": "Partnerszervezetek",
+    "continents": "Kontinens",
+    "becomePartner": "Legyen partner"
+  },
+  "common": {
+    "readMore": "Olvass tovább",
+    "close": "Bezárás",
+    "menu": "Menü",
+    "language": "Nyelv",
+    "back": "Vissza",
+    "loading": "Betöltés...",
+    "error": "Hiba történt",
+    "success": "Sikeres"
+  }
+}

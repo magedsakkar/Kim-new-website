@@ -1,0 +1,255 @@
+{
+  "nav": {
+    "home": "ホーム",
+    "about": "私たちについて",
+    "programs": "プログラム",
+    "volunteer": "ボランティア",
+    "newToIslam": "イスラム入門",
+    "library": "デジタル図書館",
+    "contact": "お問い合わせ",
+    "donate": "寄付",
+    "whoWeAre": "私たちは誰か",
+    "leadership": "リーダーシップ",
+    "media": "メディア",
+    "tourist": "観光プログラム",
+    "volunteerActivities": "ボランティア活動",
+    "studentMeetings": "学生交流",
+    "joinVolunteer": "ボランティアとして参加",
+    "kimAcademy": "KİMアカデミー",
+    "faq": "よくある質問",
+    "locations": "拠点紹介"
+  },
+  "hero": {
+    "eyebrow": "異文化交流センター",
+    "title": "橋を架け、",
+    "titleAccent": "心をつなぐ",
+    "subtitle": "イスタンブールの中心で、私たちは異なる文化を持つ人々をイスラームと結びつけ、理解と対話の橋を架けています。",
+    "cta1": "プログラムを探す",
+    "cta2": "ボランティア",
+    "scrollHint": "下にスクロール"
+  },
+  "stats": {
+    "title": "KİMの実績",
+    "visitors": "月間訪問者数",
+    "volunteers": "活動中ボランティア",
+    "years": "活動年数",
+    "countries": "参加国数"
+  },
+  "programs": {
+    "title": "私たちのプログラム",
+    "subtitle": "多様なニーズに合わせて設計された総合プログラムで、異文化間対話を強化します。",
+    "tourist": {
+      "title": "観光プログラム",
+      "description": "イスタンブール訪問者向けのモスクガイドツアー、文化交流、イスラーム入門セッション。"
+    },
+    "volunteer": {
+      "title": "ボランティア活動",
+      "description": "ボランティアの積極的な参加のもとで行われるイフタール夕食会、文化交流、地域プロジェクト。"
+    },
+    "student": {
+      "title": "学生交流",
+      "description": "学術的観点からイスラームを探求する大学生向けのセミナー、ワークショップ、教育セッション。"
+    },
+    "learnMore": "詳細を見る",
+    "viewAll": "すべてのプログラムを見る"
+  },
+  "events": {
+    "title": "予定されているイベント",
+    "subtitle": "ぜひご参加いただき、忘れられない体験をしてください。",
+    "noEvents": "現在予定されているイベントはありません。",
+    "register": "登録する",
+    "viewAll": "すべてのイベントを見る"
+  },
+  "testimonials": {
+    "title": "訪問者の声",
+    "subtitle": "世界各地からのゲストの体験談。"
+  },
+  "cta": {
+    "title": "私たちのミッションを支援してください",
+    "subtitle": "皆様のご支援が、より多くの人々が異文化間対話を体験できるようにします。",
+    "donate": "寄付する",
+    "volunteer": "ボランティア",
+    "actionBadge": "行動する",
+    "donateSub": "私たちのミッションを支援",
+    "volunteerSub": "コミュニティに参加"
+  },
+  "about": {
+    "eyebrow": "私たちについて",
+    "title": "理解と対話のために",
+    "subtitle": "2010年にイスタンブールで設立されたKİM財団は、教育・文化的取り組みを通じて、非ムスリムの訪問者、学生、居住者にイスラームを紹介する橋を架けています。",
+    "mission": "私たちのミッション",
+    "missionText": "さまざまな背景を持つ人々にイスラームとの直接的で本物の出会いを提供することで、異文化間の理解と対話を強化します。",
+    "vision": "私たちのビジョン",
+    "visionText": "文化的・宗教的な違いが橋となり、理解と尊重が広がる世界を築くこと。",
+    "values": "私たちの価値観",
+    "founded": "設立",
+    "foundedYear": "2010",
+    "location": "場所",
+    "locationValue": "スレイマニエ、イスタンブール"
+  },
+  "volunteer": {
+    "eyebrow": "ボランティア",
+    "title": "チームに参加しましょう",
+    "subtitle": "理解と対話の橋を架けるために、ボランティアチームに参加してください。",
+    "form": {
+      "name": "氏名",
+      "email": "メールアドレス",
+      "phone": "電話番号",
+      "profession": "職業",
+      "motivation": "なぜボランティアをしたいのですか？",
+      "submit": "申し込む",
+      "success": "申し込みを受け付けました。近日中にご連絡いたします。",
+      "error": "エラーが発生しました。もう一度お試しください。"
+    },
+    "academy": {
+      "title": "KİMアカデミー",
+      "subtitle": "ボランティア向けの総合研修プログラム",
+      "description": "KİMアカデミーは、ボランティアがゲストに最高の体験を提供するために必要な知識とスキルを身につける機会を提供します。"
+    },
+    "faq": {
+      "title": "よくある質問"
+    }
+  },
+  "contact": {
+    "eyebrow": "お問い合わせ",
+    "title": "ご連絡ください",
+    "subtitle": "ご質問やお問い合わせはお気軽にご連絡ください。",
+    "address": "住所",
+    "addressValue": "Süleymaniye Mah. Kanuni Medresesi Sk. No:20, Fatih/イスタンブール",
+    "phone": "電話",
+    "email": "メールアドレス",
+    "formTitle": "メッセージを送る",
+    "mapsLabel": "Googleマップで開く",
+    "socialMedia": "ソーシャルメディア",
+    "allLocations": "すべてのKİM拠点",
+    "form": {
+      "name": "氏名",
+      "email": "メールアドレス",
+      "subject": "件名",
+      "message": "メッセージ",
+      "submit": "送信",
+      "success": "メッセージを受け付けました。ありがとうございます！",
+      "error": "送信中にエラーが発生しました。"
+    }
+  },
+  "donate": {
+    "eyebrow": "寄付",
+    "title": "皆様のご支援で成長しています",
+    "subtitle": "すべての寄付が、より多くの人々が異文化間対話を体験できることに貢献します。",
+    "bankInfo": "銀行口座情報",
+    "copy": "コピー",
+    "copied": "コピーしました！"
+  },
+  "footer": {
+    "description": "異文化間の理解と対話のために橋を架け、心をつなげます。",
+    "quickLinks": "クイックリンク",
+    "programs": "プログラム",
+    "contact": "お問い合わせ",
+    "rights": "全著作権所有。",
+    "privacy": "プライバシーポリシー",
+    "terms": "利用規約"
+  },
+  "library": {
+    "eyebrow": "デジタル図書館",
+    "title": "リソースと出版物",
+    "subtitle": "イスラーム、文化、対話に関する総合的なリソースコレクション。",
+    "search": "リソースを検索...",
+    "all": "すべて",
+    "books": "書籍",
+    "brochures": "パンフレット",
+    "videos": "動画",
+    "download": "ダウンロード"
+  },
+  "newToIslam": {
+    "eyebrow": "イスラーム入門",
+    "title": "イスラームを発見する",
+    "subtitle": "イスラームに初めて触れる方向けのガイドリソースとインスピレーションを与えるストーリー。",
+    "stories": "体験談",
+    "resources": "リソース",
+    "contact": "お問い合わせ"
+  },
+  "howILiveIslam": {
+    "badge": "改宗者サポートエリア",
+    "title": "私はどのようにイスラームを実践しているか",
+    "subtitle": "現代世界でムスリムとして生きるための実用的で正直なガイド — 初めての礼拝から信仰中心のコミュニティ構築まで。",
+    "comingSoonBanner": "完全版セクション開発中 — 詳細ガイド、動画コンテンツ、コミュニティリソースを近日公開。",
+    "soon": "近日公開",
+    "sectionTitle": "テーマ",
+    "quote": "一つの行いを取りなさい — あなたが最も愛するものを — そしてそれに一貫してください。アッラーはあなたが善行に倦むまで、報酬を与えることに倦むことはありません。",
+    "quoteAuthor": "預言者ムハンマド ﷺ",
+    "back": "改宗者サポートエリアに戻る",
+    "prayer": { "title": "礼拝の生活", "desc": "1日5回の礼拝を確立し、キブラの方向を見つけ、礼拝に一貫性を持たせる方法。" },
+    "halal": { "title": "ハラールの生活", "desc": "非ムスリム社会でのハラール食品、倫理的消費、イスラーム的選択の実践。" },
+    "finance": { "title": "イスラーム金融", "desc": "リバなし銀行業務、ザカート計算、倫理的資産管理の理解。" },
+    "family": { "title": "家族と結婚", "desc": "結婚、家族の役割、信仰の中での子育てに関するイスラームの視点。" },
+    "community": { "title": "コミュニティ", "desc": "ムスリムコミュニティを見つけること、モスクのエチケット、兄弟愛の絆を築くこと。" },
+    "dawah": { "title": "ダアワ", "desc": "知恵と優しさでイスラームを伝える — 自分の信仰について自然に自信を持って話す方法。" }
+  },
+  "newMuslimCareArea": {
+    "badge": "KİM財団 · 改宗者サポートエリア",
+    "heroTitle": "あなたの変革の旅",
+    "heroTitleHighlight": "ここから始まります",
+    "heroSubtitle": "初めてイスラームを探求している方、道を見つけている新改宗者、あるいは生涯の信仰を深めている方 — これはあなたの完全なケアシステムです。",
+    "systemEyebrow": "システム",
+    "systemTitle": "変革の旅システム",
+    "systemSubtitle": "コースではありません。事実のリストでもありません。最初の質問から自信を持ってイスラームを実践するまで、あなたを導くために設計された完全なシステムです。",
+    "step": "ステップ",
+    "discoverTitle": "発見",
+    "discoverDesc": "疑問を持ってやってきます。アッラーとは誰か？イスラームとは何か？神の存在の証拠はあるか？ここで好奇心が始まります。",
+    "understandTitle": "理解",
+    "understandDesc": "私たちの構造化された教育の旅を通じて、イスラームの信仰、礼拝、倫理、クルアーン、そして預言者 ﷺ を探求します。",
+    "connectTitle": "つながり",
+    "connectDesc": "礼拝、ドゥア、感謝、霊的な省察を通じて、アッラーとの個人的な関係を築きます。",
+    "liveTitle": "イスラームを実践する",
+    "liveDesc": "日常生活でイスラームを体現し始めます — 礼拝の仕方、食事、交流、家族の形成、コミュニティへの奉仕の中で。",
+    "journeyPath": "あなたの旅の道",
+    "whoWeAreLabel": "私たちは誰か",
+    "whoWeAreSub": "背景と基盤",
+    "whatIsIslamLabel": "イスラームとは何か",
+    "whatIsIslamSub": "9ステップの学習の旅",
+    "howILiveLabel": "私はどのようにイスラームを実践しているか",
+    "howILiveSub": "日常の実践",
+    "choosePath": "あなたの道を選ぶ",
+    "choosePathSub": "3つの完全な旅、それぞれ自分のペースで。",
+    "whoWeAreTitle": "私たちは誰か",
+    "whoWeAreDesc": "KİM財団を知る — 私たちのミッション、ビジョン、センター、この活動を支えるグローバルコミュニティ。",
+    "whoWeAreCta": "チームに会う",
+    "whatIsIslamTitle": "イスラームとは何か？",
+    "whatIsIslamDesc": "イスラームの信仰、礼拝、倫理、理性的確信を通じた構造化された旅 — 好奇心旺盛な心のために構築。",
+    "whatIsIslamCta": "旅を始める",
+    "howILiveTitle": "私はどのようにイスラームを実践しているか",
+    "howILiveDesc": "礼拝、ハラールの生活、イスラーム金融、家族、コミュニティ、日常のムスリム生活についての実践的なガイダンス。",
+    "howILiveCta": "実践を探る",
+    "globalResourcesEyebrow": "リソースとアクセス",
+    "globalResourcesTitle": "グローバルリソース",
+    "partnerLocationsTitle": "パートナー拠点",
+    "partnerLocationsDesc": "80カ国以上で活動的なパートナーシップがあります。グローバルネットワークを通じてお近くのイスラームセンターとつながりましょう。",
+    "partnerLocationsCta": "パートナーを探す",
+    "suleymaniyeAppTitle": "スレイマニエアプリ",
+    "suleymaniyeAppDesc": "インタラクティブなタブレットアプリが、モスクの施設内で没入感のある多言語デジタル体験を訪問者に提供します。",
+    "suleymaniyeAppCta": "詳細を見る",
+    "madrasaToursTitle": "マドラサメディアツアー",
+    "madrasaToursDesc": "イスタンブールの3つのセンター — KİM 1（訪問者センター）、KİM 2（マドラサ）、KİM 3（メディア） — を直接またはバーチャルで訪問。",
+    "madrasaToursCta": "ツアーを予約",
+    "volunteerTitle": "私たちとボランティア活動",
+    "volunteerDesc": "イスタンブールでも世界中のどこでも、ボランティアチームに参加して異文化間理解のミッションに貢献してください。",
+    "volunteerCta": "ボランティアを始める",
+    "partnersEyebrow": "グローバルネットワーク",
+    "partnersTitle": "世界のパートナー",
+    "partnersSubtitle": "KİM財団は、本物のイスラーム教育の範囲を広げるため、80カ国以上のイスラーム団体、大学、センターと連携しています。",
+    "partnerCountries": "パートナー国",
+    "partnerOrganizations": "パートナー団体",
+    "continents": "大陸",
+    "becomePartner": "パートナーになる"
+  },
+  "common": {
+    "readMore": "続きを読む",
+    "close": "閉じる",
+    "menu": "メニュー",
+    "language": "言語",
+    "back": "戻る",
+    "loading": "読み込み中...",
+    "error": "エラーが発生しました",
+    "success": "成功"
+  }
+}

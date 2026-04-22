@@ -1,0 +1,255 @@
+{
+  "nav": {
+    "home": "Kryefaqja",
+    "about": "Rreth nesh",
+    "programs": "Programet",
+    "volunteer": "Vullnetarizmi",
+    "newToIslam": "I ri në Islam",
+    "library": "Biblioteka dixhitale",
+    "contact": "Kontakt",
+    "donate": "Dhuroni",
+    "whoWeAre": "Kush jemi ne",
+    "leadership": "Udhëheqja",
+    "media": "Media",
+    "tourist": "Programet turistike",
+    "volunteerActivities": "Aktivitetet vullnetare",
+    "studentMeetings": "Takimet studentore",
+    "joinVolunteer": "Bashkohuni si vullnetar",
+    "kimAcademy": "Akademia KİM",
+    "faq": "Pyetjet e shpeshta",
+    "locations": "Vendet tona"
+  },
+  "hero": {
+    "eyebrow": "Qendra Ndërkulturore",
+    "title": "Ndërtojmë ura,",
+    "titleAccent": "Lidhim zemra",
+    "subtitle": "Në zemër të Stambollit, ne lidhim njerëz nga kultura të ndryshme me Islamin, duke ndërtuar ura mirëkuptimi dhe dialogu.",
+    "cta1": "Eksploroni programet",
+    "cta2": "Vullnetarizmi",
+    "scrollHint": "Rrotulloni poshtë"
+  },
+  "stats": {
+    "title": "KİM në numra",
+    "visitors": "Vizitorë mujorë",
+    "volunteers": "Vullnetarë aktivë",
+    "years": "Vite përvojë",
+    "countries": "Vende të përfaqësuara"
+  },
+  "programs": {
+    "title": "Programet tona",
+    "subtitle": "Programe gjithëpërfshirëse të dizajnuara për nevoja të ndryshme, duke forcuar dialogun ndërkulturor.",
+    "tourist": {
+      "title": "Programet turistike",
+      "description": "Turne të udhëhequra nëpër xhami, biseda kulturore dhe sesione njohëse me Islamin për vizitorët e Stambollit."
+    },
+    "volunteer": {
+      "title": "Aktivitetet vullnetare",
+      "description": "Darka iftar, mbledhje kulturore dhe projekte komunitare të realizuara me pjesëmarrjen aktive të vullnetarëve."
+    },
+    "student": {
+      "title": "Takimet studentore",
+      "description": "Seminare, punëtori dhe sesione arsimore për studentë universitarë që eksplorojnë Islamin nga perspektiva akademike."
+    },
+    "learnMore": "Mësoni më shumë",
+    "viewAll": "Shikoni të gjitha programet"
+  },
+  "events": {
+    "title": "Ngjarjet e ardhshme",
+    "subtitle": "Bashkohuni me ne dhe jetoni momente të paharrueshme.",
+    "noEvents": "Nuk ka ngjarje të ardhshme në këtë moment.",
+    "register": "Regjistrohuni",
+    "viewAll": "Shikoni të gjitha ngjarjet"
+  },
+  "testimonials": {
+    "title": "Çfarë thonë vizitorët tanë",
+    "subtitle": "Eksperiencat e mysafirëve tanë nga e gjithë bota."
+  },
+  "cta": {
+    "title": "Mbështetni misionin tonë",
+    "subtitle": "Çdo kontribut lejon më shumë njerëz të përjetojnë dialogun ndërkulturor.",
+    "donate": "Dhuroni",
+    "volunteer": "Vullnetarizmi",
+    "actionBadge": "Veproni",
+    "donateSub": "Mbështetni misionin tonë",
+    "volunteerSub": "Bashkohuni me komunitetin tonë"
+  },
+  "about": {
+    "eyebrow": "Rreth nesh",
+    "title": "Për mirëkuptim dhe dialog",
+    "subtitle": "E themeluar në Stamboll në vitin 2010, Fondacioni KİM ndërton ura për të prezantuar Islamin tek vizitorët jo-muslimanë, studentët dhe banorët nëpërmjet iniciativave arsimore dhe kulturore.",
+    "mission": "Misioni ynë",
+    "missionText": "Forcimi i mirëkuptimit ndërkulturor dhe dialogut duke u ofruar njerëzve nga prejardhje të ndryshme takime direkte dhe autentike me Islamin.",
+    "vision": "Vizioni ynë",
+    "visionText": "Ndërtimi i një bote ku dallimet kulturore dhe fetare shërbejnë si ura, dhe ku mirëkuptimi dhe respekti mbizotërojnë.",
+    "values": "Vlerat tona",
+    "founded": "Themeluar",
+    "foundedYear": "2010",
+    "location": "Vendndodhja",
+    "locationValue": "Süleymaniye, Stamboll"
+  },
+  "volunteer": {
+    "eyebrow": "Vullnetarizmi",
+    "title": "Bashkohuni me ekipin tonë",
+    "subtitle": "Bashkohuni me ekipin tonë të vullnetarëve për të ndërtuar ura mirëkuptimi dhe dialogu.",
+    "form": {
+      "name": "Emri i plotë",
+      "email": "E-mail",
+      "phone": "Telefon",
+      "profession": "Profesioni",
+      "motivation": "Pse dëshironi të bëheni vullnetar?",
+      "submit": "Dërgoni aplikimin",
+      "success": "Aplikimi juaj është marrë. Do t'ju kontaktojmë së shpejti.",
+      "error": "Ndodhi një gabim. Ju lutemi provoni përsëri."
+    },
+    "academy": {
+      "title": "Akademia KİM",
+      "subtitle": "Program gjithëpërfshirës trajnimi për vullnetarët tanë",
+      "description": "Akademia KİM u ofron vullnetarëve njohuritë dhe aftësitë e nevojshme për t'u ofruar mysafirëve përvojën më të mirë të mundshme."
+    },
+    "faq": {
+      "title": "Pyetjet e bëra shpesh"
+    }
+  },
+  "contact": {
+    "eyebrow": "Kontakt",
+    "title": "Na kontaktoni",
+    "subtitle": "Na kontaktoni për çdo pyetje ose kërkesë.",
+    "address": "Adresa",
+    "addressValue": "Süleymaniye Mah. Kanuni Medresesi Sk. No:20, Fatih/Stamboll",
+    "phone": "Telefon",
+    "email": "E-mail",
+    "formTitle": "Na dërgoni një mesazh",
+    "mapsLabel": "Hapni në Google Maps",
+    "socialMedia": "Rrjetet sociale",
+    "allLocations": "Të gjitha vendet KİM",
+    "form": {
+      "name": "Emri i plotë",
+      "email": "E-mail",
+      "subject": "Subjekti",
+      "message": "Mesazhi",
+      "submit": "Dërgoni",
+      "success": "Mesazhi juaj është marrë. Faleminderit!",
+      "error": "Ndodhi një gabim gjatë dërgimit."
+    }
+  },
+  "donate": {
+    "eyebrow": "Donacion",
+    "title": "Rritemi me mbështetjen tuaj",
+    "subtitle": "Çdo donacion kontribuon që më shumë njerëz të përjetojnë dialogun ndërkulturor.",
+    "bankInfo": "Të dhënat bankare",
+    "copy": "Kopjoni",
+    "copied": "U kopjua!"
+  },
+  "footer": {
+    "description": "Ndërtojmë ura dhe lidhim zemra për mirëkuptim dhe dialog ndërkulturor.",
+    "quickLinks": "Lidhjet e shpejta",
+    "programs": "Programet",
+    "contact": "Kontakt",
+    "rights": "Të gjitha të drejtat të rezervuara.",
+    "privacy": "Politika e privatësisë",
+    "terms": "Kushtet e përdorimit"
+  },
+  "library": {
+    "eyebrow": "Biblioteka dixhitale",
+    "title": "Burime dhe publikime",
+    "subtitle": "Koleksioni ynë gjithëpërfshirës i burimeve mbi Islamin, kulturën dhe dialogun.",
+    "search": "Kërkoni burime...",
+    "all": "Të gjitha",
+    "books": "Libra",
+    "brochures": "Broshura",
+    "videos": "Video",
+    "download": "Shkarkoni"
+  },
+  "newToIslam": {
+    "eyebrow": "I ri në Islam",
+    "title": "Zbuloni Islamin",
+    "subtitle": "Burime udhëzuese dhe histori frymëzuese për ata që janë të rinj në Islam.",
+    "stories": "Dëshmi",
+    "resources": "Burime",
+    "contact": "Na kontaktoni"
+  },
+  "howILiveIslam": {
+    "badge": "Zona e kujdesit për muslimanët e rinj",
+    "title": "Si e jetoj Islamin",
+    "subtitle": "Udhëzues praktik dhe i sinqertë për jetën muslimane në botën moderne — nga namazi i parë deri tek ndërtimi i një komuniteti të bazuar në besim.",
+    "comingSoonBanner": "Seksioni i plotë në zhvillim — udhëzues të detajuar, përmbajtje video dhe burime komunitare së shpejti.",
+    "soon": "Së shpejti",
+    "sectionTitle": "Temat",
+    "quote": "Merr një vepër — atë që e do më shumë — dhe bëhu i qëndrueshëm në të. Allahu nuk lodhet duke shpërblyer derisa ju të lodheni duke bërë mirë.",
+    "quoteAuthor": "Profeti Muhammed ﷺ",
+    "back": "Kthehuni tek zona e kujdesit për muslimanët e rinj",
+    "prayer": { "title": "Jeta e namazit", "desc": "Si të vendosni pesë namazet ditore, të gjeni drejtimin e Kiblës dhe të zhvilloni qëndrueshmëri në adhurim." },
+    "halal": { "title": "Jeta hallall", "desc": "Orientimi në ushqimet hallall, konsumimin etik dhe zgjedhjet islame në një shoqëri jo-muslimane." },
+    "finance": { "title": "Financat islame", "desc": "Kuptimi i bankingut pa Riba, llogaritja e Zekatit dhe menaxhimi etik i pasurisë." },
+    "family": { "title": "Familja dhe martesa", "desc": "Perspektiva islame mbi martesën, rolet familjare dhe rritjen e fëmijëve në besim." },
+    "community": { "title": "Komuniteti", "desc": "Gjetja e komunitetit musliman, etiketa në xhami dhe ndërtimi i lidhjeve të vëllazërisë." },
+    "dawah": { "title": "Daawa", "desc": "Ndaj Islamin me mençuri dhe mirësi — si të flasësh për besimin tënd natyrshëm dhe me besim." }
+  },
+  "newMuslimCareArea": {
+    "badge": "Fondacioni KİM · Zona e kujdesit për muslimanët e rinj",
+    "heroTitle": "Udhëtimi juaj i transformimit",
+    "heroTitleHighlight": "Fillon këtu",
+    "heroSubtitle": "Nëse jeni duke eksploruar Islamin për herë të parë, jeni një musliman i ri që po gjen rrugën, ose jeni duke thelluar një besim të gjithë jetës — ky është sistemi juaj i plotë i kujdesit.",
+    "systemEyebrow": "Sistemi",
+    "systemTitle": "Sistemi i udhëtimit të transformimit",
+    "systemSubtitle": "Nuk është kurs. Nuk është listë faktesh. Një sistem i plotë i dizajnuar për t'ju udhëhequr nga pyetja e parë deri tek jetesa e Islamit me besim.",
+    "step": "Hapi",
+    "discoverTitle": "Zbulimi",
+    "discoverDesc": "Vini me pyetje. Kush është Allahu? Çfarë është Islami? A ka prova për Zotin? Këtu fillon kurioziteti.",
+    "understandTitle": "Kuptimi",
+    "understandDesc": "Eksploroni besimet islame, adhurimin, etikën, Kuranin dhe Profetin ﷺ nëpërmjet udhëtimit tonë arsimor të strukturuar.",
+    "connectTitle": "Lidhja",
+    "connectDesc": "Ndërtoni një marrëdhënie personale me Allahun — nëpërmjet namazit, duasë, mirënjohjes dhe reflektimit shpirtëror.",
+    "liveTitle": "Jetimi i Islamit",
+    "liveDesc": "Filloni të mishëroni Islamin në jetën tuaj të përditshme — në mënyrën si falni namaz, hani, ndërveprojnë, themeloni familje dhe shërbeni komunitetit tuaj.",
+    "journeyPath": "Rruga juaj",
+    "whoWeAreLabel": "Kush jemi ne",
+    "whoWeAreSub": "Konteksti dhe themeli",
+    "whatIsIslamLabel": "Çfarë është Islami",
+    "whatIsIslamSub": "Udhëtim mësimi 9-hapësh",
+    "howILiveLabel": "Si e jetoj Islamin",
+    "howILiveSub": "Praktika e përditshme",
+    "choosePath": "Zgjidhni rrugën tuaj",
+    "choosePathSub": "Tre udhëtime të plota, secili me ritmin tuaj.",
+    "whoWeAreTitle": "Kush jemi ne",
+    "whoWeAreDesc": "Njihuni me Fondacionin KİM — misioni, vizioni, qendrat tona dhe komuniteti global pas kësaj pune.",
+    "whoWeAreCta": "Njihuni me ekipin",
+    "whatIsIslamTitle": "Çfarë është Islami?",
+    "whatIsIslamDesc": "Një udhëtim i strukturuar nëpër besimet islame, adhurimin, etikën dhe bindjen racionale — i ndërtuar për mendjen e kuriozit.",
+    "whatIsIslamCta": "Filloni udhëtimin",
+    "howILiveTitle": "Si e jetoj Islamin",
+    "howILiveDesc": "Udhëzim praktik mbi namazin, jetën hallall, financat islame, familjen, komunitetin dhe jetën muslimane të përditshme.",
+    "howILiveCta": "Eksploroni praktikat",
+    "globalResourcesEyebrow": "Burimet dhe aksesi",
+    "globalResourcesTitle": "Burimet globale",
+    "partnerLocationsTitle": "Vendet partnere",
+    "partnerLocationsDesc": "Ne kemi partneritete aktive në mbi 80 vende. Lidhuni me një qendër islame pranë jush nëpërmjet rrjetit tonë global.",
+    "partnerLocationsCta": "Gjeni një partner",
+    "suleymaniyeAppTitle": "Aplikacioni Süleymaniye",
+    "suleymaniyeAppDesc": "Aplikacioni ynë interaktiv tablet u ofron vizitorëve një përvojë dixhitale gjithëpërfshirëse dhe shumëgjuhëshe brenda kompleksit të xhamisë.",
+    "suleymaniyeAppCta": "Mësoni më shumë",
+    "madrasaToursTitle": "Turnet mediatike të medresesë",
+    "madrasaToursDesc": "Vizitoni tre qendrat tona në Stamboll — KİM 1 (Qendra e vizitorëve), KİM 2 (Medreseja) dhe KİM 3 (Media) — personalisht ose virtualisht.",
+    "madrasaToursCta": "Rezervoni një turne",
+    "volunteerTitle": "Bëhuni vullnetar me ne",
+    "volunteerDesc": "Qoftë në Stamboll apo kudo në botë, bashkohuni me ekipin tonë të vullnetarëve dhe kontribuoni në misionin e mirëkuptimit ndërkulturor.",
+    "volunteerCta": "Filloni vullnetarizmin",
+    "partnersEyebrow": "Rrjeti global",
+    "partnersTitle": "Partnerët tanë në botë",
+    "partnersSubtitle": "Fondacioni KİM bashkëpunon me organizata islame, universitete dhe qendra në mbi 80 vende për të zgjeruar arritjen e arsimit islamik autentik.",
+    "partnerCountries": "Vendet partnere",
+    "partnerOrganizations": "Organizatat partnere",
+    "continents": "Kontinente",
+    "becomePartner": "Bëhuni partner"
+  },
+  "common": {
+    "readMore": "Lexoni më shumë",
+    "close": "Mbyllni",
+    "menu": "Menyja",
+    "language": "Gjuha",
+    "back": "Kthehu",
+    "loading": "Po ngarkohet...",
+    "error": "Ndodhi një gabim",
+    "success": "Sukses"
+  }
+}

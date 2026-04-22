@@ -69,16 +69,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function LocaleLayout({ children, params }: Props) {
   const { locale } = await params;
 
-  if (!routing.locales.includes(locale as 'tr' | 'en' | 'ar')) {
+  if (!routing.locales.includes(locale as (typeof routing.locales)[number])) {
     notFound();
   }
 
   setRequestLocale(locale);
 
   const messages = await getMessages();
+  const isRtl = locale === 'ar' || locale === 'fa';
 
   return (
-    <div className={`${geistSans.variable} ${playfair.variable}`}>
+    <div className={`${geistSans.variable} ${playfair.variable}`} dir={isRtl ? 'rtl' : 'ltr'}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}

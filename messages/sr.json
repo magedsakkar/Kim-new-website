@@ -1,0 +1,255 @@
+{
+  "nav": {
+    "home": "Početna",
+    "about": "O nama",
+    "programs": "Programi",
+    "volunteer": "Volontiranje",
+    "newToIslam": "Novi u islamu",
+    "library": "Digitalna biblioteka",
+    "contact": "Kontakt",
+    "donate": "Donirajte",
+    "whoWeAre": "Ko smo mi",
+    "leadership": "Rukovodstvo",
+    "media": "Mediji",
+    "tourist": "Turistički programi",
+    "volunteerActivities": "Volonterske aktivnosti",
+    "studentMeetings": "Studentski susreti",
+    "joinVolunteer": "Postanite volonter",
+    "kimAcademy": "KİM Akademija",
+    "faq": "Česta pitanja",
+    "locations": "Naše lokacije"
+  },
+  "hero": {
+    "eyebrow": "Međukulturni centar",
+    "title": "Gradimo mostove,",
+    "titleAccent": "Povezujemo srca",
+    "subtitle": "U srcu Istanbula, povezujemo ljude različitih kultura sa islamom, gradeći mostove razumevanja i dijaloga.",
+    "cta1": "Istražite programe",
+    "cta2": "Volontiranje",
+    "scrollHint": "Pomerite nadole"
+  },
+  "stats": {
+    "title": "KİM u brojkama",
+    "visitors": "Mesečnih posetilaca",
+    "volunteers": "Aktivnih volontera",
+    "years": "Godina iskustva",
+    "countries": "Zastupljenih zemalja"
+  },
+  "programs": {
+    "title": "Naši programi",
+    "subtitle": "Sveobuhvatni programi osmišljeni za različite potrebe, koji jačaju međukulturni dijalog.",
+    "tourist": {
+      "title": "Turistički programi",
+      "description": "Vođene ture džamijama, kulturni razgovori i uvodni kursevi islama za posetioce Istanbula."
+    },
+    "volunteer": {
+      "title": "Volonterske aktivnosti",
+      "description": "Iftar večere, kulturni skupovi i društveni projekti uz aktivno učešće volontera."
+    },
+    "student": {
+      "title": "Studentski susreti",
+      "description": "Seminari, radionice i obrazovne sesije za studente koji istražuju islam iz akademske perspektive."
+    },
+    "learnMore": "Saznaj više",
+    "viewAll": "Pogledaj sve programe"
+  },
+  "events": {
+    "title": "Predstojeći događaji",
+    "subtitle": "Pridružite nam se i doživite nezaboravne trenutke.",
+    "noEvents": "Trenutno nema predstojećih događaja.",
+    "register": "Registrujte se",
+    "viewAll": "Pogledaj sve događaje"
+  },
+  "testimonials": {
+    "title": "Šta kažu naši posetioci",
+    "subtitle": "Iskustva naših gostiju iz celog sveta."
+  },
+  "cta": {
+    "title": "Podržite našu misiju",
+    "subtitle": "Svaki doprinos omogućava više ljudi da dožive međukulturni dijalog.",
+    "donate": "Donirajte",
+    "volunteer": "Volontiranje",
+    "actionBadge": "Poduzmite akciju",
+    "donateSub": "Podržite našu misiju",
+    "volunteerSub": "Pridružite se našoj zajednici"
+  },
+  "about": {
+    "eyebrow": "O nama",
+    "title": "Za razumevanje i dijalog",
+    "subtitle": "Osnovan u Istanbulu 2010. godine, Fondacija KİM gradi mostove kako bi nemuslimanskim posetiocima, studentima i stanovnicima predstavila islam kroz obrazovne i kulturne inicijative.",
+    "mission": "Naša misija",
+    "missionText": "Jačati međukulturno razumevanje i dijalog pružajući ljudima različitih porekla direktna i autentična susrete sa islamom.",
+    "vision": "Naša vizija",
+    "visionText": "Izgraditi svet u kome kulturne i verske razlike služe kao mostovi, a razumevanje i poštovanje preovladavaju.",
+    "values": "Naše vrednosti",
+    "founded": "Osnovano",
+    "foundedYear": "2010",
+    "location": "Lokacija",
+    "locationValue": "Süleymaniye, Istanbul"
+  },
+  "volunteer": {
+    "eyebrow": "Volontiranje",
+    "title": "Pridružite se našem timu",
+    "subtitle": "Pridružite se našem volonterskom timu kako biste gradili mostove razumevanja i dijaloga.",
+    "form": {
+      "name": "Puno ime",
+      "email": "E-pošta",
+      "phone": "Telefon",
+      "profession": "Zanimanje",
+      "motivation": "Zašto želite da volontirate?",
+      "submit": "Pošalji prijavu",
+      "success": "Vaša prijava je primljena. Stupićemo u kontakt sa vama uskoro.",
+      "error": "Došlo je do greške. Molimo pokušajte ponovo."
+    },
+    "academy": {
+      "title": "KİM Akademija",
+      "subtitle": "Sveobuhvatan program obuke za naše volontere",
+      "description": "KİM Akademija pruža volonterima znanja i veštine potrebne da gostima pruže što bolje iskustvo."
+    },
+    "faq": {
+      "title": "Često postavljana pitanja"
+    }
+  },
+  "contact": {
+    "eyebrow": "Kontakt",
+    "title": "Stupite u kontakt",
+    "subtitle": "Kontaktirajte nas za sva pitanja ili upite.",
+    "address": "Adresa",
+    "addressValue": "Süleymaniye Mah. Kanuni Medresesi Sk. No:20, Fatih/Istanbul",
+    "phone": "Telefon",
+    "email": "E-pošta",
+    "formTitle": "Pošaljite nam poruku",
+    "mapsLabel": "Otvori u Google Maps",
+    "socialMedia": "Društvene mreže",
+    "allLocations": "Sve lokacije KİM",
+    "form": {
+      "name": "Puno ime",
+      "email": "E-pošta",
+      "subject": "Predmet",
+      "message": "Poruka",
+      "submit": "Pošalji",
+      "success": "Vaša poruka je primljena. Hvala!",
+      "error": "Došlo je do greške tokom slanja."
+    }
+  },
+  "donate": {
+    "eyebrow": "Donacija",
+    "title": "Rastemo uz vašu podršku",
+    "subtitle": "Svaka donacija doprinosi tome da više ljudi doživi međukulturni dijalog.",
+    "bankInfo": "Podaci o bankovnom računu",
+    "copy": "Kopiraj",
+    "copied": "Kopirano!"
+  },
+  "footer": {
+    "description": "Gradimo mostove i povezujemo srca za međukulturno razumevanje i dijalog.",
+    "quickLinks": "Brze veze",
+    "programs": "Programi",
+    "contact": "Kontakt",
+    "rights": "Sva prava zadržana.",
+    "privacy": "Politika privatnosti",
+    "terms": "Uslovi korišćenja"
+  },
+  "library": {
+    "eyebrow": "Digitalna biblioteka",
+    "title": "Resursi i publikacije",
+    "subtitle": "Naša sveobuhvatna kolekcija resursa o islamu, kulturi i dijalogu.",
+    "search": "Pretražite resurse...",
+    "all": "Svi",
+    "books": "Knjige",
+    "brochures": "Brošure",
+    "videos": "Video zapisi",
+    "download": "Preuzmi"
+  },
+  "newToIslam": {
+    "eyebrow": "Novi u islamu",
+    "title": "Otkrijte islam",
+    "subtitle": "Vodiči i inspirativne priče za one koji tek upoznaju islam.",
+    "stories": "Svedočanstva",
+    "resources": "Resursi",
+    "contact": "Kontaktirajte nas"
+  },
+  "howILiveIslam": {
+    "badge": "Zona podrške za nove muslimane",
+    "title": "Kako živim islam",
+    "subtitle": "Praktičan i iskren vodič za muslimanski život u modernom svetu — od prve molitve do izgradnje zajednice zasnovane na veri.",
+    "comingSoonBanner": "Potpuna sekcija u razvoju — detaljni vodiči, video sadržaj i resursi zajednice uskoro.",
+    "soon": "Uskoro",
+    "sectionTitle": "Teme",
+    "quote": "Uzmi jedno delo — ono koje najviše voliš — i budi dosledan u njemu. Allah se ne zamara nagrađivanjem dok se vi ne zamorite činjenjem dobra.",
+    "quoteAuthor": "Poslanik Muhammed ﷺ",
+    "back": "Povratak na zonu podrške za nove muslimane",
+    "prayer": { "title": "Život molitve", "desc": "Kako uspostaviti pet dnevnih namaza, pronaći pravac Kible i razviti doslednost u ibadetu." },
+    "halal": { "title": "Halal život", "desc": "Snalaženje u halal ishrani, etičnoj potrošnji i islamskim izborima u nemuslimanskom društvu." },
+    "finance": { "title": "Islamske finansije", "desc": "Razumevanje bankarstva bez Riba, obračun Zekata i etično upravljanje imovinom." },
+    "family": { "title": "Porodica i brak", "desc": "Islamski pogled na brak, porodične uloge i odgajanje dece u veri." },
+    "community": { "title": "Zajednica", "desc": "Pronalaženje muslimanske zajednice, džamijski bonton i izgradnja bratskih veza." },
+    "dawah": { "title": "Daava", "desc": "Deliti islam sa mudrošću i dobrotom — kako prirodno i samouvereno govoriti o svojoj veri." }
+  },
+  "newMuslimCareArea": {
+    "badge": "Fondacija KİM · Zona podrške za nove muslimane",
+    "heroTitle": "Vaše putovanje transformacije",
+    "heroTitleHighlight": "Počinje ovde",
+    "heroSubtitle": "Bez obzira da li istražujete islam po prvi put, ste novi musliman koji pronalazi put, ili produbljujete veru celog života — ovo je vaš kompletan sistem podrške.",
+    "systemEyebrow": "Sistem",
+    "systemTitle": "Sistem putovanja transformacije",
+    "systemSubtitle": "Nije kurs. Nije lista činjenica. Kompletan sistem osmišljen da vas vodi od prvog pitanja do samouverenog življenja islamom.",
+    "step": "Korak",
+    "discoverTitle": "Otkrivanje",
+    "discoverDesc": "Dolazite sa pitanjima. Ko je Allah? Šta je islam? Postoje li dokazi za Boga? Ovde počinje znatiželja.",
+    "understandTitle": "Razumevanje",
+    "understandDesc": "Istražujete islamska verovanja, ibadet, etiku, Kuran i Poslanika ﷺ kroz naše strukturirano obrazovno putovanje.",
+    "connectTitle": "Povezivanje",
+    "connectDesc": "Gradite lični odnos sa Allahom — kroz namaz, dovu, zahvalnost i duhovno razmišljanje.",
+    "liveTitle": "Živeti islamom",
+    "liveDesc": "Počinjete da otelesvljujete islam u svakodnevnom životu — u načinu na koji klanjate, jedete, komunicirate, osnivate porodicu i služite svojoj zajednici.",
+    "journeyPath": "Vaš put",
+    "whoWeAreLabel": "Ko smo mi",
+    "whoWeAreSub": "Kontekst i osnova",
+    "whatIsIslamLabel": "Šta je islam",
+    "whatIsIslamSub": "Put učenja u 9 koraka",
+    "howILiveLabel": "Kako živim islam",
+    "howILiveSub": "Svakodnevna praksa",
+    "choosePath": "Izaberite svoj put",
+    "choosePathSub": "Tri potpuna puta, svaki sopstvenim tempom.",
+    "whoWeAreTitle": "Ko smo mi",
+    "whoWeAreDesc": "Upoznajte Fondaciju KİM — naša misija, vizija, centri i globalna zajednica iza ovog rada.",
+    "whoWeAreCta": "Upoznajte tim",
+    "whatIsIslamTitle": "Šta je islam?",
+    "whatIsIslamDesc": "Strukturirano putovanje kroz islamska verovanja, ibadet, etiku i racionalnu ubeđenost — izgrađeno za radoznali um.",
+    "whatIsIslamCta": "Počnite putovanje",
+    "howILiveTitle": "Kako živim islam",
+    "howILiveDesc": "Praktičan vodič o namazu, halal životu, islamskim finansijama, porodici, zajednici i svakodnevnom muslimanskom životu.",
+    "howILiveCta": "Istražite prakse",
+    "globalResourcesEyebrow": "Resursi i pristup",
+    "globalResourcesTitle": "Globalni resursi",
+    "partnerLocationsTitle": "Lokacije partnera",
+    "partnerLocationsDesc": "Imamo aktivna partnerstva u više od 80 zemalja. Povežite se sa islamskim centrom u vašoj blizini kroz našu globalnu mrežu.",
+    "partnerLocationsCta": "Pronađite partnera",
+    "suleymaniyeAppTitle": "Süleymaniye aplikacija",
+    "suleymaniyeAppDesc": "Naša interaktivna tablet aplikacija pruža posetiocima impresivno višejezično digitalno iskustvo direktno unutar kompleksa džamije.",
+    "suleymaniyeAppCta": "Saznaj više",
+    "madrasaToursTitle": "Medijske ture medrese",
+    "madrasaToursDesc": "Posetite naša tri centra u Istanbulu — KİM 1 (Centar za posetioce), KİM 2 (Medresa) i KİM 3 (Mediji) — lično ili virtuelno.",
+    "madrasaToursCta": "Rezervišite turu",
+    "volunteerTitle": "Volontirajte sa nama",
+    "volunteerDesc": "Bilo u Istanbulu ili bilo gde na svetu, pridružite se našem volonterskom timu i doprinesite misiji međukulturnog razumevanja.",
+    "volunteerCta": "Počnite da volontirate",
+    "partnersEyebrow": "Globalna mreža",
+    "partnersTitle": "Naši partneri u svetu",
+    "partnersSubtitle": "Fondacija KİM sarađuje sa islamskim organizacijama, univerzitetima i centrima u više od 80 zemalja kako bi proširila doseg autentičnog islamskog obrazovanja.",
+    "partnerCountries": "Partnerske zemlje",
+    "partnerOrganizations": "Partnerske organizacije",
+    "continents": "Kontinenata",
+    "becomePartner": "Postanite partner"
+  },
+  "common": {
+    "readMore": "Pročitaj više",
+    "close": "Zatvori",
+    "menu": "Meni",
+    "language": "Jezik",
+    "back": "Nazad",
+    "loading": "Učitava se...",
+    "error": "Došlo je do greške",
+    "success": "Uspešno"
+  }
+}

@@ -1,0 +1,255 @@
+{
+  "nav": {
+    "home": "Startseite",
+    "about": "Über uns",
+    "programs": "Programme",
+    "volunteer": "Ehrenamt",
+    "newToIslam": "Neu im Islam",
+    "library": "Digitale Bibliothek",
+    "contact": "Kontakt",
+    "donate": "Spenden",
+    "whoWeAre": "Wer wir sind",
+    "leadership": "Führung",
+    "media": "Medien",
+    "tourist": "Tourismusprogramme",
+    "volunteerActivities": "Ehrenamtliche Aktivitäten",
+    "studentMeetings": "Studierendentreffen",
+    "joinVolunteer": "Als Ehrenamtlicher mitmachen",
+    "kimAcademy": "KİM-Akademie",
+    "faq": "Häufige Fragen",
+    "locations": "Unsere Standorte"
+  },
+  "hero": {
+    "eyebrow": "Interkulturelles Zentrum",
+    "title": "Brücken bauen,",
+    "titleAccent": "Herzen verbinden",
+    "subtitle": "Im Herzen Istanbuls verbinden wir Menschen verschiedener Kulturen mit dem Islam und bauen Brücken des Verständnisses und des Dialogs.",
+    "cta1": "Programme entdecken",
+    "cta2": "Ehrenamt",
+    "scrollHint": "Nach unten scrollen"
+  },
+  "stats": {
+    "title": "KİM in Zahlen",
+    "visitors": "Monatliche Besucher",
+    "volunteers": "Aktive Ehrenamtliche",
+    "years": "Jahre Erfahrung",
+    "countries": "Vertretene Länder"
+  },
+  "programs": {
+    "title": "Unsere Programme",
+    "subtitle": "Umfassende Programme für verschiedene Bedürfnisse, die den interkulturellen Dialog stärken.",
+    "tourist": {
+      "title": "Tourismusprogramme",
+      "description": "Geführte Moscheetouren, kulturelle Gespräche und Einführungen in den Islam für Besucher Istanbuls."
+    },
+    "volunteer": {
+      "title": "Ehrenamtliche Aktivitäten",
+      "description": "Iftar-Abendessen, kulturelle Begegnungen und Gemeinschaftsprojekte mit aktiver Beteiligung der Ehrenamtlichen."
+    },
+    "student": {
+      "title": "Studierendentreffen",
+      "description": "Seminare, Workshops und Bildungsveranstaltungen für Studierende, die den Islam aus akademischer Perspektive erkunden."
+    },
+    "learnMore": "Mehr erfahren",
+    "viewAll": "Alle Programme ansehen"
+  },
+  "events": {
+    "title": "Bevorstehende Veranstaltungen",
+    "subtitle": "Kommen Sie zu uns und erleben Sie unvergessliche Momente.",
+    "noEvents": "Momentan keine bevorstehenden Veranstaltungen.",
+    "register": "Anmelden",
+    "viewAll": "Alle Veranstaltungen ansehen"
+  },
+  "testimonials": {
+    "title": "Was unsere Besucher sagen",
+    "subtitle": "Erfahrungen unserer Gäste aus aller Welt."
+  },
+  "cta": {
+    "title": "Unsere Mission unterstützen",
+    "subtitle": "Jeder Beitrag ermöglicht es mehr Menschen, interkulturellen Dialog zu erleben.",
+    "donate": "Spenden",
+    "volunteer": "Ehrenamt",
+    "actionBadge": "Aktiv werden",
+    "donateSub": "Unsere Mission unterstützen",
+    "volunteerSub": "Unserer Gemeinschaft beitreten"
+  },
+  "about": {
+    "eyebrow": "Über uns",
+    "title": "Für Verständnis und Dialog",
+    "subtitle": "Die 2010 in Istanbul gegründete KİM-Stiftung baut Brücken, um nicht-muslimischen Besuchern, Studierenden und Einwohnern den Islam durch Bildungs- und Kulturinitiativen näherzubringen.",
+    "mission": "Unsere Mission",
+    "missionText": "Interkulturelles Verständnis und Dialog zu stärken, indem wir Menschen verschiedener Hintergründe direkte und authentische Begegnungen mit dem Islam ermöglichen.",
+    "vision": "Unsere Vision",
+    "visionText": "Eine Welt aufzubauen, in der kulturelle und religiöse Unterschiede als Brücken dienen und in der Verständnis und Respekt vorherrschen.",
+    "values": "Unsere Werte",
+    "founded": "Gegründet",
+    "foundedYear": "2010",
+    "location": "Standort",
+    "locationValue": "Süleymaniye, Istanbul"
+  },
+  "volunteer": {
+    "eyebrow": "Ehrenamt",
+    "title": "Treten Sie unserem Team bei",
+    "subtitle": "Treten Sie unserem Ehrenamtsteam bei, um Brücken des Verständnisses und des Dialogs zu bauen.",
+    "form": {
+      "name": "Vollständiger Name",
+      "email": "E-Mail",
+      "phone": "Telefon",
+      "profession": "Beruf",
+      "motivation": "Warum möchten Sie ehrenamtlich tätig sein?",
+      "submit": "Bewerbung einreichen",
+      "success": "Ihre Bewerbung wurde erhalten. Wir werden uns in Kürze bei Ihnen melden.",
+      "error": "Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut."
+    },
+    "academy": {
+      "title": "KİM-Akademie",
+      "subtitle": "Umfassendes Schulungsprogramm für unsere Ehrenamtlichen",
+      "description": "Die KİM-Akademie vermittelt Ehrenamtlichen das Wissen und die Fähigkeiten, die sie benötigen, um Gästen die bestmögliche Erfahrung zu bieten."
+    },
+    "faq": {
+      "title": "Häufig gestellte Fragen"
+    }
+  },
+  "contact": {
+    "eyebrow": "Kontakt",
+    "title": "Kontakt aufnehmen",
+    "subtitle": "Kontaktieren Sie uns bei Fragen oder Anfragen.",
+    "address": "Adresse",
+    "addressValue": "Süleymaniye Mah. Kanuni Medresesi Sk. No:20, Fatih/Istanbul",
+    "phone": "Telefon",
+    "email": "E-Mail",
+    "formTitle": "Schreiben Sie uns",
+    "mapsLabel": "In Google Maps öffnen",
+    "socialMedia": "Soziale Medien",
+    "allLocations": "Alle KİM-Standorte",
+    "form": {
+      "name": "Vollständiger Name",
+      "email": "E-Mail",
+      "subject": "Betreff",
+      "message": "Nachricht",
+      "submit": "Senden",
+      "success": "Ihre Nachricht wurde erhalten. Vielen Dank!",
+      "error": "Beim Senden ist ein Fehler aufgetreten."
+    }
+  },
+  "donate": {
+    "eyebrow": "Spende",
+    "title": "Wir wachsen mit Ihrer Unterstützung",
+    "subtitle": "Jede Spende trägt dazu bei, dass mehr Menschen interkulturellen Dialog erleben können.",
+    "bankInfo": "Bankverbindung",
+    "copy": "Kopieren",
+    "copied": "Kopiert!"
+  },
+  "footer": {
+    "description": "Brücken bauen und Herzen verbinden für interkulturelles Verständnis und Dialog.",
+    "quickLinks": "Schnelllinks",
+    "programs": "Programme",
+    "contact": "Kontakt",
+    "rights": "Alle Rechte vorbehalten.",
+    "privacy": "Datenschutzrichtlinie",
+    "terms": "Nutzungsbedingungen"
+  },
+  "library": {
+    "eyebrow": "Digitale Bibliothek",
+    "title": "Ressourcen und Publikationen",
+    "subtitle": "Unsere umfassende Ressourcensammlung zu Islam, Kultur und Dialog.",
+    "search": "Ressourcen suchen...",
+    "all": "Alle",
+    "books": "Bücher",
+    "brochures": "Broschüren",
+    "videos": "Videos",
+    "download": "Herunterladen"
+  },
+  "newToIslam": {
+    "eyebrow": "Neu im Islam",
+    "title": "Den Islam entdecken",
+    "subtitle": "Leitfäden und inspirierende Geschichten für Menschen, die neu zum Islam kommen.",
+    "stories": "Erfahrungsberichte",
+    "resources": "Ressourcen",
+    "contact": "Kontakt aufnehmen"
+  },
+  "howILiveIslam": {
+    "badge": "Betreuungsbereich für neue Muslime",
+    "title": "Wie ich den Islam lebe",
+    "subtitle": "Praktischer und ehrlicher Leitfaden für ein muslimisches Leben in der modernen Welt — vom ersten Gebet bis zum Aufbau einer glaubensorientierten Gemeinschaft.",
+    "comingSoonBanner": "Vollständiger Bereich in Entwicklung — detaillierte Leitfäden, Videoinhalte und Gemeinschaftsressourcen folgen in Kürze.",
+    "soon": "Demnächst",
+    "sectionTitle": "Themen",
+    "quote": "Nimm eine Tat — die, die du am meisten liebst — und sei beständig darin. Denn Allah wird nicht müde zu belohnen, bis du müde wirst, Gutes zu tun.",
+    "quoteAuthor": "Prophet Muhammad ﷺ",
+    "back": "Zurück zum Betreuungsbereich für neue Muslime",
+    "prayer": { "title": "Gebetsleben", "desc": "Wie man die fünf täglichen Gebete einrichtet, die Qibla-Richtung findet und Beständigkeit in der Anbetung entwickelt." },
+    "halal": { "title": "Halal-Leben", "desc": "Navigation bei Halal-Lebensmitteln, ethischem Konsum und islamischen Entscheidungen in einer nicht-muslimischen Gesellschaft." },
+    "finance": { "title": "Islamische Finanzen", "desc": "Verstehen von Riba-freiem Banking, Zakat-Berechnung und ethischem Vermögensmanagement." },
+    "family": { "title": "Familie und Ehe", "desc": "Die islamische Perspektive auf Ehe, Familienrollen und die Erziehung von Kindern im Glauben." },
+    "community": { "title": "Gemeinschaft", "desc": "Die muslimische Gemeinschaft finden, Moschee-Etikette und Brüderlichkeitsbande aufbauen." },
+    "dawah": { "title": "Dawah", "desc": "Den Islam mit Weisheit und Güte teilen — wie man natürlich und selbstbewusst über seinen Glauben spricht." }
+  },
+  "newMuslimCareArea": {
+    "badge": "KİM-Stiftung · Betreuungsbereich für neue Muslime",
+    "heroTitle": "Ihre Transformationsreise",
+    "heroTitleHighlight": "Beginnt hier",
+    "heroSubtitle": "Ob Sie den Islam zum ersten Mal erkunden, ein neuer Muslim auf der Suche nach Ihrem Weg sind oder einen lebenslangen Glauben vertiefen — dies ist Ihr vollständiges Betreuungssystem.",
+    "systemEyebrow": "Das System",
+    "systemTitle": "Ein Transformationsreise-System",
+    "systemSubtitle": "Kein Kurs. Keine Faktenliste. Ein vollständiges System, das Sie von Ihrer ersten Frage bis hin zum selbstbewussten Islam-Leben begleitet.",
+    "step": "Schritt",
+    "discoverTitle": "Entdeckung",
+    "discoverDesc": "Sie kommen mit Fragen. Wer ist Allah? Was ist der Islam? Gibt es Beweise für Gott? Hier beginnt die Neugier.",
+    "understandTitle": "Verstehen",
+    "understandDesc": "Sie erkunden islamischen Glauben, Anbetung, Ethik, den Koran und den Propheten ﷺ durch unsere strukturierte Bildungsreise.",
+    "connectTitle": "Verbindung",
+    "connectDesc": "Sie bauen eine persönliche Beziehung zu Allah auf — durch Gebet, du'a, Dankbarkeit und spirituelle Reflexion.",
+    "liveTitle": "Den Islam leben",
+    "liveDesc": "Sie beginnen, den Islam in Ihrem täglichen Leben zu verkörpern — in der Art, wie Sie beten, essen, interagieren, eine Familie gründen und Ihrer Gemeinschaft dienen.",
+    "journeyPath": "Ihr Weg",
+    "whoWeAreLabel": "Wer wir sind",
+    "whoWeAreSub": "Kontext und Grundlage",
+    "whatIsIslamLabel": "Was ist der Islam",
+    "whatIsIslamSub": "9-schrittiger Lernweg",
+    "howILiveLabel": "Wie ich den Islam lebe",
+    "howILiveSub": "Tägliche Praxis",
+    "choosePath": "Wählen Sie Ihren Weg",
+    "choosePathSub": "Drei vollständige Wege, jeder in Ihrem eigenen Tempo.",
+    "whoWeAreTitle": "Wer wir sind",
+    "whoWeAreDesc": "Lernen Sie die KİM-Stiftung kennen — unsere Mission, Vision, Zentren und die weltweite Gemeinschaft hinter dieser Arbeit.",
+    "whoWeAreCta": "Das Team kennenlernen",
+    "whatIsIslamTitle": "Was ist der Islam?",
+    "whatIsIslamDesc": "Eine strukturierte Reise durch islamischen Glauben, Anbetung, Ethik und rationale Überzeugung — für den neugierigen Geist.",
+    "whatIsIslamCta": "Die Reise beginnen",
+    "howILiveTitle": "Wie ich den Islam lebe",
+    "howILiveDesc": "Praktische Anleitung zu Gebet, Halal-Leben, islamischen Finanzen, Familie, Gemeinschaft und muslimischem Alltag.",
+    "howILiveCta": "Praktiken erkunden",
+    "globalResourcesEyebrow": "Ressourcen und Zugang",
+    "globalResourcesTitle": "Globale Ressourcen",
+    "partnerLocationsTitle": "Partnerstandorte",
+    "partnerLocationsDesc": "Wir haben aktive Partnerschaften in über 80 Ländern. Verbinden Sie sich über unser globales Netzwerk mit einem islamischen Zentrum in Ihrer Nähe.",
+    "partnerLocationsCta": "Einen Partner finden",
+    "suleymaniyeAppTitle": "Süleymaniye-App",
+    "suleymaniyeAppDesc": "Unsere interaktive Moschee-Tablet-App bietet Besuchern ein immersives, mehrsprachiges digitales Erlebnis direkt im Moschee-Komplex.",
+    "suleymaniyeAppCta": "Mehr erfahren",
+    "madrasaToursTitle": "Madrasa-Medientouren",
+    "madrasaToursDesc": "Besuchen Sie unsere drei Istanbuler Zentren — KİM 1 (Besucherzentrum), KİM 2 (Madrasa) und KİM 3 (Medien) — persönlich oder virtuell.",
+    "madrasaToursCta": "Eine Tour buchen",
+    "volunteerTitle": "Ehrenamtlich bei uns tätig sein",
+    "volunteerDesc": "Ob in Istanbul oder irgendwo auf der Welt — treten Sie unserem Ehrenamtsteam bei und tragen Sie zur Mission des interkulturellen Verständnisses bei.",
+    "volunteerCta": "Ehrenamt beginnen",
+    "partnersEyebrow": "Globales Netzwerk",
+    "partnersTitle": "Unsere Partner in der Welt",
+    "partnersSubtitle": "Die KİM-Stiftung arbeitet mit islamischen Organisationen, Universitäten und Zentren in über 80 Ländern zusammen, um die Reichweite authentischer islamischer Bildung zu erweitern.",
+    "partnerCountries": "Partnerländer",
+    "partnerOrganizations": "Partnerorganisationen",
+    "continents": "Kontinente",
+    "becomePartner": "Partner werden"
+  },
+  "common": {
+    "readMore": "Mehr lesen",
+    "close": "Schließen",
+    "menu": "Menü",
+    "language": "Sprache",
+    "back": "Zurück",
+    "loading": "Lädt...",
+    "error": "Ein Fehler ist aufgetreten",
+    "success": "Erfolgreich"
+  }
+}

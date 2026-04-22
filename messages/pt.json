@@ -1,0 +1,255 @@
+{
+  "nav": {
+    "home": "Início",
+    "about": "Sobre nós",
+    "programs": "Programas",
+    "volunteer": "Voluntariado",
+    "newToIslam": "Novo no Islão",
+    "library": "Biblioteca digital",
+    "contact": "Contacto",
+    "donate": "Doar",
+    "whoWeAre": "Quem somos",
+    "leadership": "Liderança",
+    "media": "Média",
+    "tourist": "Programas turísticos",
+    "volunteerActivities": "Atividades de voluntariado",
+    "studentMeetings": "Encontros de estudantes",
+    "joinVolunteer": "Juntar-se como voluntário",
+    "kimAcademy": "Academia KİM",
+    "faq": "Perguntas frequentes",
+    "locations": "As nossas sedes"
+  },
+  "hero": {
+    "eyebrow": "Centro intercultural",
+    "title": "Construindo pontes,",
+    "titleAccent": "Conectando corações",
+    "subtitle": "No coração de Istambul, conectamos pessoas de diferentes culturas com o Islão, construindo pontes de compreensão e diálogo.",
+    "cta1": "Explorar programas",
+    "cta2": "Voluntariado",
+    "scrollHint": "Rolar para baixo"
+  },
+  "stats": {
+    "title": "KİM em números",
+    "visitors": "Visitantes mensais",
+    "volunteers": "Voluntários ativos",
+    "years": "Anos de experiência",
+    "countries": "Países representados"
+  },
+  "programs": {
+    "title": "Os nossos programas",
+    "subtitle": "Programas abrangentes concebidos para diferentes necessidades, fortalecendo o diálogo intercultural.",
+    "tourist": {
+      "title": "Programas turísticos",
+      "description": "Visitas guiadas a mesquitas, conversas culturais e sessões de introdução ao Islão para visitantes de Istambul."
+    },
+    "volunteer": {
+      "title": "Atividades de voluntariado",
+      "description": "Jantares de iftar, encontros culturais e projetos comunitários realizados com a participação ativa dos voluntários."
+    },
+    "student": {
+      "title": "Encontros de estudantes",
+      "description": "Seminários, workshops e sessões educativas para estudantes universitários que exploram o Islão de uma perspetiva académica."
+    },
+    "learnMore": "Saber mais",
+    "viewAll": "Ver todos os programas"
+  },
+  "events": {
+    "title": "Próximos eventos",
+    "subtitle": "Junte-se a nós e viva momentos inesquecíveis.",
+    "noEvents": "Não há próximos eventos de momento.",
+    "register": "Inscrever-se",
+    "viewAll": "Ver todos os eventos"
+  },
+  "testimonials": {
+    "title": "O que dizem os nossos visitantes",
+    "subtitle": "Experiências dos nossos hóspedes de todo o mundo."
+  },
+  "cta": {
+    "title": "Apoiar a nossa missão",
+    "subtitle": "Cada contribuição permite que mais pessoas vivam o diálogo intercultural.",
+    "donate": "Doar",
+    "volunteer": "Voluntariado",
+    "actionBadge": "Agir",
+    "donateSub": "Apoiar a nossa missão",
+    "volunteerSub": "Juntar-se à nossa comunidade"
+  },
+  "about": {
+    "eyebrow": "Sobre nós",
+    "title": "Para a compreensão e o diálogo",
+    "subtitle": "Fundada em Istambul em 2010, a Fundação KİM constrói pontes para apresentar o Islão a visitantes não muçulmanos, estudantes e residentes através de iniciativas educativas e culturais.",
+    "mission": "A nossa missão",
+    "missionText": "Fortalecer a compreensão intercultural e o diálogo, proporcionando a pessoas de diferentes origens encontros diretos e autênticos com o Islão.",
+    "vision": "A nossa visão",
+    "visionText": "Construir um mundo onde as diferenças culturais e religiosas sirvam de pontes, e onde prevaleçam a compreensão e o respeito.",
+    "values": "Os nossos valores",
+    "founded": "Fundada",
+    "foundedYear": "2010",
+    "location": "Localização",
+    "locationValue": "Süleymaniye, Istambul"
+  },
+  "volunteer": {
+    "eyebrow": "Voluntariado",
+    "title": "Junte-se à nossa equipa",
+    "subtitle": "Junte-se à nossa equipa de voluntários para construir pontes de compreensão e diálogo.",
+    "form": {
+      "name": "Nome completo",
+      "email": "E-mail",
+      "phone": "Telefone",
+      "profession": "Profissão",
+      "motivation": "Por que quer ser voluntário?",
+      "submit": "Enviar candidatura",
+      "success": "A sua candidatura foi recebida. Entraremos em contacto em breve.",
+      "error": "Ocorreu um erro. Por favor, tente novamente."
+    },
+    "academy": {
+      "title": "Academia KİM",
+      "subtitle": "Programa de formação abrangente para os nossos voluntários",
+      "description": "A Academia KİM fornece aos voluntários os conhecimentos e competências necessários para oferecer aos hóspedes a melhor experiência possível."
+    },
+    "faq": {
+      "title": "Perguntas frequentes"
+    }
+  },
+  "contact": {
+    "eyebrow": "Contacto",
+    "title": "Entrar em contacto",
+    "subtitle": "Contacte-nos para qualquer questão ou pedido de informação.",
+    "address": "Morada",
+    "addressValue": "Süleymaniye Mah. Kanuni Medresesi Sk. No:20, Fatih/Istambul",
+    "phone": "Telefone",
+    "email": "E-mail",
+    "formTitle": "Envie-nos uma mensagem",
+    "mapsLabel": "Abrir no Google Maps",
+    "socialMedia": "Redes sociais",
+    "allLocations": "Todas as sedes KİM",
+    "form": {
+      "name": "Nome completo",
+      "email": "E-mail",
+      "subject": "Assunto",
+      "message": "Mensagem",
+      "submit": "Enviar",
+      "success": "A sua mensagem foi recebida. Obrigado!",
+      "error": "Ocorreu um erro durante o envio."
+    }
+  },
+  "donate": {
+    "eyebrow": "Doação",
+    "title": "Crescemos com o seu apoio",
+    "subtitle": "Cada doação contribui para que mais pessoas vivam o diálogo intercultural.",
+    "bankInfo": "Dados bancários",
+    "copy": "Copiar",
+    "copied": "Copiado!"
+  },
+  "footer": {
+    "description": "Construindo pontes e conectando corações para a compreensão e o diálogo interculturais.",
+    "quickLinks": "Ligações rápidas",
+    "programs": "Programas",
+    "contact": "Contacto",
+    "rights": "Todos os direitos reservados.",
+    "privacy": "Política de privacidade",
+    "terms": "Termos de utilização"
+  },
+  "library": {
+    "eyebrow": "Biblioteca digital",
+    "title": "Recursos e publicações",
+    "subtitle": "A nossa coleção abrangente de recursos sobre o Islão, a cultura e o diálogo.",
+    "search": "Pesquisar recursos...",
+    "all": "Todos",
+    "books": "Livros",
+    "brochures": "Brochuras",
+    "videos": "Vídeos",
+    "download": "Transferir"
+  },
+  "newToIslam": {
+    "eyebrow": "Novo no Islão",
+    "title": "Descobrir o Islão",
+    "subtitle": "Recursos guia e histórias inspiradoras para quem é novo no Islão.",
+    "stories": "Testemunhos",
+    "resources": "Recursos",
+    "contact": "Contacte-nos"
+  },
+  "howILiveIslam": {
+    "badge": "Área de apoio para novos muçulmanos",
+    "title": "Como vivo o Islão",
+    "subtitle": "Guia prático e honesto para viver uma vida muçulmana no mundo moderno — da primeira oração à construção de uma comunidade centrada na fé.",
+    "comingSoonBanner": "Secção completa em desenvolvimento — guias detalhados, conteúdo de vídeo e recursos comunitários em breve.",
+    "soon": "Em breve",
+    "sectionTitle": "Tópicos",
+    "quote": "Tome um ato — aquele que mais ama — e seja constante nele. Pois Allah não se cansa de recompensar até que você se canse de fazer o bem.",
+    "quoteAuthor": "Profeta Muhammad ﷺ",
+    "back": "Voltar à área de apoio para novos muçulmanos",
+    "prayer": { "title": "Vida de oração", "desc": "Como estabelecer as cinco orações diárias, encontrar a direção da Qibla e cultivar a constância na adoração." },
+    "halal": { "title": "Vida halal", "desc": "Navegar nos alimentos halal, no consumo ético e fazer escolhas islâmicas numa sociedade não muçulmana." },
+    "finance": { "title": "Finanças islâmicas", "desc": "Compreender a banca sem Riba, o cálculo do Zakat e a gestão ética do património." },
+    "family": { "title": "Família e casamento", "desc": "A perspetiva islâmica sobre o casamento, os papéis familiares e a educação dos filhos na fé." },
+    "community": { "title": "Comunidade", "desc": "Encontrar a sua comunidade muçulmana, a etiqueta na mesquita e construir laços de irmandade." },
+    "dawah": { "title": "Dawah", "desc": "Partilhar o Islão com sabedoria e bondade — como falar da sua fé de forma natural e com confiança." }
+  },
+  "newMuslimCareArea": {
+    "badge": "Fundação KİM · Área de apoio para novos muçulmanos",
+    "heroTitle": "A sua jornada de transformação",
+    "heroTitleHighlight": "Começa aqui",
+    "heroSubtitle": "Quer esteja a explorar o Islão pela primeira vez, seja um novo muçulmano a encontrar o seu caminho, ou a aprofundar uma fé de uma vida — este é o seu sistema de apoio completo.",
+    "systemEyebrow": "O sistema",
+    "systemTitle": "Um sistema de jornada de transformação",
+    "systemSubtitle": "Não é um curso. Não é uma lista de factos. Um sistema completo concebido para o acompanhar desde a sua primeira pergunta até viver o Islão com confiança.",
+    "step": "Passo",
+    "discoverTitle": "Descoberta",
+    "discoverDesc": "Chega com perguntas. Quem é Allah? O que é o Islão? Há provas da existência de Deus? É aqui que começa a curiosidade.",
+    "understandTitle": "Compreensão",
+    "understandDesc": "Explora a crença islâmica, a adoração, a ética, o Alcorão e o Profeta ﷺ através da nossa jornada educativa estruturada.",
+    "connectTitle": "Ligação",
+    "connectDesc": "Constrói uma relação pessoal com Allah — através da oração, do du'a, da gratidão e da reflexão espiritual.",
+    "liveTitle": "Viver o Islão",
+    "liveDesc": "Começa a incorporar o Islão na sua vida quotidiana — na forma como reza, come, interage, forma uma família e serve a sua comunidade.",
+    "journeyPath": "O seu caminho",
+    "whoWeAreLabel": "Quem somos",
+    "whoWeAreSub": "Contexto e fundação",
+    "whatIsIslamLabel": "O que é o Islão",
+    "whatIsIslamSub": "Jornada de aprendizagem em 9 passos",
+    "howILiveLabel": "Como vivo o Islão",
+    "howILiveSub": "Prática diária",
+    "choosePath": "Escolha o seu caminho",
+    "choosePathSub": "Três jornadas completas, cada uma ao seu próprio ritmo.",
+    "whoWeAreTitle": "Quem somos",
+    "whoWeAreDesc": "Conheça a Fundação KİM — a nossa missão, visão, centros e a comunidade global por detrás deste trabalho.",
+    "whoWeAreCta": "Conhecer a equipa",
+    "whatIsIslamTitle": "O que é o Islão?",
+    "whatIsIslamDesc": "Uma jornada estruturada pela crença islâmica, adoração, ética e convicção racional — construída para a mente curiosa.",
+    "whatIsIslamCta": "Começar a jornada",
+    "howILiveTitle": "Como vivo o Islão",
+    "howILiveDesc": "Orientação prática sobre oração, vida halal, finanças islâmicas, família, comunidade e vida muçulmana quotidiana.",
+    "howILiveCta": "Explorar as práticas",
+    "globalResourcesEyebrow": "Recursos e acesso",
+    "globalResourcesTitle": "Recursos globais",
+    "partnerLocationsTitle": "Sedes parceiras",
+    "partnerLocationsDesc": "Temos parcerias ativas em mais de 80 países. Conecte-se com um centro islâmico perto de si através da nossa rede global.",
+    "partnerLocationsCta": "Encontrar um parceiro",
+    "suleymaniyeAppTitle": "Aplicação Süleymaniye",
+    "suleymaniyeAppDesc": "A nossa aplicação interativa para tablet oferece aos visitantes uma experiência digital imersiva e multilingue dentro do complexo da mesquita.",
+    "suleymaniyeAppCta": "Saber mais",
+    "madrasaToursTitle": "Visitas à madrasa",
+    "madrasaToursDesc": "Visite os nossos três centros de Istambul — KİM 1 (Centro de visitantes), KİM 2 (Madrasa) e KİM 3 (Média) — pessoalmente ou virtualmente.",
+    "madrasaToursCta": "Reservar uma visita",
+    "volunteerTitle": "Seja voluntário connosco",
+    "volunteerDesc": "Quer esteja em Istambul ou em qualquer parte do mundo, junte-se à nossa equipa de voluntários e contribua para a missão de compreensão intercultural.",
+    "volunteerCta": "Começar o voluntariado",
+    "partnersEyebrow": "Rede global",
+    "partnersTitle": "Os nossos parceiros no mundo",
+    "partnersSubtitle": "A Fundação KİM trabalha com organizações islâmicas, universidades e centros em mais de 80 países para expandir o alcance da educação islâmica autêntica.",
+    "partnerCountries": "Países parceiros",
+    "partnerOrganizations": "Organizações parceiras",
+    "continents": "Continentes",
+    "becomePartner": "Tornar-se parceiro"
+  },
+  "common": {
+    "readMore": "Ler mais",
+    "close": "Fechar",
+    "menu": "Menu",
+    "language": "Idioma",
+    "back": "Voltar",
+    "loading": "A carregar...",
+    "error": "Ocorreu um erro",
+    "success": "Sucesso"
+  }
+}

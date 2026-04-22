@@ -1,0 +1,255 @@
+{
+  "nav": {
+    "home": "Acasă",
+    "about": "Despre noi",
+    "programs": "Programe",
+    "volunteer": "Voluntariat",
+    "newToIslam": "Nou în Islam",
+    "library": "Bibliotecă digitală",
+    "contact": "Contact",
+    "donate": "Donați",
+    "whoWeAre": "Cine suntem",
+    "leadership": "Conducere",
+    "media": "Media",
+    "tourist": "Programe turistice",
+    "volunteerActivities": "Activități de voluntariat",
+    "studentMeetings": "Întâlniri studențești",
+    "joinVolunteer": "Deveniți voluntar",
+    "kimAcademy": "Academia KİM",
+    "faq": "Întrebări frecvente",
+    "locations": "Locațiile noastre"
+  },
+  "hero": {
+    "eyebrow": "Centru Intercultural",
+    "title": "Construim punți,",
+    "titleAccent": "Conectăm inimi",
+    "subtitle": "În inima Istanbulului, conectăm oameni din culturi diferite cu Islamul, construind punți de înțelegere și dialog.",
+    "cta1": "Explorați programele",
+    "cta2": "Voluntariat",
+    "scrollHint": "Derulați în jos"
+  },
+  "stats": {
+    "title": "KİM în cifre",
+    "visitors": "Vizitatori lunari",
+    "volunteers": "Voluntari activi",
+    "years": "Ani de experiență",
+    "countries": "Țări reprezentate"
+  },
+  "programs": {
+    "title": "Programele noastre",
+    "subtitle": "Programe complete concepute pentru diferite nevoi, întărind dialogul intercultural.",
+    "tourist": {
+      "title": "Programe turistice",
+      "description": "Tururi ghidate la moschei, conversații culturale și sesiuni de introducere în Islam pentru vizitatorii Istanbulului."
+    },
+    "volunteer": {
+      "title": "Activități de voluntariat",
+      "description": "Cine de iftar, întâlniri culturale și proiecte comunitare realizate cu participarea activă a voluntarilor."
+    },
+    "student": {
+      "title": "Întâlniri studențești",
+      "description": "Seminarii, ateliere și sesiuni educaționale pentru studenți care explorează Islamul dintr-o perspectivă academică."
+    },
+    "learnMore": "Aflați mai multe",
+    "viewAll": "Vezi toate programele"
+  },
+  "events": {
+    "title": "Evenimente viitoare",
+    "subtitle": "Alăturați-vă nouă și trăiți momente de neuitat.",
+    "noEvents": "Nu există evenimente viitoare în acest moment.",
+    "register": "Înregistrați-vă",
+    "viewAll": "Vedeți toate evenimentele"
+  },
+  "testimonials": {
+    "title": "Ce spun vizitatorii noștri",
+    "subtitle": "Experiențele oaspeților noștri din întreaga lume."
+  },
+  "cta": {
+    "title": "Susțineți misiunea noastră",
+    "subtitle": "Fiecare contribuție permite mai multor oameni să trăiască dialogul intercultural.",
+    "donate": "Donați",
+    "volunteer": "Voluntariat",
+    "actionBadge": "Acționați",
+    "donateSub": "Susțineți misiunea noastră",
+    "volunteerSub": "Alăturați-vă comunității noastre"
+  },
+  "about": {
+    "eyebrow": "Despre noi",
+    "title": "Pentru înțelegere și dialog",
+    "subtitle": "Fondată la Istanbul în 2010, Fundația KİM construiește punți pentru a prezenta Islamul vizitatorilor nemusulmani, studenților și rezidenților prin inițiative educaționale și culturale.",
+    "mission": "Misiunea noastră",
+    "missionText": "Să întărim înțelegerea interculturală și dialogul oferind oamenilor din medii diferite întâlniri directe și autentice cu Islamul.",
+    "vision": "Viziunea noastră",
+    "visionText": "Să construim o lume în care diferențele culturale și religioase servesc drept punți, iar înțelegerea și respectul prevalează.",
+    "values": "Valorile noastre",
+    "founded": "Fondată",
+    "foundedYear": "2010",
+    "location": "Locație",
+    "locationValue": "Süleymaniye, Istanbul"
+  },
+  "volunteer": {
+    "eyebrow": "Voluntariat",
+    "title": "Alăturați-vă echipei noastre",
+    "subtitle": "Alăturați-vă echipei noastre de voluntari pentru a construi punți de înțelegere și dialog.",
+    "form": {
+      "name": "Nume complet",
+      "email": "E-mail",
+      "phone": "Telefon",
+      "profession": "Profesie",
+      "motivation": "De ce doriți să fiți voluntar?",
+      "submit": "Trimiteți cererea",
+      "success": "Cererea dvs. a fost primită. Vă vom contacta în curând.",
+      "error": "A apărut o eroare. Vă rugăm să încercați din nou."
+    },
+    "academy": {
+      "title": "Academia KİM",
+      "subtitle": "Program de formare complet pentru voluntarii noștri",
+      "description": "Academia KİM oferă voluntarilor cunoștințele și abilitățile necesare pentru a oferi oaspeților cea mai bună experiență posibilă."
+    },
+    "faq": {
+      "title": "Întrebări frecvente"
+    }
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "title": "Luați legătura cu noi",
+    "subtitle": "Contactați-ne pentru orice întrebări sau solicitări.",
+    "address": "Adresă",
+    "addressValue": "Süleymaniye Mah. Kanuni Medresesi Sk. No:20, Fatih/Istanbul",
+    "phone": "Telefon",
+    "email": "E-mail",
+    "formTitle": "Trimiteți-ne un mesaj",
+    "mapsLabel": "Deschide în Google Maps",
+    "socialMedia": "Rețele sociale",
+    "allLocations": "Toate locațiile KİM",
+    "form": {
+      "name": "Nume complet",
+      "email": "E-mail",
+      "subject": "Subiect",
+      "message": "Mesaj",
+      "submit": "Trimite",
+      "success": "Mesajul dvs. a fost primit. Mulțumim!",
+      "error": "A apărut o eroare în timpul trimiterii."
+    }
+  },
+  "donate": {
+    "eyebrow": "Donație",
+    "title": "Creștem cu sprijinul dvs.",
+    "subtitle": "Fiecare donație contribuie la faptul că mai mulți oameni trăiesc dialogul intercultural.",
+    "bankInfo": "Date bancare",
+    "copy": "Copiați",
+    "copied": "Copiat!"
+  },
+  "footer": {
+    "description": "Construim punți și conectăm inimi pentru înțelegere și dialog intercultural.",
+    "quickLinks": "Linkuri rapide",
+    "programs": "Programe",
+    "contact": "Contact",
+    "rights": "Toate drepturile rezervate.",
+    "privacy": "Politica de confidențialitate",
+    "terms": "Termeni de utilizare"
+  },
+  "library": {
+    "eyebrow": "Bibliotecă digitală",
+    "title": "Resurse și publicații",
+    "subtitle": "Colecția noastră completă de resurse despre Islam, cultură și dialog.",
+    "search": "Căutați resurse...",
+    "all": "Toate",
+    "books": "Cărți",
+    "brochures": "Broșuri",
+    "videos": "Videoclipuri",
+    "download": "Descărcați"
+  },
+  "newToIslam": {
+    "eyebrow": "Nou în Islam",
+    "title": "Descoperiți Islamul",
+    "subtitle": "Resurse ghid și povești inspiratoare pentru cei care sunt noi în Islam.",
+    "stories": "Mărturii",
+    "resources": "Resurse",
+    "contact": "Contactați-ne"
+  },
+  "howILiveIslam": {
+    "badge": "Zona de îngrijire pentru noii musulmani",
+    "title": "Cum trăiesc Islamul",
+    "subtitle": "Ghid practic și sincer pentru viața musulmană în lumea modernă — de la prima rugăciune până la construirea unei comunități centrate pe credință.",
+    "comingSoonBanner": "Secțiune completă în dezvoltare — ghiduri detaliate, conținut video și resurse comunitare în curând.",
+    "soon": "În curând",
+    "sectionTitle": "Subiecte",
+    "quote": "Ia o faptă — pe cea pe care o iubești cel mai mult — și fii consecvent în ea. Allah nu obosește să răsplătească până când voi obosiți să faceți binele.",
+    "quoteAuthor": "Profetul Muhammad ﷺ",
+    "back": "Înapoi la zona de îngrijire pentru noii musulmani",
+    "prayer": { "title": "Viața de rugăciune", "desc": "Cum să stabiliți cele cinci rugăciuni zilnice, să găsiți direcția Qibla și să dezvoltați consecvența în adorare." },
+    "halal": { "title": "Viața halal", "desc": "Navigarea în alimentele halal, consumul etic și alegerile islamice într-o societate nemusulmană." },
+    "finance": { "title": "Finanțe islamice", "desc": "Înțelegerea sistemului bancar fără Riba, calculul Zakat și gestionarea etică a patrimoniului." },
+    "family": { "title": "Familie și căsătorie", "desc": "Perspectiva islamică asupra căsătoriei, rolurilor familiale și creșterii copiilor în credință." },
+    "community": { "title": "Comunitate", "desc": "Găsirea comunității musulmane, eticheta la moschee și construirea legăturilor de frăție." },
+    "dawah": { "title": "Dawah", "desc": "Împărtășirea Islamului cu înțelepciune și bunătate — cum să vorbești despre credința ta natural și cu încredere." }
+  },
+  "newMuslimCareArea": {
+    "badge": "Fundația KİM · Zona de îngrijire pentru noii musulmani",
+    "heroTitle": "Călătoria dvs. de transformare",
+    "heroTitleHighlight": "Începe aici",
+    "heroSubtitle": "Indiferent dacă explorați Islamul pentru prima dată, sunteți un nou musulman care își găsește drumul sau aprofundați o credință de o viață — acesta este sistemul dvs. complet de îngrijire.",
+    "systemEyebrow": "Sistemul",
+    "systemTitle": "Un sistem de călătorie de transformare",
+    "systemSubtitle": "Nu este un curs. Nu este o listă de fapte. Un sistem complet conceput să vă ghideze de la prima întrebare până la trăirea Islamului cu încredere.",
+    "step": "Pas",
+    "discoverTitle": "Descoperire",
+    "discoverDesc": "Veniți cu întrebări. Cine este Allah? Ce este Islamul? Există dovezi pentru Dumnezeu? Aici începe curiozitatea.",
+    "understandTitle": "Înțelegere",
+    "understandDesc": "Explorați credința islamică, adorarea, etica, Coranul și Profetul ﷺ prin călătoria noastră educațională structurată.",
+    "connectTitle": "Conectare",
+    "connectDesc": "Construiți o relație personală cu Allah — prin rugăciune, du'a, recunoștință și reflecție spirituală.",
+    "liveTitle": "Trăirea Islamului",
+    "liveDesc": "Începeți să întruchipați Islamul în viața cotidiană — în modul în care vă rugați, mâncați, interacționați, întemeiați o familie și serviți comunitatea dvs.",
+    "journeyPath": "Calea dvs.",
+    "whoWeAreLabel": "Cine suntem",
+    "whoWeAreSub": "Context și fundament",
+    "whatIsIslamLabel": "Ce este Islamul",
+    "whatIsIslamSub": "Călătorie de învățare în 9 pași",
+    "howILiveLabel": "Cum trăiesc Islamul",
+    "howILiveSub": "Practică zilnică",
+    "choosePath": "Alegeți calea dvs.",
+    "choosePathSub": "Trei călătorii complete, fiecare în ritmul propriu.",
+    "whoWeAreTitle": "Cine suntem",
+    "whoWeAreDesc": "Descoperiți Fundația KİM — misiunea, viziunea, centrele noastre și comunitatea globală din spatele acestei activități.",
+    "whoWeAreCta": "Cunoașteți echipa",
+    "whatIsIslamTitle": "Ce este Islamul?",
+    "whatIsIslamDesc": "O călătorie structurată prin credința islamică, adorare, etică și convicțiune rațională — construită pentru mintea curioasă.",
+    "whatIsIslamCta": "Începeți călătoria",
+    "howILiveTitle": "Cum trăiesc Islamul",
+    "howILiveDesc": "Îndrumare practică despre rugăciune, viața halal, finanțe islamice, familie, comunitate și viața musulmană zilnică.",
+    "howILiveCta": "Explorați practicile",
+    "globalResourcesEyebrow": "Resurse și acces",
+    "globalResourcesTitle": "Resurse globale",
+    "partnerLocationsTitle": "Locații partenere",
+    "partnerLocationsDesc": "Avem parteneriate active în peste 80 de țări. Conectați-vă cu un centru islamic din apropierea dvs. prin rețeaua noastră globală.",
+    "partnerLocationsCta": "Găsiți un partener",
+    "suleymaniyeAppTitle": "Aplicația Süleymaniye",
+    "suleymaniyeAppDesc": "Aplicația noastră interactivă pentru tabletă oferă vizitatorilor o experiență digitală captivantă și multilingvă chiar în complexul moscheii.",
+    "suleymaniyeAppCta": "Aflați mai multe",
+    "madrasaToursTitle": "Tururi media la madrasa",
+    "madrasaToursDesc": "Vizitați cele trei centre ale noastre din Istanbul — KİM 1 (Centrul vizitatorilor), KİM 2 (Madrasa) și KİM 3 (Media) — personal sau virtual.",
+    "madrasaToursCta": "Rezervați un tur",
+    "volunteerTitle": "Voluntariat cu noi",
+    "volunteerDesc": "Fie că vă aflați la Istanbul sau oriunde în lume, alăturați-vă echipei noastre de voluntari și contribuiți la misiunea de înțelegere interculturală.",
+    "volunteerCta": "Începeți voluntariatul",
+    "partnersEyebrow": "Rețea globală",
+    "partnersTitle": "Partenerii noștri în lume",
+    "partnersSubtitle": "Fundația KİM colaborează cu organizații islamice, universități și centre din peste 80 de țări pentru a extinde aria educației islamice autentice.",
+    "partnerCountries": "Țări partenere",
+    "partnerOrganizations": "Organizații partenere",
+    "continents": "Continente",
+    "becomePartner": "Deveniți partener"
+  },
+  "common": {
+    "readMore": "Citiți mai mult",
+    "close": "Închide",
+    "menu": "Meniu",
+    "language": "Limbă",
+    "back": "Înapoi",
+    "loading": "Se încarcă...",
+    "error": "A apărut o eroare",
+    "success": "Succes"
+  }
+}
