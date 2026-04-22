@@ -31,11 +31,14 @@ export function ContactForm() {
       if (res.ok) {
         setStatus('success');
         reset();
+        setTimeout(() => setStatus('idle'), 3000);
       } else {
         setStatus('error');
+        setTimeout(() => setStatus('idle'), 3000);
       }
     } catch {
       setStatus('error');
+      setTimeout(() => setStatus('idle'), 3000);
     }
   };
 

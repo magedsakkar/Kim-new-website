@@ -147,6 +147,12 @@ export const globalLinks = [
   },
 ];
 
+export const hubVideoIds: Record<string, string> = {
+  tr: '55AGHR4JDPE',
+  en: 'K6QHtXq9dew',
+  ar: 'K6QHtXq9dew',
+};
+
 export const floatingActions = [
   {
     id: 'qa',
