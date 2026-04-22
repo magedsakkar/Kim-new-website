@@ -34,20 +34,20 @@ export function LocaleSwitcher({ variant = 'header' }: LocaleSwitcherProps) {
     return () => document.removeEventListener('mousedown', handler);
   }, [open]);
 
-  // ── Mobile: flat flag buttons (unchanged) ─────────────────────
+  // ── Mobile: scrollable grid of language buttons ───────────────
   if (variant === 'mobile') {
     return (
-      <div className="flex items-center gap-2">
+      <div className="grid grid-cols-3 gap-2">
         {LOCALES.map((loc) => (
           <button key={loc} onClick={() => handleChange(loc)}
             className={cn(
-              'flex flex-col items-center gap-1 px-3 py-2.5 rounded-xl transition-all duration-200 flex-1',
+              'flex flex-col items-center gap-1 px-2 py-2.5 rounded-xl transition-all duration-200',
               locale === loc
                 ? 'bg-kim-gold text-white shadow-sm'
                 : 'bg-white/5 text-white/50 hover:text-white/80 hover:bg-white/10'
             )}>
             <span className="text-xl leading-none">{LOCALE_FLAGS[loc]}</span>
-            <span className="text-[10px] font-bold uppercase tracking-wider">{LOCALE_LABELS[loc]}</span>
+            <span className="text-[9px] font-bold uppercase tracking-wider truncate w-full text-center">{LOCALE_LABELS[loc]}</span>
           </button>
         ))}
       </div>
@@ -86,14 +86,14 @@ export function LocaleSwitcher({ variant = 'header' }: LocaleSwitcherProps) {
             exit={{ opacity: 0, y: -8, scale: 0.96 }}
             transition={{ duration: 0.14, ease: 'easeOut' }}
             role="listbox"
-            className="absolute top-full right-0 mt-2 w-40 z-[200] overflow-hidden rounded-2xl border border-white/12 shadow-2xl shadow-black/50"
+            className="absolute top-full right-0 mt-2 w-48 z-[200] rounded-2xl border border-white/12 shadow-2xl shadow-black/50 overflow-hidden"
             style={{ background: 'rgba(20,26,74,0.98)', backdropFilter: 'blur(20px)' }}
           >
             {/* Caret */}
             <div className="absolute -top-[6px] right-[14px] w-3 h-3 rotate-45 border-l border-t border-white/12"
               style={{ background: 'rgba(20,26,74,0.98)' }} />
 
-            <div className="py-1.5">
+            <div className="py-1.5 max-h-80 overflow-y-auto">
               {LOCALES.map((loc) => {
                 const isActive = locale === loc;
                 return (

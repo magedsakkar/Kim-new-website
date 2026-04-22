@@ -29,17 +29,53 @@ export const STATS = [
   { key: 'countries', value: 80, suffix: '+' },
 ];
 
-export const LOCALES = ['tr', 'en', 'ar'] as const;
+export const LOCALES = ['tr', 'en', 'ar', 'fr', 'es', 'it', 'pt', 'de', 'ru', 'uk', 'pl', 'sr', 'hr', 'el', 'hu', 'ro', 'sq', 'zh', 'ko', 'ja', 'fa'] as const;
 export type Locale = (typeof LOCALES)[number];
 
 export const LOCALE_LABELS: Record<Locale, string> = {
   tr: 'Türkçe',
   en: 'English',
   ar: 'العربية',
+  fr: 'Français',
+  es: 'Español',
+  it: 'Italiano',
+  pt: 'Português',
+  de: 'Deutsch',
+  ru: 'Русский',
+  uk: 'Українська',
+  pl: 'Polski',
+  sr: 'Srpski',
+  hr: 'Hrvatski',
+  el: 'Ελληνικά',
+  hu: 'Magyar',
+  ro: 'Română',
+  sq: 'Shqip',
+  zh: '中文',
+  ko: '한국어',
+  ja: '日本語',
+  fa: 'فارسی',
 };
 
 export const LOCALE_FLAGS: Record<Locale, string> = {
   tr: '🇹🇷',
   en: '🇬🇧',
   ar: '🇸🇦',
+  fr: '🇫🇷',
+  es: '🇪🇸',
+  it: '🇮🇹',
+  pt: '🇵🇹',
+  de: '🇩🇪',
+  ru: '🇷🇺',
+  uk: '🇺🇦',
+  pl: '🇵🇱',
+  sr: '🇷🇸',
+  hr: '🇭🇷',
+  el: '🇬🇷',
+  hu: '🇭🇺',
+  ro: '🇷🇴',
+  sq: '🇦🇱',
+  zh: '🇨🇳',
+  ko: '🇰🇷',
+  ja: '🇯🇵',
+  fa: '🇮🇷',
 };
