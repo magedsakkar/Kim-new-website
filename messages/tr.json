@@ -118,6 +118,10 @@
     "addressValue": "Süleymaniye Mah. Kanuni Medresesi Sk. No:20, Fatih/İstanbul",
     "phone": "Telefon",
     "email": "E-posta",
+    "formTitle": "Bize Mesaj Gönderin",
+    "mapsLabel": "Google Maps'te aç",
+    "socialMedia": "Sosyal Medya",
+    "allLocations": "Tüm KİM konumları",
     "form": {
       "name": "Ad Soyad",
       "email": "E-posta",

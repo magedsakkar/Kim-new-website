@@ -46,8 +46,9 @@ export function ContactForm() {
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         <div>
-          <label className="block text-sm font-medium text-kim-charcoal mb-1.5">{t('name')}</label>
+          <label htmlFor="contact-name" className="block text-sm font-medium text-kim-charcoal mb-1.5">{t('name')}</label>
           <input
+            id="contact-name"
             {...register('name')}
             className={cn(
               'w-full px-4 py-3 rounded-xl border bg-white text-kim-charcoal placeholder-kim-stone/50 transition-colors focus:outline-none focus:ring-2 focus:ring-kim-navy',
@@ -59,8 +60,9 @@ export function ContactForm() {
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-kim-charcoal mb-1.5">{t('email')}</label>
+          <label htmlFor="contact-email" className="block text-sm font-medium text-kim-charcoal mb-1.5">{t('email')}</label>
           <input
+            id="contact-email"
             {...register('email')}
             type="email"
             className={cn(
@@ -74,8 +76,9 @@ export function ContactForm() {
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-kim-charcoal mb-1.5">{t('subject')}</label>
+        <label htmlFor="contact-subject" className="block text-sm font-medium text-kim-charcoal mb-1.5">{t('subject')}</label>
         <input
+          id="contact-subject"
           {...register('subject')}
           className={cn(
             'w-full px-4 py-3 rounded-xl border bg-white text-kim-charcoal placeholder-kim-stone/50 transition-colors focus:outline-none focus:ring-2 focus:ring-kim-navy',
@@ -87,8 +90,9 @@ export function ContactForm() {
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-kim-charcoal mb-1.5">{t('message')}</label>
+        <label htmlFor="contact-message" className="block text-sm font-medium text-kim-charcoal mb-1.5">{t('message')}</label>
         <textarea
+          id="contact-message"
           {...register('message')}
           rows={5}
           className={cn(

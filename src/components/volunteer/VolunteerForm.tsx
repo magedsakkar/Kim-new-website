@@ -54,8 +54,9 @@ export function VolunteerForm() {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         {fields.map((field) => (
           <div key={field.key}>
-            <label className="block text-sm font-medium text-kim-charcoal mb-1.5">{field.label}</label>
+            <label htmlFor={`volunteer-${field.key}`} className="block text-sm font-medium text-kim-charcoal mb-1.5">{field.label}</label>
             <input
+              id={`volunteer-${field.key}`}
               {...register(field.key)}
               type={field.type}
               className={cn(
@@ -72,8 +73,9 @@ export function VolunteerForm() {
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-kim-charcoal mb-1.5">{t('motivation')}</label>
+        <label htmlFor="volunteer-motivation" className="block text-sm font-medium text-kim-charcoal mb-1.5">{t('motivation')}</label>
         <textarea
+          id="volunteer-motivation"
           {...register('motivation')}
           rows={4}
           className={cn(

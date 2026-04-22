@@ -1,6 +1,7 @@
 import { ContactForm } from '@/components/contact/ContactForm';
 import { CONTACT } from '@/lib/constants';
 import { buildMetadata } from '@/lib/metadata';
+import { getTranslations } from 'next-intl/server';
 import type { Metadata } from 'next';
 
 type Props = { params: Promise<{ locale: string }> };
@@ -82,35 +83,28 @@ function IconMapPin() {
 
 export default async function ContactPage({ params }: Props) {
   const { locale } = await params;
-  const l = locale as 'tr' | 'en' | 'ar';
-
-  const headings = {
-    tr: { eyebrow: 'İletişim', title: 'Bize Ulaşın', sub: 'Sorularınız için bizimle iletişime geçin.' },
-    en: { eyebrow: 'Contact', title: 'Get in Touch', sub: 'Contact us for any questions or inquiries.' },
-    ar: { eyebrow: 'اتصل بنا', title: 'تواصل معنا', sub: 'اتصل بنا لأي أسئلة أو استفسارات.' },
-  };
-  const h = headings[l] ?? headings.tr;
+  const t = await getTranslations({ locale, namespace: 'contact' });
 
   const infoCards = [
     {
       key: 'address',
       Icon: IconLocation,
-      labels: { tr: 'Adres', en: 'Address', ar: 'العنوان' },
-      value: { tr: CONTACT.address.tr, en: CONTACT.address.en, ar: CONTACT.address.ar },
+      label: t('address'),
+      value: t('addressValue'),
       href: CONTACT.googleMapsUrl,
     },
     {
       key: 'phone',
       Icon: IconPhone,
-      labels: { tr: 'Telefon', en: 'Phone', ar: 'الهاتف' },
-      value: { tr: CONTACT.phone, en: CONTACT.phone, ar: CONTACT.phone },
+      label: t('phone'),
+      value: CONTACT.phone,
       href: `tel:${CONTACT.phone}`,
     },
     {
       key: 'email',
       Icon: IconMail,
-      labels: { tr: 'E-posta', en: 'Email', ar: 'البريد الإلكتروني' },
-      value: { tr: CONTACT.email, en: CONTACT.email, ar: CONTACT.email },
+      label: t('email'),
+      value: CONTACT.email,
       href: `mailto:${CONTACT.email}`,
     },
   ];
@@ -120,9 +114,6 @@ export default async function ContactPage({ params }: Props) {
     { label: 'YouTube', href: CONTACT.socialMedia.youtube, Icon: IconYouTube },
     { label: 'X / Twitter', href: 'https://twitter.com/kimvakfi', Icon: IconTwitterX },
   ];
-
-  const formTitle = { tr: 'Bize Mesaj Gönderin', en: 'Send Us a Message', ar: 'أرسل لنا رسالة' };
-  const mapsLabel = { tr: "Google Maps'te aç", en: 'Open in Google Maps', ar: 'عرض على خرائط جوجل' };
 
   return (
     <div className="pt-20">
@@ -150,15 +141,15 @@ export default async function ContactPage({ params }: Props) {
             </span>
             <span className="hidden sm:block text-white/20 text-xs">—</span>
             <span className="inline-block px-4 py-1.5 rounded-full border border-[#C9973A]/30 bg-[#C9973A]/8 text-[#C9973A] text-xs font-semibold uppercase tracking-widest">
-              {h.eyebrow}
+              {t('eyebrow')}
             </span>
           </div>
 
           <div className="text-center">
             <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-5">
-              {h.title}
+              {t('title')}
             </h1>
-            <p className="text-white/55 text-lg max-w-xl mx-auto leading-relaxed">{h.sub}</p>
+            <p className="text-white/55 text-lg max-w-xl mx-auto leading-relaxed">{t('subtitle')}</p>
           </div>
         </div>
 
@@ -173,7 +164,7 @@ export default async function ContactPage({ params }: Props) {
             {/* Left column: info cards + map */}
             <div className="space-y-4">
               {/* Info cards */}
-              {infoCards.map(({ key, Icon, labels, value, href }) => (
+              {infoCards.map(({ key, Icon, label, value, href }) => (
                 <a
                   key={key}
                   href={href}
@@ -189,10 +180,10 @@ export default async function ContactPage({ params }: Props) {
                   </div>
                   <div className="min-w-0">
                     <div className="text-[#C9973A]/70 text-xs font-semibold uppercase tracking-wider mb-1">
-                      {labels[l]}
+                      {label}
                     </div>
                     <p className="text-white/85 text-sm leading-relaxed break-words">
-                      {value[l]}
+                      {value}
                     </p>
                   </div>
                 </a>
@@ -201,7 +192,7 @@ export default async function ContactPage({ params }: Props) {
               {/* Social row */}
               <div className="p-5 rounded-2xl border-l-2 border-[#C9973A]/40 bg-[#0D1728]">
                 <div className="text-[#C9973A]/70 text-xs font-semibold uppercase tracking-wider mb-4">
-                  {l === 'ar' ? 'وسائل التواصل الاجتماعي' : l === 'en' ? 'Social Media' : 'Sosyal Medya'}
+                  {t('socialMedia')}
                 </div>
                 <div className="flex items-center gap-3">
                   {socialLinks.map(({ label, href, Icon }) => (
@@ -279,7 +270,7 @@ export default async function ContactPage({ params }: Props) {
                       <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                       <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                     </svg>
-                    {{ tr: 'Tüm KİM konumları', en: 'All KİM locations', ar: 'جميع مواقع كيم' }[l]}
+                    {t('allLocations')}
                   </a>
                   <a
                     href={CONTACT.googleMapsUrl}
@@ -290,7 +281,7 @@ export default async function ContactPage({ params }: Props) {
                     <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                     </svg>
-                    {mapsLabel[l]}
+                    {t('mapsLabel')}
                   </a>
                 </div>
               </div>
@@ -299,7 +290,7 @@ export default async function ContactPage({ params }: Props) {
             {/* Right column: contact form */}
             <div className="rounded-3xl border border-white/[0.06] bg-[#0D1728] p-8 md:p-10">
               <h2 className="font-serif text-2xl md:text-3xl font-bold text-white mb-8">
-                {formTitle[l]}
+                {t('formTitle')}
               </h2>
               <ContactForm />
             </div>

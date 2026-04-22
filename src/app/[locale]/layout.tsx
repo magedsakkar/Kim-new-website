@@ -6,8 +6,39 @@ import { geistSans, playfair } from '@/lib/fonts';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { buildMetadata } from '@/lib/metadata';
+import { CONTACT } from '@/lib/constants';
 import type { Metadata } from 'next';
 import '../globals.css';
+
+const organizationJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'NGO',
+  name: 'KİM Vakfı',
+  alternateName: ['KIM Foundation', 'Cross Cultural Center', 'Kültürlerarası İletişim Merkezi'],
+  url: 'https://kim.org.tr',
+  logo: 'https://kim.org.tr/images/kim-logo.png',
+  foundingDate: '2010',
+  description: 'Cross Cultural Center building bridges of understanding between cultures in Istanbul since 2010.',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'Süleymaniye Mah. Kanuni Medresesi Sk. No:20',
+    addressLocality: 'Fatih',
+    addressRegion: 'Istanbul',
+    addressCountry: 'TR',
+  },
+  contactPoint: {
+    '@type': 'ContactPoint',
+    telephone: CONTACT.phone,
+    email: CONTACT.email,
+    contactType: 'customer service',
+    availableLanguage: ['Turkish', 'English', 'Arabic'],
+  },
+  sameAs: [
+    CONTACT.socialMedia.instagram,
+    CONTACT.socialMedia.youtube,
+    'https://twitter.com/kimvakfi',
+  ],
+};
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -48,6 +79,10 @@ export default async function LocaleLayout({ children, params }: Props) {
 
   return (
     <div className={`${geistSans.variable} ${playfair.variable}`}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+      />
       <NextIntlClientProvider locale={locale} messages={messages}>
         <Header />
         <main>{children}</main>

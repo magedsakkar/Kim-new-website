@@ -118,6 +118,10 @@
     "addressValue": "Süleymaniye Mah. Kanuni Medresesi Sk. No:20, Fatih/Istanbul",
     "phone": "Phone",
     "email": "Email",
+    "formTitle": "Send Us a Message",
+    "mapsLabel": "Open in Google Maps",
+    "socialMedia": "Social Media",
+    "allLocations": "All KİM locations",
     "form": {
       "name": "Full Name",
       "email": "Email",
