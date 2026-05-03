@@ -90,7 +90,6 @@ const WORLD_ONLY_LOCATIONS: MapLocation[] = [
   { id: 33, name: 'Tokyo Camii',                    city: 'Tokyo',     country: 'Japonya',      lat: 35.6636, lng: 139.6815, address: 'Yoyogi, Shibuya-ku, Tokyo, Japan' },
   { id: 34, name: 'Namazgah / Tiran Merkez Camii',  city: 'Tiran',     country: 'Arnavutluk',   lat: 41.3275, lng: 19.8187,  address: 'Tirana, Albania' },
   { id: 35, name: 'Emevi Camii',                    city: 'Şam',       country: 'Suriye',       lat: 33.5112, lng: 36.3073,  address: 'Al-Amine Square, Damascus, Syria' },
-  { id: 36, name: 'Halep Ulu Camii',                city: 'Halep',     country: 'Suriye',       lat: 36.1991, lng: 37.1583,  address: 'Al-Jdeide, Aleppo, Syria' },
   { id: 37, name: 'Agios Ioannis Camii',            city: 'Lefkoşa',   country: 'Kıbrıs',       lat: 35.1780, lng: 33.3610,  address: 'Nicosia (North), Cyprus' },
 ];
 

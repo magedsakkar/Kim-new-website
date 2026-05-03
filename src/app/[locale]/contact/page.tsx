@@ -9,7 +9,11 @@ type Props = { params: Promise<{ locale: string }> };
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   const titles = { tr: 'İletişim', en: 'Contact', ar: 'اتصل بنا' };
-  const descs = { tr: 'Bize ulaşın', en: 'Get in touch', ar: 'تواصل معنا' };
+  const descs = {
+    tr: "KİM Vakfı ile iletişime geçin — Süleymaniye, İstanbul. Tur rezervasyonu, gönüllülük veya İslam hakkında sorularınız için bize yazın.",
+    en: 'Contact KIM Foundation in Süleymaniye, Istanbul. Reach us for tour bookings, volunteering, or any questions about Islam and our programs.',
+    ar: 'تواصل مع مؤسسة كيم في سليمانية، إسطنبول. اكتب لنا لحجز الجولات أو التطوع أو أي أسئلة حول الإسلام وبرامجنا.',
+  };
   return buildMetadata({
     locale,
     slug: 'contact',

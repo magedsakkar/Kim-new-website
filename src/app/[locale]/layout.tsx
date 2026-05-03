@@ -5,6 +5,8 @@ import { routing } from '@/lib/i18n/routing';
 import { geistSans, playfair } from '@/lib/fonts';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
+import { CookieConsent } from '@/components/analytics/CookieConsent';
+import { GoogleAnalytics } from '@/components/analytics/GoogleAnalytics';
 import { buildMetadata } from '@/lib/metadata';
 import { CONTACT } from '@/lib/constants';
 import type { Metadata } from 'next';
@@ -80,6 +82,7 @@ export default async function LocaleLayout({ children, params }: Props) {
 
   return (
     <div className={`${geistSans.variable} ${playfair.variable}`} dir={isRtl ? 'rtl' : 'ltr'}>
+      <GoogleAnalytics />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
@@ -88,6 +91,7 @@ export default async function LocaleLayout({ children, params }: Props) {
         <Header />
         <main>{children}</main>
         <Footer />
+        <CookieConsent />
       </NextIntlClientProvider>
     </div>
   );

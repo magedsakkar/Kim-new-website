@@ -329,6 +329,35 @@ export default async function NewMuslimCareAreaPage({ params }: Props) {
         </div>
       </section>
 
+      {/* ── I Just Took Shahada CTA ──────────────────────────── */}
+      <section className="max-w-6xl mx-auto px-6 pb-8">
+        <Link
+          href="/new-muslim-care-area/took-shahada"
+          className="group relative flex flex-col sm:flex-row items-center gap-6 overflow-hidden rounded-3xl bg-gradient-to-r from-kim-navy to-kim-navy-dark ring-1 ring-white/15 hover:ring-kim-gold/40 shadow-xl hover:shadow-2xl hover:-translate-y-0.5 transition-all duration-300 p-7"
+        >
+          <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.8) 1px, transparent 1px)', backgroundSize: '22px 22px' }} />
+          <div className="absolute -top-10 -right-10 w-40 h-40 rounded-full blur-3xl opacity-15 group-hover:opacity-30 bg-kim-gold transition-opacity duration-400" />
+          <div className="relative z-10 w-16 h-16 rounded-2xl bg-kim-gold/20 border border-kim-gold/30 flex items-center justify-center shrink-0 text-3xl group-hover:scale-105 transition-transform">
+            ☪️
+          </div>
+          <div className="relative z-10 flex-1 text-center sm:text-left">
+            <div className="text-kim-gold text-xs font-bold uppercase tracking-widest mb-1">
+              {locale === 'ar' ? 'للمسلمين الجدد' : locale === 'tr' ? 'Yeni Müslümanlar İçin' : 'For New Muslims'}
+            </div>
+            <h3 className="font-serif text-xl font-bold text-white mb-1">
+              {locale === 'ar' ? 'لقد نطقت بالشهادة للتو' : locale === 'tr' ? 'Az Önce Şehadet Getirdim' : 'I Just Took My Shahada'}
+            </h3>
+            <p className="text-white/50 text-sm">
+              {locale === 'ar' ? 'دليلك التفاعلي خطوة بخطوة للأيام والأسابيع الأولى.' : locale === 'tr' ? 'İlk günler ve haftalar için adım adım etkileşimli rehberiniz.' : 'Your step-by-step interactive guide for the first days and weeks.'}
+            </p>
+          </div>
+          <div className="relative z-10 flex items-center gap-2 text-kim-gold font-semibold text-sm group-hover:gap-3 transition-all shrink-0">
+            {locale === 'ar' ? 'ابدأ الآن' : locale === 'tr' ? 'Başla' : 'Start Now'}
+            <ArrowRight className="w-4 h-4" />
+          </div>
+        </Link>
+      </section>
+
       {/* ── Global Features ───────────────────────────────────── */}
       <section className="bg-kim-navy-dark border-t border-white/5 py-16">
         <div className="max-w-6xl mx-auto px-6">
