@@ -42,10 +42,10 @@ const BANK_ACCOUNTS = [
 ];
 
 const CURRENCIES = [
-  { code: 'USD', symbol: '$', flag: '🇺🇸', name: 'US Dollar' },
-  { code: 'EUR', symbol: '€', flag: '🇪🇺', name: 'Euro' },
-  { code: 'GBP', symbol: '£', flag: '🇬🇧', name: 'British Pound' },
-  { code: 'TRY', symbol: '₺', flag: '🇹🇷', name: 'Turkish Lira' },
+  { code: 'USD', symbol: '$', flag: '🇺🇸', name: { en: 'US Dollar', tr: 'ABD Doları', ar: 'دولار أمريكي' } },
+  { code: 'EUR', symbol: '€', flag: '🇪🇺', name: { en: 'Euro', tr: 'Euro', ar: 'يورو' } },
+  { code: 'GBP', symbol: '£', flag: '🇬🇧', name: { en: 'British Pound', tr: 'İngiliz Sterlini', ar: 'جنيه إسترليني' } },
+  { code: 'TRY', symbol: '₺', flag: '🇹🇷', name: { en: 'Turkish Lira', tr: 'Türk Lirası', ar: 'ليرة تركية' } },
 ];
 
 // Exchange rates relative to USD (approximate)
@@ -111,8 +111,15 @@ const IMPACT_TIERS: ImpactTier[] = [
   },
 ];
 
-function CopyButton({ text }: { text: string }) {
+const COPY_LABELS = {
+  en: { copy: 'Copy', copied: '✓ Copied!' },
+  tr: { copy: 'Kopyala', copied: '✓ Kopyalandı!' },
+  ar: { copy: 'نسخ', copied: '✓ تم النسخ!' },
+};
+
+function CopyButton({ text, locale }: { text: string; locale: string }) {
   const [copied, setCopied] = useState(false);
+  const labels = COPY_LABELS[locale as keyof typeof COPY_LABELS] ?? COPY_LABELS.en;
   const handleCopy = async () => {
     await navigator.clipboard.writeText(text);
     setCopied(true);
@@ -123,7 +130,7 @@ function CopyButton({ text }: { text: string }) {
       onClick={handleCopy}
       className="px-3 py-1 text-xs font-medium rounded-lg bg-kim-navy-light text-kim-navy hover:bg-kim-navy hover:text-white transition-colors"
     >
-      {copied ? '✓ Copied!' : 'Copy'}
+      {copied ? labels.copied : labels.copy}
     </button>
   );
 }
@@ -193,7 +200,7 @@ export default function DonatePage() {
                     >
                       <span>{c.flag}</span>
                       <span>{c.code}</span>
-                      <span className="text-gray-400 text-xs ml-auto">{c.name}</span>
+                      <span className="text-gray-400 text-xs ml-auto">{c.name[l] ?? c.name.en}</span>
                     </button>
                   ))}
                 </div>
@@ -278,7 +285,7 @@ export default function DonatePage() {
                   <div className="flex items-center gap-3 mb-4">
                     <span className="text-3xl">{acc.flag}</span>
                     <div>
-                      <div className="font-bold text-kim-charcoal">{acc.currency} — {curr?.name}</div>
+                      <div className="font-bold text-kim-charcoal">{acc.currency} — {curr ? (curr.name[l] ?? curr.name.en) : ''}</div>
                       <div className="text-kim-stone text-sm">{acc.bank}</div>
                     </div>
                     {selectedCurrency.code === acc.currency && (
@@ -303,7 +310,7 @@ export default function DonatePage() {
                         <div className="text-xs font-medium text-kim-stone uppercase mb-1">IBAN</div>
                         <div className="font-mono text-kim-charcoal font-medium tracking-wider text-sm">{acc.iban}</div>
                       </div>
-                      <CopyButton text={acc.iban.replace(/\s/g, '')} />
+                      <CopyButton text={acc.iban.replace(/\s/g, '')} locale={l} />
                     </div>
 
                     <div className="flex items-center justify-between gap-4 bg-kim-cream rounded-xl px-4 py-3">
@@ -311,7 +318,7 @@ export default function DonatePage() {
                         <div className="text-xs font-medium text-kim-stone uppercase mb-1">SWIFT/BIC</div>
                         <div className="font-mono text-kim-charcoal font-medium tracking-wider">{acc.swift}</div>
                       </div>
-                      <CopyButton text={acc.swift} />
+                      <CopyButton text={acc.swift} locale={l} />
                     </div>
                   </div>
                 </div>
