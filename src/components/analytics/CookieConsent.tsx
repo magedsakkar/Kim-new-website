@@ -57,7 +57,7 @@ export function CookieConsent() {
 
   function enableAnalytics() {
     if (typeof window !== 'undefined' && (window as { gtag?: Function }).gtag) {
-      (window as { gtag: Function }).gtag('consent', 'update', {
+      (window as unknown as { gtag: Function }).gtag('consent', 'update', {
         analytics_storage: 'granted',
         ad_storage: 'denied',
         ad_user_data: 'denied',
