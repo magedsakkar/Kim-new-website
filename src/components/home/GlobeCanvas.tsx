@@ -106,11 +106,11 @@ export function GlobeCanvas({
       const H   = canvas.height;
       const cx  = W / 2;
       const cy  = H / 2;
-      const R   = Math.min(W, H) * 0.44;
+      const R   = Math.min(W, H) * 0.47;
 
       // Gentle ±18° drift around Istanbul, no full rotation
       if (ph === 'idle') {
-        rotRef.current = 28.964 + Math.sin(elapsed / 12000) * 18;
+        rotRef.current = 28.964 + Math.sin(elapsed / 14000) * 12;
       } else if (ph === 'aligning') {
         const diff = ((28.964 - rotRef.current + 540) % 360) - 180;
         rotRef.current = (rotRef.current + diff * 0.06) % 360;
@@ -263,14 +263,12 @@ export function GlobeCanvas({
         ctx.fill();
 
         if (ph === 'aligning') {
-          const rg = 10 * dpr, rl = 14 * dpr;
+          // Gentle pulsing ring instead of crosshair lines
+          const ringR = (12 + 4 * Math.sin(elapsed / 400)) * dpr;
           ctx.beginPath();
-          ctx.moveTo(ist.x, ist.y - rg); ctx.lineTo(ist.x, ist.y - rg - rl);
-          ctx.moveTo(ist.x, ist.y + rg); ctx.lineTo(ist.x, ist.y + rg + rl);
-          ctx.moveTo(ist.x - rg, ist.y); ctx.lineTo(ist.x - rg - rl, ist.y);
-          ctx.moveTo(ist.x + rg, ist.y); ctx.lineTo(ist.x + rg + rl, ist.y);
-          ctx.strokeStyle = 'rgba(201,151,58,0.7)';
-          ctx.lineWidth = 1.5 * dpr;
+          ctx.arc(ist.x, ist.y, ringR, 0, Math.PI * 2);
+          ctx.strokeStyle = `rgba(201,151,58,${0.4 + 0.3 * Math.sin(elapsed / 400)})`;
+          ctx.lineWidth = 1.2 * dpr;
           ctx.stroke();
         }
 

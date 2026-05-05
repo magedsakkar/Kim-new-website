@@ -172,10 +172,10 @@ export function EarthEntranceOverlay({ onDone }: { onDone: () => void }) {
           className="relative order-1 lg:order-2 flex items-center justify-center"
           style={{ transformOrigin: zoomOrigin }}
           animate={zooming
-            ? { scale: 18, filter: 'blur(55px) brightness(3)' }
+            ? { scale: 22, filter: 'blur(60px) brightness(3.5)' }
             : { scale: 1,  filter: 'blur(0)    brightness(1)' }}
           transition={zooming
-            ? { duration: 1.9, ease: [0.1, 0, 0.48, 1] as const }
+            ? { duration: 2.1, ease: [0.08, 0, 0.42, 1] as const }
             : { duration: 0 }}
         >
           {/* Responsive globe container */}

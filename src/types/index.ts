@@ -46,6 +46,7 @@ export interface Resource {
   category?: string;       // 'belief' | 'quran' | 'new-muslim' | etc.
   pages?: number;
   author?: string;
+  previewUrl?: string;
 }
 
 export interface NavItem {

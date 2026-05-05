@@ -214,75 +214,30 @@ export default async function ContactPage({ params }: Props) {
                 </div>
               </div>
 
-              {/* Map placeholder */}
-              <div className="relative rounded-2xl overflow-hidden border border-white/[0.06] bg-[#0A1422]" style={{ height: '220px' }}>
-                {/* Dark map-like background */}
-                <div className="absolute inset-0">
-                  {/* Grid lines mimicking a map grid */}
-                  <svg width="100%" height="100%" aria-hidden="true" className="absolute inset-0">
-                    <defs>
-                      <pattern id="map-grid" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
-                        <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#C9973A" strokeWidth="0.3" opacity="0.3" />
-                      </pattern>
-                    </defs>
-                    <rect width="100%" height="100%" fill="url(#map-grid)" />
-                    {/* Meridian/parallel accent lines */}
-                    <line x1="50%" y1="0" x2="50%" y2="100%" stroke="#C9973A" strokeWidth="0.5" opacity="0.15" strokeDasharray="4 8" />
-                    <line x1="0" y1="50%" x2="100%" y2="50%" stroke="#C9973A" strokeWidth="0.5" opacity="0.15" strokeDasharray="4 8" />
-                  </svg>
-                </div>
-
-                {/* Subtle radial glow at centre */}
-                <div className="absolute inset-0 bg-[radial-gradient(ellipse_50%_50%_at_50%_50%,rgba(13,92,99,0.25),transparent)] pointer-events-none" />
-
-                {/* Concentric circles (sonar pulse) */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none">
-                  {[60, 90, 120].map((r) => (
-                    <div
-                      key={r}
-                      className="absolute rounded-full border border-[#C9973A]/15"
-                      style={{
-                        width: r,
-                        height: r,
-                        top: -r / 2,
-                        left: -r / 2,
-                      }}
-                    />
-                  ))}
-                </div>
-
-                {/* Centre marker */}
-                <div className="absolute inset-0 flex flex-col items-center justify-center gap-2">
-                  <div className="w-8 h-8 rounded-full bg-[#C9973A]/20 border border-[#C9973A]/50 flex items-center justify-center">
-                    <span style={{ color: '#C9973A' }}>
-                      <IconMapPin />
-                    </span>
-                  </div>
-                  <span className="font-serif text-sm font-semibold text-white/80">
-                    Süleymaniye · İstanbul
-                  </span>
-                  <span className="text-white/35 text-xs font-mono">41°01′N 28°57′E</span>
-                </div>
-
-                {/* Bottom links */}
-                <div className="absolute bottom-3 inset-x-4 flex items-center justify-between">
-                  <a
-                    href="/library-map"
-                    className="inline-flex items-center gap-1 text-xs text-white/40 hover:text-[#C9973A] transition-colors duration-200"
-                  >
+              {/* Google Maps embed */}
+              <div className="relative rounded-2xl overflow-hidden border border-white/[0.06]" style={{ height: '260px' }}>
+                <iframe
+                  src={CONTACT.googleMapsEmbed}
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0, filter: 'grayscale(20%) invert(5%)' }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="KİM Vakfı location"
+                />
+                {/* Bottom links overlay */}
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#0A1422]/90 to-transparent px-4 py-3 flex items-center justify-between">
+                  <a href="/library-map" className="inline-flex items-center gap-1 text-xs text-white/50 hover:text-[#C9973A] transition-colors">
                     <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                       <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                     </svg>
                     {t('allLocations')}
                   </a>
-                  <a
-                    href={CONTACT.googleMapsUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 text-xs text-[#C9973A]/60 hover:text-[#C9973A] transition-colors duration-200"
-                  >
-                    <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
+                  <a href={CONTACT.googleMapsUrl} target="_blank" rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-xs text-[#C9973A]/70 hover:text-[#C9973A] transition-colors">
+                    <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                     </svg>
                     {t('mapsLabel')}
