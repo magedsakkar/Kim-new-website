@@ -121,6 +121,36 @@ export default function LibraryPage() {
         </div>
       </section>
 
+      {/* ── Language Selector Bar ─────────────────────────────── */}
+      <section className="bg-[#08101E] border-b border-white/[0.06] sticky top-[72px] z-30">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center gap-2 overflow-x-auto py-3 scrollbar-none" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+            <span className="text-white/35 text-[10px] font-bold uppercase tracking-widest shrink-0 mr-1">
+              {lb.lang}:
+            </span>
+            {LANGUAGE_OPTIONS.map((lang) => {
+              const isActive = langFilter === lang;
+              const flag = langFlag(lang);
+              const label = (lb.langLabels as Record<string, string>)[lang] ?? lang;
+              return (
+                <button
+                  key={lang}
+                  onClick={() => setLangFilter(lang)}
+                  className={`shrink-0 inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all duration-200 whitespace-nowrap ${
+                    isActive
+                      ? 'bg-kim-gold text-[#08101E] shadow-sm'
+                      : 'bg-white/8 text-white/60 border border-white/10 hover:bg-white/15 hover:text-white'
+                  }`}
+                >
+                  <span className="text-sm leading-none">{flag}</span>
+                  {label}
+                </button>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
       {/* ── Filters + Content ─────────────────────────────────── */}
       <section className="py-8 sm:py-10 bg-kim-cream">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -2,7 +2,7 @@ import { Link } from '@/lib/i18n/navigation';
 import Image from 'next/image';
 import {
   ArrowRight, ArrowUpRight, Building2, Moon, Heart, Search, BookOpen, Feather, Leaf,
-  MapPin, Smartphone, Video, Users,
+  Library, MessageCircle,
   type LucideIcon,
 } from 'lucide-react';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
@@ -32,12 +32,50 @@ const STAGE_ICONS: Record<string, LucideIcon> = {
   Live: Leaf,
 };
 
-const FEATURE_ICONS: Record<string, LucideIcon> = {
-  partnerLocations: MapPin,
-  suleymaniyeApp:   Smartphone,
-  madrasaTours:     Video,
-  volunteer:        Users,
-};
+const LEARN_MORE_CARDS = [
+  {
+    id: 'what-is-islam',
+    href: '/what-is-islam',
+    Icon: BookOpen,
+    bg: 'from-[#1C2562] to-[#141A4A]',
+    accent: '#C9973A',
+    titles: { en: 'What is Islam?', tr: 'İslam Nedir?', ar: 'ما هو الإسلام؟' },
+    descs: {
+      en: 'A 9-step guided journey through Islamic belief, worship, ethics, and the Quran.',
+      tr: 'İslam inancı, ibadet, ahlak ve Kuran üzerine 9 adımlık rehberli bir yolculuk.',
+      ar: 'رحلة إرشادية من 9 خطوات عبر العقيدة والعبادة والأخلاق والقرآن.',
+    },
+    cta: { en: 'Begin Journey', tr: 'Yolculuğu Başlat', ar: 'ابدأ الرحلة' },
+  },
+  {
+    id: 'library',
+    href: '/library',
+    Icon: Library,
+    bg: 'from-[#0D3D36] to-[#072825]',
+    accent: '#2A9D8F',
+    titles: { en: 'Digital Library', tr: 'Dijital Kütüphane', ar: 'المكتبة الرقمية' },
+    descs: {
+      en: 'Free books, brochures, and resources on Islam in 10+ languages — download instantly.',
+      tr: '10+ dilde İslam üzerine ücretsiz kitap, broşür ve kaynaklar — anında indir.',
+      ar: 'كتب ومطويات وموارد مجانية حول الإسلام بأكثر من 10 لغة — تحميل فوري.',
+    },
+    cta: { en: 'Browse Resources', tr: 'Kaynakları Gör', ar: 'تصفح الموارد' },
+  },
+  {
+    id: 'contact',
+    href: '/contact',
+    Icon: MessageCircle,
+    bg: 'from-[#3D1B0D] to-[#280F06]',
+    accent: '#F97316',
+    titles: { en: 'Talk to Someone', tr: 'Biriyle Konuş', ar: 'تحدث مع شخص' },
+    descs: {
+      en: 'Have questions? Our team in Süleymaniye is ready to meet you, answer your questions, and walk with you.',
+      tr: 'Sorularınız mı var? Süleymaniye\'deki ekibimiz sizi karşılamaya, sorularınızı yanıtlamaya hazır.',
+      ar: 'هل لديك أسئلة؟ فريقنا في سليمانية مستعد لمقابلتك والإجابة عن أسئلتك.',
+    },
+    cta: { en: 'Get in Touch', tr: 'İletişime Geç', ar: 'تواصل معنا' },
+  },
+] as const;
 
 const PATHS = [
   {
@@ -97,27 +135,14 @@ const TRANSFORMATION_STAGES = [
   },
 ];
 
-const GLOBAL_FEATURES = [
-  { id: 'partnerLocations', href: '/new-muslim-care-area/who-we-are#volunteering' },
-  { id: 'suleymaniyeApp',   href: '/new-muslim-care-area/who-we-are#tablet-app' },
-  { id: 'madrasaTours',     href: '/new-muslim-care-area/who-we-are#madrasa-tours' },
-  { id: 'volunteer',        href: '/new-muslim-care-area/who-we-are#volunteering' },
-];
-
-const WORLD_PARTNERS = [
-  { name: 'Turkish Diyanet Foundation', country: 'Turkey', flag: '🇹🇷' },
-  { name: 'Islamic Relief', country: 'UK', flag: '🇬🇧' },
-  { name: 'ISNA', country: 'USA', flag: '🇺🇸' },
-  { name: 'Al-Azhar University', country: 'Egypt', flag: '🇪🇬' },
-  { name: 'Muslim Aid', country: 'Australia', flag: '🇦🇺' },
-  { name: 'European Muslim Network', country: 'Belgium', flag: '🇧🇪' },
-  { name: 'WAMY', country: 'Saudi Arabia', flag: '🇸🇦' },
-  { name: 'IIUM', country: 'Malaysia', flag: '🇲🇾' },
-  { name: 'Deen Institute', country: 'Canada', flag: '🇨🇦' },
-  { name: 'Huda TV', country: 'Egypt', flag: '🇪🇬' },
-  { name: 'Barakah Institute', country: 'South Africa', flag: '🇿🇦' },
-  { name: 'Muslim Hands', country: 'Pakistan', flag: '🇵🇰' },
-];
+const VISITOR_REGIONS = [
+  { flag: '🌍', label: { en: 'Africa', tr: 'Afrika', ar: 'أفريقيا' } },
+  { flag: '🌎', label: { en: 'Americas', tr: 'Amerikalar', ar: 'الأمريكتان' } },
+  { flag: '🌏', label: { en: 'Asia-Pacific', tr: 'Asya-Pasifik', ar: 'آسيا-المحيط الهادئ' } },
+  { flag: '🇪🇺', label: { en: 'Europe', tr: 'Avrupa', ar: 'أوروبا' } },
+  { flag: '🕌', label: { en: 'Middle East', tr: 'Ortadoğu', ar: 'الشرق الأوسط' } },
+  { flag: '🇷🇺', label: { en: 'Central Asia', tr: 'Orta Asya', ar: 'آسيا الوسطى' } },
+] as const;
 
 const DOT_TEXTURE = {
   backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.9) 1px, transparent 1px)',
@@ -330,7 +355,7 @@ export default async function NewMuslimCareAreaPage({ params }: Props) {
       </section>
 
       {/* ── I Just Took Shahada CTA ──────────────────────────── */}
-      <section className="max-w-6xl mx-auto px-6 pb-8">
+      <section className="max-w-6xl mx-auto px-6 pb-6">
         <Link
           href="/new-muslim-care-area/took-shahada"
           className="group relative flex flex-col sm:flex-row items-center gap-6 overflow-hidden rounded-3xl bg-gradient-to-r from-kim-navy to-kim-navy-dark ring-1 ring-white/15 hover:ring-kim-gold/40 shadow-xl hover:shadow-2xl hover:-translate-y-0.5 transition-all duration-300 p-7"
@@ -358,102 +383,103 @@ export default async function NewMuslimCareAreaPage({ params }: Props) {
         </Link>
       </section>
 
-      {/* ── Global Features ───────────────────────────────────── */}
-      <section className="bg-kim-navy-dark border-t border-white/5 py-16">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-10">
-            <div className="flex items-center justify-center gap-3 mb-3">
-              <span className="h-px w-8 bg-kim-gold/50" />
-              <span className="text-kim-gold text-xs font-semibold uppercase tracking-widest">{t('globalResourcesEyebrow')}</span>
-              <span className="h-px w-8 bg-kim-gold/50" />
-            </div>
-            <h2 className="font-serif text-2xl md:text-3xl font-bold text-white">{t('globalResourcesTitle')}</h2>
+      {/* ── Learn More About Islam ────────────────────────────── */}
+      <section className="max-w-6xl mx-auto px-6 pb-16">
+        <div className="mb-7">
+          <div className="flex items-center gap-3">
+            <span className="h-px w-8 bg-kim-olive" />
+            <span className="text-kim-olive text-xs font-semibold uppercase tracking-widest">
+              {locale === 'ar' ? 'تعلم المزيد' : locale === 'tr' ? 'Daha Fazla Öğren' : 'Learn More About Islam'}
+            </span>
           </div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {GLOBAL_FEATURES.map((f) => (
+        </div>
+        <div className="grid gap-4 sm:grid-cols-3">
+          {LEARN_MORE_CARDS.map((card) => {
+            const l = (locale === 'tr' || locale === 'ar') ? locale : 'en';
+            return (
               <Link
-                key={f.id}
-                href={f.href}
-                className="group relative overflow-hidden rounded-2xl bg-white/5 ring-1 ring-white/10 hover:ring-kim-gold/30 p-5 hover:-translate-y-0.5 transition-all duration-300 shadow-sm hover:shadow-lg"
+                key={card.id}
+                href={card.href}
+                className={`group relative flex flex-col overflow-hidden rounded-2xl bg-gradient-to-br ${card.bg} ring-1 ring-white/10 hover:ring-white/20 p-6 hover:-translate-y-1 hover:shadow-xl transition-all duration-300`}
               >
-                {/* Dot texture */}
-                <div className="absolute inset-0 opacity-[0.03]" style={DOT_TEXTURE} />
-                {/* Glow on hover */}
-                <div className="absolute -top-4 -right-4 w-16 h-16 rounded-full blur-2xl opacity-0 group-hover:opacity-40 bg-kim-gold transition-opacity duration-300" />
-                {/* Bottom accent */}
-                <div className="absolute bottom-0 left-0 h-[2px] w-0 group-hover:w-full transition-all duration-500 bg-gradient-to-r from-kim-gold/60 to-transparent" />
-
-                {/* Icon */}
-                <div className="relative mb-4">
-                  <div className="absolute inset-0 blur-lg opacity-0 group-hover:opacity-50 bg-kim-gold transition-opacity duration-300 rounded-xl" />
-                  <div className="relative w-10 h-10 rounded-xl bg-white/8 border border-white/10 flex items-center justify-center group-hover:border-kim-gold/30 group-hover:bg-kim-gold/10 transition-all duration-300">
-                    {(() => {
-                      const Icon = FEATURE_ICONS[f.id];
-                      return Icon ? <Icon className="w-5 h-5 text-white/60 group-hover:text-kim-gold transition-colors" strokeWidth={1.8} /> : null;
-                    })()}
-                  </div>
+                <div className="absolute inset-0 opacity-[0.04]" style={DOT_TEXTURE} />
+                <div className="absolute -top-8 -right-8 w-28 h-28 rounded-full blur-2xl opacity-20 group-hover:opacity-35 transition-opacity" style={{ background: card.accent }} />
+                <div className="relative z-10 w-10 h-10 rounded-xl flex items-center justify-center mb-4 border" style={{ background: `${card.accent}18`, borderColor: `${card.accent}35` }}>
+                  <card.Icon className="w-5 h-5" style={{ color: card.accent }} strokeWidth={1.6} />
                 </div>
-
-                <h3 className="relative z-10 font-semibold text-white text-sm mb-1.5 group-hover:text-kim-gold transition-colors">
-                  {t(f.id + 'Title')}
-                </h3>
-                <p className="relative z-10 text-xs text-white/40 leading-relaxed mb-3">{t(f.id + 'Desc')}</p>
-                <span className="relative z-10 inline-flex items-center gap-1 text-kim-gold text-xs font-bold uppercase tracking-wider group-hover:gap-2 transition-all">
-                  {t(f.id + 'Cta')}
-                  <ArrowRight className="h-3 w-3" />
-                </span>
+                <h3 className="relative z-10 font-serif font-bold text-white mb-2 text-base">{card.titles[l]}</h3>
+                <p className="relative z-10 text-white/50 text-xs leading-relaxed flex-1">{card.descs[l]}</p>
+                <div className="relative z-10 mt-4 pt-3 border-t border-white/10 flex items-center justify-between">
+                  <span className="text-xs font-semibold" style={{ color: card.accent }}>{card.cta[l]}</span>
+                  <ArrowRight className="w-3.5 h-3.5 text-white/30 group-hover:text-white/70 group-hover:translate-x-0.5 transition-all" />
+                </div>
               </Link>
-            ))}
-          </div>
+            );
+          })}
         </div>
       </section>
 
-      {/* ── Our Partners in the World ─────────────────────────── */}
-      <section id="partners" className="bg-kim-navy py-16">
+      {/* ── Visitors From Around the World ───────────────────── */}
+      <section className="bg-kim-navy py-16">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-10">
             <div className="flex items-center justify-center gap-3 mb-3">
               <span className="h-px w-8 bg-kim-gold" />
-              <span className="text-kim-gold text-xs font-semibold uppercase tracking-widest">{t('partnersEyebrow')}</span>
+              <span className="text-kim-gold text-xs font-semibold uppercase tracking-widest">
+                {locale === 'ar' ? 'مجتمعنا العالمي' : locale === 'tr' ? 'Küresel Topluluğumuz' : 'Our Global Community'}
+              </span>
               <span className="h-px w-8 bg-kim-gold" />
             </div>
-            <h2 className="font-serif text-3xl font-bold text-white mb-3">{t('partnersTitle')}</h2>
-            <p className="text-white/60 text-sm max-w-xl mx-auto">{t('partnersSubtitle')}</p>
+            <h2 className="font-serif text-3xl font-bold text-white mb-3">
+              {locale === 'ar' ? 'زوار من كل أنحاء العالم' : locale === 'tr' ? 'Dünyanın Her Yerinden Ziyaretçiler' : "We've Welcomed Visitors From Every Corner"}
+            </h2>
+            <p className="text-white/55 text-sm max-w-xl mx-auto leading-relaxed">
+              {locale === 'ar'
+                ? 'منذ عام 2010، فتحنا أبوابنا لزوار من أكثر من 80 دولة، يتحدثون أكثر من 20 لغة، من كل القارات الست.'
+                : locale === 'tr'
+                ? '2010\'dan bu yana 80\'den fazla ülkeden, 20\'den fazla dil konuşan, 6 kıtadan gelen ziyaretçilere kapılarımızı açtık.'
+                : 'Since 2010, we have opened our doors to visitors from 80+ countries, speaking 20+ languages, from all six continents.'}
+            </p>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 mb-10">
-            {WORLD_PARTNERS.map((p) => (
-              <div key={p.name} className="group flex items-center gap-3 rounded-xl bg-white/6 border border-white/8 px-4 py-3 hover:bg-white/10 hover:border-white/15 transition-all duration-200">
-                <span className="text-2xl shrink-0">{p.flag}</span>
-                <div className="min-w-0">
-                  <div className="text-xs font-semibold text-white leading-tight truncate">{p.name}</div>
-                  <div className="text-[10px] text-white/35 mt-0.5">{p.country}</div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Stats row */}
-          <div className="border-t border-white/10 pt-8 grid grid-cols-3 gap-8 text-center">
+          {/* Stats */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-10">
             {[
-              { n: '80+', l: t('partnerCountries') },
-              { n: '40+', l: t('partnerOrganizations') },
-              { n: '6',   l: t('continents') },
-            ].map(s => (
-              <div key={s.l}>
-                <div className="font-serif text-3xl font-bold text-kim-gold">{s.n}</div>
-                <div className="text-white/40 text-xs uppercase tracking-wider mt-1">{s.l}</div>
-              </div>
-            ))}
+              { n: '80+', label: { en: 'Countries', tr: 'Ülke', ar: 'دولة' } },
+              { n: '15K+', label: { en: 'Annual Visitors', tr: 'Yıllık Ziyaretçi', ar: 'زائر سنوياً' } },
+              { n: '20+', label: { en: 'Languages', tr: 'Dil', ar: 'لغة' } },
+              { n: '6', label: { en: 'Continents', tr: 'Kıta', ar: 'قارة' } },
+            ].map((s) => {
+              const l = (locale === 'tr' || locale === 'ar') ? locale : 'en';
+              return (
+                <div key={s.n} className="relative overflow-hidden rounded-2xl bg-white/5 ring-1 ring-white/10 p-5 text-center">
+                  <div className="absolute inset-0 opacity-[0.03]" style={DOT_TEXTURE} />
+                  <div className="relative z-10 font-serif text-3xl font-bold text-kim-gold mb-1">{s.n}</div>
+                  <div className="relative z-10 text-white/45 text-xs uppercase tracking-wider">{s.label[l]}</div>
+                </div>
+              );
+            })}
           </div>
 
-          <div className="mt-8 text-center">
+          {/* Region flags row */}
+          <div className="flex flex-wrap items-center justify-center gap-3 mb-8">
+            {VISITOR_REGIONS.map((r) => {
+              const l = (locale === 'tr' || locale === 'ar') ? locale : 'en';
+              return (
+                <div key={r.label.en} className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/6 border border-white/10 text-sm">
+                  <span className="text-lg">{r.flag}</span>
+                  <span className="text-white/60 font-medium text-xs">{r.label[l]}</span>
+                </div>
+              );
+            })}
+          </div>
+
+          <div className="text-center">
             <Link
               href="/contact"
               className="inline-flex items-center gap-2 px-6 py-3 border border-kim-gold/40 text-kim-gold font-semibold rounded-xl hover:bg-kim-gold/10 transition-colors text-sm"
             >
-              {t('becomePartner')}
+              {locale === 'ar' ? 'تواصل معنا' : locale === 'tr' ? 'Bize Ulaşın' : 'Plan Your Visit'}
               <ArrowRight className="h-4 w-4" />
             </Link>
           </div>

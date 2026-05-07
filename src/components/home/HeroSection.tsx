@@ -1,13 +1,14 @@
 'use client';
 
-import { useState, useRef, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/lib/i18n/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, MapPin, ChevronLeft, ChevronRight, X } from 'lucide-react';
+import Image from 'next/image';
 
 const EASE = [0.22, 1, 0.36, 1] as const;
-const SLIDE_MS = 5500;
+const SLIDE_MS = 6000;
 
 const FADE_UP = (delay = 0) => ({
   initial:    { opacity: 0, y: 28 },
@@ -15,28 +16,47 @@ const FADE_UP = (delay = 0) => ({
   transition: { duration: 0.8, delay, ease: EASE },
 });
 
-// ── Slides: gradient background + accent colour per slide ─────────
+// ── Slides: real photos + accent colour per slide ─────────────────
 const SLIDES = [
   {
-    bg:      'linear-gradient(160deg,#0c1236 0%,#141A4A 55%,#080e2a 100%)',
-    overlay: 'linear-gradient(to right,rgba(8,14,42,0.97),rgba(8,14,42,0.72),rgba(8,14,42,0.08))',
-    orb:     'rgba(201,151,58,0.20)',
+    photo:   '/images/hero/hero-mosque-interior.jpg',
+    overlay: 'linear-gradient(to right,rgba(4,10,28,0.92) 0%,rgba(4,10,28,0.70) 50%,rgba(4,10,28,0.18) 100%)',
+    orb:     'rgba(201,151,58,0.18)',
     accent:  '#C9973A',
     shadow:  'rgba(201,151,58,0.35)',
+    label:   'Süleymaniye Mosque · Istanbul',
   },
   {
-    bg:      'linear-gradient(160deg,#051c18 0%,#0a2e28 55%,#031210 100%)',
-    overlay: 'linear-gradient(to right,rgba(5,28,24,0.97),rgba(5,28,24,0.72),rgba(5,28,24,0.08))',
-    orb:     'rgba(42,157,143,0.20)',
+    photo:   '/images/hero/hero-volunteer-talk.jpg',
+    overlay: 'linear-gradient(to right,rgba(3,18,14,0.92) 0%,rgba(3,18,14,0.70) 50%,rgba(3,18,14,0.18) 100%)',
+    orb:     'rgba(42,157,143,0.18)',
     accent:  '#2A9D8F',
     shadow:  'rgba(42,157,143,0.35)',
+    label:   'KİM Volunteers · Every Day',
   },
   {
-    bg:      'linear-gradient(160deg,#120830 0%,#1e0f4a 55%,#0a0520 100%)',
-    overlay: 'linear-gradient(to right,rgba(18,8,48,0.97),rgba(18,8,48,0.72),rgba(18,8,48,0.08))',
-    orb:     'rgba(139,92,246,0.20)',
+    photo:   '/images/hero/hero-tour-guide.webp',
+    overlay: 'linear-gradient(to right,rgba(8,6,28,0.92) 0%,rgba(8,6,28,0.70) 50%,rgba(8,6,28,0.18) 100%)',
+    orb:     'rgba(139,92,246,0.18)',
     accent:  '#8B5CF6',
     shadow:  'rgba(139,92,246,0.35)',
+    label:   'Guided Tours · Süleymaniye',
+  },
+  {
+    photo:   '/images/hero/hero-book-handoff.jpg',
+    overlay: 'linear-gradient(to right,rgba(12,6,4,0.92) 0%,rgba(12,6,4,0.70) 50%,rgba(12,6,4,0.18) 100%)',
+    orb:     'rgba(239,68,68,0.15)',
+    accent:  '#F97316',
+    shadow:  'rgba(249,115,22,0.35)',
+    label:   'Sharing Knowledge · Free Resources',
+  },
+  {
+    photo:   '/images/hero/hero-outdoor-event.jpg',
+    overlay: 'linear-gradient(to right,rgba(4,16,4,0.92) 0%,rgba(4,16,4,0.70) 50%,rgba(4,16,4,0.18) 100%)',
+    orb:     'rgba(34,197,94,0.15)',
+    accent:  '#22C55E',
+    shadow:  'rgba(34,197,94,0.30)',
+    label:   'Community Gatherings · Fatih',
   },
 ];
 
@@ -327,17 +347,28 @@ export function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden" style={{ background: '#080e2a' }}>
 
-      {/* ── Sliding background ───────────────────────────────────── */}
+      {/* Dark base (always behind photo) */}
+      <div className="absolute inset-0" style={{ background: '#080e2a' }} />
+
+      {/* ── Sliding photo background ─────────────────────────────── */}
       <AnimatePresence mode="wait">
         <motion.div
-          key={`bg-${slide}`}
+          key={`photo-${slide}`}
           className="absolute inset-0"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          initial={{ opacity: 0, scale: 1.04 }}
+          animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 1.4, ease: 'easeInOut' }}
-          style={{ background: cur.bg }}
-        />
+          transition={{ duration: 1.6, ease: 'easeInOut' }}
+        >
+          <Image
+            src={cur.photo}
+            alt=""
+            fill
+            className="object-cover object-center"
+            priority={slide === 0}
+            sizes="100vw"
+          />
+        </motion.div>
       </AnimatePresence>
 
       {/* Left-side text overlay */}
@@ -351,6 +382,20 @@ export function HeroSection() {
           transition={{ duration: 1.4 }}
           style={{ background: cur.overlay }}
         />
+      </AnimatePresence>
+
+      {/* Photo credit label */}
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={`label-${slide}`}
+          className="absolute bottom-16 right-4 z-20 pointer-events-none"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+        >
+          <span className="text-[10px] text-white/28 font-mono tracking-widest">{cur.label}</span>
+        </motion.div>
       </AnimatePresence>
 
       {/* Top + bottom vignette */}

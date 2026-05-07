@@ -1,6 +1,6 @@
 import { Link } from '@/lib/i18n/navigation';
 import { buildMetadata } from '@/lib/metadata';
-import { Globe, Users, GraduationCap, Check, ArrowRight, MessageCircle } from 'lucide-react';
+import { Globe, Users, GraduationCap, Check, ArrowRight, MessageCircle, MapPin, Smartphone, Video } from 'lucide-react';
 import type { Metadata } from 'next';
 
 type Props = { params: Promise<{ locale: string }> };
@@ -248,6 +248,69 @@ export default async function ProgramsPage({ params }: Props) {
                 </div>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Resources & Access ── */}
+      <section className="py-20 bg-[#0B1628]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <span className="inline-block px-4 py-1.5 rounded-full border border-[#C9973A]/30 bg-[#C9973A]/8 text-[#C9973A] text-xs font-semibold uppercase tracking-widest mb-4">
+              {l === 'ar' ? 'الموارد والوصول' : l === 'tr' ? 'Kaynaklar ve Erişim' : 'Resources & Access'}
+            </span>
+            <h2 className="font-serif text-3xl md:text-4xl font-bold text-white">
+              {l === 'ar' ? 'الموارد العالمية' : l === 'tr' ? 'Global Kaynaklar' : 'Global Resources'}
+            </h2>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {[
+              {
+                Icon: MapPin,
+                href: '/new-muslim-care-area/who-we-are',
+                titles: { en: 'Partner Locations', tr: 'Ortak Lokasyonlar', ar: 'المواقع الشريكة' },
+                descs: { en: 'We have active partnerships in over 80 countries. Connect with an Islamic centre near you.', tr: '80\'den fazla ülkede aktif ortaklıklarımız var. Size yakın bir İslam merkeziyle bağlantı kurun.', ar: 'لدينا شراكات نشطة في أكثر من 80 دولة. تواصل مع مركز إسلامي قريب منك.' },
+                cta: { en: 'Find a Partner', tr: 'Ortak Bul', ar: 'ابحث عن شريك' },
+              },
+              {
+                Icon: Smartphone,
+                href: '/new-muslim-care-area/who-we-are',
+                titles: { en: 'Süleymaniye App', tr: 'Süleymaniye Uygulaması', ar: 'تطبيق السليمانية' },
+                descs: { en: 'Our interactive mosque tablet app gives visitors an immersive, multilingual digital experience.', tr: 'İnteraktif cami tablet uygulamamız ziyaretçilere çok dilli dijital bir deneyim sunar.', ar: 'يمنح تطبيق اللوحي للمسجد الزوارَ تجربة رقمية غامرة متعددة اللغات.' },
+                cta: { en: 'Learn More', tr: 'Daha Fazla', ar: 'اعرف المزيد' },
+              },
+              {
+                Icon: Video,
+                href: '/new-muslim-care-area/who-we-are',
+                titles: { en: 'Madrasa Media Tours', tr: 'Medrese Medya Turları', ar: 'جولات مدرسة الإعلام' },
+                descs: { en: 'Documentary-style tours of the Süleymaniye complex, filmed and shared globally online.', tr: 'Süleymaniye külliyesinin belgesel tarzı turları, küresel olarak çevrimiçi paylaşılır.', ar: 'جولات على غرار الوثائقي لمجمع السليمانية، تُصوَّر وتُشارَك عالمياً عبر الإنترنت.' },
+                cta: { en: 'Watch Tour', tr: 'Turu İzle', ar: 'شاهد الجولة' },
+              },
+              {
+                Icon: Users,
+                href: '/volunteer',
+                titles: { en: 'Volunteer', tr: 'Gönüllü', ar: 'تطوع' },
+                descs: { en: 'Join our team of 100+ active volunteers and serve visitors from around the world every week.', tr: '100\'den fazla aktif gönüllüden oluşan ekibimize katılın ve her hafta dünya genelinden gelen ziyaretçilere hizmet edin.', ar: 'انضم إلى فريقنا المكون من 100+ متطوع نشط وخدّم الزوار من جميع أنحاء العالم.' },
+                cta: { en: 'Volunteer Now', tr: 'Gönüllü Ol', ar: 'تطوع الآن' },
+              },
+            ].map(({ Icon, href, titles, descs, cta }) => (
+              <Link
+                key={href + titles.en}
+                href={href}
+                className="group relative overflow-hidden rounded-2xl bg-white/5 ring-1 ring-white/10 hover:ring-[#C9973A]/30 p-6 hover:-translate-y-0.5 transition-all duration-300 shadow-sm hover:shadow-lg flex flex-col"
+              >
+                <div className="absolute -top-4 -right-4 w-16 h-16 rounded-full blur-2xl opacity-0 group-hover:opacity-40 bg-[#C9973A] transition-opacity duration-300" />
+                <div className="absolute bottom-0 left-0 h-[2px] w-0 group-hover:w-full transition-all duration-500 bg-gradient-to-r from-[#C9973A]/60 to-transparent" />
+                <div className="w-10 h-10 rounded-xl bg-white/8 border border-white/10 flex items-center justify-center mb-4 group-hover:border-[#C9973A]/30 group-hover:bg-[#C9973A]/10 transition-all duration-300">
+                  <Icon className="w-5 h-5 text-white/60 group-hover:text-[#C9973A] transition-colors" strokeWidth={1.8} />
+                </div>
+                <h3 className="font-semibold text-white text-sm mb-1.5 group-hover:text-[#C9973A] transition-colors">{titles[l]}</h3>
+                <p className="text-xs text-white/40 leading-relaxed mb-4 flex-1">{descs[l]}</p>
+                <span className="inline-flex items-center gap-1 text-[#C9973A] text-xs font-bold uppercase tracking-wider group-hover:gap-2 transition-all">
+                  {cta[l]} <ArrowRight className="h-3 w-3" />
+                </span>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
