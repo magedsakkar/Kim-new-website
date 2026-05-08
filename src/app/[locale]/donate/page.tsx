@@ -5,6 +5,7 @@ import { useLocale } from 'next-intl';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { motion } from 'framer-motion';
 import { Check, ChevronDown, BookOpen, Users, Coffee, Utensils, Globe, Heart, Building2 } from 'lucide-react';
+import { CONTACT } from '@/lib/constants';
 
 const BANK_ACCOUNTS = [
   {
@@ -342,10 +343,10 @@ export default function DonatePage() {
 
           <p className="text-center text-kim-stone text-sm mt-8">
             {l === 'ar'
-              ? 'للاستفسارات حول التبرع، تواصل معنا على info@crossculturalcenter.org'
+              ? <>للاستفسارات حول التبرع، تواصل معنا على <a href={`mailto:${CONTACT.email}`} className="text-kim-navy hover:underline">{CONTACT.email}</a></>
               : l === 'en'
-              ? 'For donation inquiries, contact us at info@crossculturalcenter.org'
-              : 'Bağış hakkında sorularınız için info@crossculturalcenter.org adresine ulaşın.'}
+              ? <>For donation inquiries, contact us at <a href={`mailto:${CONTACT.email}`} className="text-kim-navy hover:underline">{CONTACT.email}</a></>
+              : <>Bağış hakkında sorularınız için <a href={`mailto:${CONTACT.email}`} className="text-kim-navy hover:underline">{CONTACT.email}</a> adresine ulaşın.</>}
           </p>
         </div>
       </section>

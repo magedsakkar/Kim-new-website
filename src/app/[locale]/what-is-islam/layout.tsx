@@ -1,6 +1,7 @@
 'use client';
 
 import { usePathname } from '@/lib/i18n/navigation';
+import { useLocale } from 'next-intl';
 import { globalLinks } from '@/data/what-is-islam';
 import { JourneyNav } from '@/components/what-is-islam/JourneyNav';
 import { FloatingActions } from '@/components/what-is-islam/FloatingActions';
@@ -8,8 +9,16 @@ import { MobileSidebarToggle } from '@/components/what-is-islam/MobileSidebarTog
 import { Link } from '@/lib/i18n/navigation';
 import Image from 'next/image';
 
+const UI = {
+  en: { newMuslim: 'New Muslim Care Area', whatIsIslam: 'What is Islam', journey: 'Educational Journey', tagline: 'Follow at your own pace. Each step deepens your understanding.', begin: 'Begin Journey' },
+  tr: { newMuslim: 'Yeni Müslüman Rehberi', whatIsIslam: 'İslam Nedir', journey: 'Eğitim Yolculuğu', tagline: 'Kendi hızınızda ilerleyin. Her adım anlayışınızı derinleştirir.', begin: 'Yolculuğa Başla' },
+  ar: { newMuslim: 'رعاية المسلم الجديد', whatIsIslam: 'ما هو الإسلام', journey: 'رحلة تعليمية', tagline: 'تابع بوتيرتك الخاصة. كل خطوة تعمّق فهمك.', begin: 'ابدأ الرحلة' },
+} as const;
+
 export default function WhatIsIslamLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
+  const locale   = useLocale();
+  const ui       = UI[(locale in UI ? locale : 'en') as keyof typeof UI];
 
   // Hub page — full-screen immersive design, no sidebar
   if (pathname === '/what-is-islam') {
@@ -37,10 +46,10 @@ export default function WhatIsIslamLayout({ children }: { children: React.ReactN
             </Link>
             <span className="text-white/30 select-none">/</span>
             <Link href="/new-muslim-care-area" className="text-xs text-white/50 hover:text-white/80 transition-colors">
-              New Muslim Care Area
+              {ui.newMuslim}
             </Link>
             <span className="text-white/30 select-none">/</span>
-            <span className="text-sm font-semibold text-kim-olive">What is Islam</span>
+            <span className="text-sm font-semibold text-kim-olive">{ui.whatIsIslam}</span>
           </div>
 
           <div className="flex items-center gap-2">
@@ -61,7 +70,7 @@ export default function WhatIsIslamLayout({ children }: { children: React.ReactN
               className="inline-flex items-center gap-1.5 rounded-full bg-kim-olive px-4 py-1.5 text-xs font-semibold text-white hover:bg-kim-olive/80 transition-colors"
             >
               <span>🌙</span>
-              <span className="hidden sm:inline">Begin Journey</span>
+              <span className="hidden sm:inline">{ui.begin}</span>
             </Link>
           </div>
         </div>
@@ -76,10 +85,10 @@ export default function WhatIsIslamLayout({ children }: { children: React.ReactN
             <div className="rounded-2xl bg-kim-navy shadow-xl overflow-hidden">
               <div className="px-4 pt-5 pb-4 border-b border-white/10">
                 <p className="text-[9px] font-bold uppercase tracking-widest text-white/40 mb-1">
-                  Educational Journey
+                  {ui.journey}
                 </p>
                 <h2 className="font-serif text-base font-bold text-white leading-tight">
-                  What is Islam?
+                  {ui.whatIsIslam}
                 </h2>
               </div>
               <div className="px-3 py-4">
@@ -87,7 +96,7 @@ export default function WhatIsIslamLayout({ children }: { children: React.ReactN
               </div>
               <div className="px-4 py-3 border-t border-white/10 bg-white/5">
                 <p className="text-[10px] text-white/40 leading-relaxed">
-                  Follow at your own pace. Each step deepens your understanding.
+                  {ui.tagline}
                 </p>
               </div>
             </div>

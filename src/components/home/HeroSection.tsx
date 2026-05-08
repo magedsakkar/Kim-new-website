@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import { Link } from '@/lib/i18n/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, MapPin, ChevronLeft, ChevronRight, X } from 'lucide-react';
@@ -216,43 +216,41 @@ function LocationsCard() {
           </div>
         </div>
 
-        {/* 2×2 thumbnail grid */}
-        <div className="absolute inset-0 pt-10 pb-4 px-4">
-          <div className="grid grid-cols-2 gap-2.5 h-full">
-            {LOCATIONS.map((loc) => (
-              <motion.button
-                key={loc.id}
-                onClick={() => setExpanded(loc.id)}
-                whileHover={{ scale: 1.045 }}
-                whileTap={{ scale: 0.97 }}
-                transition={{ duration: 0.15 }}
-                className="relative rounded-2xl overflow-hidden cursor-pointer group focus:outline-none"
+        {/* Location list */}
+        <div className="absolute inset-0 pt-12 pb-4 px-4 flex flex-col justify-center gap-2">
+          {LOCATIONS.map((loc, i) => (
+            <motion.button
+              key={loc.id}
+              onClick={() => setExpanded(loc.id)}
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: i * 0.08, duration: 0.4, ease: EASE }}
+              whileHover={{ x: 4 }}
+              whileTap={{ scale: 0.98 }}
+              className="group flex items-center gap-3 px-3 py-2.5 rounded-2xl text-left transition-all duration-200 hover:bg-white/8 border border-transparent hover:border-white/12 focus:outline-none"
+              aria-label={`View ${loc.fullName}`}
+            >
+              {/* Colour swatch */}
+              <div
+                className="w-9 h-9 rounded-xl flex items-center justify-center shrink-0 text-xl select-none"
                 style={{ background: loc.bg }}
-                aria-label={`View ${loc.fullName}`}
               >
-                {/* Inner glow on hover */}
-                <motion.div
-                  className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                  style={{ background: `radial-gradient(circle at 50% 40%,${loc.glow} 0%,transparent 70%)` }}
-                />
-                {/* Text fade at bottom */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent" />
-                {/* Center emoji */}
-                <div className="absolute inset-0 flex items-center justify-center pb-3">
-                  <span className="text-3xl select-none opacity-55 group-hover:opacity-90 transition-opacity duration-200">
-                    {loc.emoji}
-                  </span>
-                </div>
-                {/* Labels */}
-                <div className="absolute bottom-0 left-0 right-0 p-2.5">
-                  <p className="text-white text-[11px] font-bold leading-tight">{loc.name}</p>
-                  <p className="text-white/45 text-[8px] leading-tight mt-0.5">{loc.tag}</p>
-                </div>
-                {/* Hover border */}
-                <div className="absolute inset-0 rounded-2xl border border-transparent group-hover:border-white/20 transition-all duration-200" />
-              </motion.button>
-            ))}
-          </div>
+                {loc.emoji}
+              </div>
+              {/* Text */}
+              <div className="flex-1 min-w-0">
+                <p className="text-white text-sm font-bold leading-tight">{loc.fullName}</p>
+                <p className="text-white/40 text-[10px] leading-tight mt-0.5 truncate">{loc.subtitle}</p>
+              </div>
+              {/* Tag pill */}
+              <span
+                className="shrink-0 text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full"
+                style={{ background: loc.glow.replace('0.28', '0.35'), color: 'rgba(255,255,255,0.72)' }}
+              >
+                {loc.tag}
+              </span>
+            </motion.button>
+          ))}
         </div>
 
         {/* ── Expanded location overlay ─────────────────────────── */}
@@ -329,6 +327,8 @@ function LocationsCard() {
 // ─────────────────────────────────────────────────────────────────
 export function HeroSection() {
   const t         = useTranslations('hero');
+  const locale    = useLocale();
+  const isRtl     = locale === 'ar' || locale === 'fa';
   const [slide, setSlide]       = useState(0);
   const [timerKey, setTimerKey] = useState(0);
   const cur = SLIDES[slide];
@@ -351,14 +351,14 @@ export function HeroSection() {
       <div className="absolute inset-0" style={{ background: '#080e2a' }} />
 
       {/* ── Sliding photo background ─────────────────────────────── */}
-      <AnimatePresence mode="wait">
+      <AnimatePresence mode="sync">
         <motion.div
           key={`photo-${slide}`}
           className="absolute inset-0"
-          initial={{ opacity: 0, scale: 1.04 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 1.6, ease: 'easeInOut' }}
+          initial={{ opacity: 0, scale: 1.06, filter: 'blur(8px)' }}
+          animate={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
+          exit={{ opacity: 0, scale: 0.98, filter: 'blur(4px)' }}
+          transition={{ duration: 1.8, ease: [0.25, 0.1, 0.25, 1] }}
         >
           <Image
             src={cur.photo}
@@ -418,11 +418,6 @@ export function HeroSection() {
         />
       </AnimatePresence>
 
-      {/* Dot grid */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{ opacity: 0.04, backgroundImage: 'radial-gradient(circle,rgba(255,255,255,0.9) 1px,transparent 1px)', backgroundSize: '28px 28px' }}
-      />
 
       {/* ── Main content grid ────────────────────────────────────── */}
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-28">
@@ -524,14 +519,14 @@ export function HeroSection() {
       {/* ── Slider controls ──────────────────────────────────────── */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex items-center gap-3">
         <motion.button
-          onClick={() => goTo(slide - 1)}
+          onClick={() => goTo(isRtl ? slide + 1 : slide - 1)}
           whileHover={{ scale: 1.15 }}
           whileTap={{ scale: 0.9 }}
           className="w-7 h-7 rounded-full flex items-center justify-center"
           style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.18)' }}
           aria-label="Previous slide"
         >
-          <ChevronLeft className="w-3.5 h-3.5 text-white/55" />
+          {isRtl ? <ChevronRight className="w-3.5 h-3.5 text-white/55" /> : <ChevronLeft className="w-3.5 h-3.5 text-white/55" />}
         </motion.button>
 
         {SLIDES.map((s, i) => (
@@ -539,10 +534,11 @@ export function HeroSection() {
             key={i}
             onClick={() => goTo(i)}
             aria-label={`Slide ${i + 1}`}
+            aria-current={i === slide ? 'true' : undefined}
             className="relative overflow-hidden rounded-full"
-            animate={{ width: i === slide ? 30 : 10 }}
-            transition={{ duration: 0.3 }}
-            style={{ height: 6, background: i === slide ? s.accent : 'rgba(255,255,255,0.22)' }}
+            animate={{ width: i === slide ? 28 : 8 }}
+            transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+            style={{ height: 5, background: i === slide ? s.accent : 'rgba(255,255,255,0.20)' }}
           >
             {i === slide && (
               <motion.span
@@ -551,21 +547,21 @@ export function HeroSection() {
                 initial={{ width: '0%' }}
                 animate={{ width: '100%' }}
                 transition={{ duration: SLIDE_MS / 1000, ease: 'linear' }}
-                style={{ background: 'rgba(255,255,255,0.38)' }}
+                style={{ background: 'rgba(255,255,255,0.45)' }}
               />
             )}
           </motion.button>
         ))}
 
         <motion.button
-          onClick={() => goTo(slide + 1)}
+          onClick={() => goTo(isRtl ? slide - 1 : slide + 1)}
           whileHover={{ scale: 1.15 }}
           whileTap={{ scale: 0.9 }}
           className="w-7 h-7 rounded-full flex items-center justify-center"
           style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.18)' }}
           aria-label="Next slide"
         >
-          <ChevronRight className="w-3.5 h-3.5 text-white/55" />
+          {isRtl ? <ChevronLeft className="w-3.5 h-3.5 text-white/55" /> : <ChevronRight className="w-3.5 h-3.5 text-white/55" />}
         </motion.button>
       </div>
 
