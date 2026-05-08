@@ -411,21 +411,34 @@ function RichText({ text }: { text: string }) {
   );
 }
 
+const LS_KEY = 'kim_shahada_completed';
+
 // ── Page component ───────────────────────────────────────────────────────────
 export default function TookShahadaPage() {
   const locale = useLocale();
-  const l = locale as 'tr' | 'en' | 'ar';
+  const l = (locale in { tr: 1, en: 1, ar: 1 } ? locale : 'en') as 'tr' | 'en' | 'ar';
   const isRtl = l === 'ar';
 
   const [currentStep, setCurrentStep] = useState(0);
-  const [completed, setCompleted] = useState<Set<number>>(new Set());
+  const [completed, setCompleted] = useState<Set<number>>(() => {
+    try {
+      const stored = localStorage.getItem(LS_KEY);
+      return stored ? new Set<number>(JSON.parse(stored)) : new Set<number>();
+    } catch {
+      return new Set<number>();
+    }
+  });
 
   const step = STEPS[currentStep];
   const Icon = step.icon;
   const totalSteps = STEPS.length;
 
   function markComplete(idx: number) {
-    setCompleted((prev) => new Set(prev).add(idx));
+    setCompleted((prev) => {
+      const next = new Set(prev).add(idx);
+      try { localStorage.setItem(LS_KEY, JSON.stringify([...next])); } catch { /* ignore */ }
+      return next;
+    });
   }
 
   function goNext() {
@@ -488,10 +501,11 @@ export default function TookShahadaPage() {
               <button
                 key={s.id}
                 onClick={() => setCurrentStep(i)}
+                aria-label={s.title[l] || s.title.en}
+                aria-current={isCurrent ? 'step' : undefined}
                 className={`group relative flex-1 h-1.5 rounded-full transition-all duration-300 ${
                   isDone ? 'bg-kim-gold' : isCurrent ? 'bg-white/60' : 'bg-white/15'
                 }`}
-                title={s.title[l] || s.title.en}
               />
             );
           })}

@@ -1,9 +1,21 @@
 import Script from 'next/script';
 
+declare global {
+  interface Window {
+    gtag: (...args: unknown[]) => void;
+    dataLayer: unknown[];
+  }
+}
+
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
 
 export function GoogleAnalytics() {
-  if (!GA_ID) return null;
+  if (!GA_ID) {
+    if (process.env.NODE_ENV === 'development') {
+      console.warn('[GoogleAnalytics] NEXT_PUBLIC_GA_ID is not set — analytics disabled.');
+    }
+    return null;
+  }
 
   return (
     <>

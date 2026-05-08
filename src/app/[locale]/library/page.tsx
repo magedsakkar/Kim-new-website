@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useLocale } from 'next-intl';
 import { motion, AnimatePresence } from 'framer-motion';
 import { libraryResources } from '@/data/library';
@@ -8,7 +8,7 @@ import type { Resource } from '@/types';
 import { Link } from '@/lib/i18n/navigation';
 import {
   Search, LayoutGrid, Mail, X, List, SlidersHorizontal,
-  Globe, ChevronDown,
+  Globe, ChevronDown, Check,
 } from 'lucide-react';
 import {
   L, TYPES, LANGUAGE_OPTIONS, CATEGORIES,
@@ -31,11 +31,24 @@ export default function LibraryPage() {
   const [langFilter,  setLangFilter]  = useState<string>('All');
   const [view,        setView]        = useState<'grid' | 'list'>('grid');
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [langOpen,    setLangOpen]    = useState(false);
   const [page,        setPage]        = useState(1);
   const [previewResource, setPreviewResource] = useState<Resource | null>(null);
+  const langDropdownRef = useRef<HTMLDivElement>(null);
 
   // Reset to page 1 whenever filters change
   useEffect(() => setPage(1), [typeFilter, catFilter, langFilter, search]);
+
+  // Close language dropdown on outside click
+  useEffect(() => {
+    function handleClickOutside(e: MouseEvent) {
+      if (langDropdownRef.current && !langDropdownRef.current.contains(e.target as Node)) {
+        setLangOpen(false);
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
 
   const filtered = libraryResources.filter((r) => {
     if (typeFilter !== 'all' && r.type !== typeFilter) return false;
@@ -121,36 +134,6 @@ export default function LibraryPage() {
         </div>
       </section>
 
-      {/* ── Language Selector Bar ─────────────────────────────── */}
-      <section className="bg-[#08101E] border-b border-white/[0.06] sticky top-[72px] z-30">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-2 overflow-x-auto py-3 scrollbar-none" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
-            <span className="text-white/35 text-[10px] font-bold uppercase tracking-widest shrink-0 mr-1">
-              {lb.lang}:
-            </span>
-            {LANGUAGE_OPTIONS.map((lang) => {
-              const isActive = langFilter === lang;
-              const flag = langFlag(lang);
-              const label = (lb.langLabels as Record<string, string>)[lang] ?? lang;
-              return (
-                <button
-                  key={lang}
-                  onClick={() => setLangFilter(lang)}
-                  className={`shrink-0 inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all duration-200 whitespace-nowrap ${
-                    isActive
-                      ? 'bg-kim-gold text-[#08101E] shadow-sm'
-                      : 'bg-white/8 text-white/60 border border-white/10 hover:bg-white/15 hover:text-white'
-                  }`}
-                >
-                  <span className="text-sm leading-none">{flag}</span>
-                  {label}
-                </button>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
       {/* ── Filters + Content ─────────────────────────────────── */}
       <section className="py-8 sm:py-10 bg-kim-cream">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -230,14 +213,56 @@ export default function LibraryPage() {
                 {/* Language */}
                 <div>
                   <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-kim-stone/60 mb-2.5">{lb.lang}</p>
-                  <div className="flex flex-wrap gap-1.5">
-                    {LANGUAGE_OPTIONS.map((lang) => (
-                      <button key={lang} onClick={() => setLangFilter(lang)}
-                        className={`px-2 py-1.5 rounded-lg text-xs font-medium transition-all ${langFilter === lang ? 'bg-kim-navy text-white shadow-sm' : 'bg-white border border-gray-100 text-kim-stone hover:bg-kim-navy-light hover:text-kim-navy'}`}
-                      >
-                        {langFlag(lang)} {(lb.langLabels as Record<string, string>)[lang] ?? lang}
-                      </button>
-                    ))}
+                  <div ref={langDropdownRef} className="relative">
+                    <button
+                      onClick={() => setLangOpen((v) => !v)}
+                      onKeyDown={(e) => e.key === 'Escape' && setLangOpen(false)}
+                      aria-haspopup="listbox"
+                      aria-expanded={langOpen}
+                      className="w-full flex items-center justify-between gap-2 px-3 py-2.5 rounded-xl bg-white border border-gray-100 text-sm font-medium text-kim-charcoal hover:border-kim-navy/40 transition-colors shadow-sm"
+                    >
+                      <span className="flex items-center gap-2">
+                        <span className="text-base leading-none">{langFilter === 'All' ? '🌐' : langFlag(langFilter)}</span>
+                        <span>{(lb.langLabels as Record<string, string>)[langFilter] ?? langFilter}</span>
+                      </span>
+                      <ChevronDown className={`w-3.5 h-3.5 text-gray-400 shrink-0 transition-transform ${langOpen ? 'rotate-180' : ''}`} />
+                    </button>
+
+                    <AnimatePresence>
+                      {langOpen && (
+                        <motion.ul
+                          role="listbox"
+                          aria-label={lb.lang}
+                          initial={{ opacity: 0, y: -4 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: -4 }}
+                          transition={{ duration: 0.15 }}
+                          className="absolute left-0 right-0 top-full mt-1 bg-white border border-gray-100 rounded-xl shadow-lg z-20 overflow-hidden max-h-64 overflow-y-auto"
+                        >
+                          {LANGUAGE_OPTIONS.map((lang) => {
+                            const isActive = langFilter === lang;
+                            const label = (lb.langLabels as Record<string, string>)[lang] ?? lang;
+                            const flag = lang === 'All' ? '🌐' : langFlag(lang);
+                            return (
+                              <li key={lang} role="option" aria-selected={isActive}>
+                                <button
+                                  onClick={() => { setLangFilter(lang); setLangOpen(false); }}
+                                  className={`w-full flex items-center gap-2.5 px-3 py-2 text-sm transition-colors ${
+                                    isActive
+                                      ? 'bg-kim-navy text-white font-semibold'
+                                      : 'text-kim-charcoal hover:bg-kim-navy-light hover:text-kim-navy'
+                                  }`}
+                                >
+                                  <span className="text-sm leading-none w-5 text-center">{flag}</span>
+                                  <span className="flex-1 text-left">{label}</span>
+                                  {isActive && <Check className="w-3.5 h-3.5 shrink-0" />}
+                                </button>
+                              </li>
+                            );
+                          })}
+                        </motion.ul>
+                      )}
+                    </AnimatePresence>
                   </div>
                 </div>
 
