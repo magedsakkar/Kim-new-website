@@ -5,7 +5,7 @@ export const SITE_DESCRIPTION_TR = 'Kültürlerarası anlayış ve diyalog için
 export const SITE_DESCRIPTION_EN = 'Building bridges and connecting hearts for cross-cultural understanding and dialogue.';
 
 export const CONTACT = {
-  email: 'info@crossculturalcenter.org',
+  email: process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? 'info@crossculturalcenter.org',
   phone: '+90 553 787 18 46',
   address: {
     tr: 'Süleymaniye Mah. Kanuni Medresesi Sk. No:20, Fatih/İstanbul',

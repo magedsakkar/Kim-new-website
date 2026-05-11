@@ -5,6 +5,7 @@ import { useLocale } from 'next-intl';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { motion } from 'framer-motion';
 import { Check, ChevronDown, BookOpen, Users, Coffee, Utensils, Globe, Heart, Building2 } from 'lucide-react';
+import { CONTACT } from '@/lib/constants';
 
 const BANK_ACCOUNTS = [
   {
@@ -121,23 +122,28 @@ function CopyButton({ text, locale }: { text: string; locale: string }) {
   const [copied, setCopied] = useState(false);
   const labels = COPY_LABELS[locale as keyof typeof COPY_LABELS] ?? COPY_LABELS.en;
   const handleCopy = async () => {
-    await navigator.clipboard.writeText(text);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
+    try {
+      await navigator.clipboard.writeText(text);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch {
+      // Clipboard access denied or unavailable — silently ignore
+    }
   };
   return (
     <button
       onClick={handleCopy}
+      aria-label={copied ? labels.copied : labels.copy}
       className="px-3 py-1 text-xs font-medium rounded-lg bg-kim-navy-light text-kim-navy hover:bg-kim-navy hover:text-white transition-colors"
     >
-      {copied ? labels.copied : labels.copy}
+      <span role="status" aria-live="polite">{copied ? labels.copied : labels.copy}</span>
     </button>
   );
 }
 
 export default function DonatePage() {
   const locale = useLocale();
-  const l = locale as 'tr' | 'en' | 'ar';
+  const l = (locale in { tr: 1, en: 1, ar: 1 } ? locale : 'en') as 'tr' | 'en' | 'ar';
 
   const [selectedCurrency, setSelectedCurrency] = useState(CURRENCIES[0]);
   const [selectedAmount, setSelectedAmount] = useState<number | null>(null);
@@ -184,6 +190,10 @@ export default function DonatePage() {
             <div className="relative">
               <button
                 onClick={() => setCurrencyOpen((v) => !v)}
+                onKeyDown={(e) => e.key === 'Escape' && setCurrencyOpen(false)}
+                aria-haspopup="listbox"
+                aria-expanded={currencyOpen}
+                aria-label={`Currency: ${selectedCurrency.code}`}
                 className="flex items-center gap-2 px-4 py-2.5 bg-white border border-gray-200 rounded-xl shadow-sm text-sm font-medium text-kim-charcoal hover:border-kim-navy transition-colors"
               >
                 <span>{selectedCurrency.flag}</span>
@@ -191,19 +201,24 @@ export default function DonatePage() {
                 <ChevronDown className={`w-4 h-4 text-gray-400 transition-transform ${currencyOpen ? 'rotate-180' : ''}`} />
               </button>
               {currencyOpen && (
-                <div className="absolute right-0 top-full mt-1 bg-white border border-gray-100 rounded-xl shadow-lg z-20 min-w-[160px] overflow-hidden">
+                <ul
+                  role="listbox"
+                  aria-label="Select currency"
+                  className="absolute right-0 top-full mt-1 bg-white border border-gray-100 rounded-xl shadow-lg z-20 min-w-[160px] overflow-hidden"
+                >
                   {CURRENCIES.map((c) => (
-                    <button
-                      key={c.code}
-                      onClick={() => { setSelectedCurrency(c); setCurrencyOpen(false); }}
-                      className={`w-full flex items-center gap-2.5 px-4 py-2.5 text-sm hover:bg-kim-navy-light transition-colors ${c.code === selectedCurrency.code ? 'bg-kim-navy-light text-kim-navy font-semibold' : 'text-kim-charcoal'}`}
-                    >
-                      <span>{c.flag}</span>
-                      <span>{c.code}</span>
-                      <span className="text-gray-400 text-xs ml-auto">{c.name[l] ?? c.name.en}</span>
-                    </button>
+                    <li key={c.code} role="option" aria-selected={c.code === selectedCurrency.code}>
+                      <button
+                        onClick={() => { setSelectedCurrency(c); setCurrencyOpen(false); }}
+                        className={`w-full flex items-center gap-2.5 px-4 py-2.5 text-sm hover:bg-kim-navy-light transition-colors ${c.code === selectedCurrency.code ? 'bg-kim-navy-light text-kim-navy font-semibold' : 'text-kim-charcoal'}`}
+                      >
+                        <span>{c.flag}</span>
+                        <span>{c.code}</span>
+                        <span className="text-gray-400 text-xs ml-auto">{c.name[l] ?? c.name.en}</span>
+                      </button>
+                    </li>
                   ))}
-                </div>
+                </ul>
               )}
             </div>
           </div>
@@ -328,10 +343,10 @@ export default function DonatePage() {
 
           <p className="text-center text-kim-stone text-sm mt-8">
             {l === 'ar'
-              ? 'للاستفسارات حول التبرع، تواصل معنا على info@crossculturalcenter.org'
+              ? <>للاستفسارات حول التبرع، تواصل معنا على <a href={`mailto:${CONTACT.email}`} className="text-kim-navy hover:underline">{CONTACT.email}</a></>
               : l === 'en'
-              ? 'For donation inquiries, contact us at info@crossculturalcenter.org'
-              : 'Bağış hakkında sorularınız için info@crossculturalcenter.org adresine ulaşın.'}
+              ? <>For donation inquiries, contact us at <a href={`mailto:${CONTACT.email}`} className="text-kim-navy hover:underline">{CONTACT.email}</a></>
+              : <>Bağış hakkında sorularınız için <a href={`mailto:${CONTACT.email}`} className="text-kim-navy hover:underline">{CONTACT.email}</a> adresine ulaşın.</>}
           </p>
         </div>
       </section>

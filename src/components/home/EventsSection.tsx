@@ -19,7 +19,7 @@ function formatDateParts(dateStr: string, locale: string) {
 export function EventsSection() {
   const t = useTranslations('events');
   const locale = useLocale();
-  const events = upcomingEvents[locale] || upcomingEvents.en;
+  const events = (upcomingEvents[locale] || upcomingEvents.en).slice(0, 3);
 
   return (
     <section className="py-20 md:py-28 bg-white relative overflow-hidden">
@@ -43,13 +43,11 @@ export function EventsSection() {
               {t('title')}
             </h2>
             <Link
-              href="/contact"
+              href="/events"
               className="inline-flex items-center gap-2 text-kim-navy font-semibold text-sm hover:gap-3 transition-all group shrink-0"
             >
               {t('viewAll') || 'View all events'}
-              <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>
         </motion.div>

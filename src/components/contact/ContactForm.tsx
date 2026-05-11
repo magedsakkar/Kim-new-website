@@ -43,7 +43,7 @@ export function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+    <form onSubmit={handleSubmit(onSubmit)} className="space-y-6" noValidate>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         <div>
           <label htmlFor="contact-name" className="block text-sm font-medium text-kim-charcoal mb-1.5">{t('name')}</label>
@@ -104,14 +104,17 @@ export function ContactForm() {
         {errors.message && <p className="mt-1 text-xs text-kim-error">{errors.message.message}</p>}
       </div>
 
-      {status === 'success' && (
-        <div className="p-4 bg-green-50 border border-green-200 rounded-xl text-green-700 text-sm">
-          {t('success')}
-        </div>
-      )}
-      {status === 'error' && (
-        <div className="p-4 bg-red-50 border border-red-200 rounded-xl text-red-700 text-sm">
-          {t('error')}
+      {(status === 'success' || status === 'error') && (
+        <div
+          role="alert"
+          aria-live="polite"
+          className={`p-4 rounded-xl text-sm ${
+            status === 'success'
+              ? 'bg-green-50 border border-green-200 text-green-700'
+              : 'bg-red-50 border border-red-200 text-red-700'
+          }`}
+        >
+          {status === 'success' ? t('success') : t('error')}
         </div>
       )}
 

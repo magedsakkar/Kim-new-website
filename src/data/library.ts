@@ -1,6 +1,6 @@
 import type { Resource } from '@/types';
 
-const BASE = 'https://panel.crossculturalcenter.org/storage/book-pdfs/';
+const BASE = process.env.NEXT_PUBLIC_LIBRARY_BASE_URL ?? 'https://panel.crossculturalcenter.org/storage/book-pdfs/';
 
 export const libraryResources: Resource[] = [
 

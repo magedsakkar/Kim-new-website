@@ -37,8 +37,9 @@ const T = {
 } as const;
 
 export function CookieConsent() {
-  const locale = useLocale() as keyof typeof T;
-  const t = T[locale] ?? T.en;
+  const rawLocale = useLocale();
+  const locale = (rawLocale in T ? rawLocale : 'en') as keyof typeof T;
+  const t = T[locale];
   const isRtl = locale === 'ar';
 
   const [consent, setConsent] = useState<ConsentState>(null);
