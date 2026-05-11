@@ -1,0 +1,41 @@
+const fs = require('fs');
+const path = require('path');
+
+const TRANSLATIONS = {
+  en: { offer: 'What We Offer', svc1Title: 'Discover Islam', svc1Desc: 'Guided talks, Q&A sessions, and introductions to Islam — in your language.', svc2Title: 'New Muslim Journey', svc2Desc: 'Step-by-step support for those who have recently taken their shahada.', svc3Title: 'Free Library', svc3Desc: 'Books, guides, and resources about Islam in 10+ languages.' },
+  tr: { offer: 'Neler Sunuyoruz', svc1Title: "İslam'ı Keşfet", svc1Desc: "Rehberli sohbetler, soru-cevap oturumları ve kendi dilinizde İslam'a giriş.", svc2Title: 'Yeni Müslüman Yolculuğu', svc2Desc: 'Şehadet getirenlere adım adım destek ve rehberlik.', svc3Title: 'Ücretsiz Kütüphane', svc3Desc: "10'dan fazla dilde İslam hakkında kitaplar, rehberler ve kaynaklar." },
+  ar: { offer: 'ما نقدمه', svc1Title: 'اكتشف الإسلام', svc1Desc: 'محادثات إرشادية وجلسات أسئلة وإجابات عن الإسلام — بلغتك.', svc2Title: 'رحلة المسلم الجديد', svc2Desc: 'دعم خطوة بخطوة لمن أسلم حديثاً ونطق بالشهادة.', svc3Title: 'مكتبة مجانية', svc3Desc: 'كتب وأدلة وموارد حول الإسلام بأكثر من 10 لغات.' },
+  de: { offer: 'Unser Angebot', svc1Title: 'Islam entdecken', svc1Desc: 'Geführte Gespräche, Frage-Antwort-Sitzungen und Einführungen in den Islam — in Ihrer Sprache.', svc2Title: 'Reise des neuen Muslims', svc2Desc: 'Schritt-für-Schritt-Unterstützung für diejenigen, die kürzlich ihr Schahada gesprochen haben.', svc3Title: 'Kostenlose Bibliothek', svc3Desc: 'Bücher, Leitfäden und Ressourcen über den Islam in 10+ Sprachen.' },
+  el: { offer: 'Τι Προσφέρουμε', svc1Title: 'Ανακαλύψτε το Ισλάμ', svc1Desc: 'Καθοδηγούμενες συνομιλίες, ερωταπαντήσεις και εισαγωγές στο Ισλάμ — στη γλώσσα σας.', svc2Title: 'Ταξίδι Νέου Μουσουλμάνου', svc2Desc: 'Βήμα προς βήμα υποστήριξη για όσους πρόσφατα αγκάλιασαν το Ισλάμ.', svc3Title: 'Δωρεάν Βιβλιοθήκη', svc3Desc: 'Βιβλία, οδηγοί και πόροι για το Ισλάμ σε 10+ γλώσσες.' },
+  es: { offer: 'Lo Que Ofrecemos', svc1Title: 'Descubre el Islam', svc1Desc: 'Charlas guiadas, sesiones de preguntas y respuestas e introducciones al Islam — en tu idioma.', svc2Title: 'Viaje del Nuevo Musulmán', svc2Desc: 'Apoyo paso a paso para quienes han pronunciado recientemente su Shahada.', svc3Title: 'Biblioteca Gratuita', svc3Desc: 'Libros, guías y recursos sobre el Islam en más de 10 idiomas.' },
+  fa: { offer: 'آنچه ارائه می‌دهیم', svc1Title: 'اسلام را کشف کنید', svc1Desc: 'گفتگوهای راهنما، جلسات پرسش و پاسخ و معرفی اسلام — به زبان خودتان.', svc2Title: 'سفر مسلمان جدید', svc2Desc: 'حمایت گام به گام برای کسانی که اخیراً شهادت گفته‌اند.', svc3Title: 'کتابخانه رایگان', svc3Desc: 'کتاب‌ها، راهنماها و منابع درباره اسلام به بیش از ۱۰ زبان.' },
+  fr: { offer: 'Ce Que Nous Offrons', svc1Title: "Découvrir l'Islam", svc1Desc: "Discussions guidées, séances de questions-réponses et introductions à l'Islam — dans votre langue.", svc2Title: 'Parcours du Nouveau Musulman', svc2Desc: 'Accompagnement étape par étape pour ceux qui ont récemment prononcé leur Chahada.', svc3Title: 'Bibliothèque Gratuite', svc3Desc: "Livres, guides et ressources sur l'Islam en 10+ langues." },
+  hr: { offer: 'Što Nudimo', svc1Title: 'Otkrij Islam', svc1Desc: 'Vođeni razgovori, Q&A sesije i uvodi u Islam — na vašem jeziku.', svc2Title: 'Put Novog Muslimana', svc2Desc: 'Korak po korak podrška za one koji su nedavno izgovorili Šahadu.', svc3Title: 'Besplatna Knjižnica', svc3Desc: 'Knjige, vodiči i resursi o Islamu na 10+ jezika.' },
+  hu: { offer: 'Mit Kínálunk', svc1Title: 'Fedezze Fel az Iszlámot', svc1Desc: 'Vezető beszélgetések, kérdés-válasz ülések és bevezetések az iszlámba — az ön nyelvén.', svc2Title: 'Új Muszlim Útja', svc2Desc: 'Lépésről lépésre segítség azoknak, akik nemrég mondták el Sahadájukat.', svc3Title: 'Ingyenes Könyvtár', svc3Desc: 'Könyvek, útmutatók és erőforrások az iszlámról 10+ nyelven.' },
+  it: { offer: 'Cosa Offriamo', svc1Title: "Scopri l'Islam", svc1Desc: "Conversazioni guidate, sessioni di domande e risposte e introduzioni all'Islam — nella tua lingua.", svc2Title: 'Percorso del Nuovo Musulmano', svc2Desc: 'Supporto passo dopo passo per coloro che hanno recentemente pronunciato la loro Shahada.', svc3Title: 'Biblioteca Gratuita', svc3Desc: "Libri, guide e risorse sull'Islam in 10+ lingue." },
+  ja: { offer: '提供サービス', svc1Title: 'イスラームを発見する', svc1Desc: 'ガイド付きトーク、Q&Aセッション、あなたの言語でのイスラーム入門。', svc2Title: '新しいムスリムの旅', svc2Desc: '最近シャハーダを唱えた方へのステップバイステップのサポート。', svc3Title: '無料ライブラリ', svc3Desc: '10以上の言語でイスラームに関する本、ガイド、リソース。' },
+  ko: { offer: '우리가 제공하는 것', svc1Title: '이슬람 탐구', svc1Desc: '가이드 토크, Q&A 세션, 그리고 당신의 언어로 된 이슬람 입문.', svc2Title: '새 무슬림 여정', svc2Desc: '최근 샤하다를 선언한 분들을 위한 단계별 지원.', svc3Title: '무료 도서관', svc3Desc: '10개 이상의 언어로 이슬람에 관한 책, 가이드 및 자료.' },
+  pl: { offer: 'Co Oferujemy', svc1Title: 'Odkryj Islam', svc1Desc: 'Prowadzone rozmowy, sesje pytań i odpowiedzi oraz wprowadzenia do islamu — w twoim języku.', svc2Title: 'Podróż Nowego Muzułmanina', svc2Desc: 'Krok po kroku wsparcie dla tych, którzy niedawno wypowiedzieli Szahadę.', svc3Title: 'Darmowa Biblioteka', svc3Desc: 'Książki, przewodniki i zasoby o islamie w 10+ językach.' },
+  pt: { offer: 'O Que Oferecemos', svc1Title: 'Descubra o Islam', svc1Desc: 'Conversas guiadas, sessões de perguntas e respostas e introduções ao Islam — no seu idioma.', svc2Title: 'Jornada do Novo Muçulmano', svc2Desc: 'Apoio passo a passo para quem recentemente pronunciou sua Shahada.', svc3Title: 'Biblioteca Gratuita', svc3Desc: 'Livros, guias e recursos sobre o Islam em 10+ idiomas.' },
+  ro: { offer: 'Ce Oferim', svc1Title: 'Descoperă Islamul', svc1Desc: 'Discuții ghidate, sesiuni de întrebări și răspunsuri și introduceri în Islam — în limba ta.', svc2Title: 'Călătoria Noului Musulman', svc2Desc: "Sprijin pas cu pas pentru cei care și-au pronunțat recent Shahada.", svc3Title: 'Bibliotecă Gratuită', svc3Desc: 'Cărți, ghiduri și resurse despre Islam în 10+ limbi.' },
+  ru: { offer: 'Что Мы Предлагаем', svc1Title: 'Откройте Ислам', svc1Desc: 'Экскурсионные беседы, сессии вопросов и ответов и введение в ислам — на вашем языке.', svc2Title: 'Путь Нового Мусульманина', svc2Desc: 'Пошаговая поддержка для тех, кто недавно произнёс Шахаду.', svc3Title: 'Бесплатная Библиотека', svc3Desc: 'Книги, руководства и ресурсы об исламе на 10+ языках.' },
+  sq: { offer: 'Çfarë Ofrojmë', svc1Title: 'Zbulo Islamin', svc1Desc: 'Biseda të udhëhequra, sesione pyetje-përgjigje dhe hyrje në Islam — në gjuhën tënde.', svc2Title: 'Udhëtimi i Muslimanit të Ri', svc2Desc: 'Mbështetje hap pas hapi për ata që kanë shqiptuar Shehadetinin së fundmi.', svc3Title: 'Biblioteka Falas', svc3Desc: 'Libra, guida dhe burime rreth Islamit në 10+ gjuhë.' },
+  sr: { offer: 'Šta Nudimo', svc1Title: 'Otkrijte Islam', svc1Desc: 'Vođeni razgovori, Q&A sesije i uvodi u Islam — na vašem jeziku.', svc2Title: 'Put Novog Muslimana', svc2Desc: 'Korak po korak podrška za one koji su nedavno izgovorili Šahadu.', svc3Title: 'Besplatna Biblioteka', svc3Desc: 'Knjige, vodiči i resursi o Islamu na 10+ jezika.' },
+  uk: { offer: 'Що Ми Пропонуємо', svc1Title: 'Відкрийте Іслам', svc1Desc: 'Екскурсійні бесіди, сесії запитань і відповідей та введення в іслам — вашою мовою.', svc2Title: 'Подорож Нового Мусульманина', svc2Desc: 'Покрокова підтримка для тих, хто нещодавно проголосив Шахаду.', svc3Title: 'Безкоштовна Бібліотека', svc3Desc: 'Книги, посібники та ресурси про іслам на 10+ мовах.' },
+  zh: { offer: '我们提供的服务', svc1Title: '了解伊斯兰', svc1Desc: '引导性交谈、问答环节以及您语言的伊斯兰介绍。', svc2Title: '新穆斯林之旅', svc2Desc: '为刚刚宣读清真言的人提供逐步支持。', svc3Title: '免费图书馆', svc3Desc: '10多种语言的伊斯兰书籍、指南和资源。' }
+};
+
+const messagesDir = path.join(__dirname, '..', 'messages');
+let updated = 0;
+
+for (const [lang, keys] of Object.entries(TRANSLATIONS)) {
+  const filePath = path.join(messagesDir, lang + '.json');
+  if (!fs.existsSync(filePath)) { console.log('SKIP', filePath); continue; }
+  const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+  if (!data.hero) { console.log('No hero section in', lang); continue; }
+  Object.assign(data.hero, keys);
+  fs.writeFileSync(filePath, JSON.stringify(data, null, 2) + '\n', 'utf8');
+  updated++;
+  console.log('Updated', lang + '.json');
+}
+console.log('Done:', updated, 'files updated');
