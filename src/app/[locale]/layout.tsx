@@ -7,6 +7,7 @@ import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { CookieConsent } from '@/components/analytics/CookieConsent';
 import { GoogleAnalytics } from '@/components/analytics/GoogleAnalytics';
+import { SmoothScrollProvider } from '@/components/providers/SmoothScrollProvider';
 import { buildMetadata } from '@/lib/metadata';
 import { CONTACT } from '@/lib/constants';
 import type { Metadata } from 'next';
@@ -88,10 +89,12 @@ export default async function LocaleLayout({ children, params }: Props) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
       />
       <NextIntlClientProvider locale={locale} messages={messages}>
-        <Header />
-        <main>{children}</main>
-        <Footer />
-        <CookieConsent />
+        <SmoothScrollProvider>
+          <Header />
+          <main>{children}</main>
+          <Footer />
+          <CookieConsent />
+        </SmoothScrollProvider>
       </NextIntlClientProvider>
     </div>
   );

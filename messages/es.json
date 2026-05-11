@@ -26,7 +26,14 @@
     "subtitle": "En el corazón de Estambul, conectamos a personas de diferentes culturas con el Islam, construyendo puentes de comprensión y diálogo.",
     "cta1": "Explorar programas",
     "cta2": "Voluntariado",
-    "scrollHint": "Desplazarse hacia abajo"
+    "scrollHint": "Desplazarse hacia abajo",
+    "offer": "Lo Que Ofrecemos",
+    "svc1Title": "Descubre el Islam",
+    "svc1Desc": "Charlas guiadas, sesiones de preguntas y respuestas e introducciones al Islam — en tu idioma.",
+    "svc2Title": "Viaje del Nuevo Musulmán",
+    "svc2Desc": "Apoyo paso a paso para quienes han pronunciado recientemente su Shahada.",
+    "svc3Title": "Biblioteca Gratuita",
+    "svc3Desc": "Libros, guías y recursos sobre el Islam en más de 10 idiomas."
   },
   "stats": {
     "title": "KİM en cifras",
@@ -178,12 +185,30 @@
     "quote": "Toma un acto — el que más amas — y sé constante en él. Porque Allah no se cansa de recompensar hasta que tú te canses de hacer el bien.",
     "quoteAuthor": "Profeta Muhammad ﷺ",
     "back": "Volver al área de atención para nuevos musulmanes",
-    "prayer": { "title": "Vida de oración", "desc": "Cómo establecer las cinco oraciones diarias, encontrar la dirección de la Qibla y desarrollar constancia en la adoración." },
-    "halal": { "title": "Vida halal", "desc": "Navegar por la alimentación halal, el consumo ético y tomar decisiones islámicas en una sociedad no musulmana." },
-    "finance": { "title": "Finanzas islámicas", "desc": "Entender la banca sin Riba, el cálculo del Zakat y la gestión ética del patrimonio." },
-    "family": { "title": "Familia y matrimonio", "desc": "La perspectiva islámica sobre el matrimonio, los roles familiares y criar a los hijos en la fe." },
-    "community": { "title": "Comunidad", "desc": "Encontrar tu comunidad musulmana, la etiqueta en la mezquita y construir lazos de hermandad." },
-    "dawah": { "title": "Dawah", "desc": "Compartir el Islam con sabiduría y bondad — cómo hablar de tu fe de forma natural y con confianza." }
+    "prayer": {
+      "title": "Vida de oración",
+      "desc": "Cómo establecer las cinco oraciones diarias, encontrar la dirección de la Qibla y desarrollar constancia en la adoración."
+    },
+    "halal": {
+      "title": "Vida halal",
+      "desc": "Navegar por la alimentación halal, el consumo ético y tomar decisiones islámicas en una sociedad no musulmana."
+    },
+    "finance": {
+      "title": "Finanzas islámicas",
+      "desc": "Entender la banca sin Riba, el cálculo del Zakat y la gestión ética del patrimonio."
+    },
+    "family": {
+      "title": "Familia y matrimonio",
+      "desc": "La perspectiva islámica sobre el matrimonio, los roles familiares y criar a los hijos en la fe."
+    },
+    "community": {
+      "title": "Comunidad",
+      "desc": "Encontrar tu comunidad musulmana, la etiqueta en la mezquita y construir lazos de hermandad."
+    },
+    "dawah": {
+      "title": "Dawah",
+      "desc": "Compartir el Islam con sabiduría y bondad — cómo hablar de tu fe de forma natural y con confianza."
+    }
   },
   "newMuslimCareArea": {
     "badge": "Fundación KİM · Área de atención para nuevos musulmanes",

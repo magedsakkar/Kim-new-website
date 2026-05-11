@@ -26,7 +26,14 @@
     "subtitle": "In the heart of Istanbul, we connect people from different cultures with Islam, building bridges of understanding and dialogue.",
     "cta1": "Explore Programs",
     "cta2": "Volunteer",
-    "scrollHint": "Scroll down"
+    "scrollHint": "Scroll down",
+    "offer": "What We Offer",
+    "svc1Title": "Discover Islam",
+    "svc1Desc": "Guided talks, Q&A sessions, and introductions to Islam — in your language.",
+    "svc2Title": "New Muslim Journey",
+    "svc2Desc": "Step-by-step support for those who have recently taken their shahada.",
+    "svc3Title": "Free Library",
+    "svc3Desc": "Books, guides, and resources about Islam in 10+ languages."
   },
   "stats": {
     "title": "KIM in Numbers",
@@ -178,12 +185,30 @@
     "quote": "Take one deed — the one most beloved to you — and be consistent with it. For Allah does not tire of giving reward until you tire of doing good.",
     "quoteAuthor": "Prophet Muhammad ﷺ",
     "back": "Back to New Muslim Care Area",
-    "prayer": { "title": "Prayer Life", "desc": "How to establish the five daily prayers, find the Qibla direction, and build consistency in worship." },
-    "halal": { "title": "Halal Living", "desc": "Navigating halal food, ethical consumption, and making Islamic choices in a non-Muslim society." },
-    "finance": { "title": "Islamic Finance", "desc": "Understanding Riba-free banking, Zakat calculation, and ethical wealth management." },
-    "family": { "title": "Family & Marriage", "desc": "Islamic perspective on marriage, family roles, and raising children with faith." },
-    "community": { "title": "Community", "desc": "Finding your Muslim community, mosque etiquette, and building brotherhood and sisterhood." },
-    "dawah": { "title": "Dawah", "desc": "Sharing Islam with wisdom and kindness — how to speak about your faith naturally and confidently." }
+    "prayer": {
+      "title": "Prayer Life",
+      "desc": "How to establish the five daily prayers, find the Qibla direction, and build consistency in worship."
+    },
+    "halal": {
+      "title": "Halal Living",
+      "desc": "Navigating halal food, ethical consumption, and making Islamic choices in a non-Muslim society."
+    },
+    "finance": {
+      "title": "Islamic Finance",
+      "desc": "Understanding Riba-free banking, Zakat calculation, and ethical wealth management."
+    },
+    "family": {
+      "title": "Family & Marriage",
+      "desc": "Islamic perspective on marriage, family roles, and raising children with faith."
+    },
+    "community": {
+      "title": "Community",
+      "desc": "Finding your Muslim community, mosque etiquette, and building brotherhood and sisterhood."
+    },
+    "dawah": {
+      "title": "Dawah",
+      "desc": "Sharing Islam with wisdom and kindness — how to speak about your faith naturally and confidently."
+    }
   },
   "newMuslimCareArea": {
     "badge": "KİM Vakfı · New Muslim Care Area",

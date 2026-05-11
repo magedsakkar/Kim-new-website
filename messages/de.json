@@ -26,7 +26,14 @@
     "subtitle": "Im Herzen Istanbuls verbinden wir Menschen verschiedener Kulturen mit dem Islam und bauen Brücken des Verständnisses und des Dialogs.",
     "cta1": "Programme entdecken",
     "cta2": "Ehrenamt",
-    "scrollHint": "Nach unten scrollen"
+    "scrollHint": "Nach unten scrollen",
+    "offer": "Unser Angebot",
+    "svc1Title": "Islam entdecken",
+    "svc1Desc": "Geführte Gespräche, Frage-Antwort-Sitzungen und Einführungen in den Islam — in Ihrer Sprache.",
+    "svc2Title": "Reise des neuen Muslims",
+    "svc2Desc": "Schritt-für-Schritt-Unterstützung für diejenigen, die kürzlich ihr Schahada gesprochen haben.",
+    "svc3Title": "Kostenlose Bibliothek",
+    "svc3Desc": "Bücher, Leitfäden und Ressourcen über den Islam in 10+ Sprachen."
   },
   "stats": {
     "title": "KİM in Zahlen",
@@ -178,12 +185,30 @@
     "quote": "Nimm eine Tat — die, die du am meisten liebst — und sei beständig darin. Denn Allah wird nicht müde zu belohnen, bis du müde wirst, Gutes zu tun.",
     "quoteAuthor": "Prophet Muhammad ﷺ",
     "back": "Zurück zum Betreuungsbereich für neue Muslime",
-    "prayer": { "title": "Gebetsleben", "desc": "Wie man die fünf täglichen Gebete einrichtet, die Qibla-Richtung findet und Beständigkeit in der Anbetung entwickelt." },
-    "halal": { "title": "Halal-Leben", "desc": "Navigation bei Halal-Lebensmitteln, ethischem Konsum und islamischen Entscheidungen in einer nicht-muslimischen Gesellschaft." },
-    "finance": { "title": "Islamische Finanzen", "desc": "Verstehen von Riba-freiem Banking, Zakat-Berechnung und ethischem Vermögensmanagement." },
-    "family": { "title": "Familie und Ehe", "desc": "Die islamische Perspektive auf Ehe, Familienrollen und die Erziehung von Kindern im Glauben." },
-    "community": { "title": "Gemeinschaft", "desc": "Die muslimische Gemeinschaft finden, Moschee-Etikette und Brüderlichkeitsbande aufbauen." },
-    "dawah": { "title": "Dawah", "desc": "Den Islam mit Weisheit und Güte teilen — wie man natürlich und selbstbewusst über seinen Glauben spricht." }
+    "prayer": {
+      "title": "Gebetsleben",
+      "desc": "Wie man die fünf täglichen Gebete einrichtet, die Qibla-Richtung findet und Beständigkeit in der Anbetung entwickelt."
+    },
+    "halal": {
+      "title": "Halal-Leben",
+      "desc": "Navigation bei Halal-Lebensmitteln, ethischem Konsum und islamischen Entscheidungen in einer nicht-muslimischen Gesellschaft."
+    },
+    "finance": {
+      "title": "Islamische Finanzen",
+      "desc": "Verstehen von Riba-freiem Banking, Zakat-Berechnung und ethischem Vermögensmanagement."
+    },
+    "family": {
+      "title": "Familie und Ehe",
+      "desc": "Die islamische Perspektive auf Ehe, Familienrollen und die Erziehung von Kindern im Glauben."
+    },
+    "community": {
+      "title": "Gemeinschaft",
+      "desc": "Die muslimische Gemeinschaft finden, Moschee-Etikette und Brüderlichkeitsbande aufbauen."
+    },
+    "dawah": {
+      "title": "Dawah",
+      "desc": "Den Islam mit Weisheit und Güte teilen — wie man natürlich und selbstbewusst über seinen Glauben spricht."
+    }
   },
   "newMuslimCareArea": {
     "badge": "KİM-Stiftung · Betreuungsbereich für neue Muslime",

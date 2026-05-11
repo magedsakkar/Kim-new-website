@@ -343,7 +343,7 @@ export default function HowILiveIslamPage() {
   const Arrow = isRtl ? ArrowLeft : ArrowRight;
 
   return (
-    <div className="min-h-screen bg-[#08101E]" dir={isRtl ? 'rtl' : 'ltr'}>
+    <div className="min-h-screen bg-white" dir={isRtl ? 'rtl' : 'ltr'}>
 
       {/* ── Hero ── */}
       <section className="relative overflow-hidden bg-[#08101E] pt-20">
@@ -400,7 +400,7 @@ export default function HowILiveIslamPage() {
       </section>
 
       {/* ── Six Topic Cards ── */}
-      <section className="bg-[#08101E] py-24">
+      <section className="bg-white py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <motion.span
@@ -416,7 +416,7 @@ export default function HowILiveIslamPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="font-serif text-3xl md:text-4xl font-bold text-white mb-4"
+              className="font-serif text-3xl md:text-4xl font-bold text-gray-900 mb-4"
             >
               {t.topicsTitle}
             </motion.h2>
@@ -425,7 +425,7 @@ export default function HowILiveIslamPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="text-white/50 text-base max-w-2xl mx-auto leading-relaxed"
+              className="text-gray-500 text-base max-w-2xl mx-auto leading-relaxed"
             >
               {t.topicsSubtitle}
             </motion.p>
@@ -442,7 +442,7 @@ export default function HowILiveIslamPage() {
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: true }}
-                  className="group relative rounded-2xl border border-white/[0.07] bg-[#0D1728] p-7 hover:border-[#C9973A]/35 hover:bg-[#0D1E35] transition-all duration-300 hover:shadow-[0_0_30px_rgba(201,151,58,0.09)] flex flex-col"
+                  className="group relative rounded-2xl border border-gray-100 bg-white p-7 hover:border-[#C9973A]/40 hover:bg-amber-50/20 transition-all duration-300 hover:shadow-[0_4px_24px_rgba(201,151,58,0.12)] flex flex-col"
                 >
                   {/* Glow blob on hover */}
                   <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
@@ -453,10 +453,10 @@ export default function HowILiveIslamPage() {
                     <Icon className="w-5 h-5 text-[#C9973A]" strokeWidth={1.6} />
                   </div>
 
-                  <h3 className="font-serif text-lg font-bold text-white mb-3 group-hover:text-[#E8B96A] transition-colors duration-300">
+                  <h3 className="font-serif text-lg font-bold text-gray-900 mb-3 group-hover:text-[#C9973A] transition-colors duration-300">
                     {topic.title}
                   </h3>
-                  <p className="text-white/55 text-sm leading-relaxed mb-5">
+                  <p className="text-gray-500 text-sm leading-relaxed mb-5">
                     {topic.desc}
                   </p>
 
@@ -465,13 +465,13 @@ export default function HowILiveIslamPage() {
                     {topic.tips.map((tip, j) => (
                       <li key={j} className="flex items-start gap-2.5">
                         <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#C9973A]/60 flex-shrink-0" />
-                        <span className="text-white/45 text-xs leading-relaxed">{tip}</span>
+                        <span className="text-gray-400 text-xs leading-relaxed">{tip}</span>
                       </li>
                     ))}
                   </ul>
 
                   {/* Bottom bar progress */}
-                  <div className="mt-auto pt-4 border-t border-white/[0.06]">
+                  <div className="mt-auto pt-4 border-t border-gray-100">
                     <div className="flex items-center justify-between">
                       <span className="text-[#C9973A]/60 text-xs font-medium">{topic.cta}</span>
                       <Arrow className="w-4 h-4 text-[#C9973A]/40 group-hover:text-[#C9973A] group-hover:translate-x-0.5 transition-all duration-300" />
@@ -485,7 +485,7 @@ export default function HowILiveIslamPage() {
       </section>
 
       {/* ── Daily Routine Timeline ── */}
-      <section className="relative bg-[#0B1628] py-24 overflow-hidden">
+      <section className="relative bg-gray-50 py-24 overflow-hidden">
         <div className="absolute inset-0 pointer-events-none opacity-[0.04]">
           <svg width="100%" height="100%" aria-hidden="true">
             <defs>
@@ -513,7 +513,7 @@ export default function HowILiveIslamPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="font-serif text-3xl md:text-4xl font-bold text-white mb-4"
+              className="font-serif text-3xl md:text-4xl font-bold text-gray-900 mb-4"
             >
               {t.routineTitle}
             </motion.h2>
@@ -522,7 +522,7 @@ export default function HowILiveIslamPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="text-white/50 text-base max-w-xl mx-auto"
+              className="text-gray-500 text-base max-w-xl mx-auto"
             >
               {t.routineSubtitle}
             </motion.p>
@@ -558,17 +558,17 @@ export default function HowILiveIslamPage() {
                         ? 'order-first'
                         : 'order-first sm:order-none'
                     }`}>
-                      <div className="w-12 h-12 rounded-full bg-[#0B1628] border-2 border-[#C9973A]/50 flex items-center justify-center">
+                      <div className="w-12 h-12 rounded-full bg-white border-2 border-[#C9973A]/50 flex items-center justify-center shadow-sm">
                         <span className="font-serif text-sm font-bold text-[#C9973A]">{i + 1}</span>
                       </div>
                     </div>
 
                     {/* Card */}
-                    <div className={`flex-1 rounded-xl border border-white/[0.07] bg-[#0D1728] p-5 hover:border-[#C9973A]/25 transition-all duration-300 ${
+                    <div className={`flex-1 rounded-xl border border-gray-100 bg-white p-5 hover:border-[#C9973A]/30 shadow-sm transition-all duration-300 ${
                       isRtl ? '' : isEven ? 'sm:mr-auto sm:max-w-[calc(50%-3rem)]' : 'sm:ml-auto sm:max-w-[calc(50%-3rem)]'
                     }`}>
                       <div className="text-[#C9973A] text-xs font-bold uppercase tracking-wider mb-2">{step.time}</div>
-                      <p className="text-white/60 text-sm leading-relaxed">{step.desc}</p>
+                      <p className="text-gray-500 text-sm leading-relaxed">{step.desc}</p>
                     </div>
                   </motion.div>
                 );
@@ -579,27 +579,27 @@ export default function HowILiveIslamPage() {
       </section>
 
       {/* ── Hadith Quote ── */}
-      <section className="bg-[#08101E] py-20">
+      <section className="bg-gray-50 py-20">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.blockquote
             initial={{ opacity: 0, scale: 0.97 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="relative rounded-3xl overflow-hidden border border-white/[0.07]"
-            style={{ background: 'linear-gradient(135deg, #0D1E35 0%, #0B1628 100%)' }}
+            className="relative rounded-3xl overflow-hidden border border-amber-100"
+            style={{ background: 'linear-gradient(135deg, #FFFDF5 0%, #FFF8E7 100%)' }}
           >
             <div className={`absolute top-0 ${isRtl ? 'right-0' : 'left-0'} w-1.5 h-full bg-gradient-to-b from-[#C9973A] to-[#C9973A]/30`} />
             <div className="absolute -right-8 -bottom-8 w-40 h-40 rounded-full bg-[#C9973A]/5 blur-2xl" />
 
             <div className="px-10 py-10 md:px-12 relative z-10">
               {isRtl && (
-                <p className="font-serif text-3xl text-[#C9973A]/30 mb-2 leading-none">&ldquo;</p>
+                <p className="font-serif text-3xl text-[#C9973A]/40 mb-2 leading-none">&ldquo;</p>
               )}
               {!isRtl && (
-                <p className="font-serif text-5xl text-[#C9973A]/20 mb-2 leading-none">&ldquo;</p>
+                <p className="font-serif text-5xl text-[#C9973A]/30 mb-2 leading-none">&ldquo;</p>
               )}
-              <p className={`font-serif text-xl md:text-2xl text-white/90 leading-relaxed ${isRtl ? 'text-right' : ''}`}>
+              <p className={`font-serif text-xl md:text-2xl text-gray-800 leading-relaxed ${isRtl ? 'text-right' : ''}`}>
                 {t.quoteText}
               </p>
               <footer className={`mt-5 text-sm font-bold text-[#C9973A] ${isRtl ? 'text-right' : ''}`}>
@@ -611,7 +611,7 @@ export default function HowILiveIslamPage() {
       </section>
 
       {/* ── CTA ── */}
-      <section className="bg-[#0B1628] py-24">
+      <section className="bg-white py-24">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -619,8 +619,8 @@ export default function HowILiveIslamPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <h2 className="font-serif text-3xl md:text-4xl font-bold text-white mb-4">{t.ctaTitle}</h2>
-            <p className="text-white/55 text-base leading-relaxed max-w-xl mx-auto mb-10">{t.ctaSubtitle}</p>
+            <h2 className="font-serif text-3xl md:text-4xl font-bold text-gray-900 mb-4">{t.ctaTitle}</h2>
+            <p className="text-gray-500 text-base leading-relaxed max-w-xl mx-auto mb-10">{t.ctaSubtitle}</p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
@@ -632,7 +632,7 @@ export default function HowILiveIslamPage() {
               </Link>
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full border border-white/20 bg-white/5 text-white/80 font-semibold text-sm hover:border-white/40 hover:bg-white/10 transition-all duration-300"
+                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full border border-gray-300 bg-white text-gray-700 font-semibold text-sm hover:border-[#C9973A]/50 hover:bg-amber-50 transition-all duration-300"
               >
                 {t.ctaContact}
               </Link>
@@ -642,11 +642,11 @@ export default function HowILiveIslamPage() {
       </section>
 
       {/* ── Back link ── */}
-      <div className="bg-[#08101E] py-10">
+      <div className="bg-gray-100 py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link
             href="/new-muslim-care-area"
-            className="inline-flex items-center gap-2 text-sm font-medium text-white/40 hover:text-[#C9973A] transition-colors duration-300"
+            className="inline-flex items-center gap-2 text-sm font-medium text-gray-400 hover:text-[#C9973A] transition-colors duration-300"
           >
             <ArrowLeft className="h-4 w-4" />
             {t.back}

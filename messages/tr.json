@@ -26,7 +26,14 @@
     "subtitle": "İstanbul'un kalbinde, farklı kültürlerden insanları İslam ile buluşturuyor, anlayış ve diyalog köprüleri inşa ediyoruz.",
     "cta1": "Programlarımızı Keşfet",
     "cta2": "Gönüllü Ol",
-    "scrollHint": "Aşağı kaydır"
+    "scrollHint": "Aşağı kaydır",
+    "offer": "Neler Sunuyoruz",
+    "svc1Title": "İslam'ı Keşfet",
+    "svc1Desc": "Rehberli sohbetler, soru-cevap oturumları ve kendi dilinizde İslam'a giriş.",
+    "svc2Title": "Yeni Müslüman Yolculuğu",
+    "svc2Desc": "Şehadet getirenlere adım adım destek ve rehberlik.",
+    "svc3Title": "Ücretsiz Kütüphane",
+    "svc3Desc": "10'dan fazla dilde İslam hakkında kitaplar, rehberler ve kaynaklar."
   },
   "stats": {
     "title": "Rakamlarla KİM",
@@ -178,12 +185,30 @@
     "quote": "Bir ameli — en sevdiğin ameli — al ve buna devam et. Çünkü Allah siz iyilik yapmaktan usanana kadar sevap vermekten usanmaz.",
     "quoteAuthor": "Hz. Muhammed ﷺ",
     "back": "Yeni Müslüman Bakım Alanına Dön",
-    "prayer": { "title": "Namaz Hayatı", "desc": "Beş vakit namazı kılmak, kıble yönünü bulmak ve ibadetde istikrar sağlamak." },
-    "halal": { "title": "Helal Yaşam", "desc": "Helal gıda, etik tüketim ve Müslüman olmayan bir toplumda İslami tercihler yapmak." },
-    "finance": { "title": "İslami Finans", "desc": "Faizsiz bankacılık, zekat hesaplama ve etik servet yönetimini anlamak." },
-    "family": { "title": "Aile ve Evlilik", "desc": "Evlilik, aile rolleri ve çocukları imanla yetiştirme konusunda İslami bakış açısı." },
-    "community": { "title": "Topluluk", "desc": "Müslüman topluluğunuzu bulmak, cami adabı ve kardeşlik bağları kurmak." },
-    "dawah": { "title": "Davet", "desc": "İslam'ı bilgelik ve nezaketle paylaşmak — inancınız hakkında doğal ve güvenle konuşmak." }
+    "prayer": {
+      "title": "Namaz Hayatı",
+      "desc": "Beş vakit namazı kılmak, kıble yönünü bulmak ve ibadetde istikrar sağlamak."
+    },
+    "halal": {
+      "title": "Helal Yaşam",
+      "desc": "Helal gıda, etik tüketim ve Müslüman olmayan bir toplumda İslami tercihler yapmak."
+    },
+    "finance": {
+      "title": "İslami Finans",
+      "desc": "Faizsiz bankacılık, zekat hesaplama ve etik servet yönetimini anlamak."
+    },
+    "family": {
+      "title": "Aile ve Evlilik",
+      "desc": "Evlilik, aile rolleri ve çocukları imanla yetiştirme konusunda İslami bakış açısı."
+    },
+    "community": {
+      "title": "Topluluk",
+      "desc": "Müslüman topluluğunuzu bulmak, cami adabı ve kardeşlik bağları kurmak."
+    },
+    "dawah": {
+      "title": "Davet",
+      "desc": "İslam'ı bilgelik ve nezaketle paylaşmak — inancınız hakkında doğal ve güvenle konuşmak."
+    }
   },
   "newMuslimCareArea": {
     "badge": "KİM Vakfı · Yeni Müslüman Bakım Alanı",

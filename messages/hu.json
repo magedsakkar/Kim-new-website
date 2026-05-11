@@ -26,7 +26,14 @@
     "subtitle": "Isztambul szívében összekapcsoljuk a különböző kultúrák embereit az iszlámmal, megértési és párbeszéd hidakat építve.",
     "cta1": "Fedezze fel a programokat",
     "cta2": "Önkéntesség",
-    "scrollHint": "Görgessen le"
+    "scrollHint": "Görgessen le",
+    "offer": "Mit Kínálunk",
+    "svc1Title": "Fedezze Fel az Iszlámot",
+    "svc1Desc": "Vezető beszélgetések, kérdés-válasz ülések és bevezetések az iszlámba — az ön nyelvén.",
+    "svc2Title": "Új Muszlim Útja",
+    "svc2Desc": "Lépésről lépésre segítség azoknak, akik nemrég mondták el Sahadájukat.",
+    "svc3Title": "Ingyenes Könyvtár",
+    "svc3Desc": "Könyvek, útmutatók és erőforrások az iszlámról 10+ nyelven."
   },
   "stats": {
     "title": "KİM számokban",
@@ -178,12 +185,30 @@
     "quote": "Fogjon egy cselekedetet — azt, amelyet a legjobban szeret — és legyen kitartó benne. Allah nem fárad el a jutalom adásában, amíg Ön el nem fárad a jó cselekvésben.",
     "quoteAuthor": "Mohamed próféta ﷺ",
     "back": "Vissza az új muszlimok támogatási területére",
-    "prayer": { "title": "Az ima élete", "desc": "Hogyan alakítsa ki az öt napi imát, találja meg a Qibla irányát és fejlesszen ki következetességet az imádatban." },
-    "halal": { "title": "Halal élet", "desc": "Eligazodás a halal élelmiszerek, az etikus fogyasztás és az iszlám döntéshozatal terén nem muszlim társadalomban." },
-    "finance": { "title": "Iszlám pénzügyek", "desc": "A Riba-mentes bankolás, a Zakat kiszámítása és az etikus vagyonkezelés megértése." },
-    "family": { "title": "Család és házasság", "desc": "Az iszlám nézőpontja a házasságról, a családi szerepekről és a gyermeknevelésről a hitben." },
-    "community": { "title": "Közösség", "desc": "Muszlim közösség megtalálása, mecseti etikett és testvéri kötelékek kialakítása." },
-    "dawah": { "title": "Dawah", "desc": "Az iszlám megosztása bölcsességgel és kedvességgel — hogyan beszéljünk hitünkről természetesen és magabiztosan." }
+    "prayer": {
+      "title": "Az ima élete",
+      "desc": "Hogyan alakítsa ki az öt napi imát, találja meg a Qibla irányát és fejlesszen ki következetességet az imádatban."
+    },
+    "halal": {
+      "title": "Halal élet",
+      "desc": "Eligazodás a halal élelmiszerek, az etikus fogyasztás és az iszlám döntéshozatal terén nem muszlim társadalomban."
+    },
+    "finance": {
+      "title": "Iszlám pénzügyek",
+      "desc": "A Riba-mentes bankolás, a Zakat kiszámítása és az etikus vagyonkezelés megértése."
+    },
+    "family": {
+      "title": "Család és házasság",
+      "desc": "Az iszlám nézőpontja a házasságról, a családi szerepekről és a gyermeknevelésről a hitben."
+    },
+    "community": {
+      "title": "Közösség",
+      "desc": "Muszlim közösség megtalálása, mecseti etikett és testvéri kötelékek kialakítása."
+    },
+    "dawah": {
+      "title": "Dawah",
+      "desc": "Az iszlám megosztása bölcsességgel és kedvességgel — hogyan beszéljünk hitünkről természetesen és magabiztosan."
+    }
   },
   "newMuslimCareArea": {
     "badge": "KİM Alapítvány · Új muszlimok támogatási területe",

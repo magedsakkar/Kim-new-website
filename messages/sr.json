@@ -26,7 +26,14 @@
     "subtitle": "U srcu Istanbula, povezujemo ljude različitih kultura sa islamom, gradeći mostove razumevanja i dijaloga.",
     "cta1": "Istražite programe",
     "cta2": "Volontiranje",
-    "scrollHint": "Pomerite nadole"
+    "scrollHint": "Pomerite nadole",
+    "offer": "Šta Nudimo",
+    "svc1Title": "Otkrijte Islam",
+    "svc1Desc": "Vođeni razgovori, Q&A sesije i uvodi u Islam — na vašem jeziku.",
+    "svc2Title": "Put Novog Muslimana",
+    "svc2Desc": "Korak po korak podrška za one koji su nedavno izgovorili Šahadu.",
+    "svc3Title": "Besplatna Biblioteka",
+    "svc3Desc": "Knjige, vodiči i resursi o Islamu na 10+ jezika."
   },
   "stats": {
     "title": "KİM u brojkama",
@@ -178,12 +185,30 @@
     "quote": "Uzmi jedno delo — ono koje najviše voliš — i budi dosledan u njemu. Allah se ne zamara nagrađivanjem dok se vi ne zamorite činjenjem dobra.",
     "quoteAuthor": "Poslanik Muhammed ﷺ",
     "back": "Povratak na zonu podrške za nove muslimane",
-    "prayer": { "title": "Život molitve", "desc": "Kako uspostaviti pet dnevnih namaza, pronaći pravac Kible i razviti doslednost u ibadetu." },
-    "halal": { "title": "Halal život", "desc": "Snalaženje u halal ishrani, etičnoj potrošnji i islamskim izborima u nemuslimanskom društvu." },
-    "finance": { "title": "Islamske finansije", "desc": "Razumevanje bankarstva bez Riba, obračun Zekata i etično upravljanje imovinom." },
-    "family": { "title": "Porodica i brak", "desc": "Islamski pogled na brak, porodične uloge i odgajanje dece u veri." },
-    "community": { "title": "Zajednica", "desc": "Pronalaženje muslimanske zajednice, džamijski bonton i izgradnja bratskih veza." },
-    "dawah": { "title": "Daava", "desc": "Deliti islam sa mudrošću i dobrotom — kako prirodno i samouvereno govoriti o svojoj veri." }
+    "prayer": {
+      "title": "Život molitve",
+      "desc": "Kako uspostaviti pet dnevnih namaza, pronaći pravac Kible i razviti doslednost u ibadetu."
+    },
+    "halal": {
+      "title": "Halal život",
+      "desc": "Snalaženje u halal ishrani, etičnoj potrošnji i islamskim izborima u nemuslimanskom društvu."
+    },
+    "finance": {
+      "title": "Islamske finansije",
+      "desc": "Razumevanje bankarstva bez Riba, obračun Zekata i etično upravljanje imovinom."
+    },
+    "family": {
+      "title": "Porodica i brak",
+      "desc": "Islamski pogled na brak, porodične uloge i odgajanje dece u veri."
+    },
+    "community": {
+      "title": "Zajednica",
+      "desc": "Pronalaženje muslimanske zajednice, džamijski bonton i izgradnja bratskih veza."
+    },
+    "dawah": {
+      "title": "Daava",
+      "desc": "Deliti islam sa mudrošću i dobrotom — kako prirodno i samouvereno govoriti o svojoj veri."
+    }
   },
   "newMuslimCareArea": {
     "badge": "Fondacija KİM · Zona podrške za nove muslimane",

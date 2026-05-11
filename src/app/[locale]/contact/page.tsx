@@ -161,7 +161,7 @@ export default async function ContactPage({ params }: Props) {
       </section>
 
       {/* ── Two-column body ── */}
-      <section className="bg-[#08101E] py-20 md:py-28">
+      <section className="bg-white py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 xl:gap-20 items-start">
 
@@ -174,7 +174,7 @@ export default async function ContactPage({ params }: Props) {
                   href={href}
                   target={key === 'address' ? '_blank' : undefined}
                   rel={key === 'address' ? 'noopener noreferrer' : undefined}
-                  className="group flex items-start gap-5 p-5 rounded-2xl border-l-2 border-[#C9973A]/40 bg-[#0D1728] hover:bg-[#0D1E35] hover:border-[#C9973A] transition-all duration-300"
+                  className="group flex items-start gap-5 p-5 rounded-2xl border-l-2 border-[#C9973A]/40 bg-white shadow-sm hover:bg-amber-50/30 hover:border-[#C9973A] transition-all duration-300"
                 >
                   {/* Icon circle */}
                   <div className="flex-shrink-0 w-11 h-11 rounded-full bg-[#C9973A]/10 border border-[#C9973A]/25 flex items-center justify-center group-hover:bg-[#C9973A]/20 transition-colors duration-300">
@@ -186,7 +186,7 @@ export default async function ContactPage({ params }: Props) {
                     <div className="text-[#C9973A]/70 text-xs font-semibold uppercase tracking-wider mb-1">
                       {label}
                     </div>
-                    <p className="text-white/85 text-sm leading-relaxed break-words">
+                    <p className="text-gray-700 text-sm leading-relaxed break-words">
                       {value}
                     </p>
                   </div>
@@ -194,7 +194,7 @@ export default async function ContactPage({ params }: Props) {
               ))}
 
               {/* Social row */}
-              <div className="p-5 rounded-2xl border-l-2 border-[#C9973A]/40 bg-[#0D1728]">
+              <div className="p-5 rounded-2xl border-l-2 border-[#C9973A]/40 bg-white shadow-sm">
                 <div className="text-[#C9973A]/70 text-xs font-semibold uppercase tracking-wider mb-4">
                   {t('socialMedia')}
                 </div>
@@ -206,7 +206,7 @@ export default async function ContactPage({ params }: Props) {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={label}
-                      className="w-10 h-10 rounded-full border border-[#C9973A]/30 flex items-center justify-center text-white/60 hover:text-[#C9973A] hover:border-[#C9973A] hover:bg-[#C9973A]/10 transition-all duration-300"
+                      className="w-10 h-10 rounded-full border border-[#C9973A]/30 flex items-center justify-center text-gray-500 hover:text-[#C9973A] hover:border-[#C9973A] hover:bg-amber-50 transition-all duration-300"
                     >
                       <Icon />
                     </a>
@@ -215,19 +215,19 @@ export default async function ContactPage({ params }: Props) {
               </div>
 
               {/* Google Maps embed */}
-              <div className="relative rounded-2xl overflow-hidden border border-white/[0.06]" style={{ height: '260px' }}>
+              <div className="relative rounded-2xl overflow-hidden border border-gray-100" style={{ height: '260px' }}>
                 <iframe
                   src={CONTACT.googleMapsEmbed}
                   width="100%"
                   height="100%"
-                  style={{ border: 0, filter: 'grayscale(20%) invert(5%)' }}
+                  style={{ border: 0, filter: 'grayscale(15%)' }}
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                   title="KİM Vakfı location"
                 />
                 {/* Bottom links overlay */}
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#0A1422]/90 to-transparent px-4 py-3 flex items-center justify-between">
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent px-4 py-3 flex items-center justify-between">
                   <a href="/library-map" className="inline-flex items-center gap-1 text-xs text-white/50 hover:text-[#C9973A] transition-colors">
                     <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
@@ -247,8 +247,8 @@ export default async function ContactPage({ params }: Props) {
             </div>
 
             {/* Right column: contact form */}
-            <div className="rounded-3xl border border-white/[0.06] bg-[#0D1728] p-8 md:p-10">
-              <h2 className="font-serif text-2xl md:text-3xl font-bold text-white mb-8">
+            <div className="rounded-3xl border border-gray-100 bg-white shadow-sm p-8 md:p-10">
+              <h2 className="font-serif text-2xl md:text-3xl font-bold text-gray-900 mb-8">
                 {t('formTitle')}
               </h2>
               <ContactForm />

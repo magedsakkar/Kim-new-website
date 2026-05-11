@@ -26,7 +26,14 @@
     "subtitle": "Në zemër të Stambollit, ne lidhim njerëz nga kultura të ndryshme me Islamin, duke ndërtuar ura mirëkuptimi dhe dialogu.",
     "cta1": "Eksploroni programet",
     "cta2": "Vullnetarizmi",
-    "scrollHint": "Rrotulloni poshtë"
+    "scrollHint": "Rrotulloni poshtë",
+    "offer": "Çfarë Ofrojmë",
+    "svc1Title": "Zbulo Islamin",
+    "svc1Desc": "Biseda të udhëhequra, sesione pyetje-përgjigje dhe hyrje në Islam — në gjuhën tënde.",
+    "svc2Title": "Udhëtimi i Muslimanit të Ri",
+    "svc2Desc": "Mbështetje hap pas hapi për ata që kanë shqiptuar Shehadetinin së fundmi.",
+    "svc3Title": "Biblioteka Falas",
+    "svc3Desc": "Libra, guida dhe burime rreth Islamit në 10+ gjuhë."
   },
   "stats": {
     "title": "KİM në numra",
@@ -178,12 +185,30 @@
     "quote": "Merr një vepër — atë që e do më shumë — dhe bëhu i qëndrueshëm në të. Allahu nuk lodhet duke shpërblyer derisa ju të lodheni duke bërë mirë.",
     "quoteAuthor": "Profeti Muhammed ﷺ",
     "back": "Kthehuni tek zona e kujdesit për muslimanët e rinj",
-    "prayer": { "title": "Jeta e namazit", "desc": "Si të vendosni pesë namazet ditore, të gjeni drejtimin e Kiblës dhe të zhvilloni qëndrueshmëri në adhurim." },
-    "halal": { "title": "Jeta hallall", "desc": "Orientimi në ushqimet hallall, konsumimin etik dhe zgjedhjet islame në një shoqëri jo-muslimane." },
-    "finance": { "title": "Financat islame", "desc": "Kuptimi i bankingut pa Riba, llogaritja e Zekatit dhe menaxhimi etik i pasurisë." },
-    "family": { "title": "Familja dhe martesa", "desc": "Perspektiva islame mbi martesën, rolet familjare dhe rritjen e fëmijëve në besim." },
-    "community": { "title": "Komuniteti", "desc": "Gjetja e komunitetit musliman, etiketa në xhami dhe ndërtimi i lidhjeve të vëllazërisë." },
-    "dawah": { "title": "Daawa", "desc": "Ndaj Islamin me mençuri dhe mirësi — si të flasësh për besimin tënd natyrshëm dhe me besim." }
+    "prayer": {
+      "title": "Jeta e namazit",
+      "desc": "Si të vendosni pesë namazet ditore, të gjeni drejtimin e Kiblës dhe të zhvilloni qëndrueshmëri në adhurim."
+    },
+    "halal": {
+      "title": "Jeta hallall",
+      "desc": "Orientimi në ushqimet hallall, konsumimin etik dhe zgjedhjet islame në një shoqëri jo-muslimane."
+    },
+    "finance": {
+      "title": "Financat islame",
+      "desc": "Kuptimi i bankingut pa Riba, llogaritja e Zekatit dhe menaxhimi etik i pasurisë."
+    },
+    "family": {
+      "title": "Familja dhe martesa",
+      "desc": "Perspektiva islame mbi martesën, rolet familjare dhe rritjen e fëmijëve në besim."
+    },
+    "community": {
+      "title": "Komuniteti",
+      "desc": "Gjetja e komunitetit musliman, etiketa në xhami dhe ndërtimi i lidhjeve të vëllazërisë."
+    },
+    "dawah": {
+      "title": "Daawa",
+      "desc": "Ndaj Islamin me mençuri dhe mirësi — si të flasësh për besimin tënd natyrshëm dhe me besim."
+    }
   },
   "newMuslimCareArea": {
     "badge": "Fondacioni KİM · Zona e kujdesit për muslimanët e rinj",

@@ -26,7 +26,14 @@
     "subtitle": "În inima Istanbulului, conectăm oameni din culturi diferite cu Islamul, construind punți de înțelegere și dialog.",
     "cta1": "Explorați programele",
     "cta2": "Voluntariat",
-    "scrollHint": "Derulați în jos"
+    "scrollHint": "Derulați în jos",
+    "offer": "Ce Oferim",
+    "svc1Title": "Descoperă Islamul",
+    "svc1Desc": "Discuții ghidate, sesiuni de întrebări și răspunsuri și introduceri în Islam — în limba ta.",
+    "svc2Title": "Călătoria Noului Musulman",
+    "svc2Desc": "Sprijin pas cu pas pentru cei care și-au pronunțat recent Shahada.",
+    "svc3Title": "Bibliotecă Gratuită",
+    "svc3Desc": "Cărți, ghiduri și resurse despre Islam în 10+ limbi."
   },
   "stats": {
     "title": "KİM în cifre",
@@ -178,12 +185,30 @@
     "quote": "Ia o faptă — pe cea pe care o iubești cel mai mult — și fii consecvent în ea. Allah nu obosește să răsplătească până când voi obosiți să faceți binele.",
     "quoteAuthor": "Profetul Muhammad ﷺ",
     "back": "Înapoi la zona de îngrijire pentru noii musulmani",
-    "prayer": { "title": "Viața de rugăciune", "desc": "Cum să stabiliți cele cinci rugăciuni zilnice, să găsiți direcția Qibla și să dezvoltați consecvența în adorare." },
-    "halal": { "title": "Viața halal", "desc": "Navigarea în alimentele halal, consumul etic și alegerile islamice într-o societate nemusulmană." },
-    "finance": { "title": "Finanțe islamice", "desc": "Înțelegerea sistemului bancar fără Riba, calculul Zakat și gestionarea etică a patrimoniului." },
-    "family": { "title": "Familie și căsătorie", "desc": "Perspectiva islamică asupra căsătoriei, rolurilor familiale și creșterii copiilor în credință." },
-    "community": { "title": "Comunitate", "desc": "Găsirea comunității musulmane, eticheta la moschee și construirea legăturilor de frăție." },
-    "dawah": { "title": "Dawah", "desc": "Împărtășirea Islamului cu înțelepciune și bunătate — cum să vorbești despre credința ta natural și cu încredere." }
+    "prayer": {
+      "title": "Viața de rugăciune",
+      "desc": "Cum să stabiliți cele cinci rugăciuni zilnice, să găsiți direcția Qibla și să dezvoltați consecvența în adorare."
+    },
+    "halal": {
+      "title": "Viața halal",
+      "desc": "Navigarea în alimentele halal, consumul etic și alegerile islamice într-o societate nemusulmană."
+    },
+    "finance": {
+      "title": "Finanțe islamice",
+      "desc": "Înțelegerea sistemului bancar fără Riba, calculul Zakat și gestionarea etică a patrimoniului."
+    },
+    "family": {
+      "title": "Familie și căsătorie",
+      "desc": "Perspectiva islamică asupra căsătoriei, rolurilor familiale și creșterii copiilor în credință."
+    },
+    "community": {
+      "title": "Comunitate",
+      "desc": "Găsirea comunității musulmane, eticheta la moschee și construirea legăturilor de frăție."
+    },
+    "dawah": {
+      "title": "Dawah",
+      "desc": "Împărtășirea Islamului cu înțelepciune și bunătate — cum să vorbești despre credința ta natural și cu încredere."
+    }
   },
   "newMuslimCareArea": {
     "badge": "Fundația KİM · Zona de îngrijire pentru noii musulmani",

@@ -250,14 +250,14 @@ export default async function VolunteerPage({ params }: Props) {
       </section>
 
       {/* ── Steps Timeline ── */}
-      <section className="bg-[#070C18] py-24">
+      <section className="bg-white py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Section label */}
           <div className="text-center mb-16">
             <span className="inline-block px-4 py-1 rounded-full border border-[#C9973A]/30 bg-[#C9973A]/8 text-[#C9973A] text-xs font-semibold uppercase tracking-widest mb-4">
               {ss.eyebrow}
             </span>
-            <h2 className="font-serif text-3xl md:text-4xl font-bold text-white">{ss.title}</h2>
+            <h2 className="font-serif text-3xl md:text-4xl font-bold text-gray-900">{ss.title}</h2>
           </div>
 
           {/* Horizontal timeline desktop / vertical mobile */}
@@ -280,15 +280,15 @@ export default async function VolunteerPage({ params }: Props) {
                   className="group flex flex-col items-center text-center"
                 >
                   {/* Gold number badge */}
-                  <div className="relative z-10 w-20 h-20 rounded-full border-2 border-[#C9973A]/40 bg-[#0D1220] flex items-center justify-center mb-6 transition-all duration-300 group-hover:border-[#C9973A] group-hover:bg-[#C9973A]/10 group-hover:shadow-[0_0_30px_rgba(201,151,58,0.2)]">
+                  <div className="relative z-10 w-20 h-20 rounded-full border-2 border-[#C9973A]/40 bg-amber-50 flex items-center justify-center mb-6 transition-all duration-300 group-hover:border-[#C9973A] group-hover:bg-[#C9973A]/10 group-hover:shadow-[0_0_30px_rgba(201,151,58,0.2)]">
                     <span className="font-serif text-2xl font-bold text-[#C9973A]">
                       {step.num}
                     </span>
                   </div>
-                  <h3 className="font-serif text-lg font-bold text-white mb-2">
+                  <h3 className="font-serif text-lg font-bold text-gray-900 mb-2">
                     {step.titles[l]}
                   </h3>
-                  <p className="text-white/50 text-sm leading-relaxed max-w-[180px]">
+                  <p className="text-gray-500 text-sm leading-relaxed max-w-[180px]">
                     {step.descs[l]}
                   </p>
                 </div>
@@ -299,7 +299,7 @@ export default async function VolunteerPage({ params }: Props) {
       </section>
 
       {/* ── KIM Academy ── */}
-      <section className="relative bg-[#0B1628] py-24 overflow-hidden">
+      <section className="relative bg-gray-50 py-24 overflow-hidden">
         {/* Animated gold grid overlay */}
         <div className="absolute inset-0 pointer-events-none opacity-[0.04]">
           <svg width="100%" height="100%" aria-hidden="true">
@@ -321,10 +321,10 @@ export default async function VolunteerPage({ params }: Props) {
               <span className="inline-block px-4 py-1 rounded-full border border-[#C9973A]/30 bg-[#C9973A]/8 text-[#C9973A] text-xs font-semibold uppercase tracking-widest mb-5">
                 {ac.eyebrow}
               </span>
-              <h2 className="font-serif text-3xl md:text-4xl font-bold text-white mt-2 mb-5">
+              <h2 className="font-serif text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-5">
                 {ac.title}
               </h2>
-              <p className="text-white/60 leading-relaxed mb-8 text-base">{ac.body}</p>
+              <p className="text-gray-500 leading-relaxed mb-8 text-base">{ac.body}</p>
 
               <ul className="space-y-3">
                 {ac.items.map((item) => (
@@ -341,14 +341,14 @@ export default async function VolunteerPage({ params }: Props) {
                         <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                       </svg>
                     </span>
-                    <span className="text-white/80 text-sm">{item}</span>
+                    <span className="text-gray-600 text-sm">{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
 
             {/* Stats card */}
-            <div className="rounded-3xl border border-white/10 bg-white/5 backdrop-blur-sm p-10">
+            <div className="rounded-3xl border border-gray-100 bg-white shadow-sm p-10">
               <div className="flex items-center justify-center w-16 h-16 rounded-2xl bg-[#C9973A]/15 border border-[#C9973A]/25 mx-auto mb-8">
                 <MessageSquare className="w-8 h-8" style={{ color: '#C9973A' }} strokeWidth={1.5} />
               </div>
@@ -356,10 +356,10 @@ export default async function VolunteerPage({ params }: Props) {
                 {ac.stats.map((s) => (
                   <div
                     key={s.label}
-                    className="text-center bg-white/5 border border-white/8 rounded-2xl p-5"
+                    className="text-center bg-gray-50 border border-gray-100 rounded-2xl p-5"
                   >
-                    <div className="font-serif text-3xl font-bold text-white mb-1">{s.n}</div>
-                    <div className="text-white/50 text-xs">{s.label}</div>
+                    <div className="font-serif text-3xl font-bold text-gray-900 mb-1">{s.n}</div>
+                    <div className="text-gray-400 text-xs">{s.label}</div>
                   </div>
                 ))}
               </div>
@@ -369,13 +369,13 @@ export default async function VolunteerPage({ params }: Props) {
       </section>
 
       {/* ── Benefits ── */}
-      <section className="bg-[#070C18] py-24">
+      <section className="bg-white py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <span className="inline-block px-4 py-1 rounded-full border border-[#C9973A]/30 bg-[#C9973A]/8 text-[#C9973A] text-xs font-semibold uppercase tracking-widest mb-4">
               {bs.eyebrow}
             </span>
-            <h2 className="font-serif text-3xl md:text-4xl font-bold text-white">{bs.title}</h2>
+            <h2 className="font-serif text-3xl md:text-4xl font-bold text-gray-900">{bs.title}</h2>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -384,13 +384,13 @@ export default async function VolunteerPage({ params }: Props) {
               return (
                 <div
                   key={b.titles.en}
-                  className="group rounded-2xl border border-white/[0.06] bg-[#0D1220] p-7 hover:border-[#C9973A]/30 hover:bg-[#0D1220] transition-all duration-300 hover:shadow-[0_0_25px_rgba(201,151,58,0.08)]"
+                  className="group rounded-2xl border border-gray-100 bg-white p-7 hover:border-[#C9973A]/30 hover:bg-amber-50/20 transition-all duration-300 hover:shadow-[0_4px_20px_rgba(201,151,58,0.1)]"
                 >
                   <div className="w-12 h-12 rounded-xl bg-[#C9973A]/10 border border-[#C9973A]/20 flex items-center justify-center mb-5 group-hover:bg-[#C9973A]/18 transition-colors duration-300">
                     <Icon className="w-5 h-5" style={{ color: '#C9973A' }} strokeWidth={1.5} />
                   </div>
-                  <h3 className="font-serif text-base font-bold text-white mb-2">{b.titles[l]}</h3>
-                  <p className="text-white/50 text-sm leading-relaxed">{b.descs[l]}</p>
+                  <h3 className="font-serif text-base font-bold text-gray-900 mb-2">{b.titles[l]}</h3>
+                  <p className="text-gray-500 text-sm leading-relaxed">{b.descs[l]}</p>
                 </div>
               );
             })}
@@ -399,12 +399,12 @@ export default async function VolunteerPage({ params }: Props) {
       </section>
 
       {/* ── Form + FAQ ── */}
-      <section className="bg-[#0B1628] py-24">
+      <section className="bg-gray-50 py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             {/* Form */}
             <div>
-              <h2 className="font-serif text-2xl md:text-3xl font-bold text-white mb-8">
+              <h2 className="font-serif text-2xl md:text-3xl font-bold text-gray-900 mb-8">
                 {fl.form}
               </h2>
               <VolunteerForm />
@@ -412,7 +412,7 @@ export default async function VolunteerPage({ params }: Props) {
 
             {/* FAQ */}
             <div>
-              <h2 className="font-serif text-2xl md:text-3xl font-bold text-white mb-8">
+              <h2 className="font-serif text-2xl md:text-3xl font-bold text-gray-900 mb-8">
                 {fl.faq}
               </h2>
               <FAQAccordion />

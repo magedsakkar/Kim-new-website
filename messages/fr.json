@@ -26,7 +26,14 @@
     "subtitle": "Au cœur d'Istanbul, nous connectons des personnes de différentes cultures avec l'Islam, en bâtissant des ponts de compréhension et de dialogue.",
     "cta1": "Explorer les programmes",
     "cta2": "Bénévolat",
-    "scrollHint": "Défiler vers le bas"
+    "scrollHint": "Défiler vers le bas",
+    "offer": "Ce Que Nous Offrons",
+    "svc1Title": "Découvrir l'Islam",
+    "svc1Desc": "Discussions guidées, séances de questions-réponses et introductions à l'Islam — dans votre langue.",
+    "svc2Title": "Parcours du Nouveau Musulman",
+    "svc2Desc": "Accompagnement étape par étape pour ceux qui ont récemment prononcé leur Chahada.",
+    "svc3Title": "Bibliothèque Gratuite",
+    "svc3Desc": "Livres, guides et ressources sur l'Islam en 10+ langues."
   },
   "stats": {
     "title": "KİM en chiffres",
@@ -178,12 +185,30 @@
     "quote": "Prenez un acte — celui que vous aimez le plus — et soyez constant dans celui-ci. Car Allah ne se lasse pas de récompenser jusqu'à ce que vous vous lassiez de faire du bien.",
     "quoteAuthor": "Prophète Muhammad ﷺ",
     "back": "Retour à l'espace pour les nouveaux musulmans",
-    "prayer": { "title": "Vie de prière", "desc": "Comment établir les cinq prières quotidiennes, trouver la direction de la Qibla et cultiver la constance dans l'adoration." },
-    "halal": { "title": "Vie halal", "desc": "Naviguer dans l'alimentation halal, la consommation éthique et faire des choix islamiques dans une société non-musulmane." },
-    "finance": { "title": "Finance islamique", "desc": "Comprendre la banque sans Riba, le calcul de la Zakat et la gestion éthique du patrimoine." },
-    "family": { "title": "Famille et mariage", "desc": "La perspective islamique sur le mariage, les rôles familiaux et l'éducation des enfants dans la foi." },
-    "community": { "title": "Communauté", "desc": "Trouver votre communauté musulmane, l'étiquette à la mosquée et construire des liens de fraternité." },
-    "dawah": { "title": "Dawah", "desc": "Partager l'Islam avec sagesse et bienveillance — comment parler de votre foi naturellement et avec confiance." }
+    "prayer": {
+      "title": "Vie de prière",
+      "desc": "Comment établir les cinq prières quotidiennes, trouver la direction de la Qibla et cultiver la constance dans l'adoration."
+    },
+    "halal": {
+      "title": "Vie halal",
+      "desc": "Naviguer dans l'alimentation halal, la consommation éthique et faire des choix islamiques dans une société non-musulmane."
+    },
+    "finance": {
+      "title": "Finance islamique",
+      "desc": "Comprendre la banque sans Riba, le calcul de la Zakat et la gestion éthique du patrimoine."
+    },
+    "family": {
+      "title": "Famille et mariage",
+      "desc": "La perspective islamique sur le mariage, les rôles familiaux et l'éducation des enfants dans la foi."
+    },
+    "community": {
+      "title": "Communauté",
+      "desc": "Trouver votre communauté musulmane, l'étiquette à la mosquée et construire des liens de fraternité."
+    },
+    "dawah": {
+      "title": "Dawah",
+      "desc": "Partager l'Islam avec sagesse et bienveillance — comment parler de votre foi naturellement et avec confiance."
+    }
   },
   "newMuslimCareArea": {
     "badge": "Fondation KİM · Espace pour les nouveaux musulmans",

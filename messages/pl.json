@@ -26,7 +26,14 @@
     "subtitle": "W sercu Stambułu łączymy ludzi różnych kultur z islamem, budując mosty zrozumienia i dialogu.",
     "cta1": "Poznaj programy",
     "cta2": "Wolontariat",
-    "scrollHint": "Przewiń w dół"
+    "scrollHint": "Przewiń w dół",
+    "offer": "Co Oferujemy",
+    "svc1Title": "Odkryj Islam",
+    "svc1Desc": "Prowadzone rozmowy, sesje pytań i odpowiedzi oraz wprowadzenia do islamu — w twoim języku.",
+    "svc2Title": "Podróż Nowego Muzułmanina",
+    "svc2Desc": "Krok po kroku wsparcie dla tych, którzy niedawno wypowiedzieli Szahadę.",
+    "svc3Title": "Darmowa Biblioteka",
+    "svc3Desc": "Książki, przewodniki i zasoby o islamie w 10+ językach."
   },
   "stats": {
     "title": "KİM w liczbach",
@@ -178,12 +185,30 @@
     "quote": "Weź jeden czyn — ten, który kochasz najbardziej — i bądź w nim wytrwały. Allah nie męczy się nagradzaniem, dopóki wy nie zmęczycie się czynieniem dobra.",
     "quoteAuthor": "Prorok Muhammad ﷺ",
     "back": "Wróć do strefy wsparcia dla nowych muzułmanów",
-    "prayer": { "title": "Życie modlitwą", "desc": "Jak ustanowić pięć codziennych modlitw, znaleźć kierunek Kibli i rozwinąć wytrwałość w kulcie." },
-    "halal": { "title": "Życie halal", "desc": "Poruszanie się w świecie żywności halal, etycznej konsumpcji i islamskich wyborów w społeczeństwie niemuzułmańskim." },
-    "finance": { "title": "Finanse islamskie", "desc": "Zrozumienie bankowości bez Riba, obliczania Zakat i etycznego zarządzania majątkiem." },
-    "family": { "title": "Rodzina i małżeństwo", "desc": "Islamskie spojrzenie na małżeństwo, role rodzinne i wychowanie dzieci w wierze." },
-    "community": { "title": "Wspólnota", "desc": "Znajdowanie wspólnoty muzułmańskiej, etykieta w meczecie i budowanie więzi braterstwa." },
-    "dawah": { "title": "Dawah", "desc": "Dzielenie się islamem z mądrością i życzliwością — jak naturalnie i pewnie mówić o swojej wierze." }
+    "prayer": {
+      "title": "Życie modlitwą",
+      "desc": "Jak ustanowić pięć codziennych modlitw, znaleźć kierunek Kibli i rozwinąć wytrwałość w kulcie."
+    },
+    "halal": {
+      "title": "Życie halal",
+      "desc": "Poruszanie się w świecie żywności halal, etycznej konsumpcji i islamskich wyborów w społeczeństwie niemuzułmańskim."
+    },
+    "finance": {
+      "title": "Finanse islamskie",
+      "desc": "Zrozumienie bankowości bez Riba, obliczania Zakat i etycznego zarządzania majątkiem."
+    },
+    "family": {
+      "title": "Rodzina i małżeństwo",
+      "desc": "Islamskie spojrzenie na małżeństwo, role rodzinne i wychowanie dzieci w wierze."
+    },
+    "community": {
+      "title": "Wspólnota",
+      "desc": "Znajdowanie wspólnoty muzułmańskiej, etykieta w meczecie i budowanie więzi braterstwa."
+    },
+    "dawah": {
+      "title": "Dawah",
+      "desc": "Dzielenie się islamem z mądrością i życzliwością — jak naturalnie i pewnie mówić o swojej wierze."
+    }
   },
   "newMuslimCareArea": {
     "badge": "Fundacja KİM · Strefa wsparcia dla nowych muzułmanów",
