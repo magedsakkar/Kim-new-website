@@ -15,12 +15,13 @@ export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const isRTL = locale === 'ar';
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const isRTL = locale === 'ar' || locale === 'fa';
 
   useEffect(() => {
     const onScroll = () => {
       const scrollTop = window.scrollY;
-      setScrolled(scrollTop > 40);
+      setScrolled(scrollTop > 50);
       const doc = document.documentElement;
       const total = doc.scrollHeight - doc.clientHeight;
       setScrollProgress(total > 0 ? Math.min((scrollTop / total) * 100, 100) : 0);
@@ -64,145 +65,214 @@ export function Header() {
 
   return (
     <>
-      {/* ── Floating Island Header ─────────────────────────── */}
+      {/* ── Header ───────────────────────────────────────────── */}
       <header
-        className="fixed top-4 left-0 right-0 z-50 px-3 sm:px-4 lg:px-6"
+        className={cn(
+          'fixed top-0 left-0 right-0 z-50 transition-all duration-500',
+          scrolled
+            ? 'bg-kim-navy/[0.97] backdrop-blur-2xl border-b border-white/[0.08] shadow-xl shadow-black/30'
+            : 'bg-kim-navy/[0.82] backdrop-blur-xl border-b border-white/[0.05]'
+        )}
         dir={isRTL ? 'rtl' : 'ltr'}
       >
+        {/* Scroll progress bar — thin gold line at very top */}
         <div
           className={cn(
-            'relative max-w-7xl mx-auto rounded-2xl border transition-all duration-500',
-            scrolled
-              ? 'bg-kim-navy/96 backdrop-blur-xl border-white/15 shadow-2xl shadow-kim-navy/50'
-              : 'bg-kim-navy/88 backdrop-blur-lg border-white/10 shadow-lg shadow-kim-navy/30'
+            'absolute top-0 left-0 h-[2px] transition-opacity duration-300 pointer-events-none',
+            scrolled ? 'opacity-100' : 'opacity-0'
           )}
-        >
-          {/* Inner clip wrapper — keeps progress bar and pattern clipped to rounded corners */}
-          <div className="absolute inset-0 rounded-2xl overflow-hidden pointer-events-none">
-            {/* ── Scroll progress bar ── */}
-            <div
-              className="absolute top-0 left-0 h-[2px] bg-gradient-to-r from-kim-gold via-amber-300 to-kim-gold transition-[width] duration-100 ease-linear"
-              style={{ width: `${scrollProgress}%` }}
-            />
+          style={{
+            width: `${scrollProgress}%`,
+            background: 'linear-gradient(90deg, rgba(201,151,58,0.6), #C9973A, rgba(201,151,58,0.6))',
+            boxShadow: '0 0 8px rgba(201,151,58,0.5)',
+          }}
+        />
 
-            {/* ── Islamic star tile background ── */}
-            <div
-              className="absolute inset-0 opacity-[0.025]"
+        {/* Main row */}
+        <div className="max-w-7xl mx-auto flex items-center justify-between h-[60px] md:h-[68px] px-4 sm:px-6 lg:px-8">
+
+          {/* ── Logo ── */}
+          <Link href="/" className="flex items-center gap-3 flex-shrink-0 group">
+            <div className="relative flex items-center justify-center">
+              {/* Glow ring on hover */}
+              <div className="absolute inset-0 rounded-full bg-kim-gold/0 group-hover:bg-kim-gold/12 transition-all duration-350 scale-150" />
+              <Image
+                src="/images/logo_kim_aklamasz-removebg-preview.png"
+                alt="KİM Vakfı"
+                width={44}
+                height={44}
+                className="relative h-9 w-auto object-contain transition-opacity duration-200 group-hover:opacity-100 opacity-90"
+                priority
+                style={{ filter: 'brightness(0) invert(1)' }}
+              />
+            </div>
+            <div className="hidden sm:flex flex-col leading-none">
+              <span className="text-white font-bold text-[15px] tracking-wide">KİM Vakfı</span>
+              <span
+                className="text-[9px] font-semibold uppercase"
+                style={{ color: 'rgba(201,151,58,0.8)', letterSpacing: '0.2em' }}
+              >
+                Cross Cultural
+              </span>
+            </div>
+          </Link>
+
+          {/* ── Desktop nav ── */}
+          <nav className="hidden lg:flex items-center gap-0.5" role="navigation">
+            {navLinks.map((link) => {
+              const isActive = pathname === link.href || (link.href !== '/' && pathname.startsWith(link.href));
+              return (
+                <div
+                  key={link.href}
+                  className="relative"
+                  onMouseEnter={() => link.children && setOpenDropdown(link.href)}
+                  onMouseLeave={() => setOpenDropdown(null)}
+                >
+                  <Link
+                    href={link.href}
+                    className={cn(
+                      'relative flex items-center gap-1 px-3.5 py-2 text-[13.5px] font-medium rounded-lg transition-all duration-200 group/link',
+                      isActive
+                        ? 'text-kim-gold'
+                        : 'text-white/65 hover:text-white/95'
+                    )}
+                  >
+                    {/* Animated bottom underline for active */}
+                    <span
+                      className={cn(
+                        'absolute bottom-1 left-3.5 right-3.5 h-[1.5px] rounded-full transition-all duration-300',
+                        isActive ? 'opacity-100 scale-x-100' : 'opacity-0 scale-x-0 group-hover/link:opacity-40 group-hover/link:scale-x-75'
+                      )}
+                      style={{ background: '#C9973A', transformOrigin: 'center' }}
+                    />
+                    <span className="relative z-10">{link.label}</span>
+                    {link.children && (
+                      <svg
+                        className={cn(
+                          'relative z-10 w-3 h-3 transition-all duration-200',
+                          openDropdown === link.href ? 'rotate-180 text-kim-gold' : 'text-white/35'
+                        )}
+                        fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    )}
+                  </Link>
+
+                  {/* Dropdown */}
+                  {link.children && (
+                    <AnimatePresence>
+                      {openDropdown === link.href && (
+                        <motion.div
+                          key="dropdown"
+                          initial={{ opacity: 0, y: 6, scale: 0.97 }}
+                          animate={{ opacity: 1, y: 0, scale: 1 }}
+                          exit={{ opacity: 0, y: 4, scale: 0.97 }}
+                          transition={{ duration: 0.15, ease: 'easeOut' }}
+                          className={cn(
+                            'absolute top-full mt-1.5 w-52 z-50',
+                            isRTL ? 'right-0' : 'left-0'
+                          )}
+                        >
+                          <div
+                            className="rounded-2xl overflow-hidden border"
+                            style={{
+                              background: 'rgba(10,15,35,0.97)',
+                              backdropFilter: 'blur(20px)',
+                              borderColor: 'rgba(255,255,255,0.08)',
+                              boxShadow: '0 20px 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(201,151,58,0.06)',
+                            }}
+                          >
+                            {/* Gold top line */}
+                            <div className="h-[1px]" style={{ background: 'linear-gradient(90deg, transparent, rgba(201,151,58,0.4), transparent)' }} />
+                            <div className="py-1.5">
+                              {link.children.map((child) => (
+                                <Link
+                                  key={child.href}
+                                  href={child.href}
+                                  onClick={() => setOpenDropdown(null)}
+                                  className="group/item flex items-center gap-2.5 px-4 py-2.5 text-[13px] transition-all duration-150"
+                                  style={{ color: 'rgba(255,255,255,0.55)' }}
+                                  onMouseEnter={e => { (e.currentTarget as HTMLElement).style.color = 'rgba(255,255,255,0.95)'; (e.currentTarget as HTMLElement).style.background = 'rgba(255,255,255,0.05)'; }}
+                                  onMouseLeave={e => { (e.currentTarget as HTMLElement).style.color = 'rgba(255,255,255,0.55)'; (e.currentTarget as HTMLElement).style.background = 'transparent'; }}
+                                >
+                                  <span
+                                    className="w-1 h-1 rounded-full flex-shrink-0 transition-colors duration-150"
+                                    style={{ background: 'rgba(201,151,58,0.4)' }}
+                                  />
+                                  {child.label}
+                                </Link>
+                              ))}
+                            </div>
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  )}
+                </div>
+              );
+            })}
+          </nav>
+
+          {/* ── Right actions ── */}
+          <div className="flex items-center gap-2 sm:gap-3">
+            <LocaleSwitcher variant="header" />
+
+            <Link
+              href="/donate"
+              className="hidden sm:inline-flex items-center gap-1.5 px-4 py-2 text-[13px] font-bold rounded-lg transition-all duration-200 hover:-translate-y-px"
               style={{
-                backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48'%3E%3Cpath d='M24 4l2.5 9.5 8-5.5-4 8.5 9.5 2-9.5 2 4 8.5-8-5.5L24 33l-2.5-9.5-8 5.5 4-8.5-9.5-2 9.5-2-4-8.5 8 5.5Z' fill='white'/%3E%3C/svg%3E")`,
-                backgroundSize: '48px 48px',
+                background: 'rgba(201,151,58,1)',
+                color: '#fff',
+                boxShadow: '0 2px 12px rgba(201,151,58,0.3)',
               }}
-            />
-          </div>
-
-          {/* ── Main row ── */}
-          <div className="flex items-center justify-between h-14 md:h-16 px-4 md:px-5">
-
-            {/* Logo */}
-            <Link href="/" className="flex items-center gap-2.5 flex-shrink-0 group">
-              <div className="relative w-8 h-8 flex items-center justify-center">
-                <div className="absolute inset-0 rounded-full bg-kim-gold/20 opacity-0 group-hover:opacity-100 scale-75 group-hover:scale-100 transition-all duration-300" />
-                <Image
-                  src="/images/logo_kim_aklamasz-removebg-preview.png"
-                  alt="KİM Vakfı"
-                  width={40}
-                  height={40}
-                  className="relative h-8 w-auto object-contain"
-                  priority
-                  style={{ filter: 'brightness(0) invert(1)' }}
-                />
-              </div>
-              <div className="hidden sm:block">
-                <div className="text-white font-bold text-sm leading-tight tracking-wide">KİM Vakfı</div>
-                <div className="text-kim-gold text-[9px] font-semibold uppercase tracking-[0.18em] leading-none">Cross Cultural</div>
-              </div>
+              onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = '#b8841f'; (e.currentTarget as HTMLElement).style.boxShadow = '0 4px 20px rgba(201,151,58,0.45)'; }}
+              onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = 'rgba(201,151,58,1)'; (e.currentTarget as HTMLElement).style.boxShadow = '0 2px 12px rgba(201,151,58,0.3)'; }}
+            >
+              {t('donate')}
             </Link>
 
-            {/* Desktop nav */}
-            <nav className="hidden lg:flex items-center gap-0.5">
-              {navLinks.map((link) => {
-                const isActive = pathname === link.href;
-                return (
-                  <div key={link.href} className="relative group">
-                    <Link
-                      href={link.href}
-                      className={cn(
-                        'relative px-3 py-2 rounded-xl text-sm font-medium transition-all duration-200 flex items-center gap-1 overflow-hidden',
-                        isActive ? 'text-kim-gold' : 'text-white/70 hover:text-white'
-                      )}
-                    >
-                      {/* Animated active bg */}
-                      {isActive && (
-                        <motion.div
-                          layoutId="nav-active-bg"
-                          className="absolute inset-0 rounded-xl bg-white/10"
-                          transition={{ type: 'spring', stiffness: 500, damping: 40 }}
-                        />
-                      )}
-                      <span className="relative z-10">{link.label}</span>
-                      {link.children && (
-                        <svg
-                          className="relative z-10 w-3.5 h-3.5 text-kim-gold/70 group-hover:text-kim-gold group-hover:rotate-180 transition-all duration-200"
-                          fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                        >
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
-                        </svg>
-                      )}
-                    </Link>
-
-                    {/* Dropdown */}
-                    {link.children && (
-                      <div className="absolute top-full left-0 mt-2 w-52 opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-200 z-50">
-                        <div className="bg-kim-navy/96 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl shadow-kim-navy/50 overflow-hidden">
-                          {/* Dropdown triangle */}
-                          <div className="absolute -top-1.5 left-5 w-3 h-3 bg-kim-navy/96 border-l border-t border-white/10 rotate-45" />
-                          <div className="pt-2 pb-1.5">
-                            {link.children.map((child) => (
-                              <Link
-                                key={child.href}
-                                href={child.href}
-                                className="flex items-center gap-2.5 px-4 py-2.5 text-sm text-white/65 hover:text-white hover:bg-white/8 transition-all duration-150 group/item"
-                              >
-                                <span className="w-1 h-1 rounded-full bg-kim-gold/40 group-hover/item:bg-kim-gold transition-colors shrink-0" />
-                                {child.label}
-                              </Link>
-                            ))}
-                          </div>
-                        </div>
-                      </div>
-                    )}
-                  </div>
-                );
-              })}
-            </nav>
-
-            {/* Right actions */}
-            <div className="flex items-center gap-2">
-              <LocaleSwitcher variant="header" />
-
-              <Link
-                href="/donate"
-                className="hidden sm:inline-flex items-center px-4 py-2 bg-kim-gold text-white text-sm font-bold rounded-xl hover:bg-amber-500 transition-all duration-200 shadow-md hover:shadow-lg hover:shadow-kim-gold/25 hover:-translate-y-px"
-              >
-                {t('donate')}
-              </Link>
-
-              {/* Mobile hamburger */}
-              <button
-                className="lg:hidden w-9 h-9 rounded-xl bg-white/8 hover:bg-white/15 flex flex-col items-center justify-center gap-1.5 transition-colors"
-                onClick={() => setMobileOpen(!mobileOpen)}
-                aria-label="Toggle menu"
-              >
-                <span className={cn('block w-4.5 h-0.5 bg-white rounded-full transition-all duration-300', mobileOpen && 'rotate-45 translate-y-2')} />
-                <span className={cn('block w-4.5 h-0.5 bg-white rounded-full transition-all duration-300', mobileOpen && 'opacity-0 scale-x-0')} />
-                <span className={cn('block w-4.5 h-0.5 bg-white rounded-full transition-all duration-300', mobileOpen && '-rotate-45 -translate-y-2')} />
-              </button>
-            </div>
+            {/* Mobile hamburger */}
+            <button
+              className={cn(
+                'lg:hidden flex flex-col items-center justify-center gap-[5px] w-9 h-9 rounded-lg transition-all duration-200',
+                mobileOpen
+                  ? 'bg-white/15'
+                  : 'hover:bg-white/8'
+              )}
+              onClick={() => setMobileOpen(!mobileOpen)}
+              aria-label="Toggle menu"
+            >
+              <span
+                className="block h-[1.5px] bg-white rounded-full transition-all duration-300"
+                style={{
+                  width: '20px',
+                  transform: mobileOpen ? 'rotate(45deg) translate(4.5px, 4.5px)' : 'none',
+                }}
+              />
+              <span
+                className="block h-[1.5px] bg-white rounded-full transition-all duration-300"
+                style={{
+                  width: '14px',
+                  opacity: mobileOpen ? 0 : 1,
+                  transform: mobileOpen ? 'scaleX(0)' : 'none',
+                  alignSelf: 'flex-end',
+                  marginRight: '2px',
+                }}
+              />
+              <span
+                className="block h-[1.5px] bg-white rounded-full transition-all duration-300"
+                style={{
+                  width: '20px',
+                  transform: mobileOpen ? 'rotate(-45deg) translate(4.5px, -4.5px)' : 'none',
+                }}
+              />
+            </button>
           </div>
         </div>
       </header>
 
-      {/* ── Mobile overlay ──────────────────────────────────── */}
+      {/* ── Mobile backdrop ── */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
@@ -211,40 +281,33 @@ export function Header() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-40 bg-black/65 backdrop-blur-sm lg:hidden"
+            className="fixed inset-0 z-40 lg:hidden"
+            style={{ background: 'rgba(0,0,0,0.7)', backdropFilter: 'blur(4px)' }}
             onClick={() => setMobileOpen(false)}
           />
         )}
       </AnimatePresence>
 
-      {/* ── Mobile Drawer ───────────────────────────────────── */}
+      {/* ── Mobile Drawer ── */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
             key="drawer"
-            initial={{ x: isRTL ? '-100%' : '100%', opacity: 0.5 }}
-            animate={{ x: 0, opacity: 1 }}
-            exit={{ x: isRTL ? '-100%' : '100%', opacity: 0 }}
-            transition={{ type: 'spring', stiffness: 380, damping: 38 }}
+            initial={{ x: isRTL ? '-100%' : '100%' }}
+            animate={{ x: 0 }}
+            exit={{ x: isRTL ? '-100%' : '100%' }}
+            transition={{ type: 'spring', stiffness: 340, damping: 34 }}
             className={cn(
-              'fixed top-0 bottom-0 z-50 w-80 max-w-[88vw] bg-kim-navy overflow-y-auto lg:hidden',
-              isRTL ? 'left-0 rounded-r-3xl' : 'right-0 rounded-l-3xl'
+              'fixed top-0 bottom-0 z-50 w-[300px] max-w-[90vw] overflow-y-auto lg:hidden',
+              isRTL ? 'left-0' : 'right-0'
             )}
+            style={{ background: 'rgba(8,12,30,0.98)', backdropFilter: 'blur(20px)' }}
             dir={isRTL ? 'rtl' : 'ltr'}
           >
-            {/* Star pattern bg */}
-            <div
-              className="absolute inset-0 opacity-[0.03] pointer-events-none"
-              style={{
-                backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48'%3E%3Cpath d='M24 4l2.5 9.5 8-5.5-4 8.5 9.5 2-9.5 2 4 8.5-8-5.5L24 33l-2.5-9.5-8 5.5 4-8.5-9.5-2 9.5-2-4-8.5 8 5.5Z' fill='white'/%3E%3C/svg%3E")`,
-                backgroundSize: '48px 48px',
-              }}
-            />
-
             {/* Gold top bar */}
-            <div className="h-1 bg-gradient-to-r from-kim-gold via-amber-300 to-kim-gold" />
+            <div className="h-[2px]" style={{ background: 'linear-gradient(90deg, transparent, #C9973A 30%, #FFE49A 50%, #C9973A 70%, transparent)' }} />
 
-            <div className="relative z-10 p-5">
+            <div className="p-5">
               {/* Drawer header */}
               <div className="flex items-center justify-between mb-6">
                 <Link href="/" onClick={() => setMobileOpen(false)} className="flex items-center gap-2.5">
@@ -257,74 +320,85 @@ export function Header() {
                     style={{ filter: 'brightness(0) invert(1)' }}
                   />
                   <div>
-                    <div className="text-white font-bold text-sm leading-tight">KİM Vakfı</div>
-                    <div className="text-kim-gold text-[9px] font-semibold uppercase tracking-[0.18em]">Cross Cultural</div>
+                    <div className="text-white font-bold text-[14px]">KİM Vakfı</div>
+                    <div className="text-[9px] font-semibold uppercase" style={{ color: 'rgba(201,151,58,0.8)', letterSpacing: '0.18em' }}>
+                      Cross Cultural
+                    </div>
                   </div>
                 </Link>
                 <button
                   onClick={() => setMobileOpen(false)}
-                  className="w-8 h-8 rounded-xl bg-white/10 flex items-center justify-center text-white hover:bg-white/20 transition-colors"
+                  className="w-8 h-8 rounded-lg flex items-center justify-center text-white/60 hover:text-white hover:bg-white/10 transition-all"
                 >
-                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" />
+                  <svg className="w-4.5 h-4.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                   </svg>
                 </button>
               </div>
 
-              {/* Language switcher */}
-              <div className="mb-5 pb-5 border-b border-white/8">
-                <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/30 mb-3">Language</p>
+              {/* Language */}
+              <div className="mb-5 pb-5" style={{ borderBottom: '1px solid rgba(255,255,255,0.07)' }}>
+                <p className="text-[10px] font-bold uppercase mb-3" style={{ color: 'rgba(255,255,255,0.25)', letterSpacing: '0.22em' }}>
+                  Language
+                </p>
                 <LocaleSwitcher variant="mobile" />
               </div>
 
               {/* Nav links */}
               <nav className="space-y-0.5 mb-6">
-                {navLinks.map((link, i) => (
-                  <motion.div
-                    key={link.href}
-                    initial={{ opacity: 0, x: 16 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: i * 0.04 + 0.05 }}
-                  >
-                    <Link
-                      href={link.href}
-                      onClick={() => setMobileOpen(false)}
-                      className={cn(
-                        'flex items-center gap-3 px-4 py-3 rounded-xl font-medium transition-all text-sm',
-                        pathname === link.href
-                          ? 'text-kim-gold bg-white/10'
-                          : 'text-white/75 hover:text-white hover:bg-white/8'
-                      )}
+                {navLinks.map((link, i) => {
+                  const isActive = pathname === link.href || (link.href !== '/' && pathname.startsWith(link.href));
+                  return (
+                    <motion.div
+                      key={link.href}
+                      initial={{ opacity: 0, x: isRTL ? -14 : 14 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: i * 0.04 + 0.04 }}
                     >
-                      {pathname === link.href && (
-                        <span className="w-1.5 h-1.5 rounded-full bg-kim-gold shrink-0" />
+                      <Link
+                        href={link.href}
+                        onClick={() => setMobileOpen(false)}
+                        className="flex items-center gap-3 px-3 py-3 rounded-xl text-[14px] font-medium transition-all"
+                        style={{
+                          color: isActive ? 'rgba(201,151,58,1)' : 'rgba(255,255,255,0.65)',
+                          background: isActive ? 'rgba(201,151,58,0.1)' : 'transparent',
+                        }}
+                      >
+                        {isActive && (
+                          <span className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: '#C9973A' }} />
+                        )}
+                        {link.label}
+                      </Link>
+                      {link.children && (
+                        <div className="ml-5 mt-0.5 space-y-0 mb-1">
+                          {link.children.map((child) => (
+                            <Link
+                              key={child.href}
+                              href={child.href}
+                              onClick={() => setMobileOpen(false)}
+                              className="flex items-center gap-2 px-3 py-2 rounded-lg text-[12px] transition-all"
+                              style={{ color: 'rgba(255,255,255,0.35)' }}
+                            >
+                              <span className="w-1 h-1 rounded-full flex-shrink-0" style={{ background: 'rgba(255,255,255,0.2)' }} />
+                              {child.label}
+                            </Link>
+                          ))}
+                        </div>
                       )}
-                      {link.label}
-                    </Link>
-                    {link.children && (
-                      <div className="ml-6 mt-0.5 space-y-0.5 mb-1">
-                        {link.children.map((child) => (
-                          <Link
-                            key={child.href}
-                            href={child.href}
-                            onClick={() => setMobileOpen(false)}
-                            className="flex items-center gap-2 px-4 py-2 rounded-lg text-xs text-white/40 hover:text-white/75 hover:bg-white/5 transition-all"
-                          >
-                            <span className="w-1 h-1 rounded-full bg-white/25 shrink-0" />
-                            {child.label}
-                          </Link>
-                        ))}
-                      </div>
-                    )}
-                  </motion.div>
-                ))}
+                    </motion.div>
+                  );
+                })}
               </nav>
 
-              {/* Donate CTA */}
+              {/* Donate */}
               <Link
                 href="/donate"
                 onClick={() => setMobileOpen(false)}
-                className="block w-full text-center px-4 py-3.5 bg-kim-gold text-white font-bold rounded-xl hover:bg-amber-500 transition-colors shadow-lg shadow-kim-gold/25 text-sm"
+                className="block w-full text-center px-4 py-3.5 rounded-xl font-bold text-white text-[14px] transition-all"
+                style={{
+                  background: '#C9973A',
+                  boxShadow: '0 4px 20px rgba(201,151,58,0.3)',
+                }}
               >
                 {t('donate')}
               </Link>
