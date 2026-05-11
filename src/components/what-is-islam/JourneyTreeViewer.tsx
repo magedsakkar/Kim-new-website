@@ -1,5 +1,6 @@
 'use client';
 
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
 import { journeySteps } from '@/data/what-is-islam';
@@ -41,6 +42,7 @@ export function JourneyTreeViewer({
   activeId: string;
   onSelect: (id: string) => void;
 }) {
+  const [clickFlash, setClickFlash] = useState<string | null>(null);
   const [ax, ay] = NODE_POS[activeId] ?? [CW / 2, CH / 2];
 
   return (
@@ -99,6 +101,49 @@ export function JourneyTreeViewer({
             animate={{ cx: ax, cy: ay }}
             transition={{ type: 'spring', stiffness: 170, damping: 21 }}
           />
+
+          {clickFlash && NODE_POS[clickFlash] && (() => {
+            const [fx, fy] = NODE_POS[clickFlash];
+            const RAD_ANGLES = [0, 45, 90, 135, 180, 225, 270, 315];
+            return (
+              <g key={clickFlash + '-flash'} pointerEvents="none">
+                {/* Inner expanding ring */}
+                <motion.circle
+                  cx={fx} cy={fy}
+                  fill="#C9973A"
+                  initial={{ r: NODE_RY, opacity: 0.8 }}
+                  animate={{ r: NODE_RY * 4, opacity: 0 }}
+                  transition={{ duration: 0.6, ease: 'easeOut' }}
+                />
+                {/* Outer expanding ring */}
+                <motion.circle
+                  cx={fx} cy={fy}
+                  fill="#C9973A"
+                  initial={{ r: NODE_RY, opacity: 0.55 }}
+                  animate={{ r: NODE_RY * 6, opacity: 0 }}
+                  transition={{ duration: 0.65, ease: 'easeOut', delay: 0.1 }}
+                />
+                {/* 8 radiating lines */}
+                {RAD_ANGLES.map((angle) => {
+                  const rad = (angle * Math.PI) / 180;
+                  const x2 = fx + Math.cos(rad) * 28;
+                  const y2 = fy + Math.sin(rad) * 28;
+                  return (
+                    <motion.line
+                      key={angle}
+                      x1={fx} y1={fy} x2={x2} y2={y2}
+                      stroke="#C9973A"
+                      strokeWidth={1.5}
+                      strokeLinecap="round"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: [0, 0.8, 0] }}
+                      transition={{ duration: 0.6, ease: 'easeOut', times: [0, 0.2, 1] }}
+                    />
+                  );
+                })}
+              </g>
+            );
+          })()}
         </svg>
 
         {journeySteps.map((step) => {
@@ -110,7 +155,11 @@ export function JourneyTreeViewer({
           return (
             <motion.button
               key={step.id}
-              onClick={() => onSelect(step.id)}
+              onClick={() => {
+                setClickFlash(step.id);
+                onSelect(step.id);
+                setTimeout(() => setClickFlash(null), 700);
+              }}
               className="absolute focus:outline-none"
               style={{
                 left: `${(nx / CW) * 100}%`,
@@ -124,12 +173,12 @@ export function JourneyTreeViewer({
             >
               <span
                 style={{
-                  fontSize: '8px',
+                  fontSize: '11px',
                   whiteSpace: 'nowrap',
                   boxShadow: isActive ? '0 0 14px rgba(201,151,58,0.55), 0 0 32px rgba(201,151,58,0.2)' : undefined,
                 }}
                 className={cn(
-                  'flex items-center gap-0.5 px-2 py-1 rounded-full border font-medium leading-none transition-colors duration-300 cursor-pointer',
+                  'flex items-center gap-0.5 px-3 py-1.5 rounded-full border font-medium leading-none transition-colors duration-300 cursor-pointer',
                   isActive
                     ? 'bg-kim-navy border-kim-gold text-kim-gold'
                     : isCore
@@ -137,7 +186,7 @@ export function JourneyTreeViewer({
                     : 'bg-kim-navy-dark/90 border-white/16 text-white/65 hover:border-kim-gold/40 hover:text-white',
                 )}
               >
-                <span style={{ fontSize: '0.9em' }}>{step.icon}</span>
+                <span style={{ fontSize: '1.1em' }}>{step.icon}</span>
                 {step.shortLabel}
               </span>
             </motion.button>

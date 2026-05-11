@@ -12,7 +12,7 @@ export function JourneyTreePanel({
   onSelect: (id: string) => void;
 }) {
   return (
-    <div className="hidden lg:flex flex-col w-[300px] bg-[#07102A]/96 backdrop-blur-md border-r border-white/8 flex-shrink-0 overflow-hidden">
+    <div className="hidden lg:flex flex-col w-[320px] bg-[#07102A]/96 backdrop-blur-md border-r border-white/8 flex-shrink-0 overflow-hidden">
       {/* Header */}
       <div className="flex-shrink-0 px-4 py-3 border-b border-white/8 bg-kim-navy-dark/30">
         <p className="text-[8px] font-black uppercase tracking-[0.3em] text-kim-gold/75 mb-1">Educational Journey</p>

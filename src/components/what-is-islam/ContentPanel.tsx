@@ -1,5 +1,6 @@
 'use client';
 
+import { useRef, useEffect } from 'react';
 import { useLocale } from 'next-intl';
 import { motion, AnimatePresence } from 'framer-motion';
 import { journeySteps, hubVideoIds } from '@/data/what-is-islam';
@@ -91,6 +92,9 @@ export function ContentPanel({
   onSelect: (id: string) => void;
   onOpenMobileNav: () => void;
 }) {
+  const scrollRef  = useRef<HTMLDivElement>(null);
+  useEffect(() => { scrollRef.current?.scrollTo({ top: 0, behavior: 'instant' }); }, [activeId]);
+
   const locale     = useLocale();
   const step       = journeySteps.find((s) => s.id === activeId)!;
   const stepIdx    = STEP_ORDER.indexOf(activeId);
@@ -99,7 +103,7 @@ export function ContentPanel({
   const transcript = TRANSCRIPTS[activeId] ?? step.description;
 
   return (
-    <div className="flex-1 overflow-y-auto min-w-0">
+    <div ref={scrollRef} className="flex-1 overflow-y-auto min-w-0">
       {/* Sticky top bar */}
       <div className="sticky top-0 z-10 bg-[#05081A]/96 backdrop-blur-md border-b border-white/8 px-4 py-3 flex items-center gap-3">
         <button
