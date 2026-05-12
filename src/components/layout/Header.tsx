@@ -43,8 +43,7 @@ export function Header() {
       label: t('about'),
       children: [
         { href: '/about', label: t('whoWeAre') },
-        { href: '/about#leadership', label: t('leadership') },
-        { href: '/about#media', label: t('media') },
+        { href: '/our-projects', label: t('ourProjects') },
         { href: '/library-map', label: t('locations') },
       ],
     },

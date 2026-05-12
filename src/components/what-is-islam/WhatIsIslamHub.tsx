@@ -3,6 +3,7 @@
 import { useState, useRef } from 'react';
 import { useLocale } from 'next-intl';
 import { motion, AnimatePresence } from 'framer-motion';
+import { cn } from '@/lib/utils';
 import { IslamicBackground } from './IslamicBackground';
 import { JourneyTreeViewer } from './JourneyTreeViewer';
 import { ContentPanel } from './ContentPanel';
@@ -66,12 +67,47 @@ export function WhatIsIslamHub() {
             <p className="text-white/40 text-sm">{lb.hint}</p>
           </motion.div>
 
-          {/* Tree — full aspect-ratio, unconstrained height */}
+          {/* Mobile: topic grid (touch-friendly) */}
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.15 }}
+            className="sm:hidden grid grid-cols-2 gap-2 w-full"
+          >
+            {journeySteps.map((step) => {
+              const isActive = (activeId ?? 'introduction') === step.id;
+              return (
+                <button
+                  key={step.id}
+                  onClick={() => handleSelect(step.id)}
+                  className={cn(
+                    'flex items-center gap-2.5 p-3 rounded-xl border text-left transition-all duration-200',
+                    isActive
+                      ? 'bg-kim-navy border-kim-gold shadow-lg'
+                      : 'bg-kim-navy/70 border-white/12 active:bg-kim-navy',
+                  )}
+                  style={isActive ? { boxShadow: '0 0 14px rgba(201,151,58,0.35)' } : undefined}
+                >
+                  <span className="text-xl leading-none flex-shrink-0">{step.icon}</span>
+                  <span
+                    className={cn(
+                      'text-xs font-medium leading-snug',
+                      isActive ? 'text-kim-gold' : 'text-white/70',
+                    )}
+                  >
+                    {step.shortLabel}
+                  </span>
+                </button>
+              );
+            })}
+          </motion.div>
+
+          {/* Desktop/tablet: SVG tree */}
           <motion.div
             initial={{ opacity: 0, scale: 0.97 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.15 }}
-            className="w-full"
+            className="hidden sm:block w-full"
           >
             <JourneyTreeViewer activeId={activeId ?? 'introduction'} onSelect={handleSelect} />
           </motion.div>

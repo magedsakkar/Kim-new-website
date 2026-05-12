@@ -93,7 +93,10 @@ export function LocaleSwitcher({ variant = 'header' }: LocaleSwitcherProps) {
             <div className="absolute -top-[6px] right-[14px] w-3 h-3 rotate-45 border-l border-t border-white/12"
               style={{ background: 'rgba(20,26,74,0.98)' }} />
 
-            <div className="py-1.5 max-h-80 overflow-y-auto">
+            <div
+              className="py-1.5 max-h-80 overflow-y-auto"
+              onWheel={(e) => e.stopPropagation()}
+            >
               {LOCALES.map((loc) => {
                 const isActive = locale === loc;
                 return (

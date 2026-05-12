@@ -1,11 +1,16 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useRef } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
 import { Link } from '@/lib/i18n/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, MapPin, ChevronLeft, ChevronRight, X } from 'lucide-react';
 import Image from 'next/image';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, EffectFade } from 'swiper/modules';
+import type { Swiper as SwiperType } from 'swiper';
+import 'swiper/css';
+import 'swiper/css/effect-fade';
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 const SLIDE_MS = 6500;
@@ -155,19 +160,16 @@ function LocationsCard() {
               className="group flex items-center gap-3 px-3 py-2.5 rounded-2xl text-left transition-all duration-200 hover:bg-white/8 border border-transparent hover:border-white/12 focus:outline-none"
               aria-label={`View ${loc.fullName}`}
             >
-              {/* Colour swatch */}
               <div
                 className="w-9 h-9 rounded-xl flex items-center justify-center shrink-0 text-xl select-none"
                 style={{ background: loc.bg }}
               >
                 {loc.emoji}
               </div>
-              {/* Text */}
               <div className="flex-1 min-w-0">
                 <p className="text-white text-sm font-bold leading-tight">{loc.fullName}</p>
                 <p className="text-white/40 text-[10px] leading-tight mt-0.5 truncate">{loc.subtitle}</p>
               </div>
-              {/* Tag pill */}
               <span
                 className="shrink-0 text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full"
                 style={{ background: loc.glow.replace('0.28', '0.35'), color: 'rgba(255,255,255,0.72)' }}
@@ -217,7 +219,7 @@ function LocationsCard() {
 }
 
 // ─────────────────────────────────────────────────────────────────
-// Unique Scroll Indicator
+// Scroll Indicator
 // ─────────────────────────────────────────────────────────────────
 function ScrollIndicator() {
   return (
@@ -234,7 +236,6 @@ function ScrollIndicator() {
       >
         Scroll
       </motion.span>
-      {/* Track with travelling light */}
       <div className="w-px h-12 relative overflow-hidden rounded-full" style={{ background: 'rgba(255,255,255,0.10)' }}>
         <motion.div
           className="absolute left-0 right-0 rounded-full"
@@ -243,7 +244,6 @@ function ScrollIndicator() {
           transition={{ duration: 1.6, repeat: Infinity, ease: 'easeInOut', repeatDelay: 0.3 }}
         />
       </div>
-      {/* Staggered chevrons */}
       <div className="flex flex-col items-center -mt-1 gap-0.5">
         {[0, 1].map((i) => (
           <motion.svg
@@ -262,7 +262,7 @@ function ScrollIndicator() {
 }
 
 // ─────────────────────────────────────────────────────────────────
-// HeroSection
+// HeroSection — Swiper-powered with Framer Motion text animations
 // ─────────────────────────────────────────────────────────────────
 export function HeroSection() {
   const t      = useTranslations('hero');
@@ -271,54 +271,71 @@ export function HeroSection() {
   const isRtl  = locale === 'ar' || locale === 'fa';
   const [slide, setSlide]       = useState(0);
   const [timerKey, setTimerKey] = useState(0);
-  const cur = SLIDES[slide];
+  const swiperRef = useRef<SwiperType | null>(null);
+
+  const cur       = SLIDES[slide];
   const slideText = cur.text[lang];
 
-  useEffect(() => {
-    const id = setInterval(() => setSlide(s => (s + 1) % SLIDES.length), SLIDE_MS);
-    return () => clearInterval(id);
-  }, [timerKey]);
-
   const goTo = (idx: number) => {
-    setSlide(((idx % SLIDES.length) + SLIDES.length) % SLIDES.length);
+    const target = ((idx % SLIDES.length) + SLIDES.length) % SLIDES.length;
+    swiperRef.current?.slideTo(target);
     setTimerKey(k => k + 1);
   };
 
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden" style={{ background: '#080e2a' }}>
 
-      {/* ── Dark base (always behind photo) ── */}
-      <div className="absolute inset-0" style={{ background: '#080e2a' }} />
-
-      {/* ── Sliding photo ── */}
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={`photo-${slide}`}
-          className="absolute inset-0"
-          initial={{ opacity: 0, scale: 1.06, filter: 'blur(8px)' }}
-          animate={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
-          exit={{ opacity: 0, scale: 0.98, filter: 'blur(4px)' }}
-          transition={{ duration: 1.8, ease: [0.25, 0.1, 0.25, 1] }}
+      {/* ── Swiper: background images + overlays ── */}
+      <div className="absolute inset-0 z-0">
+        <Swiper
+          style={{ height: '100%' }}
+          modules={[Autoplay, EffectFade]}
+          effect="fade"
+          speed={1800}
+          autoplay={{ delay: SLIDE_MS, disableOnInteraction: false }}
+          loop
+          allowTouchMove
+          onSlideChange={(sw) => setSlide(sw.realIndex)}
+          onSwiper={(sw) => { swiperRef.current = sw; }}
+          onAutoplayTimeLeft={(_, __, progress) => {
+            // Keep timerKey in sync for the dot progress fill
+            if (progress < 0.05) setTimerKey(k => k + 1);
+          }}
         >
-          <Image src={cur.photo} alt="" fill className="object-cover object-center" priority={slide === 0} sizes="100vw" />
-        </motion.div>
-      </AnimatePresence>
-
-      {/* ── Directional overlay ── */}
-      <AnimatePresence mode="wait">
-        <motion.div key={`overlay-${slide}`} className="absolute inset-0 pointer-events-none" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 1.4 }} style={{ background: cur.overlay }} />
-      </AnimatePresence>
+          {SLIDES.map((s, i) => (
+            <SwiperSlide key={i} style={{ height: '100%' }}>
+              <Image
+                src={s.photo}
+                alt=""
+                fill
+                className="object-cover object-center"
+                priority={i === 0}
+                sizes="100vw"
+              />
+              <div className="absolute inset-0" style={{ background: s.overlay }} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
 
       {/* Top + bottom vignette */}
-      <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-black/25 via-transparent to-black/55" />
+      <div className="absolute inset-0 z-[1] pointer-events-none bg-gradient-to-b from-black/25 via-transparent to-black/55" />
 
       {/* Ambient orb */}
       <AnimatePresence mode="wait">
-        <motion.div key={`orb-${slide}`} className="absolute pointer-events-none" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 1.6 }} style={{ width: 500, height: 500, borderRadius: '50%', background: `radial-gradient(circle,${cur.orb} 0%,transparent 70%)`, top: -100, left: -100 }} />
+        <motion.div
+          key={`orb-${slide}`}
+          className="absolute z-[1] pointer-events-none"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 1.6 }}
+          style={{ width: 500, height: 500, borderRadius: '50%', background: `radial-gradient(circle,${cur.orb} 0%,transparent 70%)`, top: -100, left: -100 }}
+        />
       </AnimatePresence>
 
       {/* Dot grid */}
-      <div className="absolute inset-0 pointer-events-none" style={{ opacity: 0.04, backgroundImage: 'radial-gradient(circle,rgba(255,255,255,0.9) 1px,transparent 1px)', backgroundSize: '28px 28px' }} />
+      <div className="absolute inset-0 z-[1] pointer-events-none" style={{ opacity: 0.04, backgroundImage: 'radial-gradient(circle,rgba(255,255,255,0.9) 1px,transparent 1px)', backgroundSize: '28px 28px' }} />
 
       {/* ── Main content grid ── */}
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-24">
@@ -438,7 +455,7 @@ export function HeroSection() {
         </div>
       </div>
 
-      {/* ── Unique scroll indicator ── */}
+      {/* ── Scroll indicator ── */}
       <ScrollIndicator />
 
       {/* ── Slide controls — bottom right ── */}

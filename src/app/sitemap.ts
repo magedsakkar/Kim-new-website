@@ -14,6 +14,7 @@ const ROUTES = [
   '/library',
   '/contact',
   '/donate',
+  '/our-projects',
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
