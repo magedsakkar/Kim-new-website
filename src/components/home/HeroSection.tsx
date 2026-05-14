@@ -3,7 +3,7 @@
 import { useState, useRef } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
 import { Link } from '@/lib/i18n/navigation';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
 import { ArrowRight, MapPin, ChevronLeft, ChevronRight, X } from 'lucide-react';
 import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -271,7 +271,19 @@ export function HeroSection() {
   const isRtl  = locale === 'ar' || locale === 'fa';
   const [slide, setSlide]       = useState(0);
   const [timerKey, setTimerKey] = useState(0);
-  const swiperRef = useRef<SwiperType | null>(null);
+  const swiperRef  = useRef<SwiperType | null>(null);
+  const sectionRef = useRef<HTMLElement>(null);
+
+  // ── Parallax: background lags behind scroll ──────────────────
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ['start start', 'end start'],
+  });
+  // Background drifts down relative to section as user scrolls (creates depth lag)
+  const bgParallax = useTransform(scrollYProgress, [0, 1], ['0%', '22%']);
+  // Content fades and lifts slightly as hero exits viewport
+  const contentY       = useTransform(scrollYProgress, [0, 1], ['0%', '-6%']);
+  const contentOpacity = useTransform(scrollYProgress, [0, 0.65], [1, 0]);
 
   const cur       = SLIDES[slide];
   const slideText = cur.text[lang];
@@ -283,13 +295,15 @@ export function HeroSection() {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden" style={{ background: '#080e2a' }}>
+    <section ref={sectionRef} className="relative min-h-screen flex items-center overflow-hidden" style={{ background: '#080e2a' }}>
 
-      {/* ── Swiper: background images + overlays ── */}
-      <div className="absolute inset-0 z-0">
-        <Swiper
-          style={{ height: '100%' }}
-          modules={[Autoplay, EffectFade]}
+      {/* ── Swiper: background images + overlays (with parallax) ── */}
+      {/* Container extends 25% above section so upward parallax shift never exposes the base */}
+      <div className="absolute inset-x-0 z-0 overflow-hidden" style={{ top: '-25%', bottom: '0' }}>
+        <motion.div className="absolute inset-0" style={{ y: bgParallax }}>
+          <Swiper
+            style={{ height: '100%' }}
+            modules={[Autoplay, EffectFade]}
           effect="fade"
           speed={1800}
           autoplay={{ delay: SLIDE_MS, disableOnInteraction: false }}
@@ -316,6 +330,7 @@ export function HeroSection() {
             </SwiperSlide>
           ))}
         </Swiper>
+        </motion.div>
       </div>
 
       {/* Top + bottom vignette */}
@@ -337,8 +352,11 @@ export function HeroSection() {
       {/* Dot grid */}
       <div className="absolute inset-0 z-[1] pointer-events-none" style={{ opacity: 0.04, backgroundImage: 'radial-gradient(circle,rgba(255,255,255,0.9) 1px,transparent 1px)', backgroundSize: '28px 28px' }} />
 
-      {/* ── Main content grid ── */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-24">
+      {/* ── Main content grid (parallax: lifts slightly + fades on scroll) ── */}
+      <motion.div
+        className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-24"
+        style={{ y: contentY, opacity: contentOpacity }}
+      >
         <div className="grid lg:grid-cols-[1fr_340px] xl:grid-cols-[1fr_360px] gap-10 lg:gap-14 items-center">
 
           {/* ── LEFT: slide-specific copy ── */}
@@ -453,7 +471,7 @@ export function HeroSection() {
             <LocationsCard />
           </motion.div>
         </div>
-      </div>
+      </motion.div>
 
       {/* ── Scroll indicator ── */}
       <ScrollIndicator />
