@@ -46,7 +46,7 @@ export function StatsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: i * 0.1 }}
-              className="px-8 py-10 text-center group hover:bg-kim-navy-light/40 transition-colors duration-300"
+              className="px-4 py-8 sm:px-8 sm:py-10 text-center group hover:bg-kim-navy-light/40 transition-colors duration-300"
             >
               <AnimatedCounter
                 target={stat.value}

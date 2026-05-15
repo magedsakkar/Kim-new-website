@@ -128,19 +128,19 @@ export default async function OurProjectsPage({ params }: Props) {
     <div className="pt-20">
 
       {/* ── Hero ── */}
-      <section className="bg-gradient-to-br from-kim-navy to-kim-navy-dark py-24 md:py-32">
+      <section className="bg-gradient-to-br from-kim-navy to-kim-navy-dark py-16 sm:py-24 md:py-32">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <span className="inline-block px-4 py-1.5 rounded-full bg-white/20 text-white text-sm font-medium mb-6">
             {l === 'ar' ? 'مشاريعنا' : l === 'tr' ? 'Projelerimiz' : 'Our Projects'}
           </span>
-          <h1 className="font-serif text-4xl md:text-5xl font-bold text-white mb-6">
+          <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
             {l === 'ar'
               ? 'مبادراتنا وأثرنا'
               : l === 'tr'
               ? 'Girişimlerimiz ve Etkimiz'
               : 'Our Initiatives & Impact'}
           </h1>
-          <p className="text-white/80 text-lg leading-relaxed max-w-2xl mx-auto">
+          <p className="text-white/80 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto">
             {l === 'ar'
               ? 'من التطبيق اللوحي في مسجد السليمانية إلى مراكز كيم الثلاثة — نبني تجارب تعليمية تدوم.'
               : l === 'tr'
@@ -154,7 +154,7 @@ export default async function OurProjectsPage({ params }: Props) {
       <section className="py-20 md:py-28 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
 
             {/* Text */}
             <div>

@@ -29,14 +29,17 @@ export default function HomePage() {
     <>
       <MosqueEntrance />
       <HeroSection />
-      <MarqueeBanner />
-      <StatsSection />
-      <MissionStatement />
-      <ProgramsPreview />
-      <EventsSection />
-      <GallerySection />
-      <TestimonialsSection />
-      <CTABanner />
+      {/* z-10 wrapper ensures all sections paint above the sticky hero (z-0) */}
+      <div className="relative z-10">
+        <MarqueeBanner />
+        <StatsSection />
+        <MissionStatement />
+        <ProgramsPreview />
+        <EventsSection />
+        <GallerySection />
+        <TestimonialsSection />
+        <CTABanner />
+      </div>
     </>
   );
 }

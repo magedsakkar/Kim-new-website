@@ -60,7 +60,7 @@ export function TestimonialsSection() {
             <span className="text-kim-gold text-xs font-semibold uppercase tracking-[0.2em]">{t('title')}</span>
             <span className="h-px w-8 bg-kim-gold" />
           </div>
-          <h2 className="font-serif text-4xl md:text-5xl font-bold text-white">
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-white">
             {t('subtitle')}
           </h2>
         </motion.div>
@@ -82,9 +82,9 @@ export function TestimonialsSection() {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: dir * -40 }}
               transition={{ duration: 0.4, ease: 'easeInOut' }}
-              className="text-center px-8"
+              className="text-center px-2 sm:px-8"
             >
-              <blockquote className="font-serif text-xl md:text-2xl lg:text-3xl text-white/90 leading-relaxed mb-10 italic">
+              <blockquote className="font-serif text-base sm:text-xl md:text-2xl lg:text-3xl text-white/90 leading-relaxed mb-8 sm:mb-10 italic">
                 &ldquo;{data[active].quote}&rdquo;
               </blockquote>
 

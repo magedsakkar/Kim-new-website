@@ -53,7 +53,7 @@ export function MissionStatement() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.1 }}
-          className="font-serif text-3xl md:text-4xl lg:text-5xl text-white leading-[1.3] mb-12"
+          className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white leading-[1.3] mb-8 sm:mb-12"
           dir={isAr ? 'rtl' : 'ltr'}
         >
           {isAr

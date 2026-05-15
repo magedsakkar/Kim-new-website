@@ -8,7 +8,7 @@ export function CTABanner() {
   const t = useTranslations('cta');
 
   return (
-    <section className="relative py-24 md:py-32 overflow-hidden">
+    <section className="relative py-16 sm:py-24 md:py-32 overflow-hidden">
       {/* Gradient background */}
       <div className="absolute inset-0 bg-gradient-to-br from-kim-navy-dark via-kim-navy to-[#0d1a3a]" />
 
@@ -29,7 +29,7 @@ export function CTABanner() {
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-1 bg-kim-gold rounded-full" />
 
       <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
           {/* Left copy */}
           <motion.div
             initial={{ opacity: 0, x: -24 }}
@@ -43,7 +43,7 @@ export function CTABanner() {
                 {t('actionBadge')}
               </span>
             </div>
-            <h2 className="font-serif text-4xl md:text-5xl font-bold text-white leading-tight mb-4">
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight mb-4">
               {t('title')}
             </h2>
             <p className="text-white/60 text-base leading-relaxed">
@@ -61,10 +61,10 @@ export function CTABanner() {
           >
             <Link
               href="/donate"
-              className="group flex items-center justify-between px-7 py-5 bg-kim-gold text-white font-semibold rounded-2xl hover:bg-amber-600 transition-all duration-200 shadow-lg hover:shadow-kim-gold/25 hover:-translate-y-0.5"
+              className="group flex items-center justify-between px-5 py-4 sm:px-7 sm:py-5 bg-kim-gold text-white font-semibold rounded-2xl hover:bg-amber-600 transition-all duration-200 shadow-lg hover:shadow-kim-gold/25 hover:-translate-y-0.5"
             >
               <div>
-                <div className="text-lg">{t('donate')}</div>
+                <div className="text-base sm:text-lg">{t('donate')}</div>
                 <div className="text-white/70 text-xs mt-0.5 font-normal">{t('donateSub')}</div>
               </div>
               <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -74,10 +74,10 @@ export function CTABanner() {
 
             <Link
               href="/volunteer"
-              className="group flex items-center justify-between px-7 py-5 border border-white/20 text-white font-semibold rounded-2xl hover:bg-white/8 transition-all duration-200 backdrop-blur-sm hover:-translate-y-0.5"
+              className="group flex items-center justify-between px-5 py-4 sm:px-7 sm:py-5 border border-white/20 text-white font-semibold rounded-2xl hover:bg-white/8 transition-all duration-200 backdrop-blur-sm hover:-translate-y-0.5"
             >
               <div>
-                <div className="text-lg">{t('volunteer')}</div>
+                <div className="text-base sm:text-lg">{t('volunteer')}</div>
                 <div className="text-white/50 text-xs mt-0.5 font-normal">{t('volunteerSub')}</div>
               </div>
               <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">

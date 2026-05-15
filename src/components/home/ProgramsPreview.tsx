@@ -54,7 +54,7 @@ export function ProgramsPreview() {
   const t = useTranslations('programs');
 
   return (
-    <section className="py-20 md:py-28 bg-kim-cream">
+    <section className="relative py-20 md:py-28 bg-kim-cream">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
@@ -69,7 +69,7 @@ export function ProgramsPreview() {
               <span className="h-px w-8 bg-kim-olive" />
               <span className="text-kim-olive text-xs font-semibold uppercase tracking-[0.2em]">{t('title')}</span>
             </div>
-            <h2 className="font-serif text-4xl md:text-5xl font-bold text-kim-charcoal leading-tight">
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-kim-charcoal leading-tight">
               {t('title')}
             </h2>
           </div>

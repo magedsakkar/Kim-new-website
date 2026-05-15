@@ -39,7 +39,7 @@ export function EventsSection() {
             <span className="text-kim-navy text-xs font-semibold uppercase tracking-[0.2em]">{t('title')}</span>
           </div>
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
-            <h2 className="font-serif text-4xl md:text-5xl font-bold text-kim-charcoal">
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-kim-charcoal">
               {t('title')}
             </h2>
             <Link
