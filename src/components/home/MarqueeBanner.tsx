@@ -9,7 +9,7 @@ export function MarqueeBanner() {
   const repeated = [...WORDS, ...WORDS];
 
   return (
-    <div className="overflow-hidden bg-kim-olive/90 py-3 border-y border-kim-olive/30">
+    <div className="relative z-10 overflow-hidden bg-kim-olive py-3 border-y border-kim-olive/30">
       <div className="flex whitespace-nowrap animate-marquee">
         {repeated.map((word, i) => (
           <span

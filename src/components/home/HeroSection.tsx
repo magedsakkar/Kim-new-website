@@ -274,16 +274,11 @@ export function HeroSection() {
   const swiperRef  = useRef<SwiperType | null>(null);
   const sectionRef = useRef<HTMLElement>(null);
 
-  // ── Parallax: background lags behind scroll ──────────────────
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ['start start', 'end start'],
-  });
-  // Background drifts down relative to section as user scrolls (creates depth lag)
-  const bgParallax = useTransform(scrollYProgress, [0, 1], ['0%', '22%']);
-  // Content fades and lifts slightly as hero exits viewport
-  const contentY       = useTransform(scrollYProgress, [0, 1], ['0%', '-6%']);
-  const contentOpacity = useTransform(scrollYProgress, [0, 0.65], [1, 0]);
+  // ── Parallax: background drifts as page scrolls (global scrollY) ──
+  // Global scroll used because section is sticky — scrollYProgress never changes on sticky
+  const { scrollY } = useScroll();
+  // Background moves down slower than page scroll → perceived depth lag
+  const bgParallax = useTransform(scrollY, [0, 900], ['0px', '120px']);
 
   const cur       = SLIDES[slide];
   const slideText = cur.text[lang];
@@ -295,11 +290,11 @@ export function HeroSection() {
   };
 
   return (
-    <section ref={sectionRef} className="relative min-h-screen flex items-center overflow-hidden" style={{ background: '#080e2a' }}>
+    <section ref={sectionRef} className="sticky top-0 z-0 h-screen flex items-center overflow-hidden" style={{ background: '#080e2a' }}>
 
       {/* ── Swiper: background images + overlays (with parallax) ── */}
-      {/* Container extends 25% above section so upward parallax shift never exposes the base */}
-      <div className="absolute inset-x-0 z-0 overflow-hidden" style={{ top: '-25%', bottom: '0' }}>
+      {/* Extends 200px above so downward drift never gaps at top */}
+      <div className="absolute inset-x-0 z-0 overflow-hidden" style={{ top: '-200px', bottom: '0' }}>
         <motion.div className="absolute inset-0" style={{ y: bgParallax }}>
           <Swiper
             style={{ height: '100%' }}
@@ -352,15 +347,14 @@ export function HeroSection() {
       {/* Dot grid */}
       <div className="absolute inset-0 z-[1] pointer-events-none" style={{ opacity: 0.04, backgroundImage: 'radial-gradient(circle,rgba(255,255,255,0.9) 1px,transparent 1px)', backgroundSize: '28px 28px' }} />
 
-      {/* ── Main content grid (parallax: lifts slightly + fades on scroll) ── */}
+      {/* ── Main content grid ── */}
       <motion.div
-        className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-24"
-        style={{ y: contentY, opacity: contentOpacity }}
+        className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16 sm:pt-28 sm:pb-24"
       >
         <div className="grid lg:grid-cols-[1fr_340px] xl:grid-cols-[1fr_360px] gap-10 lg:gap-14 items-center">
 
           {/* ── LEFT: slide-specific copy ── */}
-          <div className="order-2 lg:order-1">
+          <div className="order-1">
 
             {/* Animated tag badge */}
             <AnimatePresence mode="wait">
@@ -383,7 +377,7 @@ export function HeroSection() {
             <AnimatePresence mode="wait">
               <motion.h1
                 key={`headline-${slide}`}
-                className="font-serif text-5xl md:text-6xl lg:text-[4rem] xl:text-[4.4rem] font-bold text-white leading-[1.06] mb-6 whitespace-pre-line"
+                className="font-serif text-[1.85rem] sm:text-5xl md:text-6xl lg:text-[4rem] xl:text-[4.4rem] font-bold text-white leading-[1.06] mb-4 sm:mb-6 whitespace-pre-line"
                 initial={{ opacity: 0, y: 28 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
@@ -397,7 +391,7 @@ export function HeroSection() {
             <AnimatePresence mode="wait">
               <motion.p
                 key={`sub-${slide}`}
-                className="text-white/58 text-lg leading-relaxed max-w-[500px] mb-8"
+                className="text-white/58 text-base sm:text-lg leading-relaxed max-w-[500px] mb-6 sm:mb-8"
                 initial={{ opacity: 0, y: 18 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0 }}
@@ -409,7 +403,7 @@ export function HeroSection() {
 
             {/* CTAs */}
             <motion.div
-              className="flex flex-wrap items-center gap-4 mb-10"
+              className="flex flex-wrap items-center gap-3 sm:gap-4 mb-6 sm:mb-10"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.25, ease: EASE }}
@@ -433,12 +427,13 @@ export function HeroSection() {
 
             {/* Service cards */}
             <motion.div
+              className="hidden sm:block"
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.38, ease: EASE }}
             >
               <p className="text-white/28 text-[10px] uppercase tracking-[0.2em] font-bold mb-3">{t('offer')}</p>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+              <div className="hidden sm:grid grid-cols-1 sm:grid-cols-3 gap-2.5">
                 {SERVICES.map((svc) => (
                   <Link key={svc.id} href={svc.href as `/${string}`} className="block group focus:outline-none">
                     <motion.div
@@ -461,9 +456,9 @@ export function HeroSection() {
             </motion.div>
           </div>
 
-          {/* ── RIGHT: compact LocationsCard ── */}
+          {/* ── RIGHT: compact LocationsCard (desktop only) ── */}
           <motion.div
-            className="order-1 lg:order-2"
+            className="hidden lg:block order-2"
             initial={{ opacity: 0, x: 40, scale: 0.96 }}
             animate={{ opacity: 1, x: 0, scale: 1 }}
             transition={{ duration: 1.1, delay: 0.2, ease: EASE }}
