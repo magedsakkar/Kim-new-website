@@ -28,6 +28,8 @@ export const L = {
     browseAll: 'Tüm Kaynaklara Göz At',
     previewTitle: 'Önizleme', closePreview: 'Kapat', openExternal: 'Yeni sekmede aç',
     availIn: 'Mevcut diller', loadMore: 'Daha fazla yükle',
+    pdfNotLinked: 'PDF henüz bağlı değil', pdfPending: 'PDF bağlantısı bekleniyor',
+    pdfNotLinkedDesc: 'Bu kitap arşivimizde mevcut. Önizlemeyi etkinleştirmek için PDF bağlantısını ekleyin.',
     categories: {
       all: 'Tüm Konular', quran: 'Kuran', belief: 'İnanç & Teoloji',
       seerah: 'Peygamberin Hayatı', worship: 'İbadet & Namaz',
@@ -55,6 +57,8 @@ export const L = {
     browseAll: 'Browse All Resources',
     previewTitle: 'Preview', closePreview: 'Close', openExternal: 'Open in new tab',
     availIn: 'Available in', loadMore: 'Load more',
+    pdfNotLinked: 'PDF not yet linked', pdfPending: 'PDF link pending',
+    pdfNotLinkedDesc: 'This book is in our archive. Add the PDF URL from the archive panel to enable preview.',
     categories: {
       all: 'All Topics', quran: 'Quran', belief: 'Belief & Theology',
       seerah: "Prophet's Life", worship: 'Worship & Prayer',
@@ -82,6 +86,8 @@ export const L = {
     browseAll: 'تصفح جميع الموارد',
     previewTitle: 'معاينة', closePreview: 'إغلاق', openExternal: 'فتح في تبويب جديد',
     availIn: 'متاح بـ', loadMore: 'تحميل المزيد',
+    pdfNotLinked: 'لم يتم ربط PDF بعد', pdfPending: 'رابط PDF قيد الانتظار',
+    pdfNotLinkedDesc: 'هذا الكتاب موجود في أرشيفنا. أضف رابط PDF لتفعيل المعاينة.',
     categories: {
       all: 'جميع الموضوعات', quran: 'القرآن', belief: 'العقيدة',
       seerah: 'سيرة النبي', worship: 'العبادة',

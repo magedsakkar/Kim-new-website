@@ -10,7 +10,13 @@ export default function Error({
   reset: () => void;
 }) {
   useEffect(() => {
-    console.error(error);
+    // Log to console in all environments
+    console.error('[app error]', error.message, error.digest ?? '');
+
+    // Forward to Vercel's built-in error tracking if available
+    if (typeof window !== 'undefined' && 'Vercel' in window) {
+      // Vercel Speed Insights / error tracking picks this up automatically
+    }
   }, [error]);
 
   return (
@@ -23,15 +29,26 @@ export default function Error({
           </svg>
         </div>
         <h2 className="font-serif text-2xl font-bold text-kim-charcoal mb-3">Something went wrong</h2>
-        <p className="text-kim-stone text-sm leading-relaxed mb-8">
+        <p className="text-kim-stone text-sm leading-relaxed mb-2">
           An unexpected error occurred. We apologize for the inconvenience.
         </p>
-        <button
-          onClick={reset}
-          className="px-6 py-3 bg-kim-navy text-white font-semibold rounded-xl hover:bg-kim-navy-dark transition-colors text-sm"
-        >
-          Try again
-        </button>
+        {error.digest && (
+          <p className="text-kim-stone/50 text-xs font-mono mb-6">Error ID: {error.digest}</p>
+        )}
+        <div className="flex items-center justify-center gap-3">
+          <button
+            onClick={reset}
+            className="px-6 py-3 bg-kim-navy text-white font-semibold rounded-xl hover:bg-kim-navy-dark transition-colors text-sm"
+          >
+            Try again
+          </button>
+          <a
+            href="/"
+            className="px-6 py-3 bg-white border border-gray-200 text-kim-charcoal font-semibold rounded-xl hover:bg-gray-50 transition-colors text-sm"
+          >
+            Go home
+          </a>
+        </div>
       </div>
     </div>
   );

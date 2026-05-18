@@ -2,7 +2,7 @@ import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { routing } from '@/lib/i18n/routing';
-import { geistSans, playfair } from '@/lib/fonts';
+import { geistSans, playfair, notoSansArabic } from '@/lib/fonts';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { CookieConsent } from '@/components/analytics/CookieConsent';
@@ -82,7 +82,7 @@ export default async function LocaleLayout({ children, params }: Props) {
   const isRtl = locale === 'ar' || locale === 'fa';
 
   return (
-    <div className={`${geistSans.variable} ${playfair.variable}`} dir={isRtl ? 'rtl' : 'ltr'}>
+    <div className={`${geistSans.variable} ${playfair.variable} ${notoSansArabic.variable}`} dir={isRtl ? 'rtl' : 'ltr'}>
       <GoogleAnalytics />
       <script
         type="application/ld+json"

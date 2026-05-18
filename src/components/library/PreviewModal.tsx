@@ -28,11 +28,7 @@ export function PreviewModal({
   }, [onClose]);
 
   const isPlaceholder = resource.url === '#' || !resource.url;
-  const viewerUrl = isPlaceholder
-    ? null
-    : resource.url.startsWith('http')
-    ? `https://docs.google.com/viewer?url=${encodeURIComponent(resource.url)}&embedded=true`
-    : resource.url;
+  const viewerUrl = isPlaceholder ? null : resource.url;
 
   return (
     <AnimatePresence>
@@ -91,9 +87,9 @@ export function PreviewModal({
                 <div className="w-16 h-16 rounded-2xl bg-white/8 border border-white/10 flex items-center justify-center mb-4">
                   <FileText className="w-8 h-8 text-white/25" />
                 </div>
-                <p className="text-white/50 font-semibold mb-2">PDF not yet linked</p>
+                <p className="text-white/50 font-semibold mb-2">{lb.pdfNotLinked}</p>
                 <p className="text-white/28 text-sm max-w-sm leading-relaxed">
-                  This book is in our archive. Add the PDF URL from the book archive panel to enable preview.
+                  {lb.pdfNotLinkedDesc}
                 </p>
               </div>
             ) : (
@@ -111,7 +107,7 @@ export function PreviewModal({
           <div className="p-4 border-t border-white/10 flex items-center justify-between gap-3 flex-shrink-0">
             <p className="text-white/35 text-xs line-clamp-1 hidden sm:block">{resource.description}</p>
             {isPlaceholder ? (
-              <span className="text-white/30 text-xs italic">PDF link pending</span>
+              <span className="text-white/30 text-xs italic">{lb.pdfPending}</span>
             ) : (
               <a href={resource.url} download
                 className="flex items-center gap-2 px-4 py-2 rounded-xl bg-kim-gold text-white text-sm font-semibold hover:bg-amber-500 transition-colors shadow-md shadow-kim-gold/25 flex-shrink-0"

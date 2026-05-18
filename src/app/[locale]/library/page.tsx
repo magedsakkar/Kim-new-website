@@ -21,8 +21,8 @@ import { ResourceRow }   from '@/components/library/ResourceRow';
 const PAGE_SIZE = 12;
 
 export default function LibraryPage() {
-  const locale = useLocale() as 'tr' | 'en' | 'ar';
-  const lb     = L[locale] ?? L.en;
+  const locale = useLocale();
+  const lb     = L[locale as keyof typeof L] ?? L.en;
   const isRTL  = locale === 'ar';
 
   const [search,      setSearch]      = useState('');

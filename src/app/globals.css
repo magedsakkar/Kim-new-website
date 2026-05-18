@@ -45,12 +45,19 @@
   --font-family-sans: var(--font-geist-sans), system-ui, sans-serif;
   --font-family-serif: var(--font-playfair), Georgia, serif;
   --font-family-amiri: var(--font-amiri), serif;
+  --font-family-arabic: var(--font-arabic), 'Noto Sans Arabic', system-ui, sans-serif;
 }
 
 @layer base {
   :root {
     --font-geist-sans: 'Geist', system-ui, sans-serif;
     --font-playfair: 'Playfair Display', Georgia, serif;
+  }
+
+  /* Arabic locale: switch body font to Noto Sans Arabic */
+  [dir="rtl"] body,
+  [dir="rtl"] {
+    font-family: var(--font-arabic), 'Noto Sans Arabic', system-ui, sans-serif;
   }
 
   html {

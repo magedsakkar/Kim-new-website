@@ -1,4 +1,4 @@
-import { Geist, Playfair_Display } from 'next/font/google';
+import { Geist, Playfair_Display, Noto_Sans_Arabic } from 'next/font/google';
 
 export const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -11,4 +11,11 @@ export const playfair = Playfair_Display({
   subsets: ['latin'],
   display: 'swap',
   style: ['normal', 'italic'],
+});
+
+export const notoSansArabic = Noto_Sans_Arabic({
+  variable: '--font-arabic',
+  subsets: ['arabic'],
+  display: 'swap',
+  weight: ['400', '500', '600', '700'],
 });
