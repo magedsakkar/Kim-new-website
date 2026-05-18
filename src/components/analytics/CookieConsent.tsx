@@ -57,8 +57,8 @@ export function CookieConsent() {
   }, []);
 
   function enableAnalytics() {
-    if (typeof window !== 'undefined' && (window as { gtag?: Function }).gtag) {
-      (window as unknown as { gtag: Function }).gtag('consent', 'update', {
+    if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
+      window.gtag('consent', 'update', {
         analytics_storage: 'granted',
         ad_storage: 'denied',
         ad_user_data: 'denied',

@@ -63,11 +63,16 @@ const STARS = Array.from({ length: 100 }, (_, i) => ({
 export function EarthEntranceOverlay({ onDone }: { onDone: () => void }) {
   const [loadProgress, setLoadProgress] = useState(0);
   const [ready, setReady] = useState(false);
+  const [showSkip, setShowSkip] = useState(false);
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   useEffect(() => {
     document.body.style.overflow = 'hidden';
-    return () => { document.body.style.overflow = ''; };
+    const skipTimer = setTimeout(() => setShowSkip(true), 1200);
+    return () => {
+      document.body.style.overflow = '';
+      clearTimeout(skipTimer);
+    };
   }, []);
 
   useEffect(() => {
@@ -330,6 +335,24 @@ export function EarthEntranceOverlay({ onDone }: { onDone: () => void }) {
               >
                 Enter Website
               </span>
+            </motion.button>
+          )}
+        </AnimatePresence>
+
+        {/* Skip button — appears after 1.2s for users who want to bypass animation */}
+        <AnimatePresence>
+          {showSkip && !ready && (
+            <motion.button
+              key="skip-btn"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.4 }}
+              onClick={handleEnter}
+              className="absolute top-5 right-5 text-white/30 hover:text-white/70 transition-colors text-xs uppercase tracking-widest font-medium"
+              aria-label="Skip intro"
+            >
+              Skip ›
             </motion.button>
           )}
         </AnimatePresence>

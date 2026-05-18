@@ -105,7 +105,7 @@ const CONTENT = {
 
 export default async function TermsPage({ params }: Props) {
   const { locale } = await params;
-  const l = (locale as keyof typeof CONTENT) in CONTENT ? (locale as keyof typeof CONTENT) : 'tr';
+  const l = (locale as keyof typeof CONTENT) in CONTENT ? (locale as keyof typeof CONTENT) : 'en';
   const c = CONTENT[l];
   const isRtl = l === 'ar';
 

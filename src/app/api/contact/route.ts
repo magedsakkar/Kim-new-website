@@ -2,6 +2,15 @@ import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
 import { Resend } from 'resend';
 
+function escHtml(str: string): string {
+  return str
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
 const schema = z.object({
   name: z.string().min(2),
   email: z.string().email(),
@@ -36,10 +45,10 @@ function buildContactHtml(data: z.infer<typeof schema>): string {
         <h2 style="color:#c9a84c;margin:0;font-size:20px">KİM Vakfı — New Contact Message</h2>
       </div>
       <table style="width:100%;border-collapse:collapse">
-        <tr><td style="padding:10px 0;color:#666;width:120px;vertical-align:top">Name</td><td style="padding:10px 0;font-weight:600;color:#1a1a1a">${data.name}</td></tr>
-        <tr><td style="padding:10px 0;color:#666;vertical-align:top">Email</td><td style="padding:10px 0"><a href="mailto:${data.email}" style="color:#c9a84c">${data.email}</a></td></tr>
-        ${data.subject ? `<tr><td style="padding:10px 0;color:#666;vertical-align:top">Subject</td><td style="padding:10px 0;color:#1a1a1a">${data.subject}</td></tr>` : ''}
-        <tr><td style="padding:10px 0;color:#666;vertical-align:top">Message</td><td style="padding:10px 0;color:#1a1a1a;white-space:pre-wrap">${data.message}</td></tr>
+        <tr><td style="padding:10px 0;color:#666;width:120px;vertical-align:top">Name</td><td style="padding:10px 0;font-weight:600;color:#1a1a1a">${escHtml(data.name)}</td></tr>
+        <tr><td style="padding:10px 0;color:#666;vertical-align:top">Email</td><td style="padding:10px 0"><a href="mailto:${escHtml(data.email)}" style="color:#c9a84c">${escHtml(data.email)}</a></td></tr>
+        ${data.subject ? `<tr><td style="padding:10px 0;color:#666;vertical-align:top">Subject</td><td style="padding:10px 0;color:#1a1a1a">${escHtml(data.subject)}</td></tr>` : ''}
+        <tr><td style="padding:10px 0;color:#666;vertical-align:top">Message</td><td style="padding:10px 0;color:#1a1a1a;white-space:pre-wrap">${escHtml(data.message)}</td></tr>
       </table>
     </div>
   `;
@@ -52,11 +61,11 @@ function buildVolunteerHtml(data: z.infer<typeof schema>): string {
         <h2 style="color:#c9a84c;margin:0;font-size:20px">KİM Vakfı — New Volunteer Application</h2>
       </div>
       <table style="width:100%;border-collapse:collapse">
-        <tr><td style="padding:10px 0;color:#666;width:130px;vertical-align:top">Name</td><td style="padding:10px 0;font-weight:600;color:#1a1a1a">${data.name}</td></tr>
-        <tr><td style="padding:10px 0;color:#666;vertical-align:top">Email</td><td style="padding:10px 0"><a href="mailto:${data.email}" style="color:#c9a84c">${data.email}</a></td></tr>
-        ${data.phone ? `<tr><td style="padding:10px 0;color:#666;vertical-align:top">Phone</td><td style="padding:10px 0;color:#1a1a1a">${data.phone}</td></tr>` : ''}
-        ${data.profession ? `<tr><td style="padding:10px 0;color:#666;vertical-align:top">Profession</td><td style="padding:10px 0;color:#1a1a1a">${data.profession}</td></tr>` : ''}
-        ${data.motivation ? `<tr><td style="padding:10px 0;color:#666;vertical-align:top">Motivation</td><td style="padding:10px 0;color:#1a1a1a;white-space:pre-wrap">${data.motivation}</td></tr>` : ''}
+        <tr><td style="padding:10px 0;color:#666;width:130px;vertical-align:top">Name</td><td style="padding:10px 0;font-weight:600;color:#1a1a1a">${escHtml(data.name)}</td></tr>
+        <tr><td style="padding:10px 0;color:#666;vertical-align:top">Email</td><td style="padding:10px 0"><a href="mailto:${escHtml(data.email)}" style="color:#c9a84c">${escHtml(data.email)}</a></td></tr>
+        ${data.phone ? `<tr><td style="padding:10px 0;color:#666;vertical-align:top">Phone</td><td style="padding:10px 0;color:#1a1a1a">${escHtml(data.phone)}</td></tr>` : ''}
+        ${data.profession ? `<tr><td style="padding:10px 0;color:#666;vertical-align:top">Profession</td><td style="padding:10px 0;color:#1a1a1a">${escHtml(data.profession)}</td></tr>` : ''}
+        ${data.motivation ? `<tr><td style="padding:10px 0;color:#666;vertical-align:top">Motivation</td><td style="padding:10px 0;color:#1a1a1a;white-space:pre-wrap">${escHtml(data.motivation)}</td></tr>` : ''}
       </table>
     </div>
   `;
