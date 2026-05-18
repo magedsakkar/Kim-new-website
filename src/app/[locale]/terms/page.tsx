@@ -6,7 +6,8 @@ type Props = { params: Promise<{ locale: string }> };
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   const titles = { tr: 'Kullanım Koşulları', en: 'Terms of Use', ar: 'شروط الاستخدام' };
-  return buildMetadata({ locale, slug: 'terms', title: titles[locale as keyof typeof titles] || titles.tr });
+  const descs = { tr: 'KİM Vakfı kullanım koşulları.', en: 'KIM Foundation terms of use.', ar: 'شروط استخدام مؤسسة كيم.' };
+  return buildMetadata({ locale, slug: 'terms', title: titles[locale as keyof typeof titles] || titles.tr, description: descs[locale as keyof typeof descs] || descs.tr });
 }
 
 const CONTENT = {
