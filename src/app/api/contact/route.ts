@@ -15,7 +15,7 @@ const schema = z.object({
   name: z.string().min(2),
   email: z.string().email(),
   subject: z.string().min(3).optional(),
-  message: z.string().min(5),
+  message: z.string().min(10),
   type: z.enum(['contact', 'volunteer']).optional(),
   phone: z.string().optional(),
   profession: z.string().optional(),
@@ -72,6 +72,19 @@ function buildVolunteerHtml(data: z.infer<typeof schema>): string {
 }
 
 export async function POST(request: NextRequest) {
+  const origin = request.headers.get('origin');
+  const host = request.headers.get('host');
+  if (origin && host) {
+    const allowed = new Set([
+      `https://${host}`,
+      `http://${host}`,
+      process.env.ALLOWED_ORIGIN,
+    ].filter(Boolean) as string[]);
+    if (!allowed.has(origin)) {
+      return NextResponse.json({ error: 'Forbidden' }, { status: 403 });
+    }
+  }
+
   const ip = request.headers.get('x-forwarded-for')?.split(',')[0].trim() ?? 'unknown';
   if (!checkRateLimit(ip)) {
     return NextResponse.json({ error: 'Too many requests. Please try again later.' }, { status: 429 });
@@ -104,7 +117,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ success: true }, { status: 200 });
   } catch (error) {
     if (error instanceof z.ZodError) {
-      return NextResponse.json({ error: 'Invalid form data', details: error.issues }, { status: 400 });
+      return NextResponse.json({ error: 'Invalid form data' }, { status: 400 });
     }
     console.error('[contact] Failed to process submission:', error);
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });

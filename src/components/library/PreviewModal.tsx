@@ -28,7 +28,17 @@ export function PreviewModal({
   }, [onClose]);
 
   const isPlaceholder = resource.url === '#' || !resource.url;
-  const viewerUrl = isPlaceholder ? null : resource.url;
+
+  function isSafeUrl(url: string): boolean {
+    try {
+      const parsed = new URL(url);
+      return parsed.protocol === 'https:';
+    } catch {
+      return false;
+    }
+  }
+
+  const viewerUrl = isPlaceholder ? null : (isSafeUrl(resource.url) ? resource.url : null);
 
   return (
     <AnimatePresence>

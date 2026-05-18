@@ -24,7 +24,7 @@ const nextConfig = {
       // Images: self + data URIs + external hosts used in the app
       "img-src 'self' data: blob: https://www.google-analytics.com https://images.unsplash.com https://kimvakfi.org.tr https://panel.crossculturalcenter.org",
       // Iframes: self + YouTube (embedded videos) + Google Maps
-      "frame-src 'self' https://www.youtube.com https://maps.google.com https://www.google.com",
+      "frame-src 'self' https://www.youtube.com https://maps.google.com https://www.google.com https://panel.crossculturalcenter.org https://crossculturalcenter.org",
       // Fetch/XHR: self + GA + Resend (email API)
       "connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://api.resend.com",
       // Media
@@ -41,7 +41,8 @@ const nextConfig = {
           { key: 'X-Content-Type-Options',     value: 'nosniff' },
           { key: 'Referrer-Policy',            value: 'strict-origin-when-cross-origin' },
           { key: 'Permissions-Policy',         value: 'camera=(), microphone=(), geolocation=(self)' },
-          { key: 'X-DNS-Prefetch-Control',     value: 'on' },
+          { key: 'X-DNS-Prefetch-Control',        value: 'on' },
+          { key: 'Strict-Transport-Security',  value: 'max-age=31536000; includeSubDomains; preload' },
           { key: 'Content-Security-Policy',    value: csp },
         ],
       },
